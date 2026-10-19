@@ -2,7 +2,8 @@
 title: Acquiring 23K Users in 2 Months While Reducing CAC by 40%
 client: Kelly App
 area: User acquisition
-order: 7
+tags: Paid ads, Social and video
+order: 12
 cover: /assets/kelly-app/01.webp
 role: Marketing Consultant, managing a team of five marketing interns.
 metrics:

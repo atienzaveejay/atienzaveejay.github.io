@@ -1,93 +1,56 @@
-## Ghostwritten for Jay Feng (LinkedIn)
-
-**Themes:** Data Science, Technical Writing, Job Search
-
-- [Lyft is Hiring Data Analysts](https://www.linkedin.com/posts/jay-feng-ab66b049_data-analyst-lyft-media-activity-7206007226585542656-vz6X?utm_source=share&utm_medium=member_desktop): 120,000 Impressions
-
-- [Atlassian is Hiring Data Engineers](https://www.linkedin.com/posts/jay-feng-ab66b049_job-details-atlassian-activity-7217180796862783489-jwKm?utm_source=share&utm_medium=member_desktop): 60,000 Impressions
-
-- [Analysis of 180,000 interview experiences](https://www.linkedin.com/posts/jay-feng-ab66b049_datascience-interviewprep-maang-activity-7206328334140526592-qwqn?utm_source=share&utm_medium=member_desktop): 44,000 Impressions
-
-- [VISA Sponsorship](https://www.linkedin.com/posts/jay-feng-ab66b049_ever-tried-applying-for-an-international-activity-7203470508162502656-67s1?utm_source=share&utm_medium=member_desktop): 25,000 Impressions
-
-- [Data Scientist Question](https://www.linkedin.com/posts/jay-feng-ab66b049_datascience-datascienceinterviews-datasciencequestions-activity-7211409127825104897-4Ca9?utm_source=share&utm_medium=member_desktop): 22,000 Impressions
-
 ---
-
-## Veejay Atienza (LinkedIn)
-
-**Themes:** College Experiences, Career Advice, B2B Copywriting
-
-- [When I applied for Internships](https://www.linkedin.com/posts/veejay-atienza-b65a331b2_when-i-applied-for-internships-last-year-activity-7222209037302427648-dQEo?utm_source=share&utm_medium=member_desktop): 8,000 Impressions
-
-- [Most Satisfying Karma Moment](https://www.linkedin.com/posts/veejay-atienza-b65a331b2_whats-the-most-satisfying-karma-moment-activity-7237791659919388675-GyUt?utm_source=share&utm_medium=member_desktop): 7,500 Impressions
-
-- [I’ve Graduated from Ateneo de Manila](https://www.linkedin.com/posts/veejay-atienza-b65a331b2_graduation-ateneo-admu-activity-7211337333382553601-6ad9?utm_source=share&utm_medium=member_desktop): 4,800 Impressions
-
-- [A Management Degree Does not Guarantee](https://www.linkedin.com/posts/veejay-atienza-b65a331b2_a-management-degree-does-not-guarantee-you-activity-7255186770957328384-KOah?utm_source=share&utm_medium=member_desktop): 3,500 Impressions
-
-- [I Was Never Anyone’s Favorite Classmate](https://www.linkedin.com/posts/veejay-atienza-b65a331b2_in-high-school-i-was-never-anyones-favorite-activity-7221846610433994755-uGG0?utm_source=share&utm_medium=member_desktop): 2,500 Impressions
-
+intro: Articles for Interview Query's blog, personal essays, LinkedIn ghostwriting and B2B thought leadership. Interview Query pieces carry my byline, reviewed by the CEO.
+# One line per piece: title | url | publication | section | date (optional) | note
+articles:
+  - Why Are AI Engineering Jobs Exploding? | https://www.interviewquery.com/p/why-ai-engineering-jobs-are-exploding-2025 | Interview Query | Interview Query | 2025 | Why AI engineering became 2025's fastest-growing tech career.
+  - November 2024 Data Science Job Market Report | https://www.interviewquery.com/p/november-data-science-job-market-report-2024 | Interview Query | Interview Query | 2024 | Built around a 69.1% jump in FAANG data listings in one month.
+  - October 2024 Data Science Job Market Report | https://www.interviewquery.com/p/october-data-science-job-market-report-2024 | Interview Query | Interview Query | 2024 | Data-role openings, FAANG vs non-FAANG hiring, top industries and layoffs.
+  - February 2025 Data Science Job Market Report | https://www.interviewquery.com/p/february-data-science-job-market-2025 | Interview Query | Interview Query | 2025 | A layoff surge, steady demand for core data roles and a FAANG slowdown.
+  - Lessons from Duke: How Alumni and AI Are Transforming Career Services | https://www.interviewquery.com/p/duke-ai-alumni-career-services-transformation | Interview Query | Interview Query | 2025 | How a university pairs alumni mentoring with AI tools in career services.
+  - From Startup Founder to Staff Data Scientist at Meta: Chris Keating's Journey | https://www.interviewquery.com/p/chris-keating-success-story | Interview Query | Interview Query | 2025 | How a founder prepared for a staff data scientist offer at Meta.
+  - Shubhangi Das Success Story: How She Landed a PM Role at ASOS | https://www.interviewquery.com/p/shubhangi-das-success-story | Interview Query | Interview Query | 2025 | Four months and 15 companies of interviews, ending in a PM role.
+  - Top Companies for Data Engineer Jobs in 2025 | https://www.interviewquery.com/p/companies-for-data-engineer-jobs | Interview Query | Interview Query | 2025 | Companies ranked for data engineers on pay, benefits and work-life balance.
+  - Best SQL Practice Platforms and Websites | https://www.interviewquery.com/p/platforms-to-practice-sql | Interview Query | Interview Query | 2025 | A roundup of platforms to learn and practise SQL.
+  - How to Gain SQL Experience: A Step-by-Step Guide for Beginners | https://www.interviewquery.com/p/gain-sql-experience | Interview Query | Interview Query | 2024 | A practical plan for building real SQL experience.
+  - Using SQL PARTITION BY | https://www.interviewquery.com/p/sql-partition-by | Interview Query | Interview Query | 2024 | The PARTITION BY clause, the functions it pairs with, and worked examples.
+  - Scale AI Research Scientist Interview Guide | https://www.interviewquery.com/interview-guides/scale-research-scientist | Interview Query | Interview Query | 2025 | Interview stages, common questions, take-home and onsite prep.
+  - Garner Health Data Engineer Interview Guide | https://www.interviewquery.com/interview-guides/garner-health-data-engineer | Interview Query | Interview Query | 2024 | The data engineer interview process and questions.
+  - How College Helped Me Overcome High School Struggles | https://medium.com/@atienzaveejay/how-college-helped-me-overcome-high-school-struggles-cdfa2af6accd | Medium | Essays | 2024 | How choosing Ateneo reshaped me after a hard high school experience.
+  - The Cost of Constant Achievement | https://medium.com/@atienzaveejay/the-cost-of-constant-achievement-why-you-need-to-listen-when-youre-burned-out-c2f543c0201b | Medium | Essays | 2024 | Ambition, rest and redefining success beyond the resume.
+  - The Overglorification of Freelancing and Hustle Culture | https://medium.com/@atienzaveejay/the-overglorification-of-freelancing-and-hustle-culture-fc98c0b1810b | Medium | Essays | 2024 | Burnout, income instability and the myth of total freedom.
+  - Lyft is Hiring Data Analysts | https://www.linkedin.com/posts/jay-feng-ab66b049_data-analyst-lyft-media-activity-7206007226585542656-vz6X | LinkedIn, Jay Feng | Ghostwriting | 2024 | 120,000 impressions
+  - Atlassian is Hiring Data Engineers | https://www.linkedin.com/posts/jay-feng-ab66b049_job-details-atlassian-activity-7217180796862783489-jwKm | LinkedIn, Jay Feng | Ghostwriting | 2024 | 60,000 impressions
+  - Analysis of 180,000 interview experiences | https://www.linkedin.com/posts/jay-feng-ab66b049_datascience-interviewprep-maang-activity-7206328334140526592-qwqn | LinkedIn, Jay Feng | Ghostwriting | 2024 | 44,000 impressions
+  - Visa sponsorship | https://www.linkedin.com/posts/jay-feng-ab66b049_ever-tried-applying-for-an-international-activity-7203470508162502656-67s1 | LinkedIn, Jay Feng | Ghostwriting | 2024 | 25,000 impressions
+  - Data Scientist question | https://www.linkedin.com/posts/jay-feng-ab66b049_datascience-datascienceinterviews-datasciencequestions-activity-7211409127825104897-4Ca9 | LinkedIn, Jay Feng | Ghostwriting | 2024 | 22,000 impressions
+  - Why efficiency is not the problem, but culture is | https://www.linkedin.com/posts/annavioleta_workculture-productivity-automation-activity-7358459268557103104-9-sw | LinkedIn, Anna Violeta | B2B, Storyseller Systems | 2025 | Automating repetitive work to finish by 5 PM, and why efficiency is a culture problem, not a time problem.
+  - How to reach your ideal client, a lesson from a successful uncle | https://www.linkedin.com/posts/annavioleta_businessgrowth-relationshipmarketing-entrepreneurship-activity-7360999774927405056--yA5 | LinkedIn, Anna Violeta | B2B, Storyseller Systems | 2025 | Reaching traditional Philippine businesses through relationships instead of cold outreach.
+  - Scaling a business with a human touch, our pitch competition story | https://www.linkedin.com/posts/annavioleta_entrepreneurship-founderstory-businessgrowth-activity-7363536470264987648-8a26 | LinkedIn, Anna Violeta | B2B, Storyseller Systems | 2025 | Choosing to scale slowly with custom dashboards instead of rigid templates.
+  - When I applied for internships | https://www.linkedin.com/posts/veejay-atienza-b65a331b2_when-i-applied-for-internships-last-year-activity-7222209037302427648-dQEo | LinkedIn | My LinkedIn | 2024 | 8,000 impressions
+  - Most satisfying karma moment | https://www.linkedin.com/posts/veejay-atienza-b65a331b2_whats-the-most-satisfying-karma-moment-activity-7237791659919388675-GyUt | LinkedIn | My LinkedIn | 2024 | 7,500 impressions
+  - I’ve graduated from Ateneo de Manila | https://www.linkedin.com/posts/veejay-atienza-b65a331b2_graduation-ateneo-admu-activity-7211337333382553601-6ad9 | LinkedIn | My LinkedIn | 2024 | 4,800 impressions
+  - A management degree does not guarantee you a job | https://www.linkedin.com/posts/veejay-atienza-b65a331b2_a-management-degree-does-not-guarantee-you-activity-7255186770957328384-KOah | LinkedIn | My LinkedIn | 2024 | 3,500 impressions
+  - I was never anyone’s favorite classmate | https://www.linkedin.com/posts/veejay-atienza-b65a331b2_in-high-school-i-was-never-anyones-favorite-activity-7221846610433994755-uGG0 | LinkedIn | My LinkedIn | 2024 | 2,500 impressions
+  - Starting a Handyman Business in Australia | https://set-up-my-business.com.au/blog/starting-a-handyman-business-in-australia/ | Set Up My Business, published under another name | Ghostwriting | 2023 | Licensing, pricing and client acquisition for independent tradespeople.
+  - How to Set Up a Website in 2024 | https://set-up-my-business.com.au/blog/how-to-set-up-a-website-in-2024/ | Set Up My Business, published under another name | Ghostwriting | 2023 | Domains, hosting and CMS setup for non-technical founders.
+  - Should You Get a Data Science Master's? | https://www.interviewquery.com/p/state-of-university-report | Interview Query | Interview Query rewrites | | Draws on master's graduates and job-board data to judge whether the degree pays off.
+  - Data Science vs Computer Science: Which Career Is Better? | https://www.interviewquery.com/p/computer-science-vs-data-science | Interview Query | Interview Query rewrites | | A comparison for people choosing between the two careers.
+  - 18 Data Engineering Projects You Must Know | https://www.interviewquery.com/p/data-engineering-projects | Interview Query | Interview Query rewrites | | Projects covering system design, ETL and machine learning.
+  - Six Steps to Ace the Data Science Take-Home Challenge | https://www.interviewquery.com/p/data-science-take-home-challenges | Interview Query | Interview Query rewrites | | A six-step method for take-home assignments.
+  - Top 18 Google SQL Interview Questions | https://www.interviewquery.com/p/google-sql-interview-questions | Interview Query | Interview Query rewrites | | Google SQL questions mapped to Google roles.
+  - 35 Basic SQL Interview Questions | https://www.interviewquery.com/p/basic-sql-interview-questions | Interview Query | Interview Query rewrites | | Beginner SQL interview questions, from GROUP BY to WHERE.
+  - Top 14 SQL Project Ideas | https://www.interviewquery.com/p/sql-projects | Interview Query | Interview Query rewrites | | SQL project ideas grouped by difficulty.
+  - Top 19 NumPy Interview Questions | https://www.interviewquery.com/p/numpy-interview-questions | Interview Query | Interview Query rewrites | | NumPy questions for science, finance and deep-learning roles.
+  - 7 Best Business Analytics Projects for Your Resume | https://www.interviewquery.com/p/business-analytics-project-ideas | Interview Query | Interview Query rewrites | | Resume-ready business analytics projects.
+  - How to Start a Data Analytics Project | https://www.interviewquery.com/p/data-analytics-project | Interview Query | Interview Query rewrites | | The steps for starting and tracking an analytics project.
+  - Data Engineer Case Study Interview Questions and Guide | https://www.interviewquery.com/p/data-engineer-case-study | Interview Query | Interview Query rewrites | | How to handle case study rounds in data engineering interviews.
+  - What Is a Supply Chain Analyst? | https://www.interviewquery.com/p/supply-chain-analyst | Interview Query | Interview Query rewrites | | Duties, skills, salary, career path and interview questions.
+  - Pricing Analyst Interview Questions | https://www.interviewquery.com/p/pricing-analyst-interview-questions | Interview Query | Interview Query rewrites | | Pricing analyst questions with strategies and tips.
+  - Top 23 Data Analyst Internship Interview Questions | https://www.interviewquery.com/p/data-analyst-internship-interview-questions | Interview Query | Interview Query rewrites | | What to expect in data analyst internship interviews.
+  - UIUC MCS-DS Review: Cost, Acceptance Rate and Career Outcomes | https://www.interviewquery.com/p/illinois-mcsds-review | Interview Query | Interview Query rewrites | | A review of the online program using candidate feedback.
+  - Evaluating Job Offers Part 1: Compensation | https://www.interviewquery.com/p/evaluating-job-offers-part-1 | Interview Query | Interview Query rewrites | | The two main things to weigh in a tech offer's pay.
+  - Consulting to Data Science | https://www.interviewquery.com/p/consulting-to-data-science | Interview Query | Interview Query rewrites | | One candidate's move from consulting into data science at Facebook.
+  - Finding a Data Science Job in a Pandemic | https://www.interviewquery.com/p/finding-a-data-science-job-in-pandemic | Interview Query | Interview Query rewrites | | How one candidate landed a data scientist job during the pandemic.
+  - What Kind of Data Analyst Are You? | https://www.interviewquery.com/p/what-kind-of-data-analyst-are-you | Interview Query | Interview Query rewrites | | A light quiz that sorts readers into data analyst personas.
+  - Goldman Sachs Machine Learning Engineer Interview Guide | https://www.interviewquery.com/interview-guides/goldman-sachs-machine-learning-engineer | Interview Query | Interview Query rewrites | | Modeling, coding, system design and behavioral rounds, salary and prep.
 ---
-
-## B2B Strategy & Marketing (Storyseller Systems)
-
-**Themes:** B2B Brand Positioning, Go-to-Market Strategy, Copywriting
-
-### [Why efficiency is not the problem, but culture is.](https://www.linkedin.com/posts/annavioleta_workculture-productivity-automation-activity-7358459268557103104-9-sw)
-
-A reflection on automating repetitive tasks to finish work by 5 PM, highlighting why true operational efficiency is a system and culture problem, not a time problem.
-
-### [How to reach your ideal client: A lesson from a successful uncle](https://www.linkedin.com/posts/annavioleta_businessgrowth-relationshipmarketing-entrepreneurship-activity-7360999774927405056--yA5)
-
-A story about identifying and reaching the ideal B2B clients (traditional Philippine businesses with legacy operations) through relationship marketing instead of standard cold outreach.
-
-### [Scaling a business with a human touch: Our pitch competition story](https://www.linkedin.com/posts/annavioleta_entrepreneurship-founderstory-businessgrowth-activity-7363536470264987648-8a26)
-
-Contrasts standard high-speed venture scaling with the choice to scale slowly, focusing on building customized operational dashboards rather than rigid templates.
-
----
-
-## Blog Articles
-
-**Themes:** Job Search, Freelancing, Technical Writing, Self-Development
-
-### September & October Data Science Job Market Reports
-
-*Job Search, Technical Writing*
-
-Deep analysis of hiring trends, salary benchmarks, and skill demands for data scientists. Actionable insights for job seekers navigating a shifting market.
-
-[Read More →](https://www.interviewquery.com/p/october-data-science-job-market-report-2024)
-
-### Starting A Handyman Business in Australia
-
-*Freelancing, Self-Development*
-
-A practical guide to licensing, pricing, and client acquisition for independent tradespeople, written for newcomers who want to skip the expensive trial-and-error phase.
-
-[Read More →](https://set-up-my-business.com.au/blog/starting-a-handyman-business-in-australia/)
-
-### How To Set Up A Website in 2024
-
-*Technical Writing, Freelancing*
-
-Step-by-step walkthrough of domain registration, hosting, and CMS setup for non-technical founders. Covers everything from choosing a stack to SEO basics.
-
-[Read More →](https://set-up-my-business.com.au/blog/how-to-set-up-a-website-in-2024/)
-
-### The Overglorification of Freelancing and Hustle Culture
-
-*Freelancing, Self-Development*
-
-A critical look at the dark side of the gig economy: burnout, income instability, and the myth of total freedom. Includes practical advice for sustainable freelancing.
-
-[Read More →](https://medium.com/@atienzaveejay/the-overglorification-of-freelancing-and-hustle-culture-fc98c0b1810b)
-
-### The Cost of Constant Achievement
-
-*Self-Development, Job Search*
-
-Exploring the psychological toll of always striving for the next milestone. A reflection on ambition, rest, and redefining success beyond the resume.
-
-[Read More →](https://medium.com/@atienzaveejay/the-cost-of-constant-achievement-why-you-need-to-listen-when-youre-burned-out-c2f543c0201b)

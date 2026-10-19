@@ -2,7 +2,8 @@
 title: Scaling a Newsletter to 1.15M Traffic and 100K Subscribers
 client: YourLifeChoices
 area: Email
-order: 6
+tags: Email
+order: 10
 cover: /assets/ylc-newsletter/01.webp
 role: Newsletter Editor, part of a five-person team. Not the lead on this project, but had direct input into subject line strategy, content selection, and structure.
 metrics:

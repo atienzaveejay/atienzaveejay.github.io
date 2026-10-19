@@ -2,7 +2,8 @@
 title: Scaling a Founder's LinkedIn to 8.7M Impressions
 client: Interview Query
 area: LinkedIn
-order: 3
+tags: Social and video
+order: 6
 cover: /assets/interview-query-linkedin/01.webp
 role: Content Marketing Manager and ghostwriter for CEO Jay Feng's personal LinkedIn. Owned the channel end to end (strategy, writing, publishing, and reporting) inside a company of a CEO, a product engineer, and a product analyst.
 metrics:

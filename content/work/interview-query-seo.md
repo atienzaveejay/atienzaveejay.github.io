@@ -2,6 +2,7 @@
 title: Turning Content Into a $569K Revenue Engine
 client: Interview Query
 area: SEO and content
+tags: SEO and content
 order: 1
 cover: /assets/interview-query-seo/01.webp
 role: Content Marketing Manager, head of marketing. Team of four contractor writers and a pool of three video editors, reporting into a company of a CEO, a product engineer, and a product analyst.

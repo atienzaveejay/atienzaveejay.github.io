@@ -2,7 +2,8 @@
 title: Rebuilding a Founder's YouTube Channel Around Buyer Intent
 client: Interview Query
 area: YouTube
-order: 4
+tags: Social and video
+order: 7
 cover: /assets/interview-query-youtube/01.webp
 role: Content Marketing Manager for CEO Jay Feng's YouTube channel. Owned strategy, topic selection, research, thumbnails, and attribution. Managed a team of contract writers and video editors, and wrote the technical scripts myself.
 metrics:

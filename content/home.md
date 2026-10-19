@@ -9,6 +9,16 @@ focus:
   - Technical SEO
   - Creative Ads
   - Marketing Analytics
+experience:
+  - Freelance growth marketing | SEO, paid social and content for DTC, coaching and SaaS clients, including ROO | 2026 to now
+  - Kareera | Founder, AI interview practice app | 2026 to now
+  - YourLifeChoices | Newsletter Editor | Mar 2025 to now
+  - Storyseller Systems | Marketing Strategist | Mar 2025 to May 2026
+  - Interview Query | Content and Marketing Manager | Apr 2024 to Jan 2026
+  - PilotTV Philippines | Content Analytics Manager | Apr 2024 to Oct 2025
+  - Kelly Technology | Content Marketing Consultant | Aug 2023 to May 2024
+  - FlexQ | Founder | Feb 2024 to Apr 2024
+  - Ateneo de Manila University | BS Management (Honors), Magna Cum Laude | Graduated 2024
 highlights:
   - $569K+ | revenue from content at Interview Query
   - ₱5M | closed revenue from Meta ads

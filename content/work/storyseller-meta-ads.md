@@ -2,6 +2,7 @@
 title: Driving ₱5M Revenue from Meta Ads for a Complex B2B Service
 client: Storyseller Systems
 area: Paid social
+tags: Paid ads
 order: 2
 cover: /assets/storyseller-meta-ads/01.webp
 role: Social Media Strategist. Marketing team of two (myself and a video editor) reporting into a leadership team of a CEO, a tech lead, and two engineers.

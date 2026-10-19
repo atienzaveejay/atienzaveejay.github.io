@@ -2,7 +2,8 @@
 title: Building an AI Prompt System That Handles 80% of a Daily Newsletter Workflow
 client: YourLifeChoices
 area: AI systems
-order: 8
+tags: AI and automation
+order: 13
 cover: /assets/ylc-ai-prompts/01.webp
 role: Newsletter operations and AI systems for Australia's largest 50+ digital publication: 80,000+ subscribers, twice-daily send, ~45% open rate.
 metrics:

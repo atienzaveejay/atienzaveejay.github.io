@@ -2,7 +2,8 @@
 title: Building Reddit From Zero Into a 34K-User Channel
 client: Interview Query
 area: Reddit
-order: 5
+tags: Social and video
+order: 8
 cover: /assets/interview-query-reddit/01.webp
 role: Content Marketing Manager. Built and ran Reddit as an acquisition channel end to end, including account strategy, comment and post operations, subreddit selection, and attribution. Entirely organic, with no media spend.
 metrics:
