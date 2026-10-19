@@ -4,6 +4,7 @@ client: US natural wellness subscription brand
 area: Influencer marketing
 tags: Analytics
 order: 11
+cover_on_page: false
 cover: /assets/outreach-audit/cover.webp
 role: Took over the brand's ambassador program in October 2026. Before changing anything, I audited every outreach email the team had sent since 2018.
 metrics:

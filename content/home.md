@@ -1,6 +1,7 @@
 ---
 name: Veejay Atienza
-tagline: Growth-focused content strategist and creator crafting high-performing digital narratives.
+tagline: Content and growth marketer. I turn search, social and email into revenue, and I build the software behind it.
+about_short: Management (Honors) graduate of Ateneo de Manila, magna cum laude. I've worked with teams in the US, Australia, Singapore and the Philippines, and I'm a former musical theatre actor and composer.
 email: atienzaveejay@gmail.com
 linkedin: https://www.linkedin.com/in/veejay-atienza/
 photo: /assets/home/01.webp

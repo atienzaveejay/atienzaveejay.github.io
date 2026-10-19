@@ -4,6 +4,7 @@ client: US non-profit kids' STEM brand
 area: Paid social
 tags: Paid ads
 order: 3
+cover_on_page: false
 cover: /assets/stem-meta-ads/cover.webp
 role: Paid social strategist and analyst. I diagnose the account, write the creative briefs, and report to the client every one to three weeks. Eleven report rounds so far.
 card: 66% | of spend reaching new creative, up from 0.3%

@@ -90,7 +90,7 @@ def embed(url):
                 f'title="Instagram reel" loading="lazy" allowfullscreen></iframe></div>')
     clean = url.split("?")[0]
     label = "TikTok photo post" if "tiktok.com" in url else re.sub(r"^https?://(www\.)?", "", clean)
-    return f'<a class="embed-link" href="{e(clean)}" target="_blank" rel="noopener">View {e(label)} &rarr;</a>'
+    return f'<a class="embed-link" href="{e(clean)}" target="_blank" rel="noopener">View {e(label)}</a>'
 
 
 def bars(spec):
@@ -137,10 +137,10 @@ def ext(href):
 
 # ---------- layout ----------
 
-NAV = [("Work", "/#work"), ("Apps", "/#apps"), ("Video", "/video/"), ("Design", "/design/"),
-       ("Writing", "/writing/"), ("About", "/#about")]
+NAV = [("Work", "/work/"), ("Apps", "/apps/"), ("Writing", "/writing/"), ("About", "/about/")]
+FOOTER_NAV = NAV[:3] + [("Video", "/video/"), ("Design", "/design/")] + NAV[3:]
 FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E"
-           "%3Crect width='64' height='64' rx='6' fill='%23b4650f'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' "
+           "%3Crect width='64' height='64' rx='6' fill='%2315171a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' "
            "font-size='34' font-weight='600' fill='%23fff' text-anchor='middle'%3EVA%3C/text%3E%3C/svg%3E")
 THEME_BOOT = ("<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}"
               "catch(e){}</script>")
@@ -150,6 +150,7 @@ def page(title, body, desc, path, active=None, image="/assets/home/01.webp", nav
     nav_items = nav if nav is not None else NAV
     links = "".join(
         f'<a href="{u(href)}"{" aria-current=page" if label == active else ""}>{label}</a>' for label, href in nav_items)
+    links_plain = "".join(f'<a href="{u(href)}">{label}</a>' for label, href in FOOTER_NAV)
     full_title = "Veejay Atienza, content and growth marketer" if title is None else f"{title} | Veejay Atienza"
     return f"""<!doctype html>
 <html lang="en">
@@ -169,7 +170,7 @@ def page(title, body, desc, path, active=None, image="/assets/home/01.webp", nav
 {THEME_BOOT}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{u('/style.css')}">
 <script src="{u('/site.js')}" defer></script>
 </head>
@@ -178,8 +179,12 @@ def page(title, body, desc, path, active=None, image="/assets/home/01.webp", nav
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="wordmark" href="{u('/')}">Veejay Atienza</a>
-    <nav aria-label="Main">{links}</nav>
-    <button type="button" class="theme-toggle" aria-label="Switch colour theme"><span aria-hidden="true"></span></button>
+    <nav aria-label="Main" id="site-nav">{links}</nav>
+    <div class="header-tools">
+      <button type="button" class="search-btn" data-open-search aria-label="Search the site"><span class="search-ico" aria-hidden="true"></span><span class="search-label">Search</span><kbd>&#8984;K</kbd></button>
+      <button type="button" class="theme-toggle" aria-label="Switch colour theme"><span aria-hidden="true"></span></button>
+      <a class="header-email" href="mailto:{EMAIL}">Email</a>
+    </div>
   </div>
 </header>
 <main id="main">
@@ -187,19 +192,24 @@ def page(title, body, desc, path, active=None, image="/assets/home/01.webp", nav
 </main>
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <div>
-      <p class="footer-big">Have a role or project in mind?</p>
-      <p><a href="mailto:{EMAIL}">{EMAIL}</a></p>
-    </div>
-    <p class="footer-links"><a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a> <a href="{u('/writing/')}">Writing</a> <a href="#main">Back to top</a></p>
+    <p class="footer-id"><span>Veejay Atienza</span> <a href="mailto:{EMAIL}">{EMAIL}</a></p>
+    <nav class="footer-nav" aria-label="Footer">{links_plain}<a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></nav>
   </div>
 </footer>
 <dialog class="lightbox" aria-label="Image preview">
   <img alt="">
   <button type="button" class="lb-close" aria-label="Close">Close</button>
   <button type="button" class="lb-prev" aria-label="Previous image">&larr;</button>
-  <button type="button" class="lb-next" aria-label="Next image">&rarr;</button>
+  <button type="button" class="lb-next" aria-label="Next image"></button>
 </dialog>
+<dialog class="finder" aria-label="Search">
+  <div class="finder-box">
+    <input type="search" placeholder="Search case studies, apps and writing" aria-label="Search" autocomplete="off">
+    <ul class="finder-results" role="listbox"></ul>
+    <p class="finder-hint"><kbd>&uarr;</kbd><kbd>&darr;</kbd> to move, <kbd>Enter</kbd> to open, <kbd>Esc</kbd> to close</p>
+  </div>
+</dialog>
+<script>window.SITE_BASE = "{BASE}";</script>
 </body>
 </html>
 """
@@ -240,7 +250,7 @@ def case_rows(work):
         value, label = metric(w.get("card") or w["metrics"][0])
         rows.append(f"""<a class="case" href="{u('/work/' + w['slug'] + '/')}" data-tags="{e('|'.join(tags_of(w)))}">
   <div class="case-metric"><span class="num">{e(value)}</span><span class="lbl">{e(label)}</span></div>
-  <div class="case-text"><h3>{e(w['title'])}</h3><p>{e(w['client'])} <span aria-hidden="true">&middot;</span> {e(w['area'])}</p></div>
+  <div class="case-text"><h3>{e(w['title'])}</h3><p>{e(w['client'])}, {e(w['area'])}</p></div>
   {f'<img class="case-thumb" src="{u(w["cover"])}" alt="" loading="lazy">' if w.get('cover') else '<span class="case-thumb" aria-hidden="true"></span>'}
 </a>""")
     return "".join(rows)
@@ -256,7 +266,7 @@ def app_cards(apps):
     stats = metrics_row(lead["metrics"], "metrics metrics-compact") if lead.get("metrics") else ""
     out = f"""<a class="app-feature" href="{e(h)}"{ext(h)}>
   <img src="{u(lead['cover'])}" alt="" loading="lazy">
-  <div class="app-text"><h3>{e(lead['title'])}</h3><p>{e(lead['summary'])}</p>{stats}<span class="more">Read about {e(lead['title'])} &rarr;</span></div>
+  <div class="app-text"><h3>{e(lead['title'])}</h3><p>{e(lead['summary'])}</p>{stats}<span class="more">Read about {e(lead['title'])}</span></div>
 </a>"""
     cards = "".join(f"""<a class="app" href="{e(href_of(a))}"{ext(href_of(a))}>
   <h3>{e(a['title'])}</h3><p>{e(a['summary'])}</p>{f'<p class="app-stack">{e(a["stack"])}</p>' if a.get('stack') else ''}
@@ -266,42 +276,36 @@ def app_cards(apps):
 
 # ---------- pages ----------
 
+def experience_list(home):
+    if not home.get("experience"):
+        return ""
+    rows = "".join(
+        f'<li><span class="xp-org">{e(o)}</span><span class="xp-role">{e(r)}</span><span class="xp-when">{e(d)}</span></li>'
+        for o, r, d in (fields(x, 3)[:3] for x in home["experience"]))
+    return f'<ul class="xp">{rows}</ul>'
+
+
+def collage(images):
+    imgs = "".join(f'<img src="{u(src)}" alt="" loading="lazy">' for src in images[:4])
+    return f'<span class="collage">{imgs}</span>'
+
+
 def build_home(home, about, work, apps, videos, designs, articles):
     focus = "".join(f"<li>{e(f)}</li>" for f in home["focus"])
-    work_tags = list(dict.fromkeys(t for w in work for t in tags_of(w)))
-    tiles = lambda items, href, img: "".join(
-        f'<a class="tile" href="{u(href + "#" + i["slug"])}"><img src="{u(img(i))}" alt="" loading="lazy">'
-        f'<span class="tile-title">{e(i["title"])}</span><span class="tile-sub">{e(i["group"])}</span></a>'
-        for i in items)
-    experience = ""
-    if home.get("experience"):
-        rows = "".join(
-            f'<li><span class="xp-org">{e(o)}</span><span class="xp-role">{e(r)}</span><span class="xp-when">{e(d)}</span></li>'
-            for o, r, d in (fields(x, 3)[:3] for x in home["experience"]))
-        experience = f"""
-<section class="wrap section" id="experience">
-  <h2>Experience</h2>
-  <ul class="xp">{rows}</ul>
-</section>"""
+    featured = [w for w in work if w.get("featured") == "true"] or work[:4]
     picks = [a for a in articles if a["section"] == "Interview Query"][:4] or articles[:4]
     writing_list = "".join(
         f'<li><a href="{e(a["url"])}" target="_blank" rel="noopener">{e(a["title"])}</a><span>{e(a["pub"])}</span></li>'
         for a in picks)
-    apps_section = ""
-    if apps:
-        apps_section = f"""
-<section class="wrap section" id="apps">
-  <div class="section-head"><h2>Apps and tools I've built</h2></div>
-  <p class="lede section-lede">I build the software side too, mostly with Claude Code: products, internal tools and the automations behind my marketing work.</p>
-  {app_cards(apps)}
-</section>"""
+    lead_app = app_cards(apps[:1]) if apps else ""
+    design_imgs = [d.get("cover") or first_image(d["body"]) for d in designs]
+    video_imgs = [v["cover"] for v in videos if v.get("cover")]
     body = f"""
 <section class="hero wrap">
   <div class="hero-text">
     <h1>{e(home['name'])}</h1>
     <p class="tagline">{e(home['tagline'])}</p>
-    <ul class="focus">{focus}</ul>
-    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="btn btn-quiet" href="{home['linkedin']}" target="_blank" rel="noopener">LinkedIn</a> <a class="btn btn-quiet" href="#work">See the work</a></p>
+    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="text-link" href="{u('/work/')}">See the work</a></p>
   </div>
   <img class="hero-photo" src="{u(home['photo'])}" alt="Portrait of Veejay Atienza" width="640" height="960">
 </section>
@@ -310,33 +314,97 @@ def build_home(home, about, work, apps, videos, designs, articles):
   {metrics_row(home['highlights'], 'highlights')}
 </section>
 
-<section class="wrap section" id="work">
-  <div class="section-head"><h2>Case studies</h2><span class="muted count" data-count-for="cases">{len(work)} projects</span></div>
+<section class="wrap section">
+  <div class="section-head"><h2>Selected case studies</h2><a href="{u('/work/')}">All {len(work)} case studies</a></div>
+  <div class="cases">{case_rows(featured)}</div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><h2>Apps I've built</h2><a href="{u('/apps/')}">All {len(apps)} apps and tools</a></div>
+  {lead_app}
+</section>
+
+<section class="wrap"><div class="home-contact">
+  <div>
+    <h2>About</h2>
+    <p>{e(home.get('about_short', ''))}</p>
+    <a class="text-link" href="{u('/about/')}">Experience and background</a>
+  </div>
+  <div>
+    <h2>Get in touch</h2>
+    <p>Open to content, growth and marketing roles, remote or Manila-based.</p>
+    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="text-link" href="{home['linkedin']}" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+</div></section>
+"""
+    write("/", page(None, body, home["tagline"], "/"))
+
+
+def build_work_index(work, videos, designs):
+    work_tags = list(dict.fromkeys(t for w in work for t in tags_of(w)))
+    body = f"""
+<div class="wrap page-head"><h1>Case studies</h1><p class="lede">Growth work across SEO, paid social, email, short-form video and AI systems. Each one covers the problem, what I did, the numbers, and what didn't work.</p></div>
+<div class="wrap section writing-wrap">
+  <div class="section-head"><span class="muted count" data-count-for="cases">{len(work)} case studies</span></div>
   {filter_bar(work_tags, 'cases')}
   <div class="cases" id="cases">{case_rows(work)}</div>
-</section>
-{apps_section}
+</div>
 <section class="wrap section">
-  <div class="section-head"><h2>Video</h2><a href="{u('/video/')}">All videos &rarr;</a></div>
-  <div class="tiles tiles-5">{tiles(videos, '/video/', lambda v: v['cover'])}</div>
+  <div class="section-head"><h2>Video and design</h2></div>
+  <div class="duo">
+    <a class="duo-card" href="{u('/video/')}">{collage([v["cover"] for v in videos if v.get("cover")])}<span class="tile-title">Video</span><span class="tile-sub">{len(videos)} sets: YouTube, TikTok, Reels and product videos</span></a>
+    <a class="duo-card" href="{u('/design/')}">{collage([d.get("cover") or first_image(d["body"]) for d in designs])}<span class="tile-title">Design</span><span class="tile-sub">{len(designs)} sets: social graphics, thumbnails and print</span></a>
+  </div>
 </section>
+"""
+    write("/work/", page("Case studies", body, "Content and growth marketing case studies by Veejay Atienza.", "/work/", "Work"))
 
-<section class="wrap section">
-  <div class="section-head"><h2>Design</h2><a href="{u('/design/')}">Full gallery &rarr;</a></div>
-  <div class="tiles tiles-4">{tiles(designs, '/design/', lambda d: d.get('cover') or first_image(d['body']))}</div>
-</section>
 
-<section class="wrap section">
-  <div class="section-head"><h2>Writing</h2><a href="{u('/writing/')}">All {len(articles)} pieces &rarr;</a></div>
-  <ul class="mini-list">{writing_list}</ul>
+def build_apps_index(apps):
+    body = f"""
+<div class="wrap page-head"><h1>Apps and tools</h1><p class="lede">I build the software side too, mostly with Claude Code: a product of my own, internal tools, and the automations behind my marketing work.</p></div>
+<div class="wrap section writing-wrap">{app_cards(apps)}</div>
+"""
+    write("/apps/", page("Apps and tools", body, "Apps and tools built by Veejay Atienza.", "/apps/", "Apps"))
+
+
+def build_about(home, about):
+    body = f"""
+<div class="wrap page-head about-head">
+  <div>
+    <h1>About</h1>
+    <p class="lede">{e(home['tagline'])}</p>
+    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="btn btn-quiet" href="{home['linkedin']}" target="_blank" rel="noopener">LinkedIn</a></p>
+  </div>
+  <img class="about-photo" src="{u(home['photo'])}" alt="Portrait of Veejay Atienza" loading="lazy">
+</div>
+<section class="wrap section" id="experience">
+  <h2>Experience</h2>
+  {experience_list(home)}
 </section>
-{experience}
-<section class="wrap section about" id="about">
+<section class="wrap section about">
   <h2>More about me</h2>
   <div class="prose">{md(about)}</div>
 </section>
 """
-    write("/", page(None, body, home["tagline"], "/"))
+    write("/about/", page("About", body, home["tagline"], "/about/", "About"))
+
+
+def plain(text):
+    text = re.sub(r"```.*?```|<details.*?</details>|<[^>]+>|@\[\w+\]\(.*?\)|!\[[^\]]*\]\([^)]*\)", " ", text, flags=re.S)
+    return re.sub(r"[#*>|`_\-]+|\s+", " ", text).strip()
+
+
+def build_search(work, apps, articles):
+    import json
+    items = [dict(title=w["title"], sub=f'{w["client"]}, {w["area"]}', kind="Case study", url=u(f"/work/{w['slug']}/"),
+                  text=" ".join(tags_of(w)) + " " + w["role"] + " " + plain(w["body"])[:1500]) for w in work]
+    items += [dict(title=a["title"], sub=a["summary"], kind="App", url=u(f"/apps/{a['slug']}/") if a["body"].strip() else a.get("url", ""),
+                   text=a.get("stack", "") + " " + plain(a["body"])[:1500]) for a in apps]
+    items += [dict(title=a["title"], sub=f'{a["pub"]}' + (f', {a["date"]}' if a["date"] else ""), kind="Writing", url=a["url"],
+                   text=a["note"] + " " + a["section"], ext=True) for a in articles]
+    items += [dict(title=t, sub="Page", kind="Page", url=u(h), text="") for t, h in NAV]
+    open(os.path.join(OUT, "search.json"), "w").write(json.dumps(items, ensure_ascii=False))
 
 
 def reading_time(text):
@@ -344,10 +412,23 @@ def reading_time(text):
     return max(1, round(words / 230))
 
 
-def detail_page(item, kind, prev, nxt, head_extra, crumb_href, crumb_label, active):
+def related_block(item, pool, kind):
+    tags = set(tags_of(item))
+    scored = [(len(tags & set(tags_of(o))), o) for o in pool if o["slug"] != item["slug"]]
+    picks = [o for s, o in sorted(scored, key=lambda x: (-x[0], x[1].get("order", 99))) if s][:3]
+    if not picks:
+        return ""
+    cards = "".join(
+        f'<a class="rel" href="{u(f"/{kind}/" + o["slug"] + "/")}"><span class="rel-num">{e(metric(o.get("card") or o["metrics"][0])[0])}</span>'
+        f'<span class="rel-title">{e(o["title"])}</span><span class="rel-sub">{e(o.get("client", ""))}</span></a>'
+        for o in picks if o.get("metrics"))
+    return f'<section class="related" aria-label="More like this"><h2>More like this</h2><div class="rel-grid">{cards}</div></section>' if cards else ""
+
+
+def detail_page(item, kind, prev, nxt, head_extra, crumb_href, crumb_label, active, related=""):
     content, heads = md(item["body"], toc=True)
     toc = ""
-    if len(heads) >= 3:
+    if len(heads) >= 3 and len(plain(item["body"]).split()) > 1200:
         toc = '<nav class="toc" aria-label="On this page"><p>On this page</p><ol>' + "".join(
             f'<li><a href="#{i}">{e(t)}</a></li>' for i, t in heads) + "</ol></nav>"
     pager = '<nav class="pager" aria-label="More">'
@@ -356,11 +437,12 @@ def detail_page(item, kind, prev, nxt, head_extra, crumb_href, crumb_label, acti
     if nxt:
         pager += f'<a class="next" href="{u(f"/{kind}/" + nxt["slug"] + "/")}"><span>Next</span>{e(nxt["title"])}</a>'
     pager += "</nav>"
-    cover = f'<figure class="wrap case-cover"><img src="{u(item["cover"])}" alt=""></figure>' if item.get("cover") else ""
+    cover = (f'<figure class="wrap case-cover"><img src="{u(item["cover"])}" alt=""></figure>'
+             if item.get("cover") and item.get("cover_on_page") != "false" else '<div class="case-gap"></div>')
     return f"""
 <article class="case-page">
   <header class="wrap case-head">
-    <p class="crumb"><a href="{u(crumb_href)}">{crumb_label}</a> <span aria-hidden="true">/</span> {e(item.get('client') or item.get('stack', ''))} <span class="dot" aria-hidden="true">&middot;</span> {reading_time(item['body'])} min read</p>
+    <p class="crumb"><a href="{u(crumb_href)}">{crumb_label}</a> <span aria-hidden="true">/</span> {e(item.get('client') or item.get('stack', ''))}, {reading_time(item['body'])} min read</p>
     <h1>{e(item['title'])}</h1>
     {head_extra}
   </header>
@@ -369,14 +451,14 @@ def detail_page(item, kind, prev, nxt, head_extra, crumb_href, crumb_label, acti
     {toc}
     <div class="prose">{content}</div>
   </div>
-  <div class="wrap">{pager}</div>
+  <div class="wrap">{related}{pager}</div>
 </article>
 """
 
 
-def build_case(w, prev, nxt):
+def build_case(w, prev, nxt, work):
     head = f'<p class="role"><strong>Role.</strong> {e(w["role"])}</p>{metrics_row(w["metrics"])}'
-    body = detail_page(w, "work", prev, nxt, head, "/#work", "Case studies", "Work")
+    body = detail_page(w, "work", prev, nxt, head, "/work/", "Case studies", "Work", related_block(w, work, "work"))
     desc = f"{w['client']}: " + "; ".join(f"{v} {l}" for v, l in map(metric, w["metrics"]))
     write(f"/work/{w['slug']}/", page(w["title"], body, desc, f"/work/{w['slug']}/", "Work", w["cover"]))
 
@@ -391,7 +473,7 @@ def build_app(a, prev, nxt):
             + (f'<p class="role"><strong>Built with.</strong> {e(a["stack"])}</p>' if a.get("stack") else "")
             + (metrics_row(a["metrics"]) if a.get("metrics") else "")
             + (f'<p class="contact app-links">{" ".join(links)}</p>' if links else ""))
-    body = detail_page(a, "apps", prev, nxt, head, "/#apps", "Apps", "Apps")
+    body = detail_page(a, "apps", prev, nxt, head, "/apps/", "Apps", "Apps")
     write(f"/apps/{a['slug']}/", page(a["title"], body, a["summary"], f"/apps/{a['slug']}/", "Apps", a.get("cover") or "/assets/home/01.webp"))
 
 
@@ -411,7 +493,7 @@ def build_video(videos):
 <div class="wrap page-head"><h1>Video</h1><p class="lede">Short-form and YouTube work across tech education, consumer apps and B2B.</p>{jump_nav(videos)}</div>
 <div class="wrap">{sections}</div>
 """
-    write("/video/", page("Video", body, "Video portfolio: YouTube, TikTok and Instagram work by Veejay Atienza.", "/video/", "Video"))
+    write("/video/", page("Video", body, "Video portfolio: YouTube, TikTok and Instagram work by Veejay Atienza.", "/video/", "Work"))
 
 
 def build_design(designs):
@@ -435,7 +517,7 @@ def build_design(designs):
 <div class="wrap page-head"><h1>Design</h1><p class="lede">Social media graphics, YouTube thumbnails, ad creative and print layouts. Click any image to view it larger, then use the arrow keys.</p>{jump_nav(designs)}</div>
 <div class="wrap">{''.join(sections)}</div>
 """
-    write("/design/", page("Design", body, "Design portfolio: social media graphics, YouTube thumbnails, ads and print by Veejay Atienza.", "/design/", "Design"))
+    write("/design/", page("Design", body, "Design portfolio: social media graphics, YouTube thumbnails, ads and print by Veejay Atienza.", "/design/", "Work"))
 
 
 def load_articles():
@@ -452,12 +534,13 @@ def build_writing(meta, arts):
     rows = "".join(
         f"""<li class="article" data-tags="{e(a['section'])}">
   <a href="{e(a['url'])}" target="_blank" rel="noopener"><span class="a-title">{e(a['title'])}</span><span class="a-note">{e(a['note'])}</span></a>
-  <span class="a-meta">{e(a['pub'])}{(' &middot; ' + e(a['date'])) if a['date'] else ''}</span>
+  <span class="a-meta">{e(a['pub'])}{(', ' + e(a['date'])) if a['date'] else ''}</span>
 </li>""" for a in arts)
     body = f"""
 <div class="wrap page-head"><h1>Writing</h1><p class="lede">{e(meta.get('intro', ''))}</p></div>
 <div class="wrap section writing-wrap">
   <div class="section-head"><span class="muted count" data-count-for="articles">{len(arts)} pieces</span></div>
+  <input type="search" class="list-search" data-target="articles" placeholder="Search {len(arts)} pieces by title or topic" aria-label="Search writing">
   {filter_bar(sections, 'articles')}
   <ul class="articles" id="articles">{rows}</ul>
 </div>
@@ -494,15 +577,19 @@ def main():
 
     build_home(home, about, work, apps, videos, designs, articles)
     for i, w in enumerate(work):
-        build_case(w, work[i - 1] if i else None, work[i + 1] if i + 1 < len(work) else None)
+        build_case(w, work[i - 1] if i else None, work[i + 1] if i + 1 < len(work) else None, work)
     detailed = [a for a in apps if a["body"].strip()]
     for i, a in enumerate(detailed):
         build_app(a, detailed[i - 1] if i else None, detailed[i + 1] if i + 1 < len(detailed) else None)
+    build_work_index(work, videos, designs)
+    build_apps_index(apps)
+    build_about(home, about)
+    build_search(work, apps, articles)
     build_video(videos)
     build_design(designs)
     build_writing(writing_meta, articles)
     build_404()
-    build_sitemap(["/", "/video/", "/design/", "/writing/"] + [f"/work/{w['slug']}/" for w in work]
+    build_sitemap(["/", "/work/", "/apps/", "/about/", "/video/", "/design/", "/writing/"] + [f"/work/{w['slug']}/" for w in work]
                   + [f"/apps/{a['slug']}/" for a in detailed])
     print(f"Built {len(work)} case studies, {len(apps)} apps, {len(videos)} video sets, "
           f"{len(designs)} design sets, {len(articles)} articles into _site/")

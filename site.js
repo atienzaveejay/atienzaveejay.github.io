@@ -15,25 +15,95 @@
     label();
   });
 
-  // Filters for case studies and writing.
-  $$('.filters').forEach(bar => {
-    const list = document.getElementById(bar.dataset.target);
-    const count = document.querySelector(`[data-count-for="${bar.dataset.target}"]`);
-    const noun = count ? count.textContent.replace(/^\d+\s*/, '') : '';
-    bar.addEventListener('click', ev => {
-      const btn = ev.target.closest('button');
-      if (!btn) return;
-      $$('button', bar).forEach(b => b.setAttribute('aria-pressed', b === btn));
-      const f = btn.dataset.filter;
-      let shown = 0;
-      Array.from(list.children).forEach(el => {
-        const hit = !f || el.dataset.tags.split('|').includes(f);
-        el.hidden = !hit;
-        shown += hit;
-      });
-      if (count) count.textContent = `${shown} ${noun}`;
+  // Filters (tabs) and text search on lists; both apply together.
+  const lists = new Map();
+  const stateFor = id => {
+    if (!lists.has(id)) lists.set(id, { tag: '', q: '' });
+    return lists.get(id);
+  };
+  const applyList = id => {
+    const list = document.getElementById(id);
+    if (!list) return;
+    const st = stateFor(id);
+    const count = document.querySelector(`[data-count-for="${id}"]`);
+    if (count && !count.dataset.noun) count.dataset.noun = count.textContent.replace(/^\d+\s*/, '');
+    let shown = 0;
+    Array.from(list.children).forEach(el => {
+      const tagHit = !st.tag || (el.dataset.tags || '').split('|').includes(st.tag);
+      const qHit = !st.q || el.textContent.toLowerCase().includes(st.q);
+      el.hidden = !(tagHit && qHit);
+      shown += !el.hidden;
     });
+    if (count) count.textContent = `${shown} ${count.dataset.noun}`;
+  };
+  $$('.filters').forEach(bar => bar.addEventListener('click', ev => {
+    const btn = ev.target.closest('button');
+    if (!btn) return;
+    $$('button', bar).forEach(b => b.setAttribute('aria-pressed', b === btn));
+    stateFor(bar.dataset.target).tag = btn.dataset.filter;
+    applyList(bar.dataset.target);
+  }));
+  $$('.list-search').forEach(inp => inp.addEventListener('input', () => {
+    stateFor(inp.dataset.target).q = inp.value.trim().toLowerCase();
+    applyList(inp.dataset.target);
+  }));
+
+  // Mobile menu.
+  const menuBtn = document.querySelector('.menu-btn');
+  menuBtn && menuBtn.addEventListener('click', () => {
+    const open = menuBtn.getAttribute('aria-expanded') !== 'true';
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.textContent = open ? 'Close' : 'Menu';
+    document.body.classList.toggle('menu-open', open);
   });
+
+  // Site search (Cmd/Ctrl+K or "/").
+  const finder = document.querySelector('.finder');
+  if (finder) {
+    const input = finder.querySelector('input');
+    const out = finder.querySelector('.finder-results');
+    let index = null, results = [], sel = 0;
+    const load = () => index ? Promise.resolve(index)
+      : fetch((window.SITE_BASE || '') + '/search.json').then(r => r.json()).then(d => (index = d));
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const render = () => {
+      out.innerHTML = results.map((r, i) =>
+        `<li role="option" aria-selected="${i === sel}"><a href="${esc(r.url)}"${r.ext ? ' target="_blank" rel="noopener"' : ''}>` +
+        `<span class="f-kind">${esc(r.kind)}</span><span class="f-title">${esc(r.title)}</span><span class="f-sub">${esc(r.sub || '')}</span></a></li>`
+      ).join('') || '<li class="f-empty">No matches</li>';
+    };
+    const search = () => {
+      const q = input.value.trim().toLowerCase();
+      const words = q.split(/\s+/).filter(Boolean);
+      results = (index || []).map(it => {
+        const hay = `${it.title} ${it.sub} ${it.text} ${it.kind}`.toLowerCase();
+        if (!words.every(w => hay.includes(w))) return null;
+        const score = (it.title.toLowerCase().includes(q) ? 3 : 0) + (it.kind === 'Case study' ? 2 : it.kind === 'App' ? 1.5 : it.kind === 'Page' ? 1 : 0);
+        return [score, it];
+      }).filter(Boolean).sort((a, b) => b[0] - a[0]).slice(0, q ? 12 : 8).map(x => x[1]);
+      sel = 0; render();
+    };
+    const openFinder = () => { load().then(() => { search(); }); finder.showModal(); input.select(); };
+    $$('[data-open-search]').forEach(b => b.addEventListener('click', openFinder));
+    document.addEventListener('keydown', ev => {
+      const typing = /input|textarea|select/i.test(document.activeElement.tagName);
+      if ((ev.key === 'k' && (ev.metaKey || ev.ctrlKey)) || (ev.key === '/' && !typing)) {
+        ev.preventDefault(); finder.open ? finder.close() : openFinder();
+      }
+    });
+    input.addEventListener('input', search);
+    input.addEventListener('keydown', ev => {
+      if (ev.key === 'ArrowDown') { sel = Math.min(sel + 1, results.length - 1); render(); ev.preventDefault(); }
+      if (ev.key === 'ArrowUp') { sel = Math.max(sel - 1, 0); render(); ev.preventDefault(); }
+      if (ev.key === 'Enter' && results[sel]) {
+        const r = results[sel];
+        r.ext ? window.open(r.url, '_blank', 'noopener') : (location.href = r.url);
+      }
+    });
+    finder.addEventListener('click', ev => { if (ev.target === finder) finder.close(); });
+    // Show the right shortcut on non-Mac machines.
+    if (!/Mac|iPhone|iPad/.test(navigator.platform)) $$('.search-btn kbd').forEach(k => (k.textContent = 'Ctrl K'));
+  }
 
   // YouTube: show the thumbnail, load the player only on click.
   $$('.yt').forEach(btn => btn.addEventListener('click', () => {

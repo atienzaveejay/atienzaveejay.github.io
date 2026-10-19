@@ -4,6 +4,7 @@ client: Philippine ornamental fish and aquarium feed brand
 area: Social and paid
 tags: Social and video, Paid ads
 order: 4
+cover_on_page: false
 cover: /assets/fish-brand/cover.webp
 role: Social media specialist. I handle organic content across Facebook, Instagram and TikTok, comments and DMs, ad planning and builds, and reporting to the owner.
 card: 8.6x | reach of teaching videos vs promos
