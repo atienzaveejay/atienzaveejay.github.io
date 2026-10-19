@@ -1,6 +1,6 @@
 ---
 title: Interview Query
-order: 1
+order: 3
 group: YouTube
 cover: /assets/iq-youtube-videos/01.webp
 ---

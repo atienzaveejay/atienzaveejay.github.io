@@ -1,6 +1,6 @@
 ---
 title: Anna Violeta
-order: 3
+order: 6
 group: TikTok and Instagram
 cover: /assets/anna-violeta/01.webp
 ---

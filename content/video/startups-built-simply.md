@@ -1,6 +1,6 @@
 ---
 title: Startups Built Simply
-order: 4
+order: 7
 group: Instagram
 cover: /assets/startups-built-simply/01.webp
 ---

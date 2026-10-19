@@ -1,6 +1,6 @@
 ---
 title: Kelly App
-order: 2
+order: 5
 group: TikTok and Instagram
 cover: /assets/kelly-app-videos/01.webp
 ---

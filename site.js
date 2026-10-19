@@ -113,7 +113,7 @@
     f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
     f.allowFullscreen = true;
     const wrap = document.createElement('div');
-    wrap.className = 'embed embed-wide';
+    wrap.className = btn.className.replace(/\byt\b/, '').trim();
     wrap.appendChild(f);
     btn.replaceWith(wrap);
   }));

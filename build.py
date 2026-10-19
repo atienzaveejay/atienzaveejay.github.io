@@ -72,7 +72,12 @@ def yt_id(url):
     return m[1] if m else None
 
 
-def embed(url):
+def embed(url, kind="video"):
+    if kind == "short" and yt_id(url):
+        vid = yt_id(url)
+        return (f'<button type="button" class="embed embed-tall yt" data-id="{vid}" aria-label="Play Short">'
+                f'<img src="https://i.ytimg.com/vi/{vid}/oar2.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/{vid}/hqdefault.jpg\'">'
+                f'<span class="play" aria-hidden="true"></span></button>')
     if url.endswith(".mp4"):
         return (f'<video class="embed-video" src="{e(url)}" controls playsinline preload="metadata"></video>')
     vid = yt_id(url)
@@ -114,7 +119,7 @@ def bars(spec):
 def md(text, toc=False):
     text = re.sub(r"<details><summary>(.*?)</summary>", r'<details markdown="1"><summary>\1</summary>', text)
     text = re.sub(r"^@\[bars\]\((.+)\)$", lambda m: bars(m[1]), text, flags=re.M)
-    text = re.sub(r"^@\[\w+\]\((.+?)\)$", lambda m: embed(m[1]), text, flags=re.M)
+    text = re.sub(r"^@\[(\w+)\]\((.+?)\)$", lambda m: embed(m[2], m[1]), text, flags=re.M)
     conv = markdown.Markdown(extensions=["tables", "fenced_code", "md_in_html", "sane_lists", "toc"],
                              extension_configs={"toc": {"toc_depth": "2"}})
     out = conv.convert(text)
@@ -137,8 +142,10 @@ def ext(href):
 
 # ---------- layout ----------
 
-NAV = [("Work", "/work/"), ("Apps", "/apps/"), ("Writing", "/writing/"), ("About", "/about/")]
-FOOTER_NAV = NAV[:3] + [("Video", "/video/"), ("Design", "/design/")] + NAV[3:]
+NAV = [("Work", "/work/"), ("Apps", "/apps/"), ("Video", "/video/"), ("Graphics", "/design/"),
+       ("Writing", "/writing/"), ("About", "/about/")]
+FOOTER_NAV = NAV
+RESUME = "/assets/resume/Veejay-Atienza-Resume.pdf"
 FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E"
            "%3Crect width='64' height='64' rx='6' fill='%2315171a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' "
            "font-size='34' font-weight='600' fill='%23fff' text-anchor='middle'%3EVA%3C/text%3E%3C/svg%3E")
@@ -183,7 +190,7 @@ def page(title, body, desc, path, active=None, image="/assets/home/01.webp", nav
     <div class="header-tools">
       <button type="button" class="search-btn" data-open-search aria-label="Search the site"><span class="search-ico" aria-hidden="true"></span><span class="search-label">Search</span><kbd>&#8984;K</kbd></button>
       <button type="button" class="theme-toggle" aria-label="Switch colour theme"><span aria-hidden="true"></span></button>
-      <a class="header-email" href="mailto:{EMAIL}">Email</a>
+      <a class="header-email" href="{u(RESUME)}" target="_blank" rel="noopener">Resume</a>
     </div>
   </div>
 </header>
@@ -193,7 +200,7 @@ def page(title, body, desc, path, active=None, image="/assets/home/01.webp", nav
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p class="footer-id"><span>Veejay Atienza</span> <a href="mailto:{EMAIL}">{EMAIL}</a></p>
-    <nav class="footer-nav" aria-label="Footer">{links_plain}<a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></nav>
+    <nav class="footer-nav" aria-label="Footer">{links_plain}<a href="{u(RESUME)}" target="_blank" rel="noopener">Resume</a><a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></nav>
   </div>
 </footer>
 <dialog class="lightbox" aria-label="Image preview">
@@ -305,7 +312,7 @@ def build_home(home, about, work, apps, videos, designs, articles):
   <div class="hero-text">
     <h1>{e(home['name'])}</h1>
     <p class="tagline">{e(home['tagline'])}</p>
-    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="text-link" href="{u('/work/')}">See the work</a></p>
+    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="text-link" href="{u('/work/')}">See the work</a> <a class="text-link" href="{u(RESUME)}" target="_blank" rel="noopener">Resume (PDF)</a></p>
   </div>
   <img class="hero-photo" src="{u(home['photo'])}" alt="Portrait of Veejay Atienza" width="640" height="960">
 </section>
@@ -350,10 +357,10 @@ def build_work_index(work, videos, designs):
   <div class="cases" id="cases">{case_rows(work)}</div>
 </div>
 <section class="wrap section">
-  <div class="section-head"><h2>Video and design</h2></div>
+  <div class="section-head"><h2>Video and graphics</h2></div>
   <div class="duo">
     <a class="duo-card" href="{u('/video/')}">{collage([v["cover"] for v in videos if v.get("cover")])}<span class="tile-title">Video</span><span class="tile-sub">{len(videos)} sets: YouTube, TikTok, Reels and product videos</span></a>
-    <a class="duo-card" href="{u('/design/')}">{collage([d.get("cover") or first_image(d["body"]) for d in designs])}<span class="tile-title">Design</span><span class="tile-sub">{len(designs)} sets: social graphics, thumbnails and print</span></a>
+    <a class="duo-card" href="{u('/design/')}">{collage([d.get("cover") or first_image(d["body"]) for d in designs])}<span class="tile-title">Graphics</span><span class="tile-sub">{len(designs)} sets: social graphics, thumbnails and print</span></a>
   </div>
 </section>
 """
@@ -374,7 +381,7 @@ def build_about(home, about):
   <div>
     <h1>About</h1>
     <p class="lede">{e(home['tagline'])}</p>
-    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="btn btn-quiet" href="{home['linkedin']}" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p class="contact"><a class="btn" href="mailto:{home['email']}">Email me</a> <a class="text-link" href="{u(RESUME)}" target="_blank" rel="noopener">Download my resume (PDF)</a> <a class="text-link" href="{home['linkedin']}" target="_blank" rel="noopener">LinkedIn</a></p>
   </div>
   <img class="about-photo" src="{u(home['photo'])}" alt="Portrait of Veejay Atienza" loading="lazy">
 </div>
@@ -487,13 +494,13 @@ def build_video(videos):
 <section class="section" id="{v['slug']}">
   <div class="section-head"><h2>{e(v['title'])}</h2><span class="muted">{e(v['group'])}</span></div>
   {f'<p class="lede section-lede">{e(v["summary"])}</p>' if v.get('summary') else ''}
-  <div class="video-grid">{md(v['body'])}</div>
+  {md(v['body']) if 'class="video-grid' in v['body'] else '<div class="video-grid">' + md(v['body']) + '</div>'}
 </section>""" for v in videos)
     body = f"""
 <div class="wrap page-head"><h1>Video</h1><p class="lede">Short-form and YouTube work across tech education, consumer apps and B2B.</p>{jump_nav(videos)}</div>
 <div class="wrap">{sections}</div>
 """
-    write("/video/", page("Video", body, "Video portfolio: YouTube, TikTok and Instagram work by Veejay Atienza.", "/video/", "Work"))
+    write("/video/", page("Video", body, "Video portfolio: YouTube, TikTok and Instagram work by Veejay Atienza.", "/video/", "Video"))
 
 
 def build_design(designs):
@@ -514,10 +521,10 @@ def build_design(designs):
   {f'<p>{links}</p>' if links else ''}
 </section>""")
     body = f"""
-<div class="wrap page-head"><h1>Design</h1><p class="lede">Social media graphics, YouTube thumbnails, ad creative and print layouts. Click any image to view it larger, then use the arrow keys.</p>{jump_nav(designs)}</div>
+<div class="wrap page-head"><h1>Graphics</h1><p class="lede">Social media graphics, YouTube thumbnails, ad creative and print layouts. Click any image to view it larger, then use the arrow keys.</p>{jump_nav(designs)}</div>
 <div class="wrap">{''.join(sections)}</div>
 """
-    write("/design/", page("Design", body, "Design portfolio: social media graphics, YouTube thumbnails, ads and print by Veejay Atienza.", "/design/", "Work"))
+    write("/design/", page("Graphics", body, "Graphics portfolio: social media graphics, YouTube thumbnails, ads and print by Veejay Atienza.", "/design/", "Graphics"))
 
 
 def load_articles():
