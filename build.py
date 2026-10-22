@@ -567,6 +567,17 @@ def build_sitemap(paths):
     open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}{u('/sitemap.xml')}\n")
 
 
+def build_hire(pages):
+    """Focused pages linked from job applications (not in the nav): the best video or graphics work first."""
+    for h in pages:
+        body = f"""
+<div class="wrap page-head"><h1>{e(h['title'])}</h1><p class="lede">{e(h['lede'])}</p>
+<p><a class="btn" href="mailto:{EMAIL}">Email me</a></p></div>
+<div class="wrap hire">{md(h['body'])}</div>
+"""
+        write(h["path"], page(h["title"], body, h["desc"], h["path"], h.get("active")))
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     for name in os.listdir(OUT):  # empty it in place so a running preview server keeps working
@@ -580,6 +591,7 @@ def main():
     home, about = parse(os.path.join(ROOT, "content", "home.md"))
     work, apps = collection("work"), collection("apps")
     videos, designs = collection("video"), collection("design")
+    hire = collection("hire")
     writing_meta, articles = load_articles()
 
     build_home(home, about, work, apps, videos, designs, articles)
@@ -594,9 +606,10 @@ def main():
     build_search(work, apps, articles)
     build_video(videos)
     build_design(designs)
+    build_hire(hire)
     build_writing(writing_meta, articles)
     build_404()
-    build_sitemap(["/", "/work/", "/apps/", "/about/", "/video/", "/design/", "/writing/"] + [f"/work/{w['slug']}/" for w in work]
+    build_sitemap(["/", "/work/", "/apps/", "/about/", "/video/", "/design/", "/writing/"] + [h["path"] for h in hire] + [f"/work/{w['slug']}/" for w in work]
                   + [f"/apps/{a['slug']}/" for a in detailed])
     print(f"Built {len(work)} case studies, {len(apps)} apps, {len(videos)} video sets, "
           f"{len(designs)} design sets, {len(articles)} articles into _site/")

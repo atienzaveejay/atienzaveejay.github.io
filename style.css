@@ -502,3 +502,6 @@ main .case-head, main .page-head { padding-top: 48px; } @media (max-width: 640px
 .contact { flex-wrap: wrap; row-gap: 12px; }
 .contact .btn, .contact .text-link { white-space: nowrap; }
 @media (max-width: 640px) { .video-grid.two { grid-template-columns: 1fr; } .shorts-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.hire h2 { margin: 48px 0 16px; }
+.hire > :first-child { margin-top: 24px; }
