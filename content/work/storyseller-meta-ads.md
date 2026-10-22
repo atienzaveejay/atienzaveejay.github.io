@@ -1,5 +1,5 @@
 ---
-title: Driving ₱5M Revenue from Meta Ads for a Complex B2B Service
+title: Driving ₱15M in Contracts from Meta Ads for a Complex B2B Service
 client: Storyseller Systems
 area: Paid social
 tags: Paid ads
@@ -7,9 +7,9 @@ order: 2
 cover: /assets/storyseller-meta-ads/01.webp
 role: Social Media Strategist. Marketing team of two (myself and a video editor) reporting into a leadership team of a CEO, a tech lead, and two engineers.
 metrics:
-  - ₱5M | closed revenue
-  - ₱20 | cost per qualified lead
-  - ~6 months | of running ads
+  - ₱15M | in contracts from ~15 clients
+  - ₱5M | collected during my time
+  - ~₱300 | cost per qualified lead
 ---
 ## **Context**
 
@@ -17,7 +17,7 @@ Storyseller Systems sells a high-ticket, customized “business command center�
 
 ### The reality:
 
-Deal size ran ₱250K to ₱1M+ per client, on a consultative sales cycle rather than an impulse buy, for a product that was highly technical and hard to explain in a single ad. Before ads, leads came mostly from referrals and networks like BNI. Demand was inconsistent and non-scalable, and even internally, messaging wasn’t clear. The business had **no reliable acquisition engine**.
+Deal size started at ₱300K and averaged about ₱1M per client, on a consultative sales cycle rather than an impulse buy, for a product that was highly technical and hard to explain in a single ad. Before ads, leads came mostly from referrals and networks like BNI. Demand was inconsistent and non-scalable, and even internally, messaging wasn’t clear. The business had **no reliable acquisition engine**.
 
 ---
 
@@ -137,15 +137,19 @@ We didn’t rely only on metrics. We read messages daily, analyzed objections, a
 
 Over ~6 months of running ads:
 
-- **₱5M in closed revenue**
+- **About 15 paying clients**, several on contracts above ₱1M
 
-- **₱3M in receivables**
+- **About ₱15M in contracted revenue**, of which **₱5M was collected** while I was there and the rest was still being paid
 
-- ~₱5M+ in pipeline (unsigned but active deals)
+Efficiency, on about ₱15,000 a month in Meta spend:
 
-Efficiency:
+- ~₱20 per lead (each Messenger enquiry), roughly 750 enquiries a month
 
-- ~₱20 cost per qualified lead
+- About 50 a month passed our screening (businesses earning ₱1M+ a month in construction, distribution or manufacturing), so ~₱300 per qualified lead
+
+- About ₱6,000 in ad spend per paying client, against an average contract of about ₱1M
+
+Many of the other enquiries were a fit for the company's lower-ticket product, but the founders chose to focus sales on the high-ticket system, so most of those leads went unworked. Price was the main objection on the high-ticket side, which is why so much of the work went into filtering.
 
 Additional impact:
 

@@ -22,7 +22,7 @@ experience:
   - Ateneo de Manila University | BS Management (Honors), Magna Cum Laude | Graduated 2024
 highlights:
   - $569K+ | revenue from content at Interview Query
-  - ₱5M | closed revenue from Meta ads
+  - ₱15M | in contracts from Meta ads
   - 8.7M+ | LinkedIn impressions for a founder
   - 100K+ | newsletter subscribers
 ---
