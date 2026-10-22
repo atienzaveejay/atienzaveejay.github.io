@@ -505,3 +505,10 @@ main .case-head, main .page-head { padding-top: 48px; } @media (max-width: 640px
 
 .hire h2 { margin: 48px 0 16px; }
 .hire > :first-child { margin-top: 24px; }
+.slides-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin: 1.2em 0; }
+.slides-row img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 1px solid var(--rule); border-radius: 2px; }
+.gallery-pins { columns: 6 140px; }
+.shorts-grid .embed-video { max-width: none; margin: 0; aspect-ratio: 9 / 16; object-fit: cover; }
+@media (max-width: 640px) { .slides-row { grid-template-columns: repeat(4, 1fr); } }
+.gallery-four { columns: 4 180px; }
+.slides-six { grid-template-columns: repeat(6, 1fr); }

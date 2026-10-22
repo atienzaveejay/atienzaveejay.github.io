@@ -79,7 +79,9 @@ def embed(url, kind="video"):
                 f'<img src="https://i.ytimg.com/vi/{vid}/oar2.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/{vid}/hqdefault.jpg\'">'
                 f'<span class="play" aria-hidden="true"></span></button>')
     if url.endswith(".mp4"):
-        return (f'<video class="embed-video" src="{e(url)}" controls playsinline preload="metadata"></video>')
+        poster = url[:-4] + ".jpg"  # a same-name .jpg next to the video becomes its cover
+        poster_attr = f' poster="{e(poster)}"' if os.path.exists(os.path.join(ROOT, poster.lstrip("/"))) else ""
+        return f'<video class="embed-video" src="{e(url)}"{poster_attr} controls playsinline preload="metadata"></video>'
     vid = yt_id(url)
     if vid:
         return (f'<button type="button" class="embed embed-wide yt" data-id="{vid}" aria-label="Play video">'
@@ -508,7 +510,7 @@ def build_design(designs):
     for d in designs:
         images = re.findall(r"!\[[^\]]*\]\((.+?)\)", d["body"])
         pdfs = re.findall(r"\[PDF: ([^\]]+)\]\((.+?)\)", d["body"])
-        cls = "gallery gallery-print" if pdfs else "gallery"
+        cls = "gallery gallery-print" if pdfs else "slides-row" if d.get("group") == "Carousels" else "gallery"
         figs = "".join(
             f'<a href="{u(src)}" class="shot" data-group="{d["slug"]}"><img src="{u(src)}" alt="{e(d["title"])} design {n + 1}" loading="lazy"></a>'
             for n, src in enumerate(images))

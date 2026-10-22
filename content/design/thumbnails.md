@@ -21,22 +21,8 @@ group: Thumbnails
 
 ![](/assets/thumbnails/09.webp)
 
-![](/assets/thumbnails/10.webp)
-
 ![](/assets/thumbnails/11.webp)
 
 ![](/assets/thumbnails/12.webp)
 
-![](/assets/thumbnails/13.webp)
-
-![](/assets/thumbnails/14.webp)
-
-![](/assets/thumbnails/15.webp)
-
-![](/assets/thumbnails/16.webp)
-
 ![](/assets/thumbnails/17.webp)
-
-![](/assets/thumbnails/18.webp)
-
-![](/assets/thumbnails/19.webp)

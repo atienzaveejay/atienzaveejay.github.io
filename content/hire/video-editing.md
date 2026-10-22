@@ -3,7 +3,7 @@ title: Video editing
 path: /video-editing/
 active: Video
 desc: Video editing portfolio: Shorts, Reels, TikToks and YouTube long-form edited by Veejay Atienza in DaVinci Resolve and CapCut.
-lede: I edit short-form and YouTube videos from raw footage, for coaches, B2B brands and apps. The pieces below are the ones I'd show first.
+lede: I edit short-form, product and YouTube videos from raw footage, for coaches, B2B brands, apps and a US kitchen brand. The pieces below are the ones I'd show first.
 ---
 ## What I handle
 
@@ -12,6 +12,7 @@ lede: I edit short-form and YouTube videos from raw footage, for coaches, B2B br
 - Music beds, sound effects and audio levels
 - Diagrams and simple motion graphics timed to what the speaker says
 - Shorts, Reels and TikToks cut from long-form videos
+- Product Reels and Meta video ads from phone footage, with on-screen hooks and captions
 - YouTube thumbnails and titles
 
 Tools: DaVinci Resolve and CapCut.
@@ -30,11 +31,25 @@ Tools: DaVinci Resolve and CapCut.
 
 @[short](https://www.youtube.com/shorts/eXhYwjnaA2o)
 
-@[short](https://www.youtube.com/shorts/zym26m2Cge4)
+@[short](https://www.youtube.com/shorts/nwHHkEbal_Q)
 
 @[short](https://www.youtube.com/shorts/_kA2zVr5djM)
 
 </div>
+
+## Product videos and ads
+
+<div class="video-grid shorts-grid" markdown="1">
+
+@[video](/assets/roo-video/ad-most-satisfying.mp4)
+
+@[video](/assets/roo-video/reel-20-second-cleanup.mp4)
+
+@[video](/assets/roo-video/reel-tomato-tips.mp4)
+
+</div>
+
+For ROO, a US kitchen brand. The first is a Meta video ad I cut from the brand's shoot footage; it ran in their paid campaign. The other two are organic Reels posted to ROO's Facebook and Instagram.
 
 ## YouTube long-form
 
