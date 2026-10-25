@@ -3,314 +3,241 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grayling Skin | Azelaic acid serum and a short skincare line</title>
-<meta name="description" content="Grayling makes five skincare products in Portland, Oregon. Every bottle lists its actives by percentage. Free US shipping over $40.">
+<title>Grayling Skin | Azelaic 10 Serum and a short skincare line</title>
+<meta name="description" content="Five fragrance-free skincare products made in Portland, Oregon. Every active listed by percentage. Free US shipping over $40.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..800;1,100,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff;
-  --panel:#eef0ec;
-  --ink:#141a17;
-  --muted:#4b5550;
-  --rule:#141a17;
-  --hair:#d3d8d2;
-  --mark:#e6f046;
-  --amber:#8a4b12;
-  --ok:#1f6b3a;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  --sans:"Archivo",system-ui,sans-serif;
-  --wrap:1240px;
+  --ink:#1b1b1a;
+  --muted:#5e5d5a;
+  --line:#e7e6e3;
+  --stone:#f3f2ef;
+  --sans:"Hanken Grotesk",system-ui,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;font-variation-settings:"wdth" 100}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;font-weight:400}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 button{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px var(--mark)}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
-@media (min-width:760px){.wrap{padding:0 32px}}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:-999px;top:0;background:var(--mark);padding:10px 14px;z-index:99}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 16px}
+@media (min-width:760px){.wrap{padding:0 40px}}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:10px 14px;z-index:99}
 .skip:focus{left:8px;top:8px}
-.mono{font-family:var(--mono);font-size:.82em;letter-spacing:0}
-h1,h2,h3{font-family:var(--sans);margin:0;line-height:1.02;letter-spacing:-.01em}
-h2{font-size:clamp(34px,5vw,58px);font-weight:750;font-variation-settings:"wdth" 72;text-transform:uppercase}
-h3{font-size:20px;font-weight:700;line-height:1.2}
-.mark{background:linear-gradient(transparent 12%,var(--mark) 12%,var(--mark) 88%,transparent 88%);padding:0 .12em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{margin:0;font-weight:300;letter-spacing:-.01em;line-height:1.1}
+h2.big{font-size:clamp(28px,3vw,40px);margin-bottom:28px}
+.label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:0 0 16px;line-height:1.5}
+.muted{color:var(--muted)}
+section{scroll-margin-top:64px}
+.num{font-variant-numeric:tabular-nums}
 
-/* concept strip */
-.concept{background:var(--ink);color:#c9d0cb;font-size:12.5px;text-align:center;padding:6px 16px}
-.concept a{color:#fff;text-underline-offset:2px}
+.concept{font-size:12px;text-align:center;padding:7px 16px;color:var(--muted);border-bottom:1px solid var(--line)}
+.concept a{color:var(--ink);text-underline-offset:2px}
 
-/* header */
-header.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:2px solid var(--rule)}
-.top .wrap{display:flex;align-items:center;gap:24px;height:64px}
-.logo{font-weight:800;font-size:26px;letter-spacing:.02em;text-decoration:none;font-variation-settings:"wdth" 62;text-transform:uppercase}
-@media (max-width:520px){.logo span{display:none}}
-.logo span{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:0;margin-left:6px;vertical-align:3px;text-transform:none;color:var(--muted)}
-nav.main{display:none;gap:26px;margin-left:12px}
-nav.main a{text-decoration:none;font-weight:500;font-size:15px;padding:6px 0;border-bottom:2px solid transparent}
-nav.main a:hover{border-color:var(--ink)}
-.top .ship{margin-left:auto;display:none;font-size:13.5px;color:var(--muted)}
-.bagbtn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:none;border:2px solid var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer;font-weight:600;font-size:15px}
-.bagbtn:hover{background:var(--mark)}
-.bagbtn .count{font-family:var(--mono);font-size:13px;min-width:22px;height:22px;border-radius:11px;background:var(--ink);color:#fff;display:inline-grid;place-items:center;padding:0 6px}
-.menubtn{background:none;border:0;padding:8px;cursor:pointer;display:inline-grid}
-.mobnav{display:none;border-top:1px solid var(--hair);padding:8px 16px 16px}
-.mobnav.open{display:block}
-.mobnav a{display:block;padding:12px 0;font-weight:600;font-size:18px;text-decoration:none;border-bottom:1px solid var(--hair)}
-@media (min-width:900px){
-  nav.main{display:flex}.menubtn,.mobnav{display:none!important}
-  .top .ship{display:block}.bagbtn{margin-left:0}
-}
+header.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:60px}
+.logo{font-size:15px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;text-decoration:none}
+nav.main{display:none;gap:28px;margin-left:auto;font-size:14px}
+nav.main a{text-decoration:none;color:var(--muted)}
+nav.main a:hover{color:var(--ink)}
+.shipnote-top{display:none;font-size:13px;color:var(--muted)}
+.bagbtn{margin-left:auto;background:none;border:0;padding:8px 0;cursor:pointer;font-size:14px}
+@media (min-width:760px){nav.main{display:flex}.bagbtn{margin-left:8px}}
+@media (min-width:1100px){.shipnote-top{display:block;margin-left:12px}}
 
 /* hero */
-.hero{border-bottom:2px solid var(--rule)}
-.hero .wrap{display:grid;gap:0;padding-top:0;padding-bottom:0}
-.hero-img{margin:0 -16px;position:relative;background:#b98b5f}
-.hero-img img{width:100%;aspect-ratio:3/2;object-fit:cover;object-position:50% 75%}
-.hero-img figcaption{position:absolute;left:16px;bottom:14px;font-family:var(--mono);font-size:12px;background:#fff;padding:4px 8px}
-.buy{padding:20px 0 36px}
-@media (max-width:899px){.buy .lede{font-size:17px;margin-bottom:16px}.buy h1{margin:8px 0 10px}}
-.rating{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--muted);text-decoration:none}
-.stars{display:inline-flex;gap:1px;color:var(--ink)}
-.stars svg{width:15px;height:15px}
-.buy h1{font-size:clamp(46px,8vw,92px);font-weight:800;font-variation-settings:"wdth" 64;text-transform:uppercase;margin:12px 0 14px;line-height:.92}
-.buy .lede{font-size:19px;max-width:34ch;margin:0 0 22px}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--rule);border-bottom:1px solid var(--rule);margin:0 0 22px}
-.facts div{padding:10px 10px 10px 0}
-.facts div+div{padding-left:12px;border-left:1px solid var(--hair)}
-.facts dt{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-transform:uppercase}
-.facts dd{margin:2px 0 0;font-weight:600;font-size:15.5px}
-.plans{border:0;padding:0;margin:0 0 16px;display:grid;gap:10px}
-.plans legend{font-weight:600;margin-bottom:8px;font-size:15px}
-.plan{display:flex;align-items:center;gap:12px;border:1.5px solid var(--hair);border-radius:10px;padding:12px 14px;cursor:pointer}
-.plan:has(input:checked){border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.plan input{accent-color:var(--ink);width:18px;height:18px;margin:0}
+.hero{padding:8px 0 110px}
+.hero .wrap{display:grid;gap:28px}
+.hero figure{margin:0 -16px;background:#b98b5f}
+.hero img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 75%}
+.hero h1{font-size:clamp(34px,4.4vw,56px)}
+.hero .line{color:var(--muted);margin:14px 0 24px;max-width:32ch;font-size:17px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0 36px;margin:0 0 24px}
+.facts dt{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.facts dd{margin:2px 0 0;font-size:15px}
+.plans{border:0;padding:0;margin:0 0 24px}
+.plans legend{padding:0;margin-bottom:6px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.plan{display:flex;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:15.5px}
+.plan input{accent-color:var(--ink);margin:0;transform:translateY(2px)}
 .plan .pl{flex:1}
-.plan .pl small{display:block;color:var(--muted);font-size:13.5px}
-.plan .pr{font-weight:700;font-family:var(--mono);font-size:15px}
-.plan s{color:var(--muted);font-weight:400;margin-right:6px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:999px;padding:15px 26px;font-weight:650;font-size:16.5px;cursor:pointer;text-decoration:none}
-.btn:hover{background:#2b3530}
-.btn.wide{width:100%}
-.btn.ghost{background:transparent;color:var(--ink)}
-.btn.ghost:hover{background:var(--mark)}
-.reassure{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 0;padding:0;list-style:none;font-size:14px;color:var(--muted)}
-.reassure li{display:flex;gap:6px;align-items:center}
-.reassure svg{width:16px;height:16px;flex:none}
+.plan small{display:block;color:var(--muted);font-size:13.5px}
+.plan s{color:var(--muted);margin-right:6px}
+.btn{display:inline-block;background:var(--ink);color:#fff;border:0;border-radius:0;padding:16px 36px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;cursor:pointer;text-decoration:none}
+.btn:hover{background:#3a3a38}
+.textlink{display:inline-block;margin-left:22px;font-size:14px;color:var(--muted);text-underline-offset:4px}
+.reassure{margin:18px 0 0;font-size:13.5px;color:var(--muted)}
 @media (min-width:900px){
-  .hero .wrap{grid-template-columns:1.05fr 1fr;gap:56px;align-items:stretch}
-  .hero-img{margin:0 0 0 -32px}
-  .hero-img img{height:100%;aspect-ratio:auto;min-height:640px}
-  .buy{padding:48px 0 52px;align-self:center}
+  .hero .wrap{grid-template-columns:7fr 4fr;gap:72px;align-items:end}
+  .hero figure{margin:0}
+  .hero img{aspect-ratio:auto;height:min(88vh,920px)}
+  .hero .copy{padding-bottom:12px}
 }
 
-/* sections */
-section.block{scroll-margin-top:66px;padding:72px 0;border-bottom:2px solid var(--rule)}
-.head{display:grid;gap:14px;margin-bottom:32px}
-.head p{margin:0;color:var(--muted);max-width:52ch;font-size:17.5px}
-@media (min-width:900px){.head{grid-template-columns:1.25fr 1fr;align-items:end;gap:48px}}
-
-/* concern picker */
-.concerns{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;margin:0 -16px 0;padding-left:16px;padding-right:16px;scrollbar-width:none}
-.concerns::-webkit-scrollbar{display:none}
-@media (min-width:760px){.concerns{flex-wrap:wrap;margin:0;padding-left:2px;padding-right:2px;overflow:visible}}
-.chip{flex:none;border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px;cursor:pointer;white-space:nowrap}
-.chip:hover{background:var(--panel)}
-.chip[aria-pressed="true"]{background:var(--ink);color:#fff}
-.routine{margin:18px 0 28px;padding:16px 18px;background:var(--panel);border-left:4px solid var(--ink);min-height:58px;font-size:16px}
-.routine b{font-weight:700}
-.grid{display:grid;gap:28px 20px;grid-template-columns:1fr 1fr}
-@media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr);gap:36px 24px}}
-@media (min-width:1100px){.grid{grid-template-columns:repeat(5,1fr)} .card:not(.set) .row{flex-direction:column;align-items:stretch}.card:not(.set) .add{width:100%}.card h3{font-size:18px}}
-@media (max-width:899px){.card:first-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.card:first-child h3{margin-top:4px}.card:first-child .ph img{height:100%}}
-.card{display:flex;flex-direction:column;transition:opacity .2s}
-.card.dim{opacity:.45;order:2}
-.card.dim:hover,.card.dim:focus-within{opacity:.8}
-.card .ph{position:relative;background:var(--panel);overflow:hidden}
-.card .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.card .pct{position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:12px;background:#fff;padding:3px 7px;border:1px solid var(--ink)}
-.card h3{margin:14px 0 4px;font-size:19px}
-.card .does{margin:0 0 8px;color:var(--muted);font-size:15px;line-height:1.45}
-.card .tags{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 12px;padding:0;list-style:none}
-.card .tags li{font-family:var(--mono);font-size:11.5px;border:1px solid var(--hair);padding:2px 6px;border-radius:4px}
-.card .tags li.hit{background:var(--mark);border-color:var(--ink)}
-.card .row{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid var(--ink);padding-top:10px}
-.card .price{font-weight:700;font-size:17px}
-.card .price small{display:block;font-weight:400;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-.add{border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:8px 14px;font-weight:650;font-size:14.5px;cursor:pointer;white-space:nowrap}
-.add:hover{background:var(--mark)}
-.add.done{background:var(--ink);color:#fff}
-.card.set{order:3;grid-column:1/-1;display:grid;gap:0;border:2px solid var(--ink)}
-.card.set .ph img{aspect-ratio:3/2}
-.card.set .body{padding:18px}
-.card.set h3{margin-top:0;font-size:24px}
-.card.set .row{border-top:1px solid var(--ink)}
-.inside{list-style:none;margin:4px 0 16px;padding:0;font-size:14.5px}
-.inside li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px dotted var(--hair)}
-.inside li span:last-child{font-family:var(--mono);font-size:13px;color:var(--muted)}
-.inside li.sum{border-bottom:0;font-weight:600}
-.inside li.sum span:last-child{text-decoration:line-through}
-@media (min-width:900px){
-  .card.set{grid-template-columns:1.3fr 1fr}
-  .card.set .ph img{height:100%}
-  .card.set .body{padding:28px 32px;display:flex;flex-direction:column}
-}
-@media (max-width:520px){
-  .grid{gap:24px 12px}
-  .card h3{font-size:16.5px}
-  .card .does{font-size:14px}
-  .add{padding:7px 11px;font-size:13.5px}
-  .card .row{flex-direction:column;align-items:stretch}
-  .card .row .add{width:100%}
+/* shop */
+.shop{padding:0 0 120px}
+.chips{display:flex;gap:6px 24px;flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+@media (min-width:760px){.chips{flex-wrap:wrap;margin:0;padding:0}}
+.chip{flex:none;background:none;border:0;padding:6px 0;font-size:15px;color:var(--muted);cursor:pointer;border-bottom:1px solid transparent;white-space:nowrap}
+.chip:hover{color:var(--ink)}
+.chip[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.routine{margin:18px 0 44px;max-width:62ch;font-size:15.5px;color:var(--muted);min-height:50px}
+.routine b{color:var(--ink);font-weight:500}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:44px 14px}
+@media (min-width:900px){.grid{grid-template-columns:repeat(3,1fr);gap:56px 28px}}
+@media (min-width:1180px){.grid{grid-template-columns:repeat(5,1fr);gap:28px}}
+.item{display:flex;flex-direction:column;transition:opacity .25s}
+.item.dim{opacity:.4;order:2}
+.item.dim:hover,.item.dim:focus-within{opacity:.85}
+.item img{width:100%;aspect-ratio:4/5;object-fit:cover;background:var(--stone)}
+.item h3{font-size:17px;font-weight:500;letter-spacing:0;margin:16px 0 0}
+.item .act{margin:0 0 6px;font-size:13.5px;color:var(--muted)}
+.item .does{margin:0 0 8px;font-size:14.5px;color:var(--muted)}
+.item .for{margin:0 0 12px;font-size:13px;color:var(--muted)}
+.item .for span.hit{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.item .row{margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;font-size:15px}
+.item .row small{color:var(--muted);font-size:13.5px}
+.add{background:none;border:0;padding:4px 0;cursor:pointer;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.add:hover{color:var(--muted)}
+@media (max-width:899px){.item:first-child{grid-column:1/-1}.item:first-child img{aspect-ratio:3/2}}
+.set{margin-top:96px}
+.set figure{margin:0 -16px}
+.set img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.set .cap{display:grid;gap:14px;margin-top:22px}
+.set h3{font-size:clamp(26px,2.6vw,34px)}
+.set .cap p{margin:0;color:var(--muted)}
+.set .cap .add{justify-self:start}
+@media (min-width:760px){
+  .set figure{margin:0}
+  .set img{aspect-ratio:21/9}
+  .set .cap{grid-template-columns:1fr 1.3fr auto;align-items:baseline;gap:40px}
 }
 
 /* ingredients */
-.ingr{display:grid;gap:28px}
-@media (min-width:1000px){.ingr{grid-template-columns:1.5fr 1fr;gap:48px}}
-.label{border:3px solid var(--ink);padding:0 16px 8px;background:#fff}
-.label h3{font-size:30px;font-weight:800;font-variation-settings:"wdth" 70;text-transform:uppercase;padding:12px 0 8px;border-bottom:8px solid var(--ink)}
-.label table{width:100%;border-collapse:collapse}
-.label th{font-family:var(--mono);font-weight:500;font-size:12px;text-transform:uppercase;text-align:left;color:var(--muted);padding:8px 0 6px;border-bottom:3px solid var(--ink)}
-.label td{vertical-align:top;padding:14px 10px 14px 0;border-bottom:1px solid var(--ink);font-size:15.5px}
-.label tr:last-child td{border-bottom:0}
-.label td:first-child{font-weight:700;width:30%}
-.label td:first-child span{display:block;font-family:var(--mono);font-weight:400;font-size:12.5px;color:var(--muted);margin-top:2px}
-.label td.p{font-family:var(--mono);font-weight:500;white-space:nowrap;width:1%}
-.label td .in{display:block;margin-top:4px;font-size:13.5px;color:var(--muted)}
+.ingr{padding:0 0 120px}
+.ingr .wrap{display:grid;gap:48px}
+@media (min-width:1000px){.ingr .wrap{grid-template-columns:5fr 7fr;gap:80px;align-items:start}.pics{position:sticky;top:90px}}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-content:start}
+.pics img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.pics figure{margin:0}
+.pics figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+table.facts-t{width:100%;border-collapse:collapse;font-size:15px}
+.facts-t th{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:left;padding:0 16px 10px 0}
+.facts-t td{vertical-align:top;padding:16px 16px 16px 0;border-top:1px solid var(--line)}
+.facts-t td:first-child{width:30%}
+.facts-t td:first-child b{font-weight:500;display:block}
+.facts-t td:first-child span{font-size:13px;color:var(--muted)}
+.facts-t td.p{white-space:nowrap;width:1%}
+.facts-t td.w{color:var(--muted)}
+.facts-t td.w em{display:block;font-style:normal;font-size:13.5px;margin-top:4px;color:var(--ink)}
 @media (max-width:640px){
-  .label thead{display:none}
-  .label tr{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid var(--ink);padding:12px 0}
-  .label tr:last-child{border-bottom:0}
-  .label td{border:0;padding:0}
-  .label td:first-child{width:auto}
-  .label td.p{text-align:right}
-  .label td.what{grid-column:1/-1;margin-top:6px}
+  .facts-t thead{display:none}
+  .facts-t tr{display:grid;grid-template-columns:1fr auto;border-top:1px solid var(--line);padding:14px 0}
+  .facts-t td{border:0;padding:0}
+  .facts-t td:first-child{width:auto}
+  .facts-t td.p{text-align:right;padding-right:0}
+  .facts-t td.w{grid-column:1/-1;margin-top:6px}
 }
-.side{display:grid;gap:20px;align-content:start}
-.leftout{border-top:2px solid var(--ink);padding-top:14px}
-.leftout h3{margin-bottom:10px}
-.leftout ul{margin:0;padding:0;list-style:none}
-.leftout li{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--hair);font-size:15.5px}
-.leftout li svg{flex:none;width:18px;height:18px;margin-top:3px}
-.textures{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.textures figure{margin:0}
-.textures img{aspect-ratio:1;object-fit:cover;width:100%}
-.textures figcaption{font-size:14px;margin-top:6px}
-.textures figcaption b{display:block}
-details.inci{border-top:2px solid var(--ink);padding-top:4px}
-details.inci summary{cursor:pointer;font-weight:650;padding:10px 0;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.leave{margin-top:36px;display:grid;gap:22px}
+@media (min-width:760px){.leave{grid-template-columns:1fr 1fr;gap:40px}}
+.leave h3,.inci summary{font-size:15px;font-weight:500;letter-spacing:0}
+.leave p{margin:6px 0 0;font-size:15px;color:var(--muted)}
+details.inci summary{cursor:pointer;list-style:none;text-decoration:underline;text-underline-offset:4px}
 details.inci summary::-webkit-details-marker{display:none}
-details.inci summary::after{content:"+";font-family:var(--mono);font-size:20px}
-details.inci[open] summary::after{content:"\2212"}
-details.inci p{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--muted);margin:4px 0 12px}
-details.inci p b{color:var(--ink);font-weight:500}
+details.inci p{font-size:13.5px}
+details.inci b{color:var(--ink);font-weight:500}
 
 /* reviews */
-.revtop{display:grid;gap:28px;margin-bottom:28px}
-@media (min-width:900px){.revtop{grid-template-columns:320px 1fr;gap:56px}}
-.score{display:flex;align-items:baseline;gap:12px}
-.score b{font-size:84px;font-weight:800;font-variation-settings:"wdth" 64;line-height:.9}
-.score span{color:var(--muted);font-size:15px}
-.bars{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:6px}
-.bars li{display:grid;grid-template-columns:56px 1fr 40px;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px}
-.bars i{display:block;height:8px;background:var(--panel);position:relative}
-.bars i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--ink)}
-.again{margin-top:14px;font-size:15px}
-.skinphotos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.skinphotos figure{margin:0}
-.skinphotos img{aspect-ratio:4/5;object-fit:cover;width:100%}
-.skinphotos figcaption{font-size:13.5px;margin-top:6px;color:var(--muted)}
-.skinphotos figcaption b{color:var(--ink);font-weight:650;display:block}
-.filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 22px}
-.filter span{font-weight:600;font-size:15px;margin-right:4px}
-.revs{display:grid;gap:0;border-top:2px solid var(--ink)}
-@media (min-width:900px){.revs{grid-template-columns:1fr 1fr;column-gap:48px}}
-.rev{padding:20px 0;border-bottom:1px solid var(--hair)}
+.reviews{padding:0 0 120px}
+.revhead{display:grid;gap:36px;margin-bottom:44px}
+@media (min-width:900px){.revhead{grid-template-columns:1fr 1.6fr;gap:72px;align-items:end}}
+.score{font-size:clamp(56px,6vw,84px);font-weight:300;line-height:1;margin:0 0 12px}
+.stats{margin:0;font-size:15px;color:var(--muted)}
+.skin{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.skin figure{margin:0}
+.skin img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.skin figcaption{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.4}
+.skin figcaption b{display:block;color:var(--ink);font-weight:500}
+.revfilter{display:flex;align-items:baseline;gap:6px 22px;flex-wrap:wrap;margin-bottom:12px}
+.revfilter span{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-right:4px}
+.revs{display:grid}
+@media (min-width:900px){.revs{grid-template-columns:1fr 1fr;column-gap:72px}}
+.rev{padding:26px 0;border-top:1px solid var(--line)}
 .rev[hidden]{display:none}
-.rev .meta{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;font-size:13.5px;color:var(--muted);margin-bottom:8px}
-.rev .meta b{color:var(--ink);font-size:15px}
-.rev h3{font-size:17.5px;margin:0 0 6px}
-.rev p{margin:0;font-size:16px}
-.rev .about{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.rev .about span{font-family:var(--mono);font-size:11.5px;background:var(--panel);padding:3px 7px}
-.verified{display:inline-flex;align-items:center;gap:4px;color:var(--ok)}
-.verified svg{width:14px;height:14px}
+.rev .who{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;color:var(--muted);margin-bottom:10px}
+.rev .who b{color:var(--ink);font-weight:500}
+.stars{letter-spacing:2px;color:var(--ink)}
+.stars i{font-style:normal;color:#c9c7c2}
+.rev h3{font-size:19px;margin:0 0 6px;font-weight:400}
+.rev p{margin:0;font-size:15.5px;color:var(--muted)}
 
 /* help */
-.help{display:grid;gap:32px}
-@media (min-width:900px){.help{grid-template-columns:1fr 1.4fr;gap:56px}}
-.help h2{margin-bottom:24px}
-.policy{display:grid;gap:0;margin:0;border-top:2px solid var(--ink)}
-.policy div{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:16px 0;border-bottom:1px solid var(--hair)}
-.policy svg{width:24px;height:24px}
-.policy dt{font-weight:700}
-.policy dd{margin:2px 0 0;color:var(--muted);font-size:15.5px;grid-column:2}
-.faq details{border-bottom:1px solid var(--ink)}
-.faq details:first-child{border-top:2px solid var(--ink)}
-.faq summary{cursor:pointer;padding:16px 36px 16px 0;font-weight:650;list-style:none;position:relative;font-size:17px}
+.help{padding:72px 0 96px;border-top:1px solid var(--line)}
+.help .wrap{display:grid;gap:48px}
+@media (min-width:900px){.help .wrap{grid-template-columns:1fr 1.4fr;gap:96px}}
+.policy{margin:0;display:grid;gap:22px}
+.policy dt{font-weight:500;font-size:15.5px}
+.policy dd{margin:4px 0 0;color:var(--muted);font-size:15px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:18px 32px 18px 0;list-style:none;position:relative;font-size:16px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:4px;top:12px;font-family:var(--mono);font-size:22px}
+.faq summary::after{content:"+";position:absolute;right:2px;top:15px;font-size:20px;font-weight:300;color:var(--muted)}
 .faq details[open] summary::after{content:"\2212"}
-.faq p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+.faq p{margin:0 0 20px;color:var(--muted);font-size:15px;max-width:60ch}
 
-footer{background:var(--ink);color:#d7ddd9;padding:56px 0 32px;font-size:15px}
-footer .cols{display:grid;gap:32px}
-@media (min-width:900px){footer .cols{grid-template-columns:1.4fr 1fr 1fr 1fr}}
-footer h2{font-size:15px;font-weight:700;text-transform:none;font-variation-settings:"wdth" 100;color:#fff;margin-bottom:10px;letter-spacing:0}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-footer a{color:#d7ddd9;text-underline-offset:3px}
-footer a:hover{color:#fff}
-footer .logo{color:#fff;font-size:34px}
-footer form{display:flex;gap:8px;margin-top:14px;max-width:380px}
-footer input{flex:1;min-width:0;background:transparent;border:1.5px solid #8d9892;border-radius:999px;color:#fff;padding:11px 16px;font:inherit;font-size:15px}
-footer input::placeholder{color:#a9b3ad}
-footer form button{background:var(--mark);color:var(--ink);border:0;border-radius:999px;padding:11px 18px;font-weight:700;cursor:pointer}
-footer .legal{margin-top:40px;padding-top:18px;border-top:1px solid #3a443f;font-size:13px;color:#a9b3ad}
+footer.site{padding:40px 0 48px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+footer.site .wrap{display:grid;gap:22px}
+@media (min-width:900px){footer.site .wrap{grid-template-columns:1.2fr 1fr 1fr;align-items:start}}
+footer.site a{color:var(--muted)}
+footer.site p{margin:0}
+footer form{display:flex;gap:16px;align-items:end;margin-top:12px;max-width:360px}
+footer input{flex:1;min-width:0;border:0;border-bottom:1px solid #b9b7b2;padding:8px 0;font:inherit;font-size:14px;background:transparent;color:var(--ink)}
+footer input::placeholder{color:#76746f}
+footer form button{background:none;border:0;padding:8px 0;font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;color:var(--ink)}
+.fda{font-size:12px}
 
 /* sticky mobile buy */
-.stickybuy{position:fixed;left:0;right:0;bottom:0;z-index:25;background:#fff;border-top:2px solid var(--ink);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s}
+.stickybuy{position:fixed;left:0;right:0;bottom:0;z-index:25;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s}
 .stickybuy.show{transform:none}
-.stickybuy div{flex:1;line-height:1.25;font-size:14.5px}
-.stickybuy b{display:block;font-size:15.5px}
-.stickybuy .btn{padding:11px 18px;font-size:15px}
+.stickybuy div{flex:1;font-size:14px;line-height:1.35}
+.stickybuy b{display:block;font-weight:500;font-size:15px}
+.stickybuy .btn{padding:12px 20px;font-size:13px}
 @media (min-width:900px){.stickybuy{display:none}}
 
-/* cart drawer */
-.scrim{position:fixed;inset:0;background:rgba(20,26,23,.45);z-index:40;opacity:0;pointer-events:none;transition:opacity .2s}
+/* bag drawer */
+.scrim{position:fixed;inset:0;background:rgba(27,27,26,.35);z-index:40;opacity:0;pointer-events:none;transition:opacity .2s}
 .scrim.open{opacity:1;pointer-events:auto}
-.drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:#fff;z-index:41;display:flex;flex-direction:column;transform:translateX(102%);transition:transform .25s ease;border-left:2px solid var(--ink)}
-.drawer.open{transform:none}
-.drawer header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:2px solid var(--ink)}
-.drawer header h2{font-size:30px}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(400px,100%);background:#fff;z-index:41;display:flex;flex-direction:column;transform:translateX(102%);transition:transform .25s ease;visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+.drawer .dh{display:flex;align-items:center;justify-content:space-between;padding:18px 22px}
+.drawer h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
 .x{background:none;border:0;cursor:pointer;padding:8px;display:grid}
-.shipbar{padding:14px 18px;border-bottom:1px solid var(--hair);font-size:14.5px}
-.shipbar .track{height:6px;background:var(--panel);margin-top:8px}
-.shipbar .track i{display:block;height:100%;background:var(--ink);width:0;transition:width .3s}
-.lines{flex:1;overflow-y:auto;padding:0 18px;margin:0;list-style:none}
-.line{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:16px 0;border-bottom:1px solid var(--hair)}
-.line img{width:72px;height:90px;object-fit:cover;background:var(--panel)}
-.line h3{font-size:16px;margin:0 0 2px}
-.line .sub{font-size:13px;color:var(--muted);margin:0 0 8px}
-.qty{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:999px}
-.qty button{background:none;border:0;width:32px;height:30px;cursor:pointer;font-size:17px;border-radius:999px}
-.qty button:hover{background:var(--panel)}
-.qty output{font-family:var(--mono);min-width:22px;text-align:center;font-size:14px}
-.line .lp{font-family:var(--mono);font-weight:500;text-align:right}
-.rm{display:block;margin-top:8px;background:none;border:0;padding:0;font-size:13px;text-decoration:underline;cursor:pointer;color:var(--muted)}
-.empty{padding:40px 18px;text-align:center;color:var(--muted)}
-.empty .btn{margin-top:16px}
-.drawer footer{background:#fff;color:var(--ink);padding:16px 18px calc(16px + env(safe-area-inset-bottom));border-top:2px solid var(--ink);font-size:15px}
-.drawer footer .tot{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin-bottom:4px}
-.drawer footer .note{margin:0 0 12px;color:var(--muted);font-size:13.5px}
-.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
-.toast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:14.5px;opacity:0;transition:.2s;z-index:50;pointer-events:none}
-.toast.show{opacity:1;transform:translate(-50%,0)}
+.shipnote{margin:0;padding:0 22px 14px;font-size:13.5px;color:var(--muted)}
+.shipnote i{display:block;height:2px;background:var(--line);margin-top:8px}
+.shipnote i span{display:block;height:100%;background:var(--ink);transition:width .3s}
+.lines{flex:1;overflow-y:auto;padding:0 22px;margin:0;list-style:none}
+.ln{display:grid;grid-template-columns:64px 1fr auto;gap:14px;padding:16px 0;border-top:1px solid var(--line)}
+.ln img{width:64px;height:80px;object-fit:cover;background:var(--stone)}
+.ln h3{font-size:15px;font-weight:500;letter-spacing:0;margin:0 0 2px}
+.ln .sub{margin:0 0 8px;font-size:12.5px;color:var(--muted)}
+.qty{display:inline-flex;align-items:center;gap:4px;font-size:14px}
+.qty button{background:none;border:1px solid var(--line);width:28px;height:28px;cursor:pointer}
+.qty output{min-width:20px;text-align:center}
+.ln .lp{text-align:right;font-size:14.5px;font-variant-numeric:tabular-nums}
+.rm{display:block;margin-top:6px;margin-left:auto;background:none;border:0;padding:0;font-size:12.5px;color:var(--muted);text-decoration:underline;cursor:pointer}
+.empty{padding:32px 0;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+.df{padding:18px 22px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.df .tot{display:flex;justify-content:space-between;font-size:16px;margin-bottom:4px;font-variant-numeric:tabular-nums}
+.df .note{margin:0 0 14px;font-size:12.5px;color:var(--muted)}
+.df .btn{width:100%;text-align:center;opacity:.6;cursor:not-allowed}
+.df small{display:block;text-align:center;margin-top:10px;color:var(--muted);font-size:12.5px}
 body.lock{overflow:hidden}
 </style>
 </head>
@@ -320,71 +247,48 @@ body.lock{overflow:hidden}
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Grayling Skin, home">Grayling<span>Portland, OR</span></a>
+    <a class="logo" href="#main">Grayling</a>
     <nav class="main" aria-label="Main">
       <a href="#shop">Shop</a>
       <a href="#ingredients">Ingredients</a>
       <a href="#reviews">Reviews</a>
       <a href="#help">Shipping and returns</a>
     </nav>
-    <p class="ship">Free US shipping over $40</p>
-    <button class="bagbtn" id="openBag" aria-haspopup="dialog" aria-controls="bag">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-      Bag <span class="count" id="bagCount" aria-live="polite">0</span>
-    </button>
-    <button class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="mobnav" aria-label="Menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+    <p class="shipnote-top">Free US shipping over $40</p>
+    <button class="bagbtn" id="openBag" aria-haspopup="dialog" aria-controls="bag">Bag (<span id="bagCount">0</span>)</button>
   </div>
-  <nav class="mobnav" id="mobnav" aria-label="Mobile">
-    <a href="#shop">Shop by concern</a>
-    <a href="#ingredients">Ingredients</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#help">Shipping and returns</a>
-  </nav>
 </header>
 
 <main id="main">
-<span id="top"></span>
 <section class="hero" aria-labelledby="heroTitle">
   <div class="wrap">
-    <figure class="hero-img">
-      <img src="img/hero-azelaic.webp" alt="Amber glass dropper bottle of Azelaic 10 Serum standing in warm afternoon light" width="1200" height="1500" fetchpriority="high">
-      <figcaption>30 ml amber glass, dropper cap</figcaption>
-    </figure>
-    <div class="buy" id="buybox">
-      <a class="rating" href="#reviews">
-        <span class="stars" aria-hidden="true" data-stars="5"></span>
-        <span>4.7 from 1,284 reviews</span>
-      </a>
+    <figure><img src="img/hero-azelaic.webp" alt="Amber glass bottle of Azelaic 10 Serum standing in warm afternoon light" width="1500" height="1950" fetchpriority="high"></figure>
+    <div class="copy">
+      <p class="label"><a href="#reviews" style="text-decoration:none">&#9733; 4.7 from 1,284 reviews</a></p>
       <h1 id="heroTitle">Azelaic 10 Serum</h1>
-      <p class="lede">Calms redness and fades the dark marks old breakouts leave behind. Gentle enough for skin that stings with most acids.</p>
+      <p class="line">Calms redness and fades the marks old breakouts leave. Gentle on skin that stings with most acids.</p>
       <dl class="facts">
         <div><dt>Size</dt><dd>30 ml / 1 fl oz</dd></div>
-        <div><dt>Lasts</dt><dd>10 weeks</dd></div>
+        <div><dt>Lasts</dt><dd>About 10 weeks</dd></div>
         <div><dt>Use</dt><dd>AM or PM</dd></div>
       </dl>
       <fieldset class="plans">
         <legend>How do you want it?</legend>
-        <label class="plan"><input type="radio" name="plan" value="once" checked><span class="pl">One bottle</span><span class="pr">$34</span></label>
-        <label class="plan"><input type="radio" name="plan" value="sub"><span class="pl">Refill every 10 weeks<small>Skip or cancel from your account</small></span><span class="pr"><s>$34</s>$30.60</span></label>
+        <label class="plan"><input type="radio" name="plan" value="once" checked><span class="pl">One bottle</span><span class="num">$34</span></label>
+        <label class="plan"><input type="radio" name="plan" value="sub"><span class="pl">Refill every 10 weeks<small>Skip or cancel any time</small></span><span class="num"><s>$34</s>$30.60</span></label>
       </fieldset>
-      <button class="btn wide" data-add="azelaic" id="heroAdd">Add to bag</button>
-      <ul class="reassure">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg>Ships from Portland in 1 to 2 days</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg>60 days to return, even opened</li>
-      </ul>
+      <button class="btn" data-add="azelaic" id="heroAdd">Add to bag</button>
+      <a class="textlink" href="#ingredients">What is in it</a>
+      <p class="reassure">Ships from Portland in 1 to 2 days. 60 days to return, even opened.</p>
     </div>
   </div>
 </section>
 
-<section class="block" id="shop" aria-labelledby="shopTitle">
+<section class="shop" id="shop" aria-labelledby="shopTitle">
   <div class="wrap">
-    <div class="head">
-      <h2 id="shopTitle">Shop by skin concern</h2>
-      <p>Five products and nothing seasonal. Pick what is bothering your skin and we will show which bottles help, and in what order.</p>
-    </div>
-    <div class="concerns" role="group" aria-label="Filter by skin concern">
+    <p class="label">Shop</p>
+    <h2 class="big" id="shopTitle">Shop by skin concern</h2>
+    <div class="chips" role="group" aria-label="Filter by skin concern">
       <button class="chip" aria-pressed="true" data-c="all">Everything</button>
       <button class="chip" aria-pressed="false" data-c="redness">Redness</button>
       <button class="chip" aria-pressed="false" data-c="marks">Dark marks</button>
@@ -394,77 +298,69 @@ body.lock{overflow:hidden}
     </div>
     <p class="routine" id="routine" aria-live="polite"></p>
     <div class="grid" id="grid"></div>
+
+    <div class="set">
+      <figure><img src="img/card-set.webp" alt="Dropper bottles and wooden-lidded jars on a linen table in morning light" loading="lazy" width="1200" height="800"></figure>
+      <div class="cap">
+        <h3>The full routine</h3>
+        <p>All five products, with a card that says what to use morning and night. <span class="num">$139</span>, instead of <span class="num">$155</span> bought one by one.</p>
+        <button class="add" data-add="set">Add the set</button>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="block" id="ingredients" aria-labelledby="ingTitle">
+<section class="ingr" id="ingredients" aria-labelledby="ingTitle">
   <div class="wrap">
-    <div class="head">
-      <h2 id="ingTitle">What the ingredients do</h2>
-      <p>Every active is printed on the bottle with its percentage. Here is what each one is for, in plain words, and who should go slow with it.</p>
+    <div class="pics">
+      <figure><img src="img/texture-gel.webp" alt="A drop of clear serum gel on a tan surface" loading="lazy" width="700" height="700"><figcaption>Serum: thin gel, dries in a minute</figcaption></figure>
+      <figure><img src="img/texture-cream.webp" alt="A swipe of thick white cream on a white surface" loading="lazy" width="700" height="700"><figcaption>Barrier Cream: rich, not greasy</figcaption></figure>
     </div>
-    <div class="ingr">
-      <div class="label">
-        <h3>Active ingredients</h3>
-        <table>
-          <thead><tr><th scope="col">Ingredient</th><th scope="col">Amount</th><th scope="col">What it does for you</th></tr></thead>
-          <tbody>
-            <tr><td>Azelaic acid<span>Azelaic 10 Serum</span></td><td class="p">10%</td><td class="what">Settles redness and slows the pigment that makes post-breakout marks. Can tingle for the first week.</td></tr>
-            <tr><td>Niacinamide<span>Azelaic 10, Barrier Cream</span></td><td class="p">4%</td><td class="what">Evens tone and helps skin hold water. We keep it at 4% because higher amounts flush some people.</td></tr>
-            <tr><td>Ceramides NP, AP, EOP<span>Barrier Cream</span></td><td class="p">3%</td><td class="what">The fats your skin barrier is made of. Tight, flaky skin gets them back.</td></tr>
-            <tr><td>Retinal<span>Retinal Night Serum</span></td><td class="p">0.05%</td><td class="what">A vitamin A that works faster than retinol at a lower dose. Softens fine lines and clears clogged pores.<span class="in">Skip it if you are pregnant or nursing. Start two nights a week.</span></td></tr>
-            <tr><td>Zinc oxide<span>Mineral SPF 30</span></td><td class="p">18%</td><td class="what">Sits on top of skin and blocks UVA and UVB. No chemical filters, so it does not sting eyes.</td></tr>
-            <tr><td>Glycerin + betaine<span>Gel Cleanser</span></td><td class="p">5%</td><td class="what">Keeps the cleanser from stripping. Your face should not feel squeaky after rinsing.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="side">
-        <div class="leftout">
+    <div>
+      <p class="label">Ingredients</p>
+      <h2 class="big" id="ingTitle">What the ingredients do</h2>
+      <table class="facts-t">
+        <thead><tr><th scope="col">Active</th><th scope="col">Amount</th><th scope="col">What it does</th></tr></thead>
+        <tbody>
+          <tr><td><b>Azelaic acid</b><span>Azelaic 10 Serum</span></td><td class="p num">10%</td><td class="w">Settles redness and slows the pigment behind post-breakout marks. Can tingle the first week.</td></tr>
+          <tr><td><b>Niacinamide</b><span>Azelaic 10, Barrier Cream</span></td><td class="p num">4%</td><td class="w">Evens tone and helps skin hold water. We stop at 4% because more flushes some people.</td></tr>
+          <tr><td><b>Ceramides NP, AP, EOP</b><span>Barrier Cream</span></td><td class="p num">3%</td><td class="w">The fats your skin barrier is made of. Tight, flaky skin gets them back.</td></tr>
+          <tr><td><b>Retinal</b><span>Retinal Night Serum</span></td><td class="p num">0.05%</td><td class="w">A vitamin A that works faster than retinol at a lower dose, for fine lines and clogged pores.<em>Skip it if pregnant or nursing. Start two nights a week.</em></td></tr>
+          <tr><td><b>Zinc oxide</b><span>Mineral SPF 30</span></td><td class="p num">18%</td><td class="w">Blocks UVA and UVB from the surface. No chemical filters, so it does not sting eyes.</td></tr>
+          <tr><td><b>Glycerin + betaine</b><span>Gel Cleanser</span></td><td class="p num">5%</td><td class="w">Keeps the cleanser from stripping. Skin should not feel squeaky after rinsing.</td></tr>
+        </tbody>
+      </table>
+      <div class="leave">
+        <div>
           <h3>What we leave out</h3>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>Added fragrance and essential oils. They are the most common cause of irritation in skincare.</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6 6l12 12"/></svg>Drying alcohol (alcohol denat.) high on the list.</li>
-          </ul>
-        </div>
-        <div class="textures">
-          <figure><img src="img/texture-gel.webp" alt="A clear gel swatch on a tan surface" loading="lazy" width="700" height="700"><figcaption><b>Serum texture</b>Thin gel, dries down in a minute</figcaption></figure>
-          <figure><img src="img/texture-cream.webp" alt="A swipe of thick white cream on a white surface" loading="lazy" width="700" height="700"><figcaption><b>Barrier Cream</b>Rich but not greasy</figcaption></figure>
+          <p>Added fragrance and essential oils, the most common causes of irritation. No drying alcohol high on the list.</p>
         </div>
         <details class="inci">
-          <summary>Full ingredient list: Azelaic 10 Serum</summary>
-          <p>Water, <b>Azelaic Acid</b>, Propanediol, <b>Niacinamide</b>, Glycerin, Panthenol, Allantoin, Hydroxyethylcellulose, Sodium Hydroxide, Xanthan Gum, Ethylhexylglycerin, Phenoxyethanol.</p>
+          <summary>Full list: Azelaic 10 Serum</summary>
+          <p class="muted">Water, <b>Azelaic Acid</b>, Propanediol, <b>Niacinamide</b>, Glycerin, Panthenol, Allantoin, Hydroxyethylcellulose, Sodium Hydroxide, Xanthan Gum, Ethylhexylglycerin, Phenoxyethanol.</p>
         </details>
       </div>
     </div>
   </div>
 </section>
 
-<section class="block" id="reviews" aria-labelledby="revTitle">
+<section class="reviews" id="reviews" aria-labelledby="revTitle">
   <div class="wrap">
-    <div class="head">
-      <h2 id="revTitle">Reviews from customers</h2>
-      <p>Every review comes from a verified order. We publish the low ones too.</p>
-    </div>
-    <div class="revtop">
+    <div class="revhead">
       <div>
-        <div class="score"><b>4.7</b><span>out of 5<br>2,906 reviews across all products</span></div>
-        <ul class="bars" aria-label="Rating breakdown">
-          <li><span>5 star</span><i style="--w:81%"></i><span>81%</span></li>
-          <li><span>4 star</span><i style="--w:11%"></i><span>11%</span></li>
-          <li><span>3 star</span><i style="--w:4%"></i><span>4%</span></li>
-          <li><span>2 star</span><i style="--w:2%"></i><span>2%</span></li>
-          <li><span>1 star</span><i style="--w:2%"></i><span>2%</span></li>
-        </ul>
-        <p class="again"><span class="mark"><b>89%</b> reordered</span> within six months.</p>
+        <p class="label">Reviews</p>
+        <h2 class="sr" id="revTitle">Reviews from customers</h2>
+        <p class="score num">4.7</p>
+        <p class="stats">Out of 5, from 2,906 verified orders. 89% reorder within six months. We publish the low ones too.</p>
       </div>
-      <div class="skinphotos">
-        <figure><img src="img/skin-mai.webp" alt="A woman with her hair in a towel applies serum from a dropper near her eye" loading="lazy" width="800" height="1000"><figcaption><b>Mai T.</b> Combination skin, uses Azelaic 10</figcaption></figure>
-        <figure><img src="img/skin-dana.webp" alt="A woman with long braids presses cream into her cheek in a tiled bathroom" loading="lazy" width="900" height="1125"><figcaption><b>Dana W.</b> Dry skin, uses Barrier Cream</figcaption></figure>
-        <figure><img src="img/skin-ruth.webp" alt="An older woman holds a dropper over a small bottle" loading="lazy" width="800" height="1000"><figcaption><b>Ruth K.</b> Mature skin, uses Retinal</figcaption></figure>
+      <div class="skin">
+        <figure><img src="img/skin-mai.webp" alt="A woman with her hair in a towel applies serum from a dropper near her eye" loading="lazy" width="800" height="1000"><figcaption><b>Mai T.</b>Combination skin, Azelaic 10</figcaption></figure>
+        <figure><img src="img/skin-dana.webp" alt="A woman with long braids presses cream into her cheek in a tiled bathroom" loading="lazy" width="900" height="1125"><figcaption><b>Dana W.</b>Dry skin, Barrier Cream</figcaption></figure>
+        <figure><img src="img/skin-ruth.webp" alt="An older woman holds a dropper over a small bottle" loading="lazy" width="800" height="1000"><figcaption><b>Ruth K.</b>Mature skin, Retinal</figcaption></figure>
       </div>
     </div>
-    <div class="filter" role="group" aria-label="Filter reviews by skin type">
-      <span>Skin type:</span>
+    <div class="revfilter" role="group" aria-label="Filter reviews by skin type">
+      <span>Skin type</span>
       <button class="chip" aria-pressed="true" data-s="all">All</button>
       <button class="chip" aria-pressed="false" data-s="sensitive">Sensitive</button>
       <button class="chip" aria-pressed="false" data-s="oily">Oily</button>
@@ -475,177 +371,151 @@ body.lock{overflow:hidden}
   </div>
 </section>
 
-<section class="block" id="help" aria-labelledby="helpTitle">
-  <div class="wrap help">
+<section class="help" id="help" aria-labelledby="helpTitle">
+  <div class="wrap">
     <div>
-      <h2 id="helpTitle">Shipping and returns</h2>
+      <p class="label">Help</p>
+      <h2 class="big" id="helpTitle">Shipping and returns</h2>
       <dl class="policy">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="17" cy="17.5" r="1.5"/></svg><dt>Free shipping over $40</dt><dd>Under $40 it is a flat $5. Orders leave Portland in 1 to 2 business days and arrive in 3 to 5.</dd></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/></svg><dt>60 days to return, opened or not</dt><dd>Used half and it is not for you? Email us and we refund it. You do not need to send the bottle back.</dd></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H8l-4 4V5z"/></svg><dt>A real person answers</dt><dd>hello@graylingskin.com or (503) 555-0142, weekdays 9 to 5 Pacific. Usually same day.</dd></div>
+        <div><dt>Free shipping over $40</dt><dd>Otherwise a flat $5. Orders leave Portland in 1 to 2 business days and arrive in 3 to 5.</dd></div>
+        <div><dt>60 days to return, opened or not</dt><dd>Used half and it is not for you? Email us for a refund. No need to send it back.</dd></div>
+        <div><dt>A real person answers</dt><dd>hello@graylingskin.com or (503) 555-0142, weekdays 9 to 5 Pacific.</dd></div>
       </dl>
     </div>
     <div class="faq">
-      <details open><summary>Can I use Azelaic 10 with my retinal or retinol?</summary><p>Yes. Use Azelaic 10 in the morning and the retinal at night. If your skin gets tight, drop the retinal to every other night for a week.</p></details>
-      <details><summary>How long before I see a difference?</summary><p>Redness usually settles in two to four weeks. Dark marks take longer, often eight weeks of daily use. Take a photo in the same light on day one so you can compare.</p></details>
-      <details><summary>Is it safe for sensitive skin or rosacea?</summary><p>Azelaic acid is often recommended for rosacea, and everything here is fragrance free. Patch test on your jaw for three nights first. If you are under a dermatologist's care, check with them.</p></details>
-      <details><summary>Are you cruelty free?</summary><p>Yes. We do not test on animals and we do not sell in markets that require it. Every formula is vegan except the Barrier Cream, which has beeswax.</p></details>
-      <details><summary>How does the refill plan work?</summary><p>You get 10% off and a bottle every 10 weeks. Change the timing, skip one or cancel from your account. There is no minimum.</p></details>
+      <details open><summary>Can I use Azelaic 10 with retinal or retinol?</summary><p>Yes. Azelaic 10 in the morning, retinal at night. If skin gets tight, drop the retinal to every other night for a week.</p></details>
+      <details><summary>How long before I see a difference?</summary><p>Redness often settles in two to four weeks. Dark marks take closer to eight. Take a photo in the same light on day one.</p></details>
+      <details><summary>Is it safe for sensitive skin or rosacea?</summary><p>Azelaic acid is often recommended for rosacea, and everything here is fragrance free. Patch test on your jaw for three nights first, and ask your dermatologist if you see one.</p></details>
+      <details><summary>Are you cruelty free?</summary><p>Yes, and we do not sell where animal testing is required. Every formula is vegan except the Barrier Cream, which has beeswax.</p></details>
+      <details><summary>How does the refill plan work?</summary><p>10% off and a bottle every 10 weeks. Change the timing, skip or cancel from your account. No minimum.</p></details>
     </div>
   </div>
 </section>
 </main>
 
-<footer>
+<footer class="site">
   <div class="wrap">
-    <div class="cols">
-      <div>
-        <a class="logo" href="#top">Grayling</a>
-        <p>Five skincare products, made in small batches in Portland, Oregon.</p>
-        <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks';">
-          <label class="sr" for="em">Email address</label>
-          <input id="em" type="email" placeholder="Your email" required>
-          <button type="submit">Sign up</button>
-        </form>
-      </div>
-      <div><h2>Shop</h2><ul><li><a href="#shop">Azelaic 10 Serum</a></li><li><a href="#shop">Barrier Cream</a></li><li><a href="#shop">Retinal Night Serum</a></li><li><a href="#shop">Mineral SPF 30</a></li><li><a href="#shop">Gel Cleanser</a></li></ul></div>
-      <div><h2>Help</h2><ul><li><a href="#help">Shipping and returns</a></li><li><a href="#ingredients">Ingredient lists</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
-      <div><h2>Contact</h2><ul><li><a href="mailto:hello@graylingskin.com">hello@graylingskin.com</a></li><li><a href="tel:+15035550142">(503) 555-0142</a></li><li>SE Division St, Portland, OR</li></ul></div>
+    <div>
+      <p>Grayling Skin. Five products, made in small batches on SE Division St, Portland, Oregon.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thanks';">
+        <label class="sr" for="em">Email address</label>
+        <input id="em" type="email" placeholder="Email for restocks" required>
+        <button type="submit">Sign up</button>
+      </form>
     </div>
-    <p class="legal">These statements have not been evaluated by the FDA. Products are not intended to diagnose, treat, cure or prevent any disease. Concept site by Veejay Atienza. Grayling is not a real company.</p>
+    <p><a href="mailto:hello@graylingskin.com">hello@graylingskin.com</a><br><a href="tel:+15035550142">(503) 555-0142</a></p>
+    <p class="fda">These statements have not been evaluated by the FDA. Products are not intended to diagnose, treat, cure or prevent any disease. Concept site: Grayling is not a real company.</p>
   </div>
 </footer>
 
 <div class="stickybuy" id="stickybuy" aria-hidden="true">
-  <div><b>Azelaic 10 Serum</b>$34, 30 ml</div>
+  <div><b>Azelaic 10 Serum</b>$34 &middot; 30 ml</div>
   <button class="btn" data-add="azelaic" tabindex="-1">Add to bag</button>
 </div>
 
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="bag" role="dialog" aria-modal="true" aria-labelledby="bagTitle" aria-hidden="true">
-  <header>
+  <div class="dh">
     <h2 id="bagTitle">Your bag</h2>
-    <button class="x" id="closeBag" aria-label="Close bag"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-  </header>
-  <div class="shipbar" id="shipbar"></div>
+    <button class="x" id="closeBag" aria-label="Close bag"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="shipnote" id="shipnote" aria-live="polite"></div>
   <ul class="lines" id="lines"></ul>
-  <footer>
+  <div class="df">
     <div class="tot"><span>Subtotal</span><span id="subtotal">$0</span></div>
     <p class="note">Taxes and shipping are worked out at checkout.</p>
-    <a class="btn wide" href="#" aria-disabled="true" id="checkout">Checkout</a>
-    <p class="note" style="margin:8px 0 0;text-align:center">Checkout is turned off on this concept site.</p>
-  </footer>
+    <button class="btn" id="checkout" aria-disabled="true">Checkout</button>
+    <small>Checkout is turned off on this concept site.</small>
+  </div>
 </aside>
-<div class="toast" id="toast" role="status"></div>
 
 <script>
 const P={
-  azelaic:{name:"Azelaic 10 Serum",price:34,size:"30 ml",img:"img/card-azelaic.webp",alt:"A hand holds a small amber dropper bottle against a white wall",pct:"Azelaic acid 10%",does:"For redness and dark marks left by breakouts.",c:["redness","marks","breakouts"],r:"4.7",n:"1,284"},
-  cleanser:{name:"Gel Cleanser",price:18,size:"150 ml",img:"img/card-cleanser.webp",alt:"Two white pump bottles on a white counter",pct:"pH 5.5",does:"Low-foam gel that removes sunscreen without the tight feeling.",c:["redness","breakouts","dryness"],r:"4.6",n:"512"},
-  cream:{name:"Barrier Cream",price:29,size:"50 ml",img:"img/card-cream.webp",alt:"A hand lifts the lid off a stack of white cream jars",pct:"Ceramides 3%",does:"Rich moisturizer for skin that is tight, flaky or stinging.",c:["dryness","redness","lines"],r:"4.8",n:"603"},
-  spf:{name:"Mineral SPF 30",price:32,size:"50 ml",img:"img/card-spf.webp",alt:"A pale pink tube standing on a marble counter",pct:"Zinc oxide 18%",does:"Sheer daily sunscreen. Leaves a slight tint, not a white cast.",c:["marks","lines","redness"],r:"4.4",n:"341"},
-  retinal:{name:"Retinal Night Serum",price:42,size:"30 ml",img:"img/card-retinal.webp",alt:"A dropper bottle of dark serum resting on a frosted jar",pct:"Retinal 0.05%",does:"Night serum for fine lines, uneven texture and clogged pores.",c:["lines","breakouts","marks"],r:"4.6",n:"166"},
-  set:{name:"The Full Routine",price:139,size:"All five",img:"img/card-set.webp",alt:"Dropper bottles and wooden-lidded jars on a linen table in morning light",pct:"Save $16",does:"Every bottle we make, with a card that tells you what to use morning and night.",c:["redness","marks","breakouts","dryness","lines"],r:"4.8",n:"94"}
+  azelaic:{name:"Azelaic 10 Serum",price:34,size:"30 ml",img:"img/card-azelaic.webp",alt:"A hand holds a small amber dropper bottle against a white wall",act:"Azelaic acid 10%",does:"For redness and the dark marks breakouts leave.",c:["redness","marks","breakouts"],r:"4.7",n:"1,284"},
+  cleanser:{name:"Gel Cleanser",price:18,size:"150 ml",img:"img/card-cleanser.webp",alt:"Two white pump bottles on a white counter",act:"pH 5.5",does:"Low-foam gel that removes sunscreen without the tight feeling.",c:["redness","breakouts","dryness"],r:"4.6",n:"512"},
+  cream:{name:"Barrier Cream",price:29,size:"50 ml",img:"img/card-cream.webp",alt:"A hand lifts the lid off a stack of white cream jars",act:"Ceramides 3%",does:"Rich moisturizer for skin that is tight, flaky or stinging.",c:["dryness","redness","lines"],r:"4.8",n:"603"},
+  spf:{name:"Mineral SPF 30",price:32,size:"50 ml",img:"img/card-spf.webp",alt:"A pale pink tube standing on a marble counter",act:"Zinc oxide 18%",does:"Sheer daily sunscreen. A slight tint, no white cast.",c:["marks","lines","redness"],r:"4.4",n:"341"},
+  retinal:{name:"Retinal Night Serum",price:42,size:"30 ml",img:"img/card-retinal.webp",alt:"A dropper bottle of dark serum resting on a frosted jar",act:"Retinal 0.05%",does:"For fine lines, rough texture and clogged pores.",c:["lines","breakouts","marks"],r:"4.6",n:"166"},
+  set:{name:"The full routine",price:139,size:"All five",img:"img/card-set.webp"}
 };
 const CN={redness:"Redness",marks:"Dark marks",breakouts:"Breakouts",dryness:"Dryness",lines:"Fine lines"};
 const R={
-  all:"Not sure where to start? Most people begin with <b>Azelaic 10</b> in the morning and the <b>Barrier Cream</b> at night, then add the rest.",
-  redness:"<b>For redness:</b> Gel Cleanser, then Azelaic 10 and SPF in the morning. Barrier Cream at night. Leave retinal out until things calm down.",
-  marks:"<b>For dark marks:</b> Azelaic 10 in the morning under SPF every day. Retinal at night, twice a week to start.",
+  all:"Not sure where to start? Most people begin with <b>Azelaic 10</b> in the morning and <b>Barrier Cream</b> at night.",
+  redness:"<b>For redness:</b> Gel Cleanser, then Azelaic 10 and SPF in the morning. Barrier Cream at night. Hold off on retinal until things calm down.",
+  marks:"<b>For dark marks:</b> Azelaic 10 under SPF every morning. Retinal at night, twice a week to start.",
   breakouts:"<b>For breakouts:</b> Gel Cleanser twice a day. Azelaic 10 in the morning, Retinal on alternate nights.",
-  dryness:"<b>For dryness:</b> Gel Cleanser at night only, rinse with water in the morning. Barrier Cream twice a day.",
-  lines:"<b>For fine lines:</b> Retinal at night followed by Barrier Cream. SPF every morning matters more than either."
+  dryness:"<b>For dryness:</b> Gel Cleanser at night only, water in the morning. Barrier Cream twice a day.",
+  lines:"<b>For fine lines:</b> Retinal at night, then Barrier Cream. SPF every morning matters more than either."
 };
-const star='<svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.8l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.7l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z"/></svg>';
-const half='<svg viewBox="0 0 20 20"><defs><linearGradient id="h"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="#c9cfc9"/></linearGradient></defs><path fill="url(#h)" d="M10 1.8l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.7l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z"/></svg>';
-const emptyStar='<svg viewBox="0 0 20 20" fill="#c9cfc9"><path d="M10 1.8l2.5 5.3 5.8.7-4.3 4 1.1 5.7L10 14.7l-5.1 2.8 1.1-5.7-4.3-4 5.8-.7z"/></svg>';
-function stars(n){let s='';for(let i=1;i<=5;i++)s+= n>=i?star:(n>=i-.5?half:emptyStar);return s}
-document.querySelectorAll('[data-stars]').forEach(e=>e.innerHTML=stars(4.7));
 const $=s=>document.querySelector(s);
 const money=n=>'$'+(Number.isInteger(n)?n:n.toFixed(2));
+const stars=n=>'&#9733;'.repeat(n)+'<i>'+'&#9733;'.repeat(5-n)+'</i>';
 
-/* product grid */
 const grid=$('#grid');
-grid.innerHTML=Object.entries(P).map(([k,p])=>`
-<article class="card${k==='set'?' set':''}" data-k="${k}" data-c="${p.c.join(' ')}">
-  <div class="ph"><img src="${p.img}" alt="${p.alt}" loading="lazy" width="800" height="1000"><span class="pct">${p.pct}</span></div>
-  <div class="body" style="display:flex;flex-direction:column;flex:1">
-    <h3>${p.name}</h3>
-    <p class="does">${p.does}</p>
-    ${k==='set'?`<ul class="inside" aria-label="In the set">${['cleanser','azelaic','cream','retinal','spf'].map(i=>`<li><span>${P[i].name}, ${P[i].size}</span><span>$${P[i].price}</span></li>`).join('')}<li class="sum"><span>Bought one by one</span><span>$155</span></li></ul>`:''}
-    <ul class="tags" aria-label="Helps with">${p.c.map(c=>`<li data-t="${c}">${CN[c]}</li>`).join('')}</ul>
-    <div class="row">
-      <span class="price">${money(p.price)}<small>${p.size} · ${p.r} (${p.n})</small></span>
-      <button class="add" data-add="${k}" aria-label="Add ${p.name} to bag">Add to bag</button>
-    </div>
-  </div>
-</article>`).join('');
-
+grid.innerHTML=['azelaic','cleanser','cream','spf','retinal'].map(k=>{const p=P[k];return `
+<article class="item" data-c="${p.c.join(' ')}">
+  <img src="${p.img}" alt="${p.alt}" loading="lazy" width="800" height="1000">
+  <h3>${p.name}</h3>
+  <p class="act">${p.act} &middot; &#9733; ${p.r} (${p.n})</p>
+  <p class="does">${p.does}</p>
+  <p class="for">${p.c.map(c=>`<span data-t="${c}">${CN[c]}</span>`).join(' &middot; ')}</p>
+  <div class="row"><span class="num">${money(p.price)} <small>&middot; ${p.size}</small></span><button class="add" data-add="${k}" aria-label="Add ${p.name} to bag">Add</button></div>
+</article>`}).join('');
 function pick(c){
-  document.querySelectorAll('[data-c].chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c));
+  document.querySelectorAll('.chip[data-c]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.c===c));
   $('#routine').innerHTML=R[c];
-  grid.querySelectorAll('.card').forEach(card=>{
-    const hit=c==='all'||card.dataset.c.split(' ').includes(c);
-    card.classList.toggle('dim',!hit);
-    card.querySelectorAll('.tags li').forEach(li=>li.classList.toggle('hit',li.dataset.t===c));
+  grid.querySelectorAll('.item').forEach(it=>{
+    it.classList.toggle('dim',!(c==='all'||it.dataset.c.split(' ').includes(c)));
+    it.querySelectorAll('[data-t]').forEach(s=>s.classList.toggle('hit',s.dataset.t===c));
   });
 }
 document.querySelectorAll('.chip[data-c]').forEach(b=>b.addEventListener('click',()=>pick(b.dataset.c)));
 pick('all');
 
-/* reviews */
 const REV=[
- {n:"Priya S.",s:"sensitive",age:"30s",p:"Azelaic 10 Serum",st:5,d:"Sep 2026",t:"First acid that does not burn",b:"I have mild rosacea and gave up on acids years ago. This tingled for about five days and then nothing. The flush across my cheeks is lighter by the end of the day now."},
- {n:"Marcus D.",s:"oily",age:"20s",p:"Azelaic 10 Serum",st:5,d:"Aug 2026",t:"Marks from my chin breakouts are fading",b:"Used it every morning for nine weeks. The old red-brown spots on my jaw are maybe half as dark. New breakouts heal faster too. One bottle lasted me just over two months."},
- {n:"Lauren B.",s:"dry",age:"40s",p:"Barrier Cream",st:5,d:"Oct 2026",t:"Finally stopped peeling around my nose",b:"Winter in Minneapolis wrecks my skin. Two weeks of this at night and the flaking is gone. It is thick, so I only use a pea size."},
- {n:"Tomás R.",s:"combination",age:"30s",p:"Mineral SPF 30",st:4,d:"Sep 2026",t:"No white cast on me, slightly shiny",b:"I am medium-tan and it disappears after a minute. Gets a little shiny on my forehead by 3 pm. Still the first mineral sunscreen I have finished."},
- {n:"Hannah K.",s:"sensitive",age:"20s",p:"Retinal Night Serum",st:3,d:"Jul 2026",t:"Works, but go slow like they say",b:"I used it four nights in a row in week one and my cheeks got raw. Backed off to twice a week with the Barrier Cream on top and it is fine now. Texture is smoother. Wish the bottle said this more loudly."},
- {n:"Grace O.",s:"oily",age:"30s",p:"Gel Cleanser",st:5,d:"Oct 2026",t:"Gets sunscreen off without stripping",b:"Two pumps is enough for my whole face. Does not leave the squeaky feeling my old foaming cleanser did, and my afternoon oil is less."},
- {n:"Diane F.",s:"dry",age:"50s",p:"Retinal Night Serum",st:5,d:"Jun 2026",t:"Lines by my eyes are softer",b:"Switched from a drugstore retinol. Three months in, the lines at the corners of my eyes look shallower in photos. Zero peeling since I followed it with the cream."},
- {n:"Kevin L.",s:"combination",age:"20s",p:"Azelaic 10 Serum",st:4,d:"Aug 2026",t:"Pills a bit under some moisturizers",b:"Helps my redness a lot. It balls up if I put a heavy cream on too fast, so I wait a minute between layers. Not an issue with their Barrier Cream."}
+ {n:"Priya S.",s:"sensitive",age:"30s",p:"Azelaic 10 Serum",st:5,d:"Sep 2026",t:"First acid that does not burn",b:"Mild rosacea, gave up on acids years ago. This tingled for five days, then nothing. The flush across my cheeks is lighter by evening now."},
+ {n:"Marcus D.",s:"oily",age:"20s",p:"Azelaic 10 Serum",st:5,d:"Aug 2026",t:"Chin marks are fading",b:"Nine weeks of mornings. The old red-brown spots on my jaw are about half as dark, and new breakouts heal faster. One bottle lasted just over two months."},
+ {n:"Lauren B.",s:"dry",age:"40s",p:"Barrier Cream",st:5,d:"Oct 2026",t:"No more peeling around my nose",b:"Minneapolis winters wreck my skin. Two weeks of this at night and the flaking is gone. It is thick, so a pea size is enough."},
+ {n:"Tomás R.",s:"combination",age:"30s",p:"Mineral SPF 30",st:4,d:"Sep 2026",t:"No white cast, a little shiny",b:"I am medium-tan and it disappears in a minute. My forehead gets shiny by 3 pm. Still the first mineral sunscreen I have finished."},
+ {n:"Hannah K.",s:"sensitive",age:"20s",p:"Retinal Night Serum",st:3,d:"Jul 2026",t:"Works, but go slow like they say",b:"Four nights in a row in week one and my cheeks got raw. Twice a week under the Barrier Cream is fine. Smoother texture. The bottle should say this louder."}
 ];
-const tick='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>';
 $('#revs').innerHTML=REV.map(r=>`
 <article class="rev" data-s="${r.s}">
-  <div class="meta"><b>${r.n}</b><span class="stars" role="img" aria-label="${r.st} out of 5 stars">${stars(r.st)}</span><span class="verified">${tick}Verified buyer</span><span>${r.d}</span></div>
+  <div class="who"><b>${r.n}</b><span class="stars" role="img" aria-label="${r.st} out of 5 stars">${stars(r.st)}</span><span>${r.s[0].toUpperCase()+r.s.slice(1)} skin, ${r.age}</span><span>${r.p}</span><span>${r.d}</span></div>
   <h3>${r.t}</h3>
   <p>${r.b}</p>
-  <div class="about"><span>${r.p}</span><span>${r.s[0].toUpperCase()+r.s.slice(1)} skin</span><span>Age ${r.age}</span></div>
 </article>`).join('');
 document.querySelectorAll('.chip[data-s]').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.chip[data-s]').forEach(x=>x.setAttribute('aria-pressed',x===b));
   document.querySelectorAll('.rev').forEach(r=>r.hidden=!(b.dataset.s==='all'||r.dataset.s===b.dataset.s));
 }));
 
-/* cart */
+/* bag */
 let cart={};
-try{cart=JSON.parse(localStorage.getItem('grayling-bag')||'{}')||{}}catch(e){cart={}}
-const save=()=>{try{localStorage.setItem('grayling-bag',JSON.stringify(cart))}catch(e){}};
-const unit=k=>k==='azelaic'&&cart[k]&&cart[k].sub?30.6:P[k].price;
+try{cart=JSON.parse(localStorage.getItem('grayling-bag-v3')||'{}')||{}}catch(e){cart={}}
+const save=()=>{try{localStorage.setItem('grayling-bag-v3',JSON.stringify(cart))}catch(e){}};
+const unit=k=>k==='azelaic'&&cart[k].sub?30.6:P[k].price;
 function render(){
   const keys=Object.keys(cart).filter(k=>P[k]&&cart[k].q>0);
   const count=keys.reduce((a,k)=>a+cart[k].q,0);
-  const sub=keys.reduce((a,k)=>a+unit(k)*cart[k].q,0);
+  const sub=Math.round(keys.reduce((a,k)=>a+unit(k)*cart[k].q,0)*100)/100;
   $('#bagCount').textContent=count;
-  $('#subtotal').textContent=money(Math.round(sub*100)/100);
-  const left=40-sub;
-  $('#shipbar').innerHTML=(left>0?`You are <b>${money(Math.round(left*100)/100)}</b> away from free shipping.`:`<b>Free shipping</b> is on this order.`)+`<div class="track"><i style="width:${Math.min(100,sub/40*100)}%"></i></div>`;
+  $('#subtotal').textContent=money(sub);
+  $('#shipnote').innerHTML=(sub>=40?'Your order ships free.':`Add ${money(Math.round((40-sub)*100)/100)} more for free shipping.`)+`<i><span style="width:${Math.min(100,sub/40*100)}%"></span></i>`;
   $('#lines').innerHTML=keys.length?keys.map(k=>{const p=P[k];return `
-  <li class="line">
+  <li class="ln">
     <img src="${p.img}" alt="">
-    <div><h3>${p.name}</h3><p class="sub">${p.size}${k==='azelaic'&&cart[k].sub?' · refill every 10 weeks':''}</p>
-      <div class="qty"><button data-q="-1" data-k="${k}" aria-label="One less ${p.name}">&minus;</button><output aria-live="polite">${cart[k].q}</output><button data-q="1" data-k="${k}" aria-label="One more ${p.name}">+</button></div>
+    <div><h3>${p.name}</h3><p class="sub">${p.size}${k==='azelaic'&&cart[k].sub?', refill every 10 weeks':''}</p>
+      <div class="qty"><button data-q="-1" data-k="${k}" aria-label="One less ${p.name}">&minus;</button><output>${cart[k].q}</output><button data-q="1" data-k="${k}" aria-label="One more ${p.name}">+</button></div>
     </div>
     <div class="lp">${money(Math.round(unit(k)*cart[k].q*100)/100)}<button class="rm" data-rm="${k}">Remove</button></div>
-  </li>`}).join(''):`<li class="empty">Your bag is empty.<br><a class="btn ghost" href="#shop" data-close>Shop by concern</a></li>`;
+  </li>`}).join(''):'<li class="empty">Your bag is empty.</li>';
   save();
 }
 function add(k){
   if(!cart[k])cart[k]={q:0};
-  if(k==='azelaic'){const sub=document.querySelector('input[name=plan]:checked').value==='sub';cart[k].sub=sub}
-  cart[k].q++;render();
-  document.querySelectorAll(`[data-add="${k}"]`).forEach(b=>{const t=b.textContent;if(b.classList.contains('add')){b.classList.add('done');b.textContent='Added';setTimeout(()=>{b.classList.remove('done');b.textContent=t},1400)}});
-  openBag();
+  if(k==='azelaic')cart[k].sub=document.querySelector('input[name=plan]:checked').value==='sub';
+  cart[k].q++;render();openBag();
 }
 let lastFocus=null;
 function openBag(){lastFocus=document.activeElement;$('#bag').classList.add('open');$('#scrim').classList.add('open');$('#bag').setAttribute('aria-hidden','false');document.body.classList.add('lock');setTimeout(()=>$('#closeBag').focus(),50)}
@@ -653,26 +523,20 @@ function closeBag(){$('#bag').classList.remove('open');$('#scrim').classList.rem
 document.addEventListener('click',e=>{
   const a=e.target.closest('[data-add]');if(a){add(a.dataset.add);return}
   const q=e.target.closest('[data-q]');if(q){const k=q.dataset.k;cart[k].q+=+q.dataset.q;if(cart[k].q<=0)delete cart[k];render();return}
-  const r=e.target.closest('[data-rm]');if(r){delete cart[r.dataset.rm];render();return}
-  if(e.target.closest('[data-close]')){closeBag()}
+  const r=e.target.closest('[data-rm]');if(r){delete cart[r.dataset.rm];render()}
 });
 $('#openBag').addEventListener('click',openBag);
 $('#closeBag').addEventListener('click',closeBag);
 $('#scrim').addEventListener('click',closeBag);
-$('#checkout').addEventListener('click',e=>{e.preventDefault();const t=$('#toast');t.textContent='Checkout is off on this concept site';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)});
 document.addEventListener('keydown',e=>{
   if(!$('#bag').classList.contains('open'))return;
   if(e.key==='Escape')closeBag();
-  if(e.key==='Tab'){const f=[...$('#bag').querySelectorAll('button,a[href]')];const first=f[0],last=f[f.length-1];
+  if(e.key==='Tab'){const f=[...$('#bag').querySelectorAll('button:not([aria-disabled])')];const first=f[0],last=f[f.length-1];
     if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}
 });
 render();
 
-/* menu */
-$('#menuBtn').addEventListener('click',()=>{const o=$('#mobnav').classList.toggle('open');$('#menuBtn').setAttribute('aria-expanded',o)});
-document.querySelectorAll('#mobnav a').forEach(a=>a.addEventListener('click',()=>{$('#mobnav').classList.remove('open');$('#menuBtn').setAttribute('aria-expanded','false')}));
-
-/* sticky buy on phones once the hero button scrolls away */
+/* sticky buy on phones once the hero button has scrolled away */
 const sb=$('#stickybuy'),ha=$('#heroAdd');
 function sticky(){const show=ha.getBoundingClientRect().bottom<0&&$('#help').getBoundingClientRect().top>innerHeight*.5;sb.classList.toggle('show',show);sb.setAttribute('aria-hidden',!show);sb.querySelector('button').tabIndex=show?0:-1}
 addEventListener('scroll',sticky,{passive:true});addEventListener('resize',sticky);sticky();

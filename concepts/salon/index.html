@@ -167,106 +167,44 @@ section.block{padding:72px 0;border-top:1px solid var(--line)}
 }
 
 /* prices */
-.price-grid{display:grid;gap:28px}
-@media (min-width:1000px){.price-grid{grid-template-columns:340px 1fr;gap:44px;align-items:start}.est{position:sticky;top:84px}}
-.est{background:var(--ink);color:#fff;border-radius:var(--radius);padding:22px}
-.est h3{font-size:24px}
-.est p.sub{color:#B9C2BD;font-size:14px;margin-top:6px}
-.field{margin-top:16px}
-.field label,.field legend{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:6px;color:#DDE3DF}
-.est select{width:100%;min-height:46px;border-radius:8px;border:1px solid #4A5650;background:#222C27;color:#fff;font:500 15px var(--body);padding:0 12px}
-.est fieldset{min-width:0;border:0;margin:16px 0 0;padding:0}
-.est .lg{font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:6px;color:#DDE3DF;padding:0}
-.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.seg label{margin:0}
-.seg input{position:absolute;opacity:0}
-.seg span{display:flex;align-items:center;justify-content:center;text-align:center;min-height:44px;padding:4px 6px;border:1px solid #4A5650;border-radius:8px;font-size:13.5px;font-weight:500;color:#fff;cursor:pointer;line-height:1.2}
-.seg input:checked+span{background:#fff;color:var(--ink);border-color:#fff}
-.seg input:focus-visible+span{outline:3px solid var(--violet-on-dark);outline-offset:2px}
-.check{display:flex;gap:10px;align-items:center;margin-top:14px;font-size:14px;color:#DDE3DF}
-.check input{width:18px;height:18px;accent-color:var(--violet-on-dark)}
-.result{margin-top:20px;padding-top:18px;border-top:1px solid #3A4540}
-.result .num{font-family:var(--display);font-size:52px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
-.result .dur{margin-top:6px;color:#DDE3DF}
-.result .note{margin-top:10px;font-size:13.5px;color:#B9C2BD}
-.result .btn{margin-top:16px;width:100%}
-.result .btn-primary{background:var(--violet-on-dark);color:var(--ink)}
-.result .btn-primary:hover{background:#fff}
-
-.level-switch{display:flex;gap:6px;margin-bottom:12px}
-.level-switch button{flex:1;min-height:44px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font:500 14px var(--body);color:var(--ink);cursor:pointer;line-height:1.15}
-.level-switch button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
-@media (min-width:760px){.level-switch{display:none}}
-
 .table-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 table.prices{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.prices caption{text-align:left;padding:16px 16px 0;font-size:14px;color:var(--muted)}
-.prices th,.prices td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
-.prices thead th{font-size:13px;font-weight:600;color:var(--muted);vertical-align:bottom}
+.prices th,.prices td{padding:14px 16px;text-align:right;border-bottom:1px solid var(--line)}
+.prices thead th{font-size:13px;font-weight:600;color:var(--muted);vertical-align:bottom;background:var(--paper)}
 .prices thead th .n{display:block;color:var(--ink);font-size:15px;margin-top:3px}
-.prices td{text-align:right;font-weight:600;white-space:nowrap}
-.prices th[scope=row]{font-weight:500}
-.prices th[scope=row] small{display:block;color:var(--muted);font-size:13px;font-weight:400}
-.prices .grp th{background:var(--paper);font-family:var(--display);font-size:18px;font-weight:700;padding-top:14px;letter-spacing:-.01em}
-.prices .na{font-weight:400;color:var(--muted);font-size:14px}
+.prices th:first-child{text-align:left}
+.prices tbody th{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.01em}
+.prices td{font-weight:600;font-size:17px;white-space:nowrap}
 .prices tr:last-child th,.prices tr:last-child td{border-bottom:0}
-.prices .col-time{color:var(--muted);font-weight:500}
-@media (max-width:759px){
-  .prices[data-show="1"] .l2,.prices[data-show="1"] .l3,.prices[data-show="1"] .l4,
-  .prices[data-show="2"] .l1,.prices[data-show="2"] .l3,.prices[data-show="2"] .l4,
-  .prices[data-show="3"] .l1,.prices[data-show="3"] .l2,.prices[data-show="3"] .l4,
-  .prices[data-show="4"] .l1,.prices[data-show="4"] .l2,.prices[data-show="4"] .l3{display:none}
-  .prices th[scope=row]{width:68%}
-  .prices thead th:first-child{width:68%}
+@media (max-width:600px){
+  .prices th,.prices td{padding:12px 6px}
+  .prices th:first-child{padding-left:12px}.prices th:last-child,.prices td:last-child{padding-right:12px}
+  .prices tbody th{font-size:16px}.prices td{font-size:15px}
+  .prices thead th{font-size:11.5px}.prices thead th .n{font-size:13px}
 }
-.addons{display:grid;gap:12px;margin-top:18px}
-.addons div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
-.addons b{display:block;margin-bottom:4px}
-.addons p{font-size:14.5px;color:var(--muted)}
-@media (min-width:760px){.addons{grid-template-columns:repeat(3,1fr)}}
 
 /* booking */
 .dark{background:var(--ink);color:#fff;border-top:0!important}
 .dark .sec-head p{color:#B9C2BD}
-.book-grid{display:grid;gap:30px}
-.book-grid>*,.price-grid>*,.hero-grid>*,.visit>*{min-width:0}
-@media (min-width:1000px){.book-grid{grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}}
-.booker{background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:22px}
-.step{min-width:0;border:0;margin:0;padding:0 0 20px;border-bottom:1px solid var(--line)}
-.step+.step{padding-top:20px}
-.step:last-of-type{border-bottom:0}
-.step legend{font-family:var(--display);font-weight:700;font-size:19px;padding:0;margin-bottom:12px;display:flex;gap:10px;align-items:center}
-.step legend .n{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font:600 13px var(--body);align-items:center;justify-content:center}
-.two{display:grid;gap:12px}
-@media (min-width:640px){.two{grid-template-columns:1fr 1fr}}
-.booker label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
-.booker select,.booker input[type=text],.booker input[type=tel],.booker input[type=email]{width:100%;min-height:48px;border:1px solid #B9BFBB;border-radius:8px;background:#fff;font:16px var(--body);color:var(--ink);padding:0 12px}
-.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
-.day,.time{flex:none;border:1px solid #B9BFBB;background:#fff;border-radius:8px;cursor:pointer;font:inherit;color:var(--ink)}
+.hero-grid>*,.visit>*{min-width:0}
+.booker{max-width:880px;background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:24px;display:grid;gap:24px}
+.two{display:grid;gap:16px}
+@media (min-width:640px){.two{grid-template-columns:1fr 1fr}.booker{padding:32px}}
+.booker label,.booker .legend{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+.booker select,.booker input{width:100%;min-height:48px;border:1px solid #B9BFBB;border-radius:8px;background:#fff;font:16px var(--body);color:var(--ink);padding:0 12px}
+.days{display:flex;flex-wrap:wrap;gap:8px}
+.day,.time{border:1px solid #B9BFBB;background:#fff;border-radius:8px;cursor:pointer;font:inherit;color:var(--ink)}
 .day{width:64px;padding:8px 0;text-align:center;line-height:1.2}
 .day b{display:block;font-size:20px;font-family:var(--display)}
 .day small{font-size:12px;color:var(--muted)}
 .day[aria-pressed="true"],.time[aria-pressed="true"]{background:var(--violet);border-color:var(--violet);color:#fff}
 .day[aria-pressed="true"] small{color:#E6E0FF}
-.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
-@media (min-width:640px){.times{grid-template-columns:repeat(5,1fr)}}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media (min-width:640px){.times{grid-template-columns:repeat(6,1fr)}}
 .time{min-height:44px;font-weight:600;font-variant-numeric:tabular-nums}
-.time:disabled{color:#8B928E;background:var(--paper);text-decoration:line-through;cursor:not-allowed;border-color:var(--line)}
-.summary{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;margin-top:20px;padding:16px;background:var(--violet-tint);border-radius:8px}
+.time:disabled{color:#767C78;background:var(--paper);text-decoration:line-through;cursor:not-allowed;border-color:var(--line)}
+.summary{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center;padding:16px;background:var(--violet-tint);border-radius:8px}
 .summary p{font-size:15px}
-.summary strong{font-variant-numeric:tabular-nums}
-.done{display:none;margin-top:16px;padding:14px 16px;border-radius:8px;background:#E3F1E8;color:#14452B;font-size:15px}
-.done.show{display:block}
-.policy h3{font-size:22px;margin-bottom:6px}
-.policy dl{margin:0}
-.policy dt{font-weight:700;margin-top:18px}
-.policy dd{margin:4px 0 0;color:#C9D0CC;font-size:15.5px}
-.consult{margin-top:28px;border-radius:var(--radius);overflow:hidden;display:grid;grid-template-columns:110px 1fr;background:#222C27}
-.consult img{width:100%;height:100%;object-fit:cover}
-.consult div{padding:16px}
-.consult b{display:block;margin-bottom:4px}
-.consult p{font-size:14.5px;color:#C9D0CC}
-.consult a{color:var(--violet-on-dark);font-weight:600}
 
 /* reviews */
 .reviews{display:grid;gap:18px}
@@ -482,70 +420,21 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;str
   <div class="wrap">
     <div class="sec-head">
       <h2 id="pr-h">Prices</h2>
-      <p>One fixed price per service and level. Hair past your chin uses more color, so color services add a flat length fee. No "starting at", and nothing gets added at the front desk that you weren't told about in the chair.</p>
+      <p>Color on hair past the chin adds $20, past the shoulders $40. Your stylist confirms the total before mixing. Going more than two shades lighter, or fixing color from another salon? Start with a free 15-minute consult.</p>
     </div>
-    <div class="price-grid">
-      <form class="est" id="est" aria-labelledby="est-h" onsubmit="return false">
-        <h3 id="est-h">Price your visit</h3>
-        <p class="sub">Pick a service, a stylist and your length.</p>
-        <div class="field">
-          <label for="e-svc">Service</label>
-          <select id="e-svc"></select>
-        </div>
-        <div class="field">
-          <label for="e-sty">Stylist</label>
-          <select id="e-sty">
-            <option value="1">Jo, Level 1</option>
-            <option value="2">Marisol, Level 2</option>
-            <option value="3" selected>Rue, Level 3</option>
-            <option value="4">Dana, Level 4</option>
-          </select>
-        </div>
-        <fieldset>
-          <legend class="lg">Hair length now</legend>
-          <div class="seg">
-            <label><input type="radio" name="len" value="0" checked><span>Chin or shorter</span></label>
-            <label><input type="radio" name="len" value="20"><span>To shoulders</span></label>
-            <label><input type="radio" name="len" value="40"><span>Past shoulders</span></label>
-          </div>
-        </fieldset>
-        <label class="check"><input type="checkbox" id="e-bond"> Add bond treatment (+$30)</label>
-        <div class="result" aria-live="polite">
-          <div class="num" id="e-num">$290</div>
-          <p class="dur" id="e-time">About 3.5 hours with Rue</p>
-          <p class="note" id="e-note">Includes gloss and blow-dry. Your stylist confirms the price before mixing color.</p>
-          <a class="btn btn-primary" href="#book" id="e-book">Book this</a>
-        </div>
-      </form>
-
-      <div>
-        <div class="level-switch" role="group" aria-label="Show prices for level">
-          <button data-l="1" aria-pressed="false">Jo<br>Level 1</button>
-          <button data-l="2" aria-pressed="false">Marisol<br>Level 2</button>
-          <button data-l="3" aria-pressed="true">Rue<br>Level 3</button>
-          <button data-l="4" aria-pressed="false">Dana<br>Level 4</button>
-        </div>
-        <div class="table-card">
-          <table class="prices" id="ptable" data-show="3">
-            <caption>Prices in US dollars. Haircuts include a wash and blow-dry.</caption>
-            <thead>
-              <tr>
-                <th scope="col">Service</th>
-                <th scope="col" class="l1" style="text-align:right">Level 1<span class="n">Jo</span></th>
-                <th scope="col" class="l2" style="text-align:right">Level 2<span class="n">Marisol</span></th>
-                <th scope="col" class="l3" style="text-align:right">Level 3<span class="n">Rue</span></th>
-                <th scope="col" class="l4" style="text-align:right">Level 4<span class="n">Dana</span></th>
-              </tr>
-            </thead>
-            <tbody id="pbody"></tbody>
-          </table>
-        </div>
-        <div class="addons">
-          <div><b>Length fee on color</b><p>Chin or shorter, no fee. To shoulders, $20. Past shoulders, $40.</p></div>
-          <div><b>Bond treatment</b><p>$30 with any color. We suggest it when lightening more than three shades.</p></div>
-          <div><b>Bang trims</b><p>Free between cuts with the stylist who cut them. Book 15 minutes.</p></div>
-        </div>
-      </div>
+    <div class="table-card">
+      <table class="prices">
+        <caption class="sr">Prices in US dollars by stylist and level</caption>
+        <thead><tr><th scope="col">Service</th><th scope="col">Level 1<span class="n">Jo</span></th><th scope="col">Level 2<span class="n">Marisol</span></th><th scope="col">Level 3<span class="n">Rue</span></th><th scope="col">Level 4<span class="n">Dana</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Haircut</th><td>$55</td><td>$72</td><td>$88</td><td>$110</td></tr>
+          <tr><th scope="row">Root touch-up</th><td>$85</td><td>$98</td><td>$112</td><td>$130</td></tr>
+          <tr><th scope="row">All-over color</th><td>$110</td><td>$128</td><td>$148</td><td>$170</td></tr>
+          <tr><th scope="row">Partial highlight</th><td>$135</td><td>$160</td><td>$185</td><td>$215</td></tr>
+          <tr><th scope="row">Balayage</th><td>$210</td><td>$250</td><td>$290</td><td>$340</td></tr>
+          <tr><th scope="row">Gray blending</th><td>$120</td><td>$140</td><td>$165</td><td>$190</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
@@ -553,67 +442,27 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;str
 <section class="block dark" id="book" aria-labelledby="bk-h">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="bk-h">Book an appointment</h2>
-      <p>Pick a service and a stylist and you'll see their real openings. We text a reminder two days before.</p>
+      <h2 id="bk-h">Book a time</h2>
+      <p>We hold a card and charge it after your visit. Cancel free up to 48 hours before.</p>
     </div>
-    <div class="book-grid">
-      <form class="booker" id="booker" onsubmit="return false" novalidate>
-        <fieldset class="step">
-          <legend><span class="n">1</span>Service and stylist</legend>
-          <div class="two">
-            <div><label for="b-svc">Service</label><select id="b-svc"></select></div>
-            <div><label for="b-sty">Stylist</label>
-              <select id="b-sty">
-                <option value="any">First available</option>
-                <option value="jo">Jo, Level 1</option>
-                <option value="marisol">Marisol, Level 2</option>
-                <option value="rue">Rue, Level 3</option>
-                <option value="dana">Dana, Level 4</option>
-              </select></div>
-          </div>
-        </fieldset>
-        <fieldset class="step">
-          <legend><span class="n">2</span>Day and time</legend>
-          <div class="days" id="days" role="group" aria-label="Day"></div>
-          <div class="times" id="times" role="group" aria-label="Start time"></div>
-        </fieldset>
-        <fieldset class="step">
-          <legend><span class="n">3</span>Your details</legend>
-          <div class="two">
-            <div><label for="b-name">Name</label><input id="b-name" type="text" autocomplete="name"></div>
-            <div><label for="b-tel">Mobile number</label><input id="b-tel" type="tel" autocomplete="tel" inputmode="tel"></div>
-          </div>
-          <div style="margin-top:12px"><label for="b-mail">Email</label><input id="b-mail" type="email" autocomplete="email"></div>
-        </fieldset>
-        <div class="summary">
-          <p id="b-sum">Pick a day and time.</p>
-          <button class="btn btn-primary" id="b-go" type="submit">Request this time</button>
-        </div>
-        <p class="done" id="b-done" role="status"></p>
-      </form>
-
-      <aside class="policy" aria-labelledby="pol-h">
-        <h3 id="pol-h">Before you book</h3>
-        <dl>
-          <dt>Card on file, no charge</dt>
-          <dd>We hold a card and charge it after your visit. Appointments over three hours take a $50 deposit, which comes off your total.</dd>
-          <dt>Cancelling</dt>
-          <dd>Free up to 48 hours before. Inside 48 hours we charge half the service price. Text us at (503) 555-0142 to move a time.</dd>
-          <dt>Running late</dt>
-          <dd>We can usually work with 15 minutes. Past that we may need to shorten the service or rebook.</dd>
-          <dt>First color with us</dt>
-          <dd>If you have allergies or reacted to dye before, come in 48 hours early for a free patch test.</dd>
-        </dl>
-        <div class="consult">
-          <img src="img/consult.webp" width="900" height="1350" loading="lazy" alt="Close-up of a brush painting color onto hair laid on foil">
-          <div>
-            <b>Big change? Start with a consult</b>
-            <p>Going more than two shades lighter, or fixing color from somewhere else: book a free 15-minute consult first. In the studio or on video.</p>
-            <p style="margin-top:8px"><a href="#book" data-consult>Book a free consult</a></p>
-          </div>
-        </div>
-      </aside>
-    </div>
+    <form class="booker" id="booker" onsubmit="return false" novalidate>
+      <div class="two">
+        <div><label for="b-sty">Stylist</label>
+          <select id="b-sty"><option value="any">First available</option><option value="jo">Jo, Level 1</option><option value="marisol">Marisol, Level 2</option><option value="rue">Rue, Level 3</option><option value="dana">Dana, Level 4</option></select></div>
+        <div><label for="b-svc">Service</label>
+          <select id="b-svc"><option>Haircut</option><option>Root touch-up</option><option>All-over color</option><option>Partial highlight</option><option selected>Balayage</option><option>Gray blending</option><option>Free color consult</option></select></div>
+      </div>
+      <div><span class="legend" id="d-l">Day</span><div class="days" id="days" role="group" aria-labelledby="d-l"></div></div>
+      <div><span class="legend" id="t-l">Time</span><div class="times" id="times" role="group" aria-labelledby="t-l"></div></div>
+      <div class="two">
+        <div><label for="b-name">Name</label><input id="b-name" type="text" autocomplete="name"></div>
+        <div><label for="b-tel">Mobile</label><input id="b-tel" type="tel" autocomplete="tel" inputmode="tel"></div>
+      </div>
+      <div class="summary">
+        <p id="b-status" role="status">We text to confirm.</p>
+        <button class="btn btn-primary" type="submit" id="b-go">Request this time</button>
+      </div>
+    </form>
   </div>
 </section>
 
@@ -740,102 +589,31 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;str
   mb.addEventListener('click',function(){var o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu');});
   mn.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mn.classList.remove('open');mb.setAttribute('aria-expanded',false);});});
 
-  // services: [id, name, note, group, prices L1-4, hours, isColor]
-  var S=[
-    ['cut','Haircut and blow-dry','','Cuts',[55,72,88,110],1,0],
-    ['short','Short cut','Pixie or clipper work','Cuts',[45,58,70,88],.75,0],
-    ['curly','Curly cut','Cut dry, curl by curl','Cuts',[65,80,98,120],1.25,0],
-    ['root','Root touch-up','Up to 1.5 inches of regrowth','Color',[85,98,112,130],1.5,1],
-    ['allover','All-over color','One shade, roots to ends','Color',[110,128,148,170],2,1],
-    ['gloss','Gloss or toner','Shine and tone refresh','Color',[50,60,70,80],.75,1],
-    ['partial','Partial highlight','Top and sides','Color',[135,160,185,215],2.5,1],
-    ['full','Full highlight','Whole head','Color',[175,205,240,280],3,1],
-    ['balayage','Balayage or lived-in blonde','Hand-painted, gloss included','Color',[210,250,290,340],3.5,1],
-    ['gray','Gray blending','Softens gray without full coverage','Color',[120,140,165,190],2,1]
-  ];
-  var names={1:'Jo',2:'Marisol',3:'Rue',4:'Dana'}, lvlOf={jo:1,marisol:2,rue:3,dana:4};
-  function hrs(h){return h<1?Math.round(h*60)+' minutes':(h===1?'1 hour':h+' hours');}
-  function hshort(h){return h<1?Math.round(h*60)+' min':h+' hr';}
-
-  // price table
-  var tb=document.getElementById('pbody'),html='',g='';
-  S.forEach(function(s){
-    if(s[3]!==g){g=s[3];html+='<tr class="grp"><th colspan="5" scope="colgroup">'+g+'</th></tr>';}
-    html+='<tr><th scope="row">'+s[1]+'<small>'+(s[2]?s[2]+' · ':'')+hshort(s[5])+'</small></th>'+s[4].map(function(p,i){return '<td class="l'+(i+1)+'">$'+p+'</td>';}).join('')+'</tr>';
-  });
-  html+='<tr><th scope="row">Color correction<small>Consult first · priced by the hour</small></th><td class="l1 na">Not offered</td><td class="l2 na">Not offered</td><td class="l3">$95/hr</td><td class="l4">$110/hr</td></tr>';
-  tb.innerHTML=html;
-  var pt=document.getElementById('ptable');
-  document.querySelectorAll('.level-switch button').forEach(function(b){b.addEventListener('click',function(){
-    document.querySelectorAll('.level-switch button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});
-    pt.setAttribute('data-show',b.dataset.l);
-  });});
-
-  // estimator
-  var es=document.getElementById('e-svc'),ey=document.getElementById('e-sty'),eb=document.getElementById('e-bond');
-  var bs=document.getElementById('b-svc'),by=document.getElementById('b-sty');
-  var opts='';g='';
-  S.forEach(function(s){if(s[3]!==g){if(g)opts+='</optgroup>';g=s[3];opts+='<optgroup label="'+g+'">';}opts+='<option value="'+s[0]+'">'+s[1]+'</option>';});
-  opts+='</optgroup>';
-  es.innerHTML=opts;es.value='balayage';
-  bs.innerHTML=opts+'<optgroup label="Other"><option value="consult">Free color consult (15 min)</option></optgroup>';bs.value='balayage';
-  function find(id){return S.filter(function(s){return s[0]===id;})[0];}
-  function est(){
-    var s=find(es.value),l=+ey.value,len=+document.querySelector('input[name=len]:checked').value;
-    var p=s[4][l-1]+(s[6]?len:0)+(eb.checked?30:0);
-    document.getElementById('e-num').textContent='$'+p;
-    document.getElementById('e-time').textContent='About '+hrs(s[5])+' with '+names[l];
-    document.getElementById('e-note').textContent=(s[6]?(len?'Includes the $'+len+' length fee. ':'')+'Your stylist confirms the price before mixing color.':'Includes a wash and blow-dry.');
-    eb.disabled=!s[6];if(!s[6])eb.checked=false;
-  }
-  [es,ey,eb].forEach(function(el){el.addEventListener('change',est);});
-  document.querySelectorAll('input[name=len]').forEach(function(r){r.addEventListener('change',est);});
-  est();
-  document.getElementById('e-book').addEventListener('click',function(){
-    bs.value=es.value;by.value=Object.keys(lvlOf).filter(function(k){return lvlOf[k]===+ey.value;})[0];render();
-  });
-
-  // booking mock
-  var daysEl=document.getElementById('days'),timesEl=document.getElementById('times');
-  var dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],mn2=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  // booking
+  var daysEl=document.getElementById('days'),timesEl=document.getElementById('times'),by=document.getElementById('b-sty'),bs=document.getElementById('b-svc'),st=document.getElementById('b-status');
+  var dn=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var days=[],d=new Date();d.setHours(12,0,0,0);
-  while(days.length<10){d.setDate(d.getDate()+1);if(d.getDay()>1)days.push(new Date(d));}
-  var selDay=0,selTime=null;
-  var slots=['9:00','10:00','11:30','1:00','2:30','4:15','5:30','7:00'];
+  while(days.length<6){d.setDate(d.getDate()+1);if(d.getDay()>1)days.push(new Date(d));}
+  var slots=['10:00 am','11:30 am','1:00 pm','2:30 pm','4:15 pm','5:30 pm'],selDay=0,selTime=null;
   function seed(a){var x=Math.sin(a*9301+49297)*233280;return x-Math.floor(x);}
   function render(){
-    daysEl.innerHTML=days.map(function(x,i){return '<button type="button" class="day" aria-pressed="'+(i===selDay)+'"><small>'+dn[x.getDay()]+'</small><b>'+x.getDate()+'</b><small>'+mn2[x.getMonth()]+'</small></button>';}).join('');
-    daysEl.querySelectorAll('.day').forEach(function(b,i){b.addEventListener('click',function(){selDay=i;selTime=null;render();});});
-    var sty=by.value,k=(sty.length*7)+selDay*3+bs.selectedIndex;
-    var day=days[selDay].getDay();
-    timesEl.innerHTML=slots.map(function(t,i){
-      var late=(day===5&&i>5)||(day===6&&i>5)||(day!==6&&i===0);
-      var off=late||seed(k+i)<.42;
-      return '<button type="button" class="time" '+(off?'disabled aria-label="'+t+' taken"':'')+' aria-pressed="'+(selTime===t)+'">'+t+(i<3?' am':' pm')+'</button>';
-    }).join('');
-    timesEl.querySelectorAll('.time:not(:disabled)').forEach(function(b){b.addEventListener('click',function(){selTime=b.textContent;render();});});
-    sum();
+    daysEl.innerHTML=days.map(function(x,i){return '<button type="button" class="day" aria-pressed="'+(i===selDay)+'"><small>'+dn[x.getDay()]+'</small><b>'+x.getDate()+'</b><small>'+mo[x.getMonth()]+'</small></button>';}).join('');
+    daysEl.querySelectorAll('.day').forEach(function(b,i){b.onclick=function(){selDay=i;selTime=null;render();};});
+    var k=by.selectedIndex*7+selDay*3+bs.selectedIndex;
+    timesEl.innerHTML=slots.map(function(t,i){var off=seed(k+i)<.4;return '<button type="button" class="time" '+(off?'disabled aria-label="'+t+' taken"':'')+' aria-pressed="'+(selTime===t)+'">'+t+'</button>';}).join('');
+    timesEl.querySelectorAll('.time:not(:disabled)').forEach(function(b){b.onclick=function(){selTime=b.textContent;render();};});
+    var x=days[selDay];
+    st.textContent=selTime?dn[x.getDay()]+' '+mo[x.getMonth()]+' '+x.getDate()+', '+selTime+' with '+(by.value==='any'?'the first available stylist':by.options[by.selectedIndex].text.split(',')[0])+'.':'We text to confirm.';
   }
-  function sum(){
-    var el=document.getElementById('b-sum');
-    if(!selTime){el.textContent='Pick a day and time.';return;}
-    var x=days[selDay],sty=by.value,svc=bs.value;
-    var who=sty==='any'?'first available stylist':by.options[by.selectedIndex].text.split(',')[0];
-    var price='';
-    if(svc!=='consult'&&sty!=='any'){var s=find(svc);price=' · <strong>$'+s[4][lvlOf[sty]-1]+'</strong> before length fee';}
-    el.innerHTML=dn[x.getDay()]+' '+mn2[x.getMonth()]+' '+x.getDate()+', '+selTime+' with '+who+price;
-  }
-  [bs,by].forEach(function(el){el.addEventListener('change',function(){selTime=null;render();});});
-  document.getElementById('b-go').addEventListener('click',function(){
-    var done=document.getElementById('b-done');
-    if(!selTime){done.textContent='Choose a day and a start time first.';done.classList.add('show');return;}
-    if(!document.getElementById('b-name').value.trim()||!document.getElementById('b-tel').value.trim()){done.textContent='Add your name and mobile number and we will text you a confirmation.';done.classList.add('show');return;}
-    done.textContent='Requested. This is a concept site, so nothing was sent. A real booking would text you within a few minutes.';done.classList.add('show');
-  });
-  function pick(sty){by.value=sty;selTime=null;render();}
+  by.onchange=bs.onchange=function(){selTime=null;render();};
+  document.getElementById('b-go').onclick=function(){
+    if(!selTime){st.textContent='Pick a day and a time first.';return;}
+    if(!document.getElementById('b-name').value.trim()||!document.getElementById('b-tel').value.trim()){st.textContent='Add your name and mobile.';return;}
+    st.textContent='Requested. This is a concept, so nothing was sent.';
+  };
+  function pick(v){by.value=v;selTime=null;render();}
   document.querySelectorAll('[data-book]').forEach(function(a){a.addEventListener('click',function(){pick(a.dataset.book);});});
   document.querySelectorAll('.slot').forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.stylist);document.getElementById('book').scrollIntoView();});});
-  document.querySelector('[data-consult]').addEventListener('click',function(){bs.value='consult';selTime=null;render();});
   render();
 
   // work filter

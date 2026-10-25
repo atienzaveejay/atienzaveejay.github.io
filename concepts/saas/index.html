@@ -4,338 +4,158 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hourfold: time tracking and invoicing for small studios</title>
-<meta name="description" content="Hourfold is time tracking and invoicing for freelancers and studios of 2 to 20 people. Flat team pricing from $12 a month. 14-day free trial, no card needed.">
+<meta name="description" content="Hourfold turns your team's hours into invoices clients can pay online. One flat price for up to 20 people. 14-day free trial, no card needed.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#15171a; --ink-2:#3b4048; --muted:#5b616b; --line:#dde0e5; --line-2:#eceef1;
-  --bg:#f3f4f6; --surface:#fff;
-  --yellow:#ffcc29; --yellow-2:#ffd95c; --yellow-soft:#fff4c7;
-  --green:#14774a; --green-soft:#e3f3ea; --red:#b42318; --red-soft:#fdecea; --blue:#1d4ed8; --blue-soft:#e6edfd;
-  --sans:"Schibsted Grotesk", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, monospace;
-  --r:10px; --wrap:1180px;
+  --ink:#121417; --ink-2:#454a52; --muted:#5f656e; --line:#e6e7ea; --soft:#f7f7f5;
+  --yellow:#ffcc29; --yellow-2:#ffd75a; --yellow-tint:#fff6d6;
+  --green:#14774a; --green-soft:#e3f3ea; --red:#b42318; --red-soft:#fdecea;
+  --sans:"Instrument Sans", system-ui, sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.02em}
-p{margin:0}
-.num{font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{letter-spacing:-.025em;line-height:1.08}
+.n{font-variant-numeric:tabular-nums}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid #1d4ed8;outline-offset:3px;border-radius:6px}
 
-/* concept strip */
 .concept{background:var(--ink);color:#c9ccd1;font-size:12.5px;text-align:center;padding:6px 16px}
 .concept a{color:#fff;text-underline-offset:2px}
 
-/* header */
-header.top{position:sticky;top:0;z-index:20;background:rgba(243,244,246,.94);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:28px;height:64px}
-.logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none}
-.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500}
-.nav ul a{text-decoration:none;color:var(--ink-2)}
-.nav ul a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
-.nav .right{margin-left:auto;display:flex;align-items:center;gap:18px;font-size:15px;font-weight:500}
-.nav .right a.login{text-decoration:none;color:var(--ink-2)}
-.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 15px/1 var(--sans);text-decoration:none;border-radius:8px;padding:12px 18px;white-space:nowrap}
-.btn-y{background:var(--yellow);color:var(--ink);box-shadow:inset 0 -2px 0 rgba(0,0,0,.12)}
-.btn-y:hover{background:var(--yellow-2)}
+header{border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:20px;letter-spacing:-.03em;text-decoration:none}
+.nav-r{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:500}
+.nav-r a.q{text-decoration:none;color:var(--ink-2)}
+.nav-r a.q:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:600 15px/1 var(--sans);text-decoration:none;border-radius:999px;padding:12px 20px;border:0;cursor:pointer;background:var(--yellow);color:var(--ink);white-space:nowrap}
+.btn:hover{background:var(--yellow-2)}
+.btn-lg{padding:17px 30px;font-size:17px}
 .btn-ink{background:var(--ink);color:#fff}
 .btn-ink:hover{background:#2a2e34}
-.btn-lg{padding:16px 22px;font-size:16.5px}
-.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
-@media (max-width:860px){
-  .nav ul,.nav .right a.login{display:none}
-  .nav .right{margin-left:auto}
-  .menu-btn{display:inline-flex;margin-left:0}
-  .nav ul.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--line);padding:12px 24px 18px;gap:4px}
-  .nav ul.open a{display:block;padding:10px 0;font-size:17px}
-}
-@media (max-width:420px){.nav .right .btn{padding:10px 12px;font-size:14px}.nav{gap:12px}}
 
 /* hero */
-.hero{padding:64px 0 0}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
-.hero h1{font-size:clamp(38px,5.4vw,66px);font-weight:800;letter-spacing:-.035em;line-height:1.02}
-.hero h1 mark{background:linear-gradient(transparent 58%,var(--yellow) 58%,var(--yellow) 92%,transparent 92%);color:inherit;padding:0 .04em}
-.hero .lede{font-size:19.5px;color:var(--ink-2);max-width:34em}
-.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:4px}
-.hero-cta a.text{font-weight:600;text-underline-offset:4px}
-.facts{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;padding:0;margin:0;font-size:14.5px;color:var(--muted)}
-.facts li{display:flex;align-items:center;gap:7px}
-.facts svg{color:var(--green)}
-.hero-side{display:grid;gap:20px;padding-bottom:6px}
-.hero-left{display:grid;gap:24px}
-
-/* app window */
-.app-stage{margin-top:44px;position:relative}
-.app-stage::before{content:"";position:absolute;left:0;right:0;top:120px;bottom:-1px;background:var(--ink);z-index:0}
-.app{position:relative;z-index:1;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 24px 60px -24px rgba(21,23,26,.45);overflow:hidden;font-size:13.5px}
-.app-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line-2);background:#fafbfc}
-.app-bar i{width:10px;height:10px;border-radius:50%;background:#d5d8dd;display:block}
-.app-bar .url{margin-left:14px;font:500 12px var(--mono);color:var(--muted);background:var(--bg);padding:4px 10px;border-radius:6px}
-.app-body{display:grid;grid-template-columns:190px 1fr;min-height:470px}
-.side{border-right:1px solid var(--line-2);padding:14px 10px;background:#fafbfc}
-.side .ws{display:flex;align-items:center;gap:8px;font-weight:700;padding:4px 8px 14px}
-.ws-dot{width:22px;height:22px;border-radius:6px;background:var(--ink);color:var(--yellow);display:grid;place-items:center;font:700 11px var(--mono)}
-.side a{display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:6px;text-decoration:none;color:var(--ink-2);font-weight:500}
-.side a.on{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
-.side svg{width:16px;height:16px}
-.main{padding:16px 20px 20px;min-width:0}
-.timer{display:flex;align-items:center;gap:12px;border:1px solid var(--line);border-radius:10px;padding:10px 10px 10px 14px}
+.hero{padding:96px 0 0;text-align:center;overflow:hidden}
+.hero h1{font-size:clamp(42px,6.6vw,80px);font-weight:700;max-width:12em;margin:0 auto}
+.hero .line{font-size:20px;color:var(--ink-2);margin:22px auto 34px;max-width:30em}
+.hero .sub{display:block;margin-top:16px;font-size:14.5px;color:var(--muted)}
+.stage{position:relative;margin-top:72px;padding:0 24px}
+.stage::before{content:"";position:absolute;left:0;right:0;top:38%;bottom:0;background:var(--yellow)}
+.app{position:relative;max-width:980px;margin:0 auto;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 0 0 1px rgba(18,20,23,.08),0 40px 80px -30px rgba(18,20,23,.35);text-align:left;font-size:15px;overflow:hidden}
+.bar{display:flex;gap:7px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.bar i{width:11px;height:11px;border-radius:50%;background:#dcdee2}
+.app-in{padding:28px 36px 40px}
+.timer{display:flex;align-items:center;gap:18px;padding-bottom:26px;border-bottom:1px solid var(--line)}
 .timer .what{flex:1;min-width:0}
-.timer .what b{display:block;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.timer .what span{color:var(--muted);font-size:12.5px}
-.chip{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:99px;white-space:nowrap}
-.chip-bill{background:var(--green-soft);color:var(--green)}
-.clock{font:700 20px var(--mono);font-variant-numeric:tabular-nums}
-.stop{width:38px;height:38px;border-radius:50%;border:0;background:var(--yellow);cursor:pointer;display:grid;place-items:center;flex:none}
-.stop.paused{background:var(--ink);color:#fff}
-.stop svg{width:14px;height:14px}
-.tabs{display:flex;gap:4px;margin:18px 0 12px;border-bottom:1px solid var(--line-2)}
-.tabs button{background:none;border:0;font:600 13.5px var(--sans);color:var(--muted);padding:8px 10px 10px;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px}
-.tabs button[aria-selected=true]{color:var(--ink);border-color:var(--ink)}
-.panel[hidden]{display:none}
-.sheet{width:100%;border-collapse:collapse;font-size:13px}
-.sheet th{font-weight:600;color:var(--muted);text-align:right;padding:6px 8px;font-size:12px}
-.sheet th:first-child,.sheet td:first-child{text-align:left}
-.sheet td{padding:9px 8px;border-top:1px solid var(--line-2);text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
-.sheet td:first-child{font-family:var(--sans);font-weight:500}
-.sheet tr.total td{font-weight:700;border-top:1px solid var(--ink)}
-.sheet .today{background:var(--yellow-soft)}
-.who{display:flex;align-items:center;gap:8px}
-.av{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font:700 10px var(--sans);color:#fff;flex:none}
-.sheet-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:12px 14px;background:var(--bg);border-radius:10px}
-.sheet-foot p{font-size:13px;color:var(--ink-2)}
-.sheet-foot .btn{padding:10px 14px;font-size:13.5px}
-.inv{display:grid;grid-template-columns:1fr 210px;gap:18px}
-.paper{border:1px solid var(--line);border-radius:10px;padding:16px 18px}
-.paper-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px}
-.paper-h b{font-size:15px}
-.paper table{width:100%;border-collapse:collapse;font-size:12.5px}
-.paper td{padding:7px 0;border-top:1px solid var(--line-2)}
-.paper td:last-child,.paper th:last-child{text-align:right;font-family:var(--mono)}
-.paper th{text-align:left;font-size:11.5px;color:var(--muted);font-weight:600;padding-bottom:4px}
-.paper .sum td{border-top:1px solid var(--ink);font-weight:700;font-size:14px}
-.inv-side{display:grid;gap:10px;align-content:start;font-size:12.5px}
-.box{border:1px solid var(--line);border-radius:10px;padding:12px}
-.box h4{margin:0 0 6px;font-size:12px;color:var(--muted);font-weight:600}
-.steps{list-style:none;margin:0;padding:0;display:grid;gap:7px}
-.steps li{display:flex;gap:8px;align-items:center}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--line);flex:none}
-.dot.g{background:var(--green)}
-.dot.y{background:#e0a800}
-.bars{display:grid;gap:12px}
-.bar-row{display:grid;grid-template-columns:150px 1fr 120px;gap:14px;align-items:center;font-size:13px}
-.track{height:10px;border-radius:5px;background:var(--line-2);overflow:hidden;position:relative}
-.track span{position:absolute;inset:0 auto 0 0;background:var(--ink);border-radius:5px}
-.track span.warn{background:#e0a800}
-.track span.over{background:var(--red)}
-.bar-row .num{text-align:right;font-size:12.5px}
+.timer b{display:block;font-weight:600;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.timer span{color:var(--muted);font-size:14.5px}
+.timer .clock{color:var(--ink)}
+.clock{font-size:34px;font-weight:600;letter-spacing:-.02em}
+.dot-stop{width:46px;height:46px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;flex:none}
+.week{width:100%;border-collapse:collapse;margin-top:10px}
+.week th{font-size:13px;font-weight:500;color:var(--muted);text-align:right;padding:14px 0 8px}
+.week th:first-child,.week td:first-child{text-align:left}
+.week td{padding:16px 0;border-top:1px solid var(--line);text-align:right;font-size:16px}
+.week tr.tot td{font-weight:700;border-top:1.5px solid var(--ink)}
+.who{display:flex;align-items:center;gap:10px;font-weight:500}
+.av{width:28px;height:28px;border-radius:50%;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center}
 
-/* sections */
-section.band{padding:96px 0}
-.sec-h{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
-.sec-h h2{font-size:clamp(30px,3.6vw,46px);font-weight:800}
-.sec-h p{color:var(--ink-2);font-size:18px;max-width:32em}
-.kicker{font:600 13px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
-
-/* flow rows */
-.flow{display:grid;gap:22px}
-.row{display:grid;grid-template-columns:.8fr 1.2fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
-.row .txt{padding:36px 36px 32px;display:flex;flex-direction:column;gap:14px;border-right:1px solid var(--line-2)}
-.row .txt h3{font-size:25px;font-weight:700}
-.row .txt p{color:var(--ink-2)}
-.row .txt ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px;color:var(--ink-2)}
-.row .txt li{display:flex;gap:10px}
-.row .txt li svg{flex:none;margin-top:4px;color:var(--ink)}
-.row .vis{background:var(--bg);padding:32px;display:grid;place-items:center;min-width:0}
-.mini{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px -18px rgba(21,23,26,.35);font-size:13px;width:100%;max-width:520px}
-.mini-h{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line-2);font-weight:600;gap:10px}
-.mini-b{padding:12px 14px}
-.ent{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding:9px 0;border-top:1px solid var(--line-2)}
-.ent:first-child{border-top:0}
-.ent small{display:block;color:var(--muted);font-size:12px}
-.approve{display:flex;gap:8px;justify-content:flex-end;padding:12px 14px;border-top:1px solid var(--line-2)}
-.approve span{font:600 12.5px var(--sans);padding:8px 12px;border-radius:7px;border:1px solid var(--line)}
-.approve span.go{background:var(--ink);color:#fff;border-color:var(--ink)}
-.phone-pair{display:flex;gap:18px;align-items:flex-end;width:100%;justify-content:center}
-.phone{width:200px;flex:none;background:var(--ink);border-radius:28px;padding:9px;box-shadow:0 18px 36px -18px rgba(0,0,0,.5)}
-.phone .scr{background:var(--surface);border-radius:20px;padding:16px 14px;min-height:330px;display:flex;flex-direction:column;gap:10px;font-size:12px}
-.phone .big{font:700 30px var(--mono);text-align:center;margin:8px 0 2px}
-.phone .stopbar{background:var(--yellow);border-radius:10px;text-align:center;font-weight:700;padding:10px;margin-top:auto}
-.p-ent{display:flex;justify-content:space-between;border-top:1px solid var(--line-2);padding-top:8px}
-.ext{width:230px;flex:none}
-.pay{display:grid;gap:10px;width:100%;max-width:520px;min-width:0}
-.row .vis > *{min-width:0;max-width:100%}
-.row .vis,.pay{grid-template-columns:minmax(0,1fr)}
-.pay-link{display:flex;align-items:center;gap:10px;padding:12px 14px}
-.pay-link code{font:500 12px var(--mono);background:var(--bg);padding:6px 9px;border-radius:6px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.status{font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:99px;white-space:nowrap}
-.s-paid{background:var(--green-soft);color:var(--green)}
-.s-due{background:var(--yellow-soft);color:#7a5600}
-.s-over{background:var(--red-soft);color:var(--red)}
-.s-draft{background:var(--line-2);color:var(--ink-2)}
-.inv-list .ent{grid-template-columns:auto 1fr auto auto}
+/* features */
+section.sec{padding:120px 0}
+.sec h2{font-size:clamp(32px,4.2vw,52px);font-weight:700;text-align:center;max-width:14em;margin:0 auto}
+.feats{display:grid;gap:96px;margin-top:88px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.feat:nth-child(even) .crop{order:-1}
+.feat h3{font-size:28px;font-weight:700;margin-bottom:12px}
+.feat p{font-size:18.5px;color:var(--ink-2);max-width:24em}
+.crop{background:var(--yellow-tint);border-radius:20px;padding:48px;display:grid;place-items:center;min-width:0}
+.ui{background:#fff;border-radius:14px;box-shadow:0 0 0 1px rgba(18,20,23,.06),0 20px 40px -24px rgba(18,20,23,.3);width:100%;max-width:380px;padding:20px 22px;font-size:15px}
+.ui .t{font-size:13px;color:var(--muted);margin-bottom:6px}
+.ui .big{font-size:40px;font-weight:600;letter-spacing:-.02em;margin:6px 0 16px}
+.ui .r{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.ui .r:first-of-type{border-top:0}
+.ui .r span:first-child{flex:1}
+.tbtn{width:100%;border:0;border-radius:10px;padding:13px;font:600 15px var(--sans);cursor:pointer;background:var(--ink);color:#fff}
+.tbtn.run{background:var(--yellow);color:var(--ink)}
+.pill{font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:99px;white-space:nowrap}
+.paid{background:var(--green-soft);color:var(--green)}
+.late{background:var(--red-soft);color:var(--red)}
+.track{height:10px;border-radius:5px;background:var(--line);overflow:hidden;margin:8px 0 4px}
+.track span{display:block;height:100%;border-radius:5px;background:var(--ink)}
+.track span.w{background:#d99a00}
 
 /* pricing */
-#pricing{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.calc{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;background:var(--bg);border-radius:14px;padding:22px 26px;margin-bottom:22px}
-.calc label{font-weight:600}
-.slider{display:flex;align-items:center;gap:16px;flex:1;min-width:260px}
-.slider input{flex:1;accent-color:var(--ink);height:28px}
-.slider output{font:700 28px var(--mono);min-width:2.2ch;text-align:right}
-.seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:3px}
-.seg button{border:0;background:none;font:600 14px var(--sans);padding:8px 14px;border-radius:7px;cursor:pointer;color:var(--ink-2)}
-.seg button[aria-pressed=true]{background:var(--ink);color:#fff}
-.seg em{font-style:normal;color:var(--green);font-weight:700}
-.seg button[aria-pressed=true] em{color:var(--yellow)}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.plan{border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:16px;position:relative;background:var(--surface);transition:box-shadow .2s,border-color .2s}
-.plan.fit{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink),0 18px 40px -24px rgba(21,23,26,.5)}
-.plan .tag{position:absolute;top:-12px;left:22px;background:var(--yellow);font:700 12px var(--sans);padding:4px 10px;border-radius:99px;display:none}
-.plan.fit .tag{display:block}
-.plan.na{opacity:.55}
-.plan h3{font-size:22px}
-.plan .for{color:var(--muted);font-size:15px;margin-top:4px}
-.price{display:flex;align-items:baseline;gap:6px}
-.price b{font:700 44px var(--mono);letter-spacing:-.04em}
-.price span{color:var(--muted);font-size:14.5px}
-.plan .note{font-size:14px;color:var(--ink-2);min-height:2.6em}
-.plan ul{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line-2);display:grid;gap:9px;font-size:15px}
+#pricing{background:var(--soft)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);margin-top:72px;border-top:1px solid #d9dadd}
+.plan{padding:36px 36px 8px;border-left:1px solid #d9dadd;display:flex;flex-direction:column;gap:8px}
+.plan:first-child{border-left:0;padding-left:0}
+.plan h3{font-size:22px;font-weight:600}
+.plan .for{color:var(--muted)}
+.price{font-size:56px;font-weight:600;letter-spacing:-.04em;margin:18px 0 4px;line-height:1}
+.price small{font-size:16px;font-weight:500;letter-spacing:0;color:var(--muted);margin-left:4px}
+.plan ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;color:var(--ink-2);font-size:16px}
 .plan li{display:flex;gap:10px}
-.plan li svg{flex:none;margin-top:4px;color:var(--green)}
-.plan .btn{justify-content:center;margin-top:auto}
-.plan .btn-out{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.plan .btn-out:hover{background:var(--bg)}
-.seat-compare{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between;font-size:15px;color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:18px}
-.seat-compare strong{color:var(--ink)}
+.plan li svg{flex:none;margin-top:5px;color:var(--green)}
+.price-cta{text-align:center;margin-top:56px;font-size:15.5px;color:var(--muted)}
 
-/* switching */
-#switching{background:var(--ink);color:#e8eaed}
-#switching .sec-h p{color:#b9bec6}
-#switching .kicker{color:#9aa1ab}
-.sw-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
-.sw-list{list-style:none;margin:0;padding:0;border-top:1px solid #343840}
-.sw-list li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #343840}
-.sw-list b{font-size:18px;color:#fff}
-.sw-list p{color:#c3c8cf;font-size:15.5px}
-.sw-list p code{font:500 13.5px var(--mono);color:var(--yellow)}
-.map{color:var(--ink)}
-.map .row2{display:grid;grid-template-columns:1fr 24px 1fr;gap:8px;align-items:center;padding:9px 0;border-top:1px solid var(--line-2);font-size:13px}
-.map .row2:first-of-type{border-top:0}
-.map code{font:500 12px var(--mono);background:var(--bg);padding:5px 8px;border-radius:6px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.map select{font:500 13px var(--sans);padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);width:100%;color:var(--ink)}
-.sw-note{margin-top:18px;color:#c3c8cf;font-size:15px}
-.sw-note strong{color:#fff}
+/* quote */
+.quote{display:grid;grid-template-columns:1.15fr 1fr;min-height:620px;background:var(--ink);color:#fff}
+.quote img{width:100%;height:100%;object-fit:cover}
+.quote figure{margin:0;padding:80px 72px;display:flex;flex-direction:column;justify-content:center;gap:28px}
+.quote blockquote{margin:0;font-size:clamp(26px,2.8vw,36px);line-height:1.25;letter-spacing:-.02em;font-weight:500}
+.quote figcaption{color:#b9bec6;font-size:16px}
+.quote figcaption b{color:#fff;font-weight:600}
 
-/* customers */
-.stories{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:18px}
-.story{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.story img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.story:first-child img{aspect-ratio:16/10}
-.story .in{padding:22px 24px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
-.story blockquote{margin:0;font-size:17.5px;line-height:1.5}
-.story:first-child blockquote{font-size:20px;font-weight:500}
-.story .by{margin-top:auto;font-size:14px;color:var(--muted)}
-.story .by b{color:var(--ink);font-weight:600}
-.story .stat{display:flex;gap:10px;align-items:baseline;font-size:14px;color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:12px}
-.story .stat b{font:700 22px var(--mono);color:var(--ink)}
+/* final */
+.final{text-align:center;padding:128px 0 136px}
+.final h2{font-size:clamp(36px,5vw,64px);font-weight:700;max-width:12em;margin:0 auto 34px}
+.final .sub{display:block;margin-top:16px;font-size:14.5px;color:var(--muted)}
 
-/* faq */
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px}
-.faq details{border-top:1px solid var(--line);padding:4px 0}
-.faq details:last-child{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:18px 36px 18px 0;font-weight:600;font-size:18px;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";position:absolute;right:6px;top:26px;width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(-135deg);top:30px}
-.faq details p{padding:0 0 20px;color:var(--ink-2);max-width:40em}
-.faq-side p{color:var(--ink-2);margin-top:16px}
-.faq-side a{font-weight:600}
-
-/* final cta */
-.final{padding:0 0 96px}
-.final-box{background:var(--yellow);border-radius:18px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.final h2{font-size:clamp(30px,3.8vw,48px);font-weight:800}
-.final p{font-size:17.5px;margin-top:12px;color:#2b2a22}
-.signup{display:grid;gap:10px}
-.signup label{font-weight:600;font-size:15px}
-.signup .f{display:flex;gap:8px;background:var(--surface);border-radius:10px;padding:6px;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
-.signup input{flex:1;min-width:0;border:0;font:500 16.5px var(--sans);padding:10px 12px;border-radius:6px;background:transparent;color:var(--ink)}
-.signup input:focus-visible{outline:2px solid var(--blue)}
-.signup small{font-size:14px;color:#3a382c}
-.signup .ok{font-weight:600}
-
-footer{border-top:1px solid var(--line);padding:48px 0 40px;font-size:14.5px;color:var(--ink-2)}
-.foot{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px}
-.foot h4{margin:0 0 10px;font-size:13px;color:var(--muted);font-weight:600}
-.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer{border-top:1px solid var(--line);padding:32px 0;font-size:14.5px;color:var(--muted)}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;align-items:center}
 .foot a{text-decoration:none}
 .foot a:hover{text-decoration:underline}
-.legal{margin-top:36px;font-size:13px;color:var(--muted)}
+.foot-l{display:flex;flex-wrap:wrap;gap:8px 24px}
 
-/* responsive */
-@media (max-width:1020px){
-  .hero-grid{grid-template-columns:1fr;gap:24px}
-  .app-body{grid-template-columns:1fr}
-  .side{display:none}
-  .row{grid-template-columns:1fr}
-  .row .txt{border-right:0;border-bottom:1px solid var(--line-2)}
+@media (max-width:900px){
+  .feat{grid-template-columns:1fr;gap:28px}
+  .feat:nth-child(even) .crop{order:0}
   .plans{grid-template-columns:1fr}
-  .sw-grid,.faq-grid{grid-template-columns:1fr;gap:36px}
-  .stories{grid-template-columns:1fr 1fr}
-  .stories .story:first-child{grid-column:1/-1}
-  .final-box{grid-template-columns:1fr;padding:40px}
-  .foot{grid-template-columns:1fr 1fr}
-  .sec-h{grid-template-columns:1fr;gap:16px}
+  .plan,.plan:first-child{border-left:0;border-bottom:1px solid #d9dadd;padding:28px 0}
+  .quote{grid-template-columns:1fr;min-height:0}
+  .quote img{aspect-ratio:4/3;height:auto}
+  .quote figure{padding:48px 24px 56px}
 }
 @media (max-width:640px){
   body{font-size:16px}
   .wrap{padding:0 16px}
-  .hero{padding-top:36px}
-  .hero .lede{font-size:17.5px}
-  section.band{padding:64px 0}
-  .app{font-size:12.5px;border-radius:12px}
-  .app-stage{margin-top:32px;margin-left:-4px;margin-right:-4px}
-  .app-stage::before{top:90px}
-  .main{padding:12px}
-  .app-bar .url{display:none}
-  .timer{padding:8px 8px 8px 10px;gap:8px}
-  .timer .chip{display:none}
-  .clock{font-size:16px}
-  .sheet{font-size:11.5px}
-  .sheet th,.sheet td{padding:7px 3px}
-  .sheet .av{display:none}
-  .sheet .hide-s{display:none}
-  .inv{grid-template-columns:1fr}
-  .bar-row{grid-template-columns:1fr auto;gap:6px 10px}
-  .bar-row .track{grid-column:1/-1;grid-row:2}
-  .row .txt{padding:26px 22px}
-  .row .vis{padding:20px 14px}
-  .phone-pair .ext{display:none}
-  .calc{padding:18px}
-  .sw-list li{grid-template-columns:1fr;gap:6px}
-  .stories{grid-template-columns:1fr}
-  .final-box{padding:30px 22px;border-radius:14px}
-  .signup .f{flex-direction:column}
-  .signup .f .btn{justify-content:center}
-  .foot{grid-template-columns:1fr 1fr}
-  .foot > div:first-child{grid-column:1/-1}
-  .ent{gap:8px}
-  .inv-list .ent{grid-template-columns:1fr auto auto}
-  .inv-list .ent > span:first-child{display:none}
-  .inv-list .status{font-size:10.5px;padding:3px 6px}
-  .calc{flex-direction:column;align-items:stretch;gap:14px}
-  .slider{display:grid;grid-template-columns:1fr auto;gap:6px 14px;min-width:0}
-  .slider label{grid-column:1/-1}
-  .seg{align-self:flex-start}
+  .nav-r a.q{display:none}
+  .hero{padding-top:56px}
+  .hero .line{font-size:18px;margin:18px auto 28px}
+  .stage{margin-top:48px;padding:0 12px}
+  .app{font-size:14px;border-radius:12px 12px 0 0}
+  .app-in{padding:18px 16px 24px}
+  .timer{gap:10px;padding-bottom:18px}
+  .timer b{font-size:15.5px}
+  .timer span{font-size:13px}
+  .clock{font-size:22px}
+  .dot-stop{width:38px;height:38px}
+  .week td{font-size:14.5px;padding:13px 0}
+  .av{display:none}
+  section.sec{padding:80px 0}
+  .feats{gap:64px;margin-top:56px}
+  .feat h3{font-size:24px}
+  .feat p{font-size:17px}
+  .crop{padding:28px 18px;border-radius:16px}
+  .final{padding:88px 0 96px}
 }
 </style>
 </head>
@@ -343,466 +163,161 @@ footer{border-top:1px solid var(--line);padding:48px 0 40px;font-size:14.5px;col
 
 <div class="concept"><a href="https://atienzaveejay.github.io/ui-design/">Concept design by Veejay Atienza</a>. Not a real business.</div>
 
-<header class="top">
+<header>
   <nav class="wrap nav" aria-label="Main">
     <a class="logo" href="#top" aria-label="Hourfold home">
-      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#15171a"/><path d="M14 6v8l5 3" stroke="#ffcc29" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 22h16" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#121417"/><path d="M14 7v7l5 3" stroke="#ffcc29" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Hourfold
     </a>
-    <ul id="menu">
-      <li><a href="#product">Product</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#switching">Switching tools</a></li>
-      <li><a href="#customers">Customers</a></li>
-      <li><a href="#faq">Questions</a></li>
-    </ul>
-    <div class="right">
-      <a class="login" href="#trial">Log in</a>
-      <a class="btn btn-y" href="#trial">Start free trial</a>
+    <div class="nav-r">
+      <a class="q" href="#features">Product</a>
+      <a class="q" href="#pricing">Pricing</a>
+      <a class="q" href="#trial">Log in</a>
+      <a class="btn" href="#trial">Start free trial</a>
     </div>
-    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
   </nav>
 </header>
 
 <main id="top">
-<section class="hero" aria-labelledby="hero-h">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="hero-left">
-        <h1 id="hero-h">Time tracking and invoicing for <mark>small studios</mark></h1>
-      </div>
-      <div class="hero-side">
-        <p class="lede">Your team's hours go straight onto the invoice. Clients pay by card or bank transfer from a link, and you see who still owes you.</p>
-        <div class="hero-cta">
-          <a class="btn btn-y btn-lg" href="#trial">Start 14-day free trial</a>
-          <a class="text" href="#pricing">See pricing</a>
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <h1 id="h1">Your hours, on the invoice</h1>
+      <p class="line">Time tracking and invoicing for freelancers and studios of up to 20 people.</p>
+      <a class="btn btn-lg" href="#trial">Start free trial</a>
+      <span class="sub">14 days free. No card needed.</span>
+    </div>
+    <div class="stage">
+      <div class="app" role="img" aria-label="Hourfold app: a timer running on Spring menu boards for Northfield Bakery, and the team's hours this week">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="app-in">
+          <div class="timer">
+            <div class="what"><b>Spring menu boards</b><span>Northfield Bakery</span></div>
+            <span class="clock n" id="clock">01:23:45</span>
+            <span class="dot-stop" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" rx="2" fill="#121417"/></svg></span>
+          </div>
+          <table class="week" aria-hidden="true">
+            <thead><tr><th>This week</th><th>Hours</th><th>Billable</th></tr></thead>
+            <tbody>
+              <tr><td><span class="who"><span class="av" style="background:#2f6b5a">MP</span>Maya</span></td><td class="n">23.5</td><td class="n">$2,232.50</td></tr>
+              <tr><td><span class="who"><span class="av" style="background:#8a4b2a">KS</span>Ken</span></td><td class="n">15.5</td><td class="n">$1,317.50</td></tr>
+              <tr class="tot"><td>Total</td><td class="n">39.0</td><td class="n">$3,550.00</td></tr>
+            </tbody>
+          </table>
         </div>
-        <ul class="facts">
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>No card needed</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>From $12 a month</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Flat price for up to 20 people</li>
-        </ul>
       </div>
     </div>
+  </section>
 
-    <div class="app-stage" id="product">
-      <div class="app" role="region" aria-label="Hourfold app preview, try the tabs">
-        <div class="app-bar" aria-hidden="true"><i></i><i></i><i></i><span class="url">app.hourfold.com/week</span></div>
-        <div class="app-body">
-          <aside class="side" aria-hidden="true">
-            <div class="ws"><span class="ws-dot">PS</span>Pine &amp; Sato</div>
-            <a class="on" href="#product" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M10 2h4"/></svg>Time</a>
-            <a href="#product" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>Invoices</a>
-            <a href="#product" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3zM8 7V4h8v3"/></svg>Projects</a>
-            <a href="#product" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3.5 3.5 0 010 7M18 14c2 .8 3 3 3 6"/></svg>Clients</a>
-            <a href="#product" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Reports</a>
-          </aside>
-          <div class="main">
-            <div class="timer">
-              <div class="what"><b>Spring menu boards, layout round 2</b><span>Northfield Bakery · Design</span></div>
-              <span class="chip chip-bill">Billable · $95/h</span>
-              <span class="clock" id="clock" aria-live="off">01:23:45</span>
-              <button class="stop" id="stop" aria-label="Pause timer"><svg viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" rx="2" fill="currentColor"/></svg></button>
+  <section class="sec" id="features" aria-labelledby="f-h">
+    <div class="wrap">
+      <h2 id="f-h">From timer to paid invoice</h2>
+      <div class="feats">
+        <div class="feat">
+          <div>
+            <h3>Track time anywhere</h3>
+            <p>Start a timer from the browser, the desktop app or your phone, and add forgotten hours to the week later. We never take screenshots or log keystrokes.</p>
+          </div>
+          <div class="crop">
+            <div class="ui">
+              <p class="t">Okafor Law, website</p>
+              <p class="big n" id="demo">00:00:00</p>
+              <button class="tbtn" id="demoBtn" type="button">Start timer</button>
             </div>
-
-            <div class="tabs" role="tablist" aria-label="App views">
-              <button role="tab" id="t1" aria-selected="true" aria-controls="p1">This week</button>
-              <button role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1">Invoice draft</button>
-              <button role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1">Project budgets</button>
+          </div>
+        </div>
+        <div class="feat">
+          <div>
+            <h3>Bill in one click</h3>
+            <p>Approved hours become an invoice with a payment link. Clients pay by card or bank transfer, and polite reminders go out when a payment is late.</p>
+          </div>
+          <div class="crop">
+            <div class="ui" role="img" aria-label="Invoice list: Halvard Coffee paid, Bright Path 9 days late">
+              <div class="r"><span>Halvard Coffee</span><span class="n">$1,900</span><span class="pill paid">Paid</span></div>
+              <div class="r"><span>Bright Path</span><span class="n">$2,268</span><span class="pill late">9 days late</span></div>
             </div>
-
-            <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1">
-              <table class="sheet">
-                <caption class="sr">Hours tracked this week by person, Northfield Bakery project</caption>
-                <thead><tr><th scope="col">Person</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col" class="today">Thu</th><th scope="col">Fri</th><th scope="col">Total</th></tr></thead>
-                <tbody>
-                  <tr><td><span class="who"><span class="av" style="background:#2f6b5a">MP</span>Maya</span></td><td>6.5</td><td>7.0</td><td>5.5</td><td class="today">4.5</td><td>0.0</td><td>23.5</td></tr>
-                  <tr><td><span class="who"><span class="av" style="background:#8a4b2a">KS</span>Ken</span></td><td>3.0</td><td>4.5</td><td>6.0</td><td class="today">2.0</td><td>0.0</td><td>15.5</td></tr>
-                  <tr><td><span class="who"><span class="av" style="background:#3d4f9e">AR</span>Ana</span></td><td>1.5</td><td>0.0</td><td>2.0</td><td class="today">0.0</td><td>0.0</td><td>3.5</td></tr>
-                  <tr class="total"><td>Billable</td><td>11.0</td><td>11.5</td><td>13.5</td><td class="today">6.5</td><td>0.0</td><td>42.5</td></tr>
-                </tbody>
-              </table>
-              <div class="sheet-foot">
-                <p><b class="num">42.5 h</b> billable at mixed rates, worth <b class="num">$3,867.50</b>. 3.0 h marked internal.</p>
-                <button class="btn btn-ink" data-go="t2">Make invoice from these hours</button>
-              </div>
-            </div>
-
-            <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
-              <div class="inv">
-                <div class="paper">
-                  <div class="paper-h">
-                    <div><b>Northfield Bakery</b><br><span style="color:var(--muted);font-size:12px">Invoice <span class="num">INV-0148</span> · due in 14 days</span></div>
-                    <span class="status s-draft">Draft</span>
-                  </div>
-                  <table>
-                    <thead><tr><th scope="col">Item</th><th scope="col">Hours</th><th scope="col">Amount</th></tr></thead>
-                    <tbody>
-                      <tr><td>Menu boards, design</td><td class="num">23.5</td><td>$2,232.50</td></tr>
-                      <tr><td>Menu boards, illustration</td><td class="num">15.5</td><td>$1,317.50</td></tr>
-                      <tr><td>Print checks and handoff</td><td class="num">3.5</td><td>$317.50</td></tr>
-                      <tr class="sum"><td>Total</td><td></td><td>$3,867.50</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="inv-side">
-                  <div class="box"><h4>Client can pay by</h4>Card, Apple Pay, ACH bank transfer</div>
-                  <div class="box"><h4>Reminders</h4>
-                    <ul class="steps"><li><span class="dot g"></span>On the due date</li><li><span class="dot y"></span>7 days late</li><li><span class="dot"></span>14 days late</li></ul>
-                  </div>
-                  <span class="btn btn-y" style="justify-content:center">Send to Dana at Northfield</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="panel" id="p3" role="tabpanel" aria-labelledby="t3" hidden>
-              <div class="bars">
-                <div class="bar-row"><span>Northfield, menu boards</span><span class="track"><span style="width:68%"></span></span><span class="num">54 of 80 h</span></div>
-                <div class="bar-row"><span>Okafor Law, website</span><span class="track"><span class="warn" style="width:91%"></span></span><span class="num">109 of 120 h</span></div>
-                <div class="bar-row"><span>Halvard Coffee, retainer</span><span class="track"><span style="width:45%"></span></span><span class="num">9 of 20 h</span></div>
-                <div class="bar-row"><span>Bright Path, annual report</span><span class="track"><span class="over" style="width:100%"></span></span><span class="num">63 of 56 h</span></div>
-              </div>
-              <div class="sheet-foot" style="margin-top:18px">
-                <p>Ken gets an email when a project passes 80% of its budget. Bright Path is 7 h over.</p>
-              </div>
+          </div>
+        </div>
+        <div class="feat">
+          <div>
+            <h3>See budgets before they run out</h3>
+            <p>Each project shows hours used against its budget. You get an email at 80%, while there is still time to talk scope with the client.</p>
+          </div>
+          <div class="crop">
+            <div class="ui" role="img" aria-label="Budget bars: Northfield 54 of 80 hours, Okafor Law 109 of 120 hours">
+              <p>Northfield Bakery</p>
+              <div class="track"><span style="width:68%"></span></div>
+              <p class="t n">54 of 80 h</p>
+              <p style="margin-top:12px">Okafor Law</p>
+              <div class="track"><span class="w" style="width:91%"></span></div>
+              <p class="t n">109 of 120 h</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="band" aria-labelledby="flow-h" style="background:var(--ink);padding-top:72px;color:#fff">
-  <div class="wrap">
-    <div class="sec-h">
-      <div><p class="kicker" style="color:#9aa1ab">How it works</p><h2 id="flow-h">From a running timer to a paid invoice</h2></div>
-      <p style="color:#c3c8cf">Most studios we talk to track time in one app and bill from another, then copy numbers across at month end. In Hourfold it is one record the whole way through.</p>
-    </div>
-    <div class="flow">
-      <article class="row" style="color:var(--ink)">
-        <div class="txt">
-          <h3>Track time where you already work</h3>
-          <p>Start a timer from the browser, the Mac and Windows app, or your phone. Forgot? Add it to the week later.</p>
-          <ul>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Browser button inside Asana, Trello, Linear and Figma</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Idle reminder if a timer runs past 10 hours</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>No screenshots or keystroke logging, ever</li>
-          </ul>
+  <section class="sec" id="pricing" aria-labelledby="p-h">
+    <div class="wrap">
+      <h2 id="p-h">One price for the whole team</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Solo</h3><p class="for">One freelancer</p>
+          <p class="price n">$12<small>a month</small></p>
+          <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Timer on web, desktop and phone</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Unlimited clients and invoices</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Card and bank payments</li></ul>
         </div>
-        <div class="vis">
-          <div class="phone-pair">
-            <div class="mini ext" aria-hidden="true">
-              <div class="mini-h"><span>Linear · HAL-212</span><span class="chip chip-bill">Billable</span></div>
-              <div class="mini-b">
-                <p style="font-weight:600">Fix checkout on mobile Safari</p>
-                <p style="color:var(--muted);font-size:12px;margin-top:2px">Halvard Coffee · Development</p>
-                <p class="num" style="font-size:22px;font-weight:700;margin:14px 0 10px">00:47:12</p>
-                <span class="btn btn-y" style="width:100%;justify-content:center;padding:9px">Stop timer</span>
-              </div>
-            </div>
-            <div class="phone" role="img" aria-label="Hourfold phone app showing a running timer and today's entries">
-              <div class="scr">
-                <div style="display:flex;justify-content:space-between;font-weight:600"><span>Today</span><span class="num">5:10 h</span></div>
-                <p style="color:var(--muted)">Okafor Law · Website</p>
-                <p style="font-weight:600;font-size:13px">Content migration, practice pages</p>
-                <p class="big">02:14:08</p>
-                <div class="p-ent"><span>Client call</span><span class="num">0:45</span></div>
-                <div class="p-ent"><span>Invoice review</span><span class="num">0:20</span></div>
-                <div class="p-ent"><span>Wireframes</span><span class="num">1:51</span></div>
-                <div class="stopbar">Stop</div>
-              </div>
-            </div>
-          </div>
+        <div class="plan">
+          <h3>Studio</h3><p class="for">Up to 6 people</p>
+          <p class="price n">$39<small>a month</small></p>
+          <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Everything in Solo</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Weekly timesheet approval</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Project budgets with alerts</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>We move your old data for you</li></ul>
         </div>
-      </article>
-
-      <article class="row" style="color:var(--ink)">
-        <div class="txt">
-          <h3>Check the week before it gets billed</h3>
-          <p>On Friday, each person submits their week. You approve it, or send back one entry with a note. Only approved hours can go on an invoice.</p>
-          <ul>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Billable and internal hours kept apart</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Rates set per person, per project or per task</li>
-          </ul>
+        <div class="plan">
+          <h3>Agency</h3><p class="for">Up to 20 people</p>
+          <p class="price n">$79<small>a month</small></p>
+          <ul><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Everything in Studio</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Profit by project and client</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Retainers and cost rates</li><li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Phone support the same day</li></ul>
         </div>
-        <div class="vis">
-          <div class="mini" role="img" aria-label="Approval screen showing Ken's week of 36.5 hours waiting for approval">
-            <div class="mini-h"><span class="who"><span class="av" style="background:#8a4b2a">KS</span>Ken's week, 19 to 23 Oct</span><span class="num">36.5 h</span></div>
-            <div class="mini-b">
-              <div class="ent"><span>Spring menu boards<small>Northfield Bakery</small></span><span class="chip chip-bill">Billable</span><span class="num">15.5</span></div>
-              <div class="ent"><span>Annual report charts<small>Bright Path</small></span><span class="chip chip-bill">Billable</span><span class="num">12.0</span></div>
-              <div class="ent"><span>Portfolio update<small>Internal</small></span><span class="chip" style="background:var(--line-2);color:var(--ink-2)">Internal</span><span class="num">6.0</span></div>
-              <div class="ent"><span>Team meeting<small>Internal</small></span><span class="chip" style="background:var(--line-2);color:var(--ink-2)">Internal</span><span class="num">3.0</span></div>
-            </div>
-            <div class="approve"><span>Send back</span><span class="go">Approve week</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="row" style="color:var(--ink)">
-        <div class="txt">
-          <h3>Send the invoice and get paid online</h3>
-          <p>Every invoice has a payment link. Clients pay by card or ACH through Stripe, and the invoice marks itself paid. Polite reminders go out on the schedule you pick.</p>
-          <ul>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Any currency, tax lines, deposits and retainers</li>
-            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Syncs to QuickBooks Online and Xero</li>
-          </ul>
-        </div>
-        <div class="vis">
-          <div class="pay">
-            <div class="mini pay-link" role="img" aria-label="Payment link for invoice INV-0148">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>
-              <code>pay.hourfold.com/pine-sato/INV-0148</code>
-              <span class="btn btn-ink" style="padding:8px 12px;font-size:12.5px">Copy</span>
-            </div>
-            <div class="mini inv-list" role="img" aria-label="Invoice list: one paid, one due, one overdue, one draft">
-              <div class="mini-h"><span>Invoices, October</span><span class="num" style="color:var(--muted);font-weight:500">$14,210 billed</span></div>
-              <div class="mini-b">
-                <div class="ent"><span class="num" style="color:var(--muted)">0145</span><span>Halvard Coffee</span><span class="num">$1,900.00</span><span class="status s-paid">Paid 2 Oct</span></div>
-                <div class="ent"><span class="num" style="color:var(--muted)">0146</span><span>Okafor Law</span><span class="num">$6,175.00</span><span class="status s-due">Due 30 Oct</span></div>
-                <div class="ent"><span class="num" style="color:var(--muted)">0147</span><span>Bright Path</span><span class="num">$2,267.50</span><span class="status s-over">9 days late</span></div>
-                <div class="ent"><span class="num" style="color:var(--muted)">0148</span><span>Northfield Bakery</span><span class="num">$3,867.50</span><span class="status s-draft">Draft</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="pricing" aria-labelledby="price-h">
-  <div class="wrap">
-    <div class="sec-h">
-      <div><p class="kicker">Pricing</p><h2 id="price-h">One price for the whole team, not per person</h2></div>
-      <p>Every plan has unlimited clients, projects and invoices. Hiring your fourth designer does not change your bill. Try any plan free for 14 days.</p>
-    </div>
-
-    <div class="calc">
-      <div class="slider">
-        <label for="people">People tracking time</label>
-        <input type="range" id="people" min="1" max="20" value="6" aria-describedby="fitnote">
-        <output for="people" id="peopleOut" class="num">6</output>
       </div>
-      <div class="seg" role="group" aria-label="Billing period">
-        <button type="button" aria-pressed="false" data-bill="m">Monthly</button>
-        <button type="button" aria-pressed="true" data-bill="y">Yearly <em>2 months free</em></button>
-      </div>
+      <p class="price-cta">Pay yearly and get two months free. Cancel any time from Settings.</p>
     </div>
+  </section>
 
-    <div class="plans">
-      <article class="plan" data-max="1">
-        <span class="tag">Fits your team</span>
-        <div><h3>Solo</h3><p class="for">For one freelancer</p></div>
-        <div class="price"><b data-m="12" data-y="10">$10</b><span>a month</span></div>
-        <p class="note" data-note>Billed $120 a year.</p>
-        <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Timer on web, desktop and phone</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Invoices with payment links</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Automatic payment reminders</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>QuickBooks and Xero sync</li>
-        </ul>
-        <a class="btn btn-out" href="#trial">Try Solo free</a>
-      </article>
-      <article class="plan" data-max="6">
-        <span class="tag">Fits your team</span>
-        <div><h3>Studio</h3><p class="for">Up to 6 people</p></div>
-        <div class="price"><b data-m="39" data-y="32">$32</b><span>a month</span></div>
-        <p class="note" data-note>Billed $390 a year.</p>
-        <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Everything in Solo</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Weekly timesheet approval</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Rates per person and project</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Project budgets with alerts</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>We import your old data for you</li>
-        </ul>
-        <a class="btn btn-y" href="#trial">Try Studio free</a>
-      </article>
-      <article class="plan" data-max="20">
-        <span class="tag">Fits your team</span>
-        <div><h3>Agency</h3><p class="for">Up to 20 people</p></div>
-        <div class="price"><b data-m="79" data-y="66">$66</b><span>a month</span></div>
-        <p class="note" data-note>Billed $790 a year.</p>
-        <ul>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Everything in Studio</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Profit by project and by client</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Cost rates for staff and contractors</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Retainers that roll over unused hours</li>
-          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Phone support, same business day</li>
-        </ul>
-        <a class="btn btn-out" href="#trial">Try Agency free</a>
-      </article>
-    </div>
-    <div class="seat-compare" aria-live="polite">
-      <p id="fitnote">For <strong class="num" id="n1">6</strong> people, Studio works out to <strong class="num" id="pp">$5.33</strong> a person each month.</p>
-      <p>A tool charging $11 per person would cost <strong class="num" id="seat">$66</strong> a month for the same team.</p>
-    </div>
-  </div>
-</section>
+  <section class="quote" aria-label="Customer story">
+    <img src="img/studio-design.webp" alt="Two designers at a shared desk in a bright studio with plants" width="1200" height="675" loading="lazy">
+    <figure>
+      <blockquote>"We used to send invoices on the 9th because someone had to chase timesheets. Now they go out on the 1st, and we're paid about a week sooner. Nobody on the team misses the old spreadsheet."</blockquote>
+      <figcaption><b>Rosa M.</b>, owner of a 4-person brand studio in Denver</figcaption>
+    </figure>
+  </section>
 
-<section class="band" id="switching" aria-labelledby="sw-h">
-  <div class="wrap">
-    <div class="sec-h">
-      <div><p class="kicker">Switching tools</p><h2 id="sw-h">Bring your clients, projects and past hours with you</h2></div>
-      <p>Export from your current tool, drop the file in, and match the columns. On Studio and Agency, send us the export and we do the import for you, usually the same day.</p>
+  <section class="final" id="trial" aria-labelledby="t-h">
+    <div class="wrap">
+      <h2 id="t-h">Send your next invoice from Hourfold</h2>
+      <a class="btn btn-lg btn-ink" href="#trial">Start free trial</a>
+      <span class="sub">14 days free on any plan. No card needed, and setup takes about two minutes.</span>
     </div>
-    <div class="sw-grid">
-      <ul class="sw-list">
-        <li><b>Harvest</b><p>Export the detailed time report as CSV, plus clients and projects. Rates and billable flags come across. <code>Detailed Time.csv</code></p></li>
-        <li><b>Toggl Track</b><p>Export the detailed report as CSV. Tags become tasks, and you set rates after import. <code>Toggl_time_entries.csv</code></p></li>
-        <li><b>FreshBooks</b><p>Export clients and open invoices. Unpaid invoices keep their numbers, so nothing gets billed twice.</p></li>
-        <li><b>A spreadsheet</b><p>Use our template, or upload yours with date, person, client, project and hours columns.</p></li>
-      </ul>
-      <div>
-        <div class="mini map" role="img" aria-label="Import screen matching columns from a Harvest export to Hourfold fields">
-          <div class="mini-h"><span>Import time entries</span><span class="status s-paid">2,418 rows ready</span></div>
-          <div class="mini-b">
-            <div class="row2"><code>Date</code><span aria-hidden="true">→</span><select tabindex="-1" aria-hidden="true"><option>Date</option></select></div>
-            <div class="row2"><code>First Name + Last Name</code><span aria-hidden="true">→</span><select tabindex="-1" aria-hidden="true"><option>Person</option></select></div>
-            <div class="row2"><code>Client</code><span aria-hidden="true">→</span><select tabindex="-1" aria-hidden="true"><option>Client</option></select></div>
-            <div class="row2"><code>Project</code><span aria-hidden="true">→</span><select tabindex="-1" aria-hidden="true"><option>Project</option></select></div>
-            <div class="row2"><code>Hours</code><span aria-hidden="true">→</span><select tabindex="-1" aria-hidden="true"><option>Hours</option></select></div>
-            <div class="row2"><code>Billable?</code><span aria-hidden="true">→</span><select tabindex="-1" aria-hidden="true"><option>Billable</option></select></div>
-            <div class="row2"><code>Billable Rate</code><span aria-hidden="true">→</span><select tabindex="-1" aria-hidden="true"><option>Rate (USD)</option></select></div>
-          </div>
-          <div class="approve"><span>Preview</span><span class="go">Import 2,418 entries</span></div>
-        </div>
-        <p class="sw-note"><strong>Keep both tools for a month if you like.</strong> Your trial and first month are free to cancel, and you can export everything from Hourfold as CSV at any time.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="customers" aria-labelledby="cu-h">
-  <div class="wrap">
-    <div class="sec-h">
-      <div><p class="kicker">Customers</p><h2 id="cu-h">Studios that bill with Hourfold</h2></div>
-      <p>Most of our customers are teams of two to twelve who sell their time: design, video, development, copy and bookkeeping.</p>
-    </div>
-    <div class="stories">
-      <figure class="story" style="margin:0">
-        <img src="img/studio-design.webp" alt="Two designers at a shared desk in a bright studio with plants" width="1200" height="675" loading="lazy">
-        <div class="in">
-          <blockquote>"We used to send invoices around the 9th because someone had to chase timesheets first. Now the week is approved on Friday and invoices go out on the 1st."</blockquote>
-          <div class="stat"><b>8 days</b>sooner, on average, that her clients pay</div>
-          <figcaption class="by"><b>Rosa M.</b>, owner of a 4-person brand studio in Denver</figcaption>
-        </div>
-      </figure>
-      <figure class="story" style="margin:0">
-        <img src="img/studio-video.webp" alt="Two video producers reviewing footage on a laptop next to a camera" width="1200" height="800" loading="lazy">
-        <div class="in">
-          <blockquote>"The budget bar told us we were at 80% on a wedding film edit with two rounds left. We had the scope talk before it was a problem."</blockquote>
-          <figcaption class="by"><b>Theo A.</b>, two-person video studio</figcaption>
-        </div>
-      </figure>
-      <figure class="story" style="margin:0">
-        <img src="img/studio-agency.webp" alt="A small web agency team working on laptops in a shared office" width="1200" height="800" loading="lazy">
-        <div class="in">
-          <blockquote>"We were paying per seat for 14 people, including three part-timers who log two hours a week. The flat price was the reason we moved."</blockquote>
-          <figcaption class="by"><b>Priya N.</b>, operations lead at a 14-person web agency</figcaption>
-        </div>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="faq" aria-labelledby="faq-h" style="padding-top:0">
-  <div class="wrap faq-grid">
-    <div class="faq-side">
-      <p class="kicker">Questions</p>
-      <h2 id="faq-h" style="font-size:clamp(30px,3.6vw,46px);font-weight:800">Common questions</h2>
-      <p>Something else? Email <a href="mailto:hello@hourfold.com">hello@hourfold.com</a>. A person who works on the product answers, usually within a few hours on weekdays.</p>
-    </div>
-    <div class="faq">
-      <details open><summary>What happens when my free trial ends?</summary><p>Nothing is charged until you add a card. If you don't, your account goes read-only and your data stays there for 90 days so you can export it.</p></details>
-      <details><summary>Do you take a cut of client payments?</summary><p>No. Card and ACH payments run through your own Stripe account at Stripe's normal fees (2.9% + 30¢ for US cards, 0.8% for ACH capped at $5). Hourfold adds nothing on top.</p></details>
-      <details><summary>What if we grow past 20 people?</summary><p>Agency covers up to 20 people. Past that, each extra person is $4 a month. Clients who only view and pay invoices never count.</p></details>
-      <details><summary>Can contractors track time without seeing our rates?</summary><p>Yes. Give them the Member role and they see their own hours and projects, but no rates, budgets or invoices.</p></details>
-      <details><summary>Does it handle tax and other currencies?</summary><p>Invoices support any currency, up to two tax lines, and tax IDs on the invoice. Reports convert to your home currency at the rate on the invoice date.</p></details>
-      <details><summary>Can I cancel any time?</summary><p>Yes, from Settings, no call needed. Monthly plans stop at the end of the month. Yearly plans are refunded for the unused months.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="final" id="trial" aria-labelledby="trial-h">
-  <div class="wrap">
-    <div class="final-box">
-      <div>
-        <h2 id="trial-h">Try Hourfold free for 14 days</h2>
-        <p>Every feature on the Agency plan, for your whole team. Invite people, run timers and send a real invoice before you pay anything.</p>
-      </div>
-      <form class="signup" id="signup" novalidate>
-        <label for="email">Work email</label>
-        <div class="f">
-          <input id="email" type="email" name="email" autocomplete="email" placeholder="you@yourstudio.com" required>
-          <button class="btn btn-ink btn-lg" type="submit">Start free trial</button>
-        </div>
-        <small id="signup-msg" role="status">No card needed. Takes about two minutes to set up.</small>
-      </form>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <a class="logo" href="#top" aria-label="Hourfold home"><svg width="24" height="24" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="7" fill="#15171a"/><path d="M14 6v8l5 3" stroke="#ffcc29" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 22h16" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>Hourfold</a>
-        <p style="margin-top:12px;max-width:26em">Time tracking and invoicing for freelancers and studios of up to 20 people. Made by a small team in Portland, Oregon.</p>
-      </div>
-      <div><h4>Product</h4><ul><li><a href="#product">Time tracking</a></li><li><a href="#product">Invoices</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
-      <div><h4>Switching</h4><ul><li><a href="#switching">From Harvest</a></li><li><a href="#switching">From Toggl Track</a></li><li><a href="#switching">From FreshBooks</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="mailto:hello@hourfold.com">hello@hourfold.com</a></li><li><a href="tel:+15035550142">(503) 555-0142</a></li><li><a href="#faq">Questions</a></li></ul></div>
+  <div class="wrap foot">
+    <span>© 2026 Hourfold, made by a small team in Portland, Oregon</span>
+    <div class="foot-l">
+      <a href="#pricing">Pricing</a>
+      <a href="#trial">Privacy</a>
+      <a href="#trial">Terms</a>
+      <a href="mailto:hello@hourfold.com">hello@hourfold.com</a>
+      <a href="tel:+15035550142">(503) 555-0142</a>
     </div>
-    <p class="legal">© 2026 Hourfold. Harvest, Toggl Track and FreshBooks are trademarks of their owners. Photos from Pexels.</p>
   </div>
 </footer>
 
 <script>
-// mobile menu
-const mb=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
-mb.addEventListener('click',()=>{const o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-menu.addEventListener('click',e=>{if(e.target.tagName==='A'){menu.classList.remove('open');mb.setAttribute('aria-expanded',false)}});
-
-// running timer
-let secs=1*3600+23*60+45,running=true;const clock=document.getElementById('clock'),stop=document.getElementById('stop');
 const fmt=s=>[Math.floor(s/3600),Math.floor(s/60)%60,s%60].map(n=>String(n).padStart(2,'0')).join(':');
-setInterval(()=>{if(running){secs++;clock.textContent=fmt(secs)}},1000);
-stop.addEventListener('click',()=>{running=!running;stop.classList.toggle('paused',!running);stop.setAttribute('aria-label',running?'Pause timer':'Resume timer');
-  stop.innerHTML=running?'<svg viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" rx="2" fill="currentColor"/></svg>':'<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z" fill="currentColor"/></svg>'});
-
-// tabs
-const tabs=[...document.querySelectorAll('[role=tab]')];
-function sel(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute('aria-controls')).hidden=!on})}
-tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];sel(n);n.focus()}})});
-document.querySelector('[data-go]').addEventListener('click',()=>{const t=document.getElementById('t2');sel(t);t.focus()});
-
-// pricing calculator
-const range=document.getElementById('people'),out=document.getElementById('peopleOut'),plans=[...document.querySelectorAll('.plan')];
-let bill='y';
-function price(){
-  const n=+range.value;out.textContent=n;document.getElementById('n1').textContent=n;
-  let fit=plans.find(p=>n<=+p.dataset.max);
-  plans.forEach(p=>{const b=p.querySelector('b'),m=+b.dataset.m,y=+b.dataset.y;
-    b.textContent='$'+(bill==='y'?y:m);
-    p.querySelector('[data-note]').textContent=bill==='y'?`Billed $${m*10} a year.`:'Billed monthly. Cancel any time.';
-    p.classList.toggle('fit',p===fit);p.classList.toggle('na',n>+p.dataset.max)});
-  const fb=fit.querySelector('b'),monthly=bill==='y'?+fb.dataset.y:+fb.dataset.m;
-  document.getElementById('fitnote').innerHTML=n===1?`For <strong class="num">1</strong> person, Solo is <strong class="num">$${monthly}</strong> a month.`:`For <strong class="num">${n}</strong> people, ${fit.querySelector('h3').textContent} works out to <strong class="num">$${(monthly/n).toFixed(2)}</strong> a person each month.`;
-  document.getElementById('seat').textContent='$'+(11*n);
-}
-range.addEventListener('input',price);
-document.querySelectorAll('[data-bill]').forEach(b=>b.addEventListener('click',()=>{bill=b.dataset.bill;document.querySelectorAll('[data-bill]').forEach(x=>x.setAttribute('aria-pressed',x===b));price()}));
-price();
-
-// signup mock
-document.getElementById('signup').addEventListener('submit',e=>{e.preventDefault();const v=document.getElementById('email').value.trim(),m=document.getElementById('signup-msg');
-  if(!/^\S+@\S+\.\S+$/.test(v)){m.textContent='Please enter an email address like you@yourstudio.com.';m.classList.remove('ok');return}
-  m.textContent=`This is a concept site, so no account was made. In the real product, a sign-in link would go to ${v}.`;m.classList.add('ok')});
+let h=5025;const clock=document.getElementById('clock');
+setInterval(()=>{clock.textContent=fmt(++h)},1000);
+let d=0,run=false,iv;const demo=document.getElementById('demo'),btn=document.getElementById('demoBtn');
+btn.addEventListener('click',()=>{run=!run;btn.textContent=run?'Stop timer':'Start timer';btn.classList.toggle('run',run);
+  if(run){iv=setInterval(()=>{demo.textContent=fmt(++d)},1000)}else clearInterval(iv)});
 </script>
 </body>
 </html>

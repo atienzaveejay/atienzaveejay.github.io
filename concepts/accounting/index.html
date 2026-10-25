@@ -3,293 +3,156 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Merri Books & Tax | Fixed-fee bookkeeping and tax, Brunswick</title>
-<meta name="description" content="Fixed monthly bookkeeping, BAS, payroll and tax returns for Melbourne sole traders and small businesses on Xero. See your price now and book a 15-minute call.">
+<title>Merri Books & Tax | Bookkeeping and tax, Brunswick</title>
+<meta name="description" content="Fixed monthly bookkeeping, BAS and tax for Melbourne sole traders and small businesses. Book a 15-minute call.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#14211B; --body:#2C3A33; --muted:#4F5F57;
-  --paper:#FFFFFF; --wash:#F2F5F2; --rule:#D3DCD6; --rule-strong:#14211B;
+  --paper:#FFFFFF; --wash:#F2F5F2; --rule:#D3DCD6;
   --green:#1E5A43; --green-dark:#163F30; --green-tint:#E3EEE8;
-  --hl:#FFE45C; --red:#A3261C;
-  --display:"Public Sans", system-ui, sans-serif;
-  --text:"Public Sans", system-ui, sans-serif;
-  --wrap:1200px; --r:6px;
+  --hl:#FFE45C;
+  --font:"Public Sans", system-ui, sans-serif;
+  --r:6px;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--paper);color:var(--body);font:400 17px/1.6 var(--text);font-variant-numeric:tabular-nums}
+body{margin:0;background:var(--paper);color:var(--body);font:400 18px/1.6 var(--font);font-variant-numeric:tabular-nums}
 img{max-width:100%;height:auto;display:block}
+h1,h2,h3{margin:0;color:var(--ink);font-weight:800;line-height:1.06;letter-spacing:-.025em}
+p{margin:0}
 a{color:var(--green)}
-h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:1.08;margin:0;font-weight:800;letter-spacing:-.025em}
-h3{letter-spacing:-.015em}
-h2{font-size:clamp(30px,4vw,44px);text-wrap:balance}
-h3{font-size:21px;font-weight:700}
-p{margin:0 0 1em}
 :focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:3px}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.hl{background:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 92%,transparent 92%);padding:0 .15em;color:var(--ink)}
-.skip{position:absolute;left:-999px;top:0}
-.skip:focus{left:12px;top:12px;background:#fff;padding:8px 12px;z-index:100}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.skip,.sr{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.skip:focus{left:12px;top:12px;width:auto;height:auto;background:#fff;color:var(--ink);padding:8px 12px;z-index:99}
+section{scroll-margin-top:72px}
+.hl{background:linear-gradient(transparent 14%,var(--hl) 14%,var(--hl) 90%,transparent 90%);padding:0 .12em;color:var(--ink)}
 
-/* concept strip */
 .concept{background:var(--wash);color:var(--muted);font-size:13px;text-align:center;padding:6px 16px;border-bottom:1px solid var(--rule)}
 .concept a{color:var(--muted)}
 
-/* header */
-header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--rule)}
-.bar{display:flex;align-items:center;gap:28px;height:68px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;white-space:nowrap}
+header.site{background:rgba(255,255,255,.97);position:sticky;top:0;z-index:40;border-bottom:1px solid var(--rule)}
+.bar{display:flex;align-items:center;gap:24px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none;color:var(--ink)}
 .logo svg{flex:none}
-.logo small{display:block;font:500 12px/1 var(--text);color:var(--muted);letter-spacing:0;margin-top:3px}
-nav.main{display:flex;gap:24px;margin-left:auto}
-nav.main a{color:var(--body);text-decoration:none;font-weight:500;font-size:15px}
-nav.main a:hover{color:var(--green);text-decoration:underline;text-underline-offset:4px}
-.phone{font-weight:600;color:var(--ink);text-decoration:none;font-size:15px;white-space:nowrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;border:0;border-radius:var(--r);padding:13px 20px;font:600 16px/1.2 var(--text);text-decoration:none;cursor:pointer;white-space:nowrap}
+.bar nav{margin-left:auto;display:flex;gap:28px}
+.bar nav a{text-decoration:none;font-weight:500;font-size:16px;color:var(--body)}
+.bar nav a:hover{color:var(--green);text-decoration:underline;text-underline-offset:5px}
+.bar .tel{font-weight:700;text-decoration:none;white-space:nowrap;color:var(--ink)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;font:700 18px/1 var(--font);padding:18px 26px;border-radius:var(--r);text-decoration:none;border:0;cursor:pointer;white-space:nowrap}
 .btn:hover{background:var(--green-dark)}
-.btn.small{padding:10px 16px;font-size:15px}
-.link{font-weight:600;color:var(--ink);text-underline-offset:4px}
-.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--rule);border-radius:var(--r);padding:8px 10px;cursor:pointer;color:var(--ink)}
-@media (max-width:980px){
-  nav.main,.bar .phone{display:none}
-  .menu-btn{display:inline-flex}
-  .bar .btn{display:none}
-  nav.main.open{display:flex;flex-direction:column;gap:0;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--rule);padding:8px 24px 16px}
-  nav.main.open a{padding:12px 0;border-bottom:1px solid var(--wash);font-size:17px}
-}
+.btn svg{flex:none}
+.quiet{font-weight:600;text-underline-offset:5px;color:var(--ink)}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px}
 
-/* hero */
-.hero{padding:44px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1fr 520px;gap:64px;align-items:start}
-.eyebrowless-loc{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:15px;margin-bottom:20px}
-.hero h1{font-size:clamp(36px,4.4vw,56px);margin-bottom:22px}
-.hero .lead{font-size:19px;max-width:30em;color:var(--body)}
-.hero-facts{list-style:none;padding:0;margin:32px 0 0;border-top:1px solid var(--rule)}
-.hero-facts li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--rule);font-size:16px}
-.hero-facts svg{flex:none;margin-top:3px;color:var(--green)}
-.hero-facts strong{color:var(--ink)}
+.hero{padding:64px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:5fr 6fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(42px,4.6vw,66px);margin-bottom:28px}
+.hero h1 .accent{color:var(--green)}
+.hero .line{font-size:21px;color:var(--body);max-width:24em;margin-bottom:36px}
+.photo{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 1px 0 var(--ink),0 28px 60px -32px rgba(20,33,27,.45);border:1.5px solid var(--ink)}
+.photo img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:50% 30%}
+.tag{position:absolute;display:flex;align-items:center;gap:7px;background:#fff;color:var(--ink);font-weight:700;font-size:15px;padding:6px 12px 6px 10px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 8px rgba(20,33,27,.18)}
+.t1{left:6%;top:16%}.t2{left:41%;top:11%}.t3{right:4%;top:19%}
+@media (max-width:640px){.t1{left:4%;top:7%}.t2{left:36%;top:2%}.t3{right:3%;top:11%}}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
 
-/* quote card */
-.quote{background:#fff;border:1.5px solid var(--ink);border-radius:10px;box-shadow:0 1px 0 var(--ink),0 18px 40px -24px rgba(20,33,27,.35)}
-.quote-head{display:flex;justify-content:space-between;align-items:baseline;padding:20px 24px 14px;border-bottom:1px solid var(--rule)}
-.quote-head h2{font-size:24px}
-.quote-head{flex-wrap:wrap;gap:4px 12px}
-.quote-head span{font-size:13px;color:var(--muted)}
-.q-step{padding:12px 24px 4px}
-.q-step fieldset{border:0;margin:0;padding:0}
-.q-step legend{font-weight:600;color:var(--ink);font-size:15px;margin-bottom:10px;padding:0}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips label{position:relative}
-.chips input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
-.chips span{display:inline-block;border:1.5px solid var(--rule);border-radius:999px;padding:7px 13px;font-size:15px;font-weight:500;color:var(--body);cursor:pointer;background:#fff}
-.chips input:checked+span{border-color:var(--green);background:var(--green-tint);color:var(--green-dark);font-weight:600}
-.chips input:focus-visible+span{outline:3px solid var(--green);outline-offset:2px}
-.lines{margin:14px 24px 0;border-top:1.5px solid var(--ink)}
-.line{display:flex;justify-content:space-between;gap:16px;padding:7px 0;border-bottom:1px dashed var(--rule);font-size:15px}
-.line b{font-weight:600;color:var(--ink);white-space:nowrap}
-.line .inc{color:var(--muted);font-weight:500}
-.total{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0 4px;border-bottom:3px double var(--ink)}
-.total span{font-weight:600;color:var(--ink)}
-.total output{font:700 36px/1 var(--display);color:var(--ink)}
-.total output small{font:500 14px var(--text);color:var(--muted);margin-left:4px}
-.who{display:flex;align-items:center;gap:12px;padding:12px 24px;font-size:15px}
-.who img{width:44px;height:44px;border-radius:50%;object-fit:cover}
-.who strong{color:var(--ink)}
-.quote-foot{padding:0 24px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
-.quote-foot .btn{flex:1 1 auto;white-space:normal;text-align:center}
-.quote-foot p{font-size:13px;color:var(--muted);margin:0;flex-basis:100%}
-
-/* due dates */
-.dates{background:var(--ink);color:#E6EDE9}
-.dates .wrap{display:grid;grid-template-columns:260px 1fr;gap:40px;padding-top:40px;padding-bottom:40px}
-.dates h2{color:#fff;font-size:28px}
-.dates .sub{color:#B9C7BF;font-size:15px;margin-top:10px}
-.date-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.date-list li{padding:0 20px;border-left:1px solid #3A4A42}
-.date-list .when{font:700 22px/1.15 var(--display);color:#fff;display:block;margin-bottom:6px}
-.date-list .when mark{background:var(--hl);color:var(--ink);padding:0 .2em}
-.date-list .what{font-weight:600;color:#fff;display:block;font-size:15px}
-.date-list p{font-size:14px;color:#B9C7BF;margin:6px 0 0;line-height:1.5}
-.count{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--ink);background:var(--hl);border-radius:3px;padding:2px 8px}
-
-section{scroll-margin-top:80px}
-.sec{padding:96px 0}
-.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px}
-.sec-head p{color:var(--muted);margin:0;max-width:34em}
-
-/* prices table */
-.ptable{width:100%;border-collapse:collapse;font-size:16px}
-.ptable th,.ptable td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
-.ptable thead th{border-bottom:1.5px solid var(--ink);vertical-align:bottom;padding-bottom:18px}
-.ptable thead .plan{font:700 22px/1.2 var(--display);color:var(--ink);display:block}
-.ptable thead .for{font-weight:400;color:var(--muted);font-size:14px;display:block;margin-top:4px}
-.ptable thead .price{display:block;margin-top:14px;font:700 34px/1 var(--display);color:var(--ink)}
-.ptable thead .price small{font:500 14px var(--text);color:var(--muted)}
-.ptable tbody th{font-weight:500;color:var(--body);width:34%}
-.ptable td{color:var(--ink)}
-.ptable td.no{color:var(--muted)}
-.ptable .tick{color:var(--green);vertical-align:-3px;margin-right:6px}
-.ptable col.mid{background:var(--wash)}
-.ptable tfoot td{border-bottom:0;padding-top:20px}
-.oneoff{margin-top:64px;display:grid;grid-template-columns:300px 1fr;gap:48px}
-.oneoff h3{font-size:26px}
-.oneoff .note{color:var(--muted);font-size:15px;margin-top:10px}
-.leader{list-style:none;margin:0;padding:0}
-.leader li{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:1px solid var(--rule)}
-.leader li span{color:var(--ink);font-weight:500}
-.leader li small{display:block;color:var(--muted);font-weight:400;font-size:14px}
-.leader li i{flex:1;border-bottom:2px dotted #A9B7AF;transform:translateY(-5px);min-width:20px}
-.leader li b{color:var(--ink);font-weight:700;white-space:nowrap}
-
-/* team */
-.team{background:var(--wash)}
+.team{padding:96px 0;border-top:1px solid var(--rule)}
+.team h2,.price h2,.book h2{font-size:clamp(36px,4.4vw,60px)}
+.team h2{margin-bottom:48px}
 .people{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.person img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:8px;background:#ddd}
-.person h3{margin-top:18px;font-size:24px}
-.person .role{color:var(--green-dark);font-weight:600;font-size:15px;margin:4px 0 12px}
-.person p{font-size:16px}
-.person dl{margin:0;border-top:1px solid var(--rule);font-size:14px}
-.person dl div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--rule)}
-.person dt{color:var(--muted)}
-.person dd{margin:0;color:var(--ink);font-weight:500;text-align:right}
-.team-note{margin-top:40px;font-size:18px;color:var(--ink);max-width:40em}
+.person img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px}
+.person h3{font-size:28px;margin-top:20px}
+.person .role{font-weight:600;color:var(--green);margin:4px 0 10px;font-size:16px}
+.person p{font-size:17px}
 
-/* how it works */
-.steps{display:grid;grid-template-columns:1fr 440px;gap:64px;align-items:start}
-.timeline{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
-.timeline li{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--rule)}
-.timeline .t{font:700 17px/1.3 var(--display);color:var(--green-dark)}
-.timeline h3{font-size:20px;margin-bottom:6px}
-.timeline p{margin:0;color:var(--body);font-size:16px}
-.email{border:1px solid var(--rule);border-radius:10px;background:#fff;box-shadow:0 18px 40px -28px rgba(20,33,27,.4);font-size:15px;position:sticky;top:100px}
-.email header{padding:16px 20px;border-bottom:1px solid var(--rule);font-size:14px;color:var(--muted)}
-.email header div{display:flex;gap:8px}
-.email header b{color:var(--ink);font-weight:600}
-.email .body{padding:20px}
-.email .amt{font:700 40px/1 var(--display);color:var(--ink);margin:6px 0 4px}
-.email table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
-.email td{padding:7px 0;border-bottom:1px solid var(--wash)}
-.email td:last-child{text-align:right;color:var(--ink);font-weight:500}
-.caption{font-size:14px;color:var(--muted);margin-top:12px}
+.price{background:var(--wash);padding:96px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.price .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.price h2{margin-bottom:40px}
+.price fieldset{border:0;margin:0 0 28px;padding:0}
+.price legend{font-weight:700;font-size:19px;color:var(--ink);margin-bottom:12px;padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opts label{position:relative}
+.opts input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.opts span{display:inline-block;padding:12px 20px;border:1.5px solid var(--rule);background:#fff;border-radius:999px;font-weight:500;font-size:17px;color:var(--body);cursor:pointer}
+.opts input:checked+span{border-color:var(--green);background:var(--green-tint);color:var(--green-dark);font-weight:700}
+.opts input:focus-visible+span{outline:3px solid var(--green);outline-offset:3px}
+.result{background:#fff;border:1.5px solid var(--ink);border-radius:12px;padding:40px;box-shadow:0 1px 0 var(--ink),0 24px 50px -30px rgba(20,33,27,.35)}
+.result .amt{font-size:clamp(68px,8vw,110px);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--ink)}
+.result .per{font-size:18px;color:var(--muted);margin:10px 0 18px;padding-bottom:18px;border-bottom:3px double var(--ink)}
+.result .inc{font-size:18px;margin-bottom:28px;max-width:24em}
 
-/* clients */
-.clients .wrap{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
-.clients figure{margin:0}
-.clients figure img{border-radius:8px;aspect-ratio:4/3;object-fit:cover;width:100%}
-.clients figcaption{font-size:14px;color:var(--muted);margin-top:10px}
-.quotes{display:grid;gap:0;border-top:1.5px solid var(--ink)}
-.quotes blockquote{margin:0;padding:24px 0;border-bottom:1px solid var(--rule)}
-.quotes blockquote p{font-size:19px;color:var(--ink);line-height:1.5;margin-bottom:10px}
-.quotes cite{font-style:normal;font-size:14px;color:var(--muted)}
-.quotes cite b{color:var(--body);font-weight:600}
+.dates{padding:56px 0;border-bottom:1px solid var(--rule)}
+.dates .wrap{display:grid;grid-template-columns:auto 1fr;gap:24px 64px;align-items:start}
+.dates h2{font-size:30px}
+.dates ul{list-style:none;margin:0;padding:0;display:grid;font-size:20px;border-top:1.5px solid var(--ink)}
+.dates li{display:flex;gap:20px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule)}
+.dates b{white-space:nowrap;font-weight:800;color:var(--ink);background:linear-gradient(transparent 12%,var(--hl) 12%,var(--hl) 92%,transparent 92%);padding:0 .2em}
 
-/* faq */
-.faq .wrap{display:grid;grid-template-columns:1fr 2fr;gap:64px}
-.faq-list{border-top:1.5px solid var(--ink)}
-details{border-bottom:1px solid var(--rule)}
-summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;color:var(--ink);font-size:18px;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-75%) rotate(45deg);transition:transform .2s}
-details[open] summary::after{transform:translateY(-25%) rotate(-135deg)}
-details p{padding:0 40px 8px 0;color:var(--body)}
+.client{padding:96px 0}
+.client .wrap{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:center}
+.client figure{margin:0}
+.client img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.client figcaption{margin-top:12px;color:var(--muted);font-size:15px}
+.client blockquote{margin:0}
+.client blockquote p{font-size:clamp(24px,2.4vw,32px);font-weight:600;line-height:1.3;color:var(--ink);letter-spacing:-.015em}
+.client cite{display:block;font-style:normal;margin-top:18px;color:var(--muted);font-size:16px}
+.client cite b{color:var(--ink)}
+.client .second{margin-top:36px;padding-top:28px;border-top:1px solid var(--rule)}
+.client .second p{font-size:clamp(20px,1.8vw,24px)}
 
-/* booking */
-.book{background:var(--ink);color:#E6EDE9}
-.book .wrap{display:grid;grid-template-columns:1fr 560px;gap:64px}
-.book h2{color:#fff}
-.book .intro{color:#C5D2CB;margin-top:16px;max-width:28em}
-.office{margin-top:40px;font-style:normal;border-top:1px solid #3A4A42}
-.office div{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #3A4A42;font-size:16px}
-.office dt{color:#9FB1A7}
-.office dd{margin:0;color:#fff}
-.office a{color:#fff}
-.picker{background:#fff;color:var(--body);border-radius:10px;padding:24px}
-.picker h3{font-size:20px;margin-bottom:4px}
-.picker .hint{font-size:14px;color:var(--muted);margin:0 0 16px}
-.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
-.days button,.times button{font:inherit;border:1.5px solid var(--rule);background:#fff;border-radius:var(--r);cursor:pointer;color:var(--ink)}
-.days button{padding:10px 4px;font-size:14px;line-height:1.25}
-.days button b{display:block;font-size:20px;font-family:var(--display)}
-.times{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px}
-.times button{padding:10px 4px;font-size:15px;font-weight:500}
-.days button[aria-pressed="true"],.times button[aria-pressed="true"]{border-color:var(--green);background:var(--green);color:#fff}
-.times button:disabled{color:#9AA7A0;text-decoration:line-through;cursor:not-allowed;background:var(--wash)}
-.field{display:grid;gap:6px;margin-bottom:14px}
-.field label{font-weight:600;font-size:14px;color:var(--ink)}
-.field input,.field select{font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid #9DAEA5;border-radius:var(--r);background:#fff;color:var(--ink);width:100%}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.picker .btn{width:100%;margin-top:6px}
-.done{display:none;padding:12px 14px;border-radius:var(--r);background:var(--green-tint);color:var(--green-dark);font-weight:500;margin-top:14px}
+.book{background:var(--wash);padding:96px 0 104px;border-top:1px solid var(--rule)}
+.book .wrap{display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:end}
+.book h2{margin-bottom:22px}
+.book .line{font-size:20px;max-width:28em;margin-bottom:34px}
+.book address{font-style:normal;font-size:17px;line-height:1.75;color:var(--body);border-left:3px solid var(--green);padding-left:24px}
+.book address strong{color:var(--ink);display:block;font-size:19px;margin-bottom:4px}
 
-footer.site{padding:40px 0 48px;font-size:14px;color:var(--muted);border-top:1px solid var(--rule)}
-footer.site .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+footer.site{color:var(--muted);font-size:14px;padding:28px 0;border-top:1px solid var(--rule)}
 footer.site a{color:var(--muted)}
+footer.site .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
 
-/* mobile action bar */
 .mbar{display:none}
 
-@media (max-width:1100px){
-  .hero .wrap{grid-template-columns:1fr 460px;gap:40px}
-  .date-list{grid-template-columns:repeat(2,1fr);row-gap:28px}
+@media (max-width:980px){
+  .bar nav{display:none}
+  .bar .tel{margin-left:auto}
+  .hero .wrap,.price .wrap,.client .wrap,.book .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
+  .people{gap:16px}
   .dates .wrap{grid-template-columns:1fr}
-  .book .wrap{grid-template-columns:1fr 480px;gap:40px}
-}
-@media (max-width:900px){
-  .hero .wrap,.steps,.clients .wrap,.faq .wrap,.book .wrap,.oneoff,.sec-head{grid-template-columns:minmax(0,1fr);gap:32px}
-  .people{grid-template-columns:1fr 1fr}
-  .hero-copy{display:contents}
-  .hero-facts{order:3;margin-top:0}
-  .hero .wrap{gap:0}
-  .hero .lead{margin-bottom:24px}
-  .quote{order:2;margin-bottom:32px}
-  .email{position:static}
-  .ptable-wrap{overflow-x:auto}
 }
 @media (max-width:640px){
-  body{font-size:16px;padding-bottom:72px}
+  body{font-size:17px;padding-bottom:76px}
   .wrap{padding:0 16px}
-  .hero{padding:32px 0 40px}
-  .hero .lead{font-size:17px}
-  .sec{padding:64px 0}
-  .sec-head{margin-bottom:28px}
-  .quote-head,.q-step,.who,.quote-foot{padding-left:16px;padding-right:16px}
-  .lines{margin-left:16px;margin-right:16px}
-  .date-list{grid-template-columns:1fr}
-  .date-list li{padding:0 0 0 16px}
-  .people{grid-template-columns:1fr}
-  .person{display:grid;grid-template-columns:120px 1fr;gap:16px}
-  .person img{aspect-ratio:1;border-radius:6px}
-  .person h3{margin-top:0;font-size:21px}
-  .person p,.person dl{grid-column:1/-1}
-  .timeline li{grid-template-columns:1fr;gap:4px}
-  .picker{padding:18px}
-  .times{grid-template-columns:repeat(3,1fr)}
-  .days button{font-size:12px}
-  .two{grid-template-columns:1fr}
-  /* prices: stacked cards on phone */
-  .ptable thead{display:none}
-  .ptable,.ptable tbody,.ptable tr,.ptable td,.ptable th{display:block;width:100%}
-  .ptable tbody tr{display:none}
-  .mplans{display:grid!important}
-  .ptable-wrap{display:none}
-  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--rule);padding:10px 16px calc(10px + env(safe-area-inset-bottom));gap:10px}
-  .mbar a{flex:1}
-  .mbar .call{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+  .bar{height:64px}
+  .bar .tel{font-size:15px}
+  .logo{font-size:17px}
+  .hero{padding:32px 0 56px}
+  .hero .line{font-size:18px;margin-bottom:28px}
+  .tag{font-size:13px;padding:4px 9px 4px 8px}
+  .team,.client,.price,.book{padding:64px 0}
+  .team h2{margin-bottom:32px}
+  .price h2{margin-bottom:28px}
+  .people{grid-template-columns:1fr;gap:28px}
+  .person{display:grid;grid-template-columns:132px 1fr;gap:4px 18px;align-items:start}
+  .person img{grid-row:span 3;border-radius:8px}
+  .person h3{margin-top:0;font-size:23px}
+  .person .role{margin:0}
+  .person p{font-size:16px}
+  .result{padding:28px 22px}
+  .opts span{padding:11px 16px;font-size:16px}
+  .dates ul{font-size:17px}
+  .dates li{flex-direction:column;gap:2px}
+  .btn{font-size:17px;padding:17px 22px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--rule);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+  .mbar .btn{flex:1;justify-content:center}
 }
-.mplans{display:none;gap:16px}
-.mplan{border:1.5px solid var(--ink);border-radius:10px;padding:20px}
-.mplan h3{font-size:22px}
-.mplan .for{color:var(--muted);font-size:14px;margin:2px 0 10px}
-.mplan .price{font:700 32px/1 var(--display);color:var(--ink);margin-bottom:12px}
-.mplan .price small{font:500 14px var(--text);color:var(--muted)}
-.mplan ul{list-style:none;padding:0;margin:0;font-size:15px}
-.mplan li{padding:7px 0;border-top:1px solid var(--rule);display:flex;gap:8px}
-.mplan li svg{flex:none;color:var(--green);margin-top:3px}
 </style>
 </head>
 <body>
@@ -299,390 +162,161 @@ footer.site a{color:var(--muted)}
 <header class="site">
   <div class="wrap bar">
     <a class="logo" href="#top" aria-label="Merri Books and Tax, home">
-      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="6" fill="#1E5A43"/><path d="M8 11h18M8 17h18M8 23h11" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M22 23h4" stroke="#FFE45C" stroke-width="3.2" stroke-linecap="round"/></svg>
-      <span>Merri Books &amp; Tax<small>Brunswick, Melbourne</small></span>
+      <svg width="32" height="32" viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="6" fill="#1E5A43"/><path d="M8 11h18M8 17h18M8 23h11" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><path d="M22 23h4" stroke="#FFE45C" stroke-width="3.2" stroke-linecap="round"/></svg>
+      Merri Books &amp; Tax
     </a>
-    <nav class="main" id="nav" aria-label="Main">
-      <a href="#prices">Prices</a>
-      <a href="#dates">Due dates</a>
-      <a href="#team">Who you'll deal with</a>
-      <a href="#how">How it works</a>
-      <a href="#faq">Questions</a>
+    <nav aria-label="Main">
+      <a href="#team">Our team</a>
+      <a href="#price">Prices</a>
+      <a href="#book">Contact</a>
     </nav>
-    <a class="phone" href="tel:0400000000">0400 000 000</a>
-    <a class="btn small" href="#book">Book a 15-minute call</a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="nav" id="menuBtn">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="skip">Menu</span>
-    </button>
+    <a class="tel" href="tel:0400000000">0400 000 000</a>
   </div>
 </header>
 
 <main id="main">
-<section class="hero" id="top">
+<section class="hero" id="top" aria-labelledby="h1">
   <div class="wrap">
-    <div class="hero-copy">
-      <p class="eyebrowless-loc">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-        Sydney Road, Brunswick. Registered tax and BAS agents.
-      </p>
-      <h1>Bookkeeping and tax for Melbourne small businesses, at one fixed monthly price.</h1>
-      <p class="lead">We're a team of three who keep Xero up to date, lodge your BAS and do your tax return. Answer three questions and you'll see what you'd pay before you talk to anyone.</p>
-      <ul class="hero-facts">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span><strong>The price on this page goes in your engagement letter.</strong> No hourly bills, no surprise invoice at tax time.</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span><strong>One bookkeeper looks after your file.</strong> You get their name and their mobile on day one.</span></li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg><span><strong>Month to month.</strong> Leave whenever you like and we'll hand your Xero file over clean.</span></li>
-      </ul>
+    <div class="hero-text">
+      <h1 id="h1">Your books and tax, done by <span class="accent">people you know</span>.</h1>
+      <p class="line">Three bookkeepers on Sydney Road, Brunswick, for sole traders and small businesses. One fixed price each month.</p>
+      <div class="actions">
+        <a class="btn" href="#book">Book a 15-minute call
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="quiet" href="#price">See what you'd pay</a>
+      </div>
     </div>
-
-    <form class="quote" id="quote" aria-labelledby="quoteTitle" onsubmit="return false">
-      <div class="quote-head"><h2 id="quoteTitle">Your monthly price</h2><span>All prices include GST</span></div>
-      <div class="q-step"><fieldset><legend>How is your business set up?</legend>
-        <div class="chips">
-          <label><input type="radio" name="type" value="sole" checked><span>Sole trader</span></label>
-          <label><input type="radio" name="type" value="trust"><span>Partnership or trust</span></label>
-          <label><input type="radio" name="type" value="co"><span>Company (Pty Ltd)</span></label>
-        </div></fieldset></div>
-      <div class="q-step"><fieldset><legend>Bank transactions in a usual month</legend>
-        <div class="chips">
-          <label><input type="radio" name="tx" value="0" checked><span>Under 50</span></label>
-          <label><input type="radio" name="tx" value="1"><span>50 to 150</span></label>
-          <label><input type="radio" name="tx" value="2"><span>150 to 400</span></label>
-        </div></fieldset></div>
-      <div class="q-step"><fieldset><legend>Staff on payroll</legend>
-        <div class="chips">
-          <label><input type="radio" name="staff" value="0" checked><span>Just me</span></label>
-          <label><input type="radio" name="staff" value="1"><span>1 to 5</span></label>
-          <label><input type="radio" name="staff" value="2"><span>6 to 15</span></label>
-        </div></fieldset></div>
-
-      <div class="lines" aria-live="polite">
-        <div class="line"><span>Xero reconciled every month</span><b class="inc">Included</b></div>
-        <div class="line"><span>BAS prepared and lodged each quarter</span><b class="inc">Included</b></div>
-        <div class="line" id="lPay"><span>Payroll, STP and Payday Super</span><b class="inc">Not needed</b></div>
-        <div class="line"><span id="lTaxLabel">Your individual tax return</span><b class="inc">Included</b></div>
-        <div class="line" id="lAsic" hidden><span>ASIC annual review</span><b class="inc">Included</b></div>
-        <div class="total"><span>Per month</span><output id="total" for="quote">$149<small>inc GST</small></output></div>
-      </div>
-      <div class="who">
-        <img id="whoImg" src="img/tom.webp" alt="" width="44" height="44">
-        <span>Your bookkeeper would be <strong id="whoName">Tom</strong>. <span id="whoExtra">Claire signs off your tax return.</span></span>
-      </div>
-      <div class="quote-foot">
-        <a class="btn" href="#book" id="quoteBook">Book a 15-minute call about this price</a>
-        <p>Behind on lodgements? We quote the catch-up as a separate fixed price on the call.</p>
-      </div>
-    </form>
+    <div class="photo">
+      <img src="img/team.webp" alt="Claire, Daniel and Kevin from Merri Books and Tax, smiling outside the office with client paperwork" width="1600" height="1200" fetchpriority="high">
+      <span class="tag t1">Claire, tax</span>
+      <span class="tag t2">Daniel, books</span>
+      <span class="tag t3">Kevin, payroll</span>
+    </div>
   </div>
 </section>
 
-<section class="dates" id="dates" aria-labelledby="datesTitle">
+<section class="team" id="team" aria-labelledby="teamTitle">
   <div class="wrap">
-    <div>
-      <h2 id="datesTitle">Next due dates</h2>
-      <p class="sub">The ATO gives registered agents later dates for most lodgements. These are the ones coming up.</p>
+    <h2 id="teamTitle">Who you'll deal with</h2>
+    <div class="people">
+      <article class="person">
+        <img src="img/claire.webp" alt="Claire Tan" width="480" height="640" loading="lazy">
+        <h3>Claire Tan</h3>
+        <p class="role">CPA, registered tax agent</p>
+        <p>Started the practice in 2014 after nine years at a city firm. She checks and signs every tax return we lodge, and she's the one to ask about companies and trusts.</p>
+      </article>
+      <article class="person">
+        <img src="img/daniel.webp" alt="Daniel Lim" width="480" height="640" loading="lazy">
+        <h3>Daniel Lim</h3>
+        <p class="role">Bookkeeper, BAS agent</p>
+        <p>Looks after the day-to-day books for about forty local businesses. He keeps your Xero up to date, lodges your BAS and gives you his mobile on day one.</p>
+      </article>
+      <article class="person">
+        <img src="img/kevin.webp" alt="Kevin Tran" width="480" height="640" loading="lazy">
+        <h3>Kevin Tran</h3>
+        <p class="role">Payroll, BAS agent</p>
+        <p>Runs pay and super for cafes, builders and clinics around Brunswick. He knows the hospitality and building awards, so your staff get paid right.</p>
+      </article>
     </div>
-    <ul class="date-list">
-      <li><span class="when"><mark>31 Oct 2026</mark></span><span class="what">Your 2026 tax return</span><p>Due this date if you lodge it yourself. Join our client list before then and it can move to as late as 15 May 2027.</p><span class="count" id="cd" hidden></span></li>
-      <li><span class="when">25 Nov 2026</span><span class="what">July to September BAS</span><p>28 October if you lodge yourself. 25 November when we lodge it for you.</p></li>
-      <li><span class="when">Each payday</span><span class="what">Super for your staff</span><p>Since 1 July 2026, super must reach the fund within 7 days of each payday. We run it with payroll.</p></li>
-      <li><span class="when">28 Feb 2027</span><span class="what">October to December BAS</span><p>Same date for everyone. We send you the amount by early February.</p></li>
+  </div>
+</section>
+
+<section class="price" id="price" aria-labelledby="priceTitle">
+  <div class="wrap">
+    <form id="quote" onsubmit="return false">
+      <h2 id="priceTitle">What you'll pay</h2>
+      <fieldset><legend>Your business</legend>
+        <div class="opts">
+          <label><input type="radio" name="type" value="sole" checked><span>Sole trader</span></label>
+          <label><input type="radio" name="type" value="biz"><span>Company or trust</span></label>
+        </div>
+      </fieldset>
+      <fieldset><legend>Staff on payroll</legend>
+        <div class="opts">
+          <label><input type="radio" name="staff" value="0" checked><span>Just me</span></label>
+          <label><input type="radio" name="staff" value="1"><span>Up to 5 staff</span></label>
+        </div>
+      </fieldset>
+    </form>
+    <div class="result" aria-live="polite">
+      <p class="amt"><span class="hl" id="amt">$149</span></p>
+      <p class="per">a month, GST included. No lock-in contract.</p>
+      <p class="inc" id="inc">Covers your Xero books and BAS, plus your tax return at the end of the year.</p>
+      <a class="btn" href="#book">Book a 15-minute call</a>
+    </div>
+  </div>
+</section>
+
+<section class="dates" aria-labelledby="datesTitle">
+  <div class="wrap">
+    <h2 id="datesTitle">Coming up</h2>
+    <ul>
+      <li><b>31 Oct</b><span>Join us before then and your 2026 tax return can wait until May 2027.</span></li>
+      <li><b>25 Nov</b><span>Your July to September BAS is due on this date when we lodge it for you, not 28 October.</span></li>
     </ul>
   </div>
 </section>
 
-<section class="sec" id="prices" aria-labelledby="pricesTitle">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="pricesTitle">Monthly prices</h2>
-      <p>Pick the plan that matches your business today. If your transactions or staff grow, we'll tell you before the price changes, never after.</p>
-    </div>
-
-    <div class="ptable-wrap">
-    <table class="ptable">
-      <caption class="skip">Monthly plans compared</caption>
-      <colgroup><col><col><col class="mid"><col></colgroup>
-      <thead>
-        <tr>
-          <td></td>
-          <th scope="col"><span class="plan">Sole trader</span><span class="for">ABN and GST, no staff</span><span class="price">$149<small> /month</small></span></th>
-          <th scope="col"><span class="plan">Business</span><span class="for">Company, trust or partnership</span><span class="price">$389<small> /month</small></span></th>
-          <th scope="col"><span class="plan">Business with staff</span><span class="for">Any structure, up to 5 staff</span><span class="price">$539<small> /month</small></span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><th scope="row">Bank transactions a month</th><td>Up to 50</td><td>Up to 150</td><td>Up to 150</td></tr>
-        <tr><th scope="row">Xero reconciled by the 10th</th><td><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Monthly</td><td><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Monthly</td><td><svg class="tick" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Monthly</td></tr>
-        <tr><th scope="row">BAS lodged by us</th><td>Quarterly</td><td>Quarterly or monthly</td><td>Quarterly or monthly</td></tr>
-        <tr><th scope="row">Payroll, STP and Payday Super</th><td class="no">Not included</td><td class="no">Not included</td><td>Weekly or fortnightly</td></tr>
-        <tr><th scope="row">Year-end tax return</th><td>Your individual return</td><td>Business return and one owner's return</td><td>Business return and one owner's return</td></tr>
-        <tr><th scope="row">ASIC annual review (companies)</th><td class="no">Not needed</td><td>Included</td><td>Included</td></tr>
-        <tr><th scope="row">Xero subscription</th><td>Yours to keep, we set it up</td><td>Yours to keep, we set it up</td><td>Yours to keep, we set it up</td></tr>
-        <tr><th scope="row">Who you deal with</th><td>Tom</td><td>Tom, with Claire for tax</td><td>Tom and Dave, with Claire for tax</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <div class="mplans">
-      <div class="mplan"><h3>Sole trader</h3><p class="for">ABN and GST, no staff</p><p class="price">$149<small> /month</small></p>
-        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Up to 50 transactions a month</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Quarterly BAS lodged</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Your individual tax return</li></ul></div>
-      <div class="mplan"><h3>Business</h3><p class="for">Company, trust or partnership</p><p class="price">$389<small> /month</small></p>
-        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Up to 150 transactions a month</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Quarterly or monthly BAS</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Business return and one owner's return</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>ASIC annual review</li></ul></div>
-      <div class="mplan"><h3>Business with staff</h3><p class="for">Any structure, up to 5 staff</p><p class="price">$539<small> /month</small></p>
-        <ul><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Everything in Business</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Weekly or fortnightly pay runs</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>STP and Payday Super handled</li></ul></div>
-    </div>
-
-    <div class="oneoff">
-      <div>
-        <h3>One-off work</h3>
-        <p class="note">Fixed prices, agreed before we start. Most people come to us for one of these first.</p>
-      </div>
-      <ul class="leader">
-        <li><span>Sole trader tax return only<small>Business schedule, deductions, no BAS</small></span><i></i><b>$330</b></li>
-        <li><span>Individual tax return<small>Wages, rental or shares</small></span><i></i><b>$165</b></li>
-        <li><span>Moving from MYOB or spreadsheets to Xero<small>Setup, bank feeds, opening balances</small></span><i></i><b>from $450</b></li>
-        <li><span>Catching up on late BAS<small>Per quarter, depends on the state of the records</small></span><i></i><b>from $280</b></li>
-        <li><span>ABN, GST and PAYG registration</span><i></i><b>$120</b></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="sec team" id="team" aria-labelledby="teamTitle">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="teamTitle">Who you'll deal with</h2>
-      <p>There are three of us. Nobody else works on your file, and your bookkeeper won't change every year.</p>
-    </div>
-    <div class="people">
-      <article class="person">
-        <img src="img/claire.webp" alt="Claire Tan at her desk in the Brunswick office" width="800" height="600" loading="lazy">
-        <div>
-          <h3>Claire Tan</h3>
-          <p class="role">Principal, CPA and registered tax agent</p>
-        </div>
-        <p>Claire started the practice in 2014 after nine years at a city firm. She reviews and signs every tax return we lodge.</p>
-        <dl>
-          <div><dt>Looks after</dt><dd>Tax returns, companies and trusts</dd></div>
-          <div><dt>Direct line</dt><dd>0400 000 001</dd></div>
-        </dl>
-      </article>
-      <article class="person">
-        <img src="img/tom.webp" alt="Tom Kowalski in the office" width="800" height="600" loading="lazy">
-        <div>
-          <h3>Tom Kowalski</h3>
-          <p class="role">Bookkeeper, registered BAS agent</p>
-        </div>
-        <p>Tom does the day-to-day books for about forty businesses, mostly trades and hospitality around Brunswick and Coburg.</p>
-        <dl>
-          <div><dt>Looks after</dt><dd>Xero, BAS, catch-up work</dd></div>
-          <div><dt>Direct line</dt><dd>0400 000 002</dd></div>
-        </dl>
-      </article>
-      <article class="person">
-        <img src="img/dave.webp" alt="Dave Rourke in the office" width="800" height="600" loading="lazy">
-        <div>
-          <h3>Dave Rourke</h3>
-          <p class="role">Payroll, registered BAS agent</p>
-        </div>
-        <p>Dave runs pay for cafes, builders and clinics. He knows the hospitality and building award rates well.</p>
-        <dl>
-          <div><dt>Looks after</dt><dd>Pay runs, STP, super, awards</dd></div>
-          <div><dt>Direct line</dt><dd>0400 000 003</dd></div>
-        </dl>
-      </article>
-    </div>
-    <p class="team-note">Every email you get from us has a name on it. If you call and they're with another client, they ring you back the same day.</p>
-  </div>
-</section>
-
-<section class="sec" id="how" aria-labelledby="howTitle">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="howTitle">What happens after you book</h2>
-      <p>Most new clients are fully set up within three weeks, including the ones who arrive a year behind.</p>
-    </div>
-    <div class="steps">
-      <ol class="timeline">
-        <li><span class="t">Day 1</span><div><h3>A 15-minute call</h3><p>You tell us what the business does and where things are at. We confirm the monthly price and flag anything overdue.</p></div></li>
-        <li><span class="t">Within 2 days</span><div><h3>Engagement letter and Xero access</h3><p>The fixed price goes in writing. You sign online and add us to Xero, or we set up a new file for you.</p></div></li>
-        <li><span class="t">Weeks 1 to 3</span><div><h3>We tidy up the books</h3><p>Bank feeds, rules for your regular costs and any late quarters. You'll get a short list of questions, not a pile of forms.</p></div></li>
-        <li><span class="t">Every month after</span><div><h3>Books done by the 10th</h3><p>Xero is reconciled, and each quarter you get one email with the BAS amount, the due date and how to pay it.</p></div></li>
-      </ol>
-
-      <div>
-        <article class="email" aria-label="Example of the quarterly BAS email">
-          <header>
-            <div><span>From</span><b>Tom Kowalski, Merri Books &amp; Tax</b></div>
-            <div><span>Subject</span><b>Your BAS for July to September</b></div>
-          </header>
-          <div class="body">
-            <p style="margin-bottom:4px">Hi Sam, your BAS is lodged. You owe the ATO:</p>
-            <p class="amt"><span class="hl">$2,184.00</span></p>
-            <p style="color:var(--muted);font-size:14px">Pay by 25 November 2026</p>
-            <table>
-              <tr><td>GST on sales</td><td>$2,640.00</td></tr>
-              <tr><td>GST credits on purchases</td><td>&minus;$1,416.00</td></tr>
-              <tr><td>PAYG income tax instalment</td><td>$960.00</td></tr>
-            </table>
-            <p style="margin:0;font-size:14px">BPAY biller 75556, your reference is in the attached PDF. Any questions, call me on 0400 000 002.</p>
-          </div>
-        </article>
-        <p class="caption">An example of the quarterly email. The numbers are made up.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec clients team" aria-labelledby="clientsTitle">
+<section class="client" aria-labelledby="clientTitle">
   <div class="wrap">
     <figure>
-      <img src="img/cafe-owners.webp" alt="Two cafe owners smiling behind their counter" width="1400" height="935" loading="lazy">
-      <figcaption>Mai and Ken run a cafe in Brunswick East. Dave does their pay every Tuesday.</figcaption>
+      <img src="img/cafe-owners.webp" alt="Mai and Ken behind the counter of their cafe in Brunswick East" width="1400" height="935" loading="lazy">
+      <figcaption>Mai and Ken have run their cafe in Brunswick East since 2019. They've been with us for three years.</figcaption>
     </figure>
     <div>
-      <h2 id="clientsTitle" style="margin-bottom:28px">What clients say</h2>
-      <div class="quotes">
-        <blockquote><p>"We used to get a bill at tax time that was double what we expected. Now it's $539 a month and that's it. Dave sorted the new super rules before we'd even heard about them."</p><cite><b>Mai L.</b>, cafe owner, Brunswick East</cite></blockquote>
-        <blockquote><p>"I was two years behind on BAS. Tom gave me one price for the catch-up, did it in a month and set up a payment plan with the ATO."</p><cite><b>Josh P.</b>, electrician, Coburg</cite></blockquote>
-        <blockquote><p>"I text Tom a photo of a receipt and it's in Xero by the next morning."</p><cite><b>Priya S.</b>, graphic designer, Northcote</cite></blockquote>
-      </div>
+      <h2 id="clientTitle" class="sr">What a client says</h2>
+      <blockquote>
+        <p>"We used to get a tax bill from our old accountant that was double what we expected. Now it's one price a month, and Kevin does our pay every Tuesday."</p>
+        <cite><b>Mai L.</b>, cafe owner, Brunswick East</cite>
+      </blockquote>
+      <blockquote class="second">
+        <p>"I was two years behind on BAS. Daniel gave me one price for the catch-up, sorted it in a month and set up a payment plan with the ATO."</p>
+        <cite><b>Josh P.</b>, electrician, Coburg</cite>
+      </blockquote>
     </div>
   </div>
 </section>
 
-<section class="sec faq" id="faq" aria-labelledby="faqTitle">
-  <div class="wrap">
-    <div>
-      <h2 id="faqTitle">Questions people ask on the first call</h2>
-    </div>
-    <div class="faq-list">
-      <details><summary>Do I have to use Xero?</summary><p>For the monthly plans, yes. It lets us see your bank feeds daily and lets you see the same numbers we do. If you're on MYOB or QuickBooks we move your file across as a one-off job.</p></details>
-      <details><summary>Is GST included in your prices?</summary><p>Yes. Every price on this page includes GST. If you're registered for GST you can claim it back on your BAS, and our fee is a tax deduction for the business.</p></details>
-      <details><summary>Am I locked into a contract?</summary><p>No. Plans run month to month with 30 days' notice. When you leave, we give your new accountant everything they need.</p></details>
-      <details><summary>I'm behind on BAS and tax returns. Can you still help?</summary><p>That's most of our new clients. We work out what's missing, give you one fixed price for the catch-up and talk to the ATO about penalties and payment plans for you.</p></details>
-      <details><summary>Can we meet in person?</summary><p>Yes. We're upstairs at 401 Sydney Road, a short walk from Jewell station. Most clients meet us once, then keep in touch by phone and email.</p></details>
-      <details><summary>What if my business grows past my plan?</summary><p>We check your transaction count each quarter. If you move up a plan we tell you first and the new price starts the following month.</p></details>
-    </div>
-  </div>
-</section>
-
-<section class="sec book" id="book" aria-labelledby="bookTitle">
+<section class="book" id="book" aria-labelledby="bookTitle">
   <div class="wrap">
     <div>
       <h2 id="bookTitle">Book a 15-minute call</h2>
-      <p class="intro">Pick a time and Claire or Tom will call you. Have a rough idea of your turnover and whether you're behind on anything. That's all we need.</p>
-      <dl class="office">
-        <div><dt>Office</dt><dd>Level 1, 401 Sydney Road<br>Brunswick VIC 3056</dd></div>
-        <div><dt>Phone</dt><dd><a href="tel:0400000000">0400 000 000</a></dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:hello@merribooks.com">hello@merribooks.com</a></dd></div>
-        <div><dt>Hours</dt><dd>Monday to Friday, 8:30 am to 5:30 pm</dd></div>
-      </dl>
-    </div>
-
-    <form class="picker" id="picker" aria-labelledby="pickTitle">
-      <h3 id="pickTitle">Choose a day and time</h3>
-      <p class="hint">Melbourne time. Calls take about 15 minutes.</p>
-      <div class="days" id="days" role="group" aria-label="Day"></div>
-      <div class="times" id="times" role="group" aria-label="Time"></div>
-      <div class="two">
-        <div class="field"><label for="fname">Your name</label><input id="fname" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="fphone">Mobile</label><input id="fphone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="0400 000 000"></div>
+      <p class="line">Tell us what your business does and where things are at, even if you're behind. If we're a fit, the price goes in writing within two days and we take over your Xero from there.</p>
+      <div class="actions">
+        <a class="btn" href="mailto:hello@merribooks.com?subject=Book%20a%2015-minute%20call">Book a 15-minute call</a>
+        <a class="quiet" href="tel:0400000000">Or call 0400 000 000</a>
       </div>
-      <div class="field"><label for="ftype">Your business</label>
-        <select id="ftype" name="type">
-          <option>Sole trader</option><option>Partnership or trust</option><option>Company (Pty Ltd)</option><option>Not set up yet</option>
-        </select></div>
-      <button class="btn" type="submit" id="bookBtn">Request this time</button>
-      <p class="done" id="done" role="status"></p>
-    </form>
+    </div>
+    <address>
+      <strong>Merri Books &amp; Tax</strong>
+      Level 1, 401 Sydney Road, Brunswick<br>
+      Monday to Friday, 8:30 to 5:30<br>
+      Calls are with Claire or Daniel<br>
+      <a href="mailto:hello@merribooks.com">hello@merribooks.com</a>
+    </address>
   </div>
 </section>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <span>Merri Books &amp; Tax. Level 1, 401 Sydney Road, Brunswick VIC 3056. ABN 00 000 000 000.</span>
-    <span>Registered tax agent 00000000. Registered BAS agent 00000000.</span>
+    <span>Merri Books &amp; Tax, Brunswick VIC 3056. Registered tax agent 00000000. Registered BAS agent 00000000.</span>
     <span><a href="https://atienzaveejay.github.io/ui-design/">Concept design by Veejay Atienza</a>. Not a real business.</span>
   </div>
 </footer>
 
-<div class="mbar">
-  <a class="btn call" href="tel:0400000000">Call us</a>
-  <a class="btn" href="#book">Book a call</a>
-</div>
+<div class="mbar"><a class="btn" href="#book">Book a 15-minute call</a></div>
 
 <script>
-// mobile menu
-const mb=document.getElementById('menuBtn'),nav=document.getElementById('nav');
-mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
-
-// quote builder
 const q=document.getElementById('quote');
-const base={sole:149,trust:389,co:389}, staffAdd=[0,150,330];
 function calc(){
-  const t=q.type.value, tx=+q.tx.value, st=+q.staff.value;
-  const txAdd=t==='sole'?[0,90,220]:[0,0,150];
-  const price=base[t]+txAdd[tx]+staffAdd[st];
-  document.getElementById('total').innerHTML='$'+price+'<small>inc GST</small>';
-  const pay=document.querySelector('#lPay b');
-  pay.textContent=st?'Included':'Not needed';
-  document.getElementById('lTaxLabel').textContent=t==='sole'?'Your individual tax return':'Business tax return and one owner’s return';
-  document.getElementById('lAsic').hidden=t!=='co';
-  const img=document.getElementById('whoImg');
-  if(st){img.src='img/dave.webp';document.getElementById('whoName').textContent='Tom, with Dave on payroll';}
-  else{img.src='img/tom.webp';document.getElementById('whoName').textContent='Tom';}
-  document.getElementById('whoExtra').textContent='Claire signs off your tax return.';
-  document.getElementById('quoteBook').textContent='Book a 15-minute call about $'+price+' a month';
+  const biz=q.type.value==='biz', staff=q.staff.value==='1';
+  document.getElementById('amt').textContent='$'+((biz?389:149)+(staff?150:0));
+  let t=biz?'Covers your Xero books and BAS, plus the business tax return and your own.':'Covers your Xero books and BAS, plus your tax return at the end of the year.';
+  if(staff) t+=' Pay runs and super are in there too.';
+  document.getElementById('inc').textContent=t;
 }
 q.addEventListener('change',calc);calc();
-
-// countdown to 31 Oct
-(function(){
-  const end=new Date('2026-10-31T23:59:59+11:00'), now=new Date();
-  const d=Math.ceil((end-now)/864e5);
-  if(d>0&&d<60){const c=document.getElementById('cd');c.textContent=d===1?'1 day left':d+' days left';c.hidden=false;}
-})();
-
-// booking mock
-(function(){
-  const daysEl=document.getElementById('days'),timesEl=document.getElementById('times');
-  const slots=['9:00','9:30','10:30','11:30','1:00','2:30','3:30','4:30'];
-  const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  let d=new Date(); d.setDate(d.getDate()+1); const days=[];
-  while(days.length<5){ if(d.getDay()%6!==0) days.push(new Date(d)); d.setDate(d.getDate()+1); }
-  let selDay=0, selTime=null;
-  function drawTimes(){
-    timesEl.innerHTML='';
-    slots.forEach((s,i)=>{
-      const b=document.createElement('button');b.type='button';
-      const taken=((selDay*3+i*5)%7)===0;
-      b.textContent=s+(i<4?' am':' pm');b.disabled=taken;
-      if(taken)b.setAttribute('aria-label',s+' taken');
-      b.setAttribute('aria-pressed',selTime===i);
-      b.onclick=()=>{selTime=i;drawTimes();};
-      timesEl.appendChild(b);
-    });
-  }
-  days.forEach((dt,i)=>{
-    const b=document.createElement('button');b.type='button';
-    b.innerHTML=names[dt.getDay()]+'<b>'+dt.getDate()+'</b>'+months[dt.getMonth()];
-    b.setAttribute('aria-pressed',i===0);
-    b.onclick=()=>{selDay=i;selTime=null;daysEl.querySelectorAll('button').forEach((x,j)=>x.setAttribute('aria-pressed',j===i));drawTimes();};
-    daysEl.appendChild(b);
-  });
-  drawTimes();
-  document.getElementById('picker').addEventListener('submit',e=>{
-    e.preventDefault();
-    const done=document.getElementById('done');
-    if(selTime===null){done.style.display='block';done.textContent='Pick a time first.';return;}
-    const dt=days[selDay];
-    done.style.display='block';
-    done.textContent='Thanks '+(e.target.name.value||'')+'. We’ll call you on '+names[dt.getDay()]+' '+dt.getDate()+' '+months[dt.getMonth()]+' at '+timesEl.querySelectorAll('button')[selTime].textContent+'. (This is a concept, so no call is booked.)';
-  });
-})();
 </script>
 </body>
 </html>
