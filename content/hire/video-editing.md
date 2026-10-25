@@ -1,6 +1,6 @@
 ---
 facts:
-  - Formats | Shorts, YouTube, real estate, ads
+  - Formats | Shorts, YouTube, real estate, beauty, ads
   - Languages | English and Taglish
   - Tools | DaVinci Resolve, CapCut
 title: Video editing
@@ -12,7 +12,7 @@ prices:
   - YouTube long-form, 10 to 15 minutes | From USD 80 per video
   - Real estate listing video | From USD 40 each
   - Monthly plan, 12 Shorts | From USD 300 a month
-lede: I edit talking-head videos for coaches and experts in English and Taglish, plus real estate and product videos: YouTube long-form, Shorts and Reels, listing films and ads.
+lede: I edit talking-head videos for coaches and experts in English and Taglish, plus real estate, beauty and product videos: YouTube long-form, Shorts and Reels, listing films and ads.
 ---
 ## What I handle
 
@@ -20,9 +20,10 @@ lede: I edit talking-head videos for coaches and experts in English and Taglish,
 - Word-timed captions and on-screen text
 - Music beds, sound effects and audio levels
 - Diagrams and simple motion graphics timed to what the speaker says
+- Kinetic text, whip transitions, speed ramps and sound design for Reels
 - Shorts, Reels and TikToks cut from long-form videos
 - Product Reels and Meta video ads from phone footage
 - YouTube thumbnails and titles
 
-Tools: DaVinci Resolve and CapCut.
+Tools: DaVinci Resolve, CapCut, and Remotion for motion graphics.
 

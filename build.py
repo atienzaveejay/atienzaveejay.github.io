@@ -421,7 +421,7 @@ def build_home(home, about, work, apps, videos, designs, articles):
 TYPES = [("content", "Content", [("short", "Short-form video"), ("long", "Long-form video"), ("video-ads", "Video ads"), ("graphics", "Graphics")]),
          ("growth", "Growth", [("seo", "SEO"), ("paid-ads", "Paid ads"), ("email", "Email"), ("social", "Social growth")]),
          ("design", "Design", [("websites", "Websites"), ("decks", "Decks")])]
-INDUSTRIES = [("coaching", "Coaching"), ("careers", "Careers and recruiting"), ("real-estate", "Real estate"),
+INDUSTRIES = [("coaching", "Coaching"), ("careers", "Careers and recruiting"), ("real-estate", "Real estate"), ("beauty", "Beauty and wellness"),
               ("ecommerce", "E-commerce"), ("tech-b2b", "Tech and B2B"), ("media", "Media and entertainment"), ("local", "Local business")]
 TYPE_LABEL = {k: v for _, _, ts in TYPES for k, v in ts}
 IND_LABEL = dict(INDUSTRIES)
@@ -464,17 +464,20 @@ def library_items(work, designs):
     content = [
         mp4("/assets/real-estate/guess-the-price.mp4", "Guess the price", "short", "real-estate", "Real estate reel"),
         yt("bMklmLvtEqU", "Coach Edwin Soriano", True, "coaching"), yt("MJj1i-smWm8", "Interview Query", False, "careers"),
+        mp4("/assets/beauty/brow-before-after.mp4", "Brow and lash before and after", "short", "beauty", "Spec Reel, stock footage"),
         mp4("/assets/roo-video/ad-three-years.mp4", "ROO", "video-ads", "ecommerce", "Meta video ad, hook: 'the smartest kitchen tool I own'"),
         img("/assets/thumbnails/02.webp", "Interview Query thumbnail", "YouTube thumbnail", "r-169", "graphics", "careers"),
         yt("eXhYwjnaA2o", "Kate Lewis", True, "careers"),
         mp4("/assets/real-estate/pov-keys.mp4", "POV: you just got the keys", "short", "real-estate", "Real estate reel"),
         img("/assets/roo-tiktok/slide-1.webp", "ROO TikTok carousel", "Carousel", "r-916", "graphics", "ecommerce"),
+        mp4("/assets/beauty/skincare-ugc-ad.mp4", "Skincare UGC ad", "video-ads", "beauty", "Spec ad for a sample brand, stock footage"),
         yt("vL4Zw3YUjTY", "Coach Edwin Soriano, sales video", False, "coaching"), yt("uraRYBQaydw", "Coach Edwin Soriano", True, "coaching"),
         mp4("/assets/real-estate/listing-film.mp4", "Listing film", "long", "real-estate", "Narrated walkthrough", "r-169"),
         mp4("/assets/roo-video/ad-most-satisfying.mp4", "ROO", "video-ads", "ecommerce", "Meta video ad, hook: 'the most satisfying...'"),
         img("/assets/roo-pins/01.webp", "ROO Pinterest pin", "Pinterest pin", "r-23", "graphics", "ecommerce"),
         yt("_kA2zVr5djM", "Kate Lewis", True, "careers"),
         mp4("/assets/real-estate/just-listed.mp4", "Just listed", "short", "real-estate", "Real estate reel"),
+        mp4("/assets/beauty/brow-lamination-tips.mp4", "3 things to know before a brow lamination", "short", "beauty", "Spec Reel, stock footage"),
         img("/assets/thumbnails/03.webp", "Interview Query thumbnail", "YouTube thumbnail", "r-169", "graphics", "careers"),
         yt("xC2PH0EtLI4", "Coach Edwin Soriano", True, "coaching"),
         mp4("/assets/roo-video/reel-20-second-cleanup.mp4", "ROO", "short", "ecommerce", "Organic Reel"),
@@ -486,6 +489,7 @@ def library_items(work, designs):
         img("/assets/thumbnails/05.webp", "Interview Query thumbnail", "YouTube thumbnail", "r-169", "graphics", "careers"),
         yt("cLDtFwbElTo", "Coach Edwin Soriano", True, "coaching"), yt("pmVLbOqVOYs", "Kate Lewis, Leaders In Transition", False, "careers"),
         mp4("/assets/roo-video/reel-tomato-tips.mp4", "ROO", "short", "ecommerce", "Organic Reel"),
+        mp4("/assets/beauty/grwm.mp4", "Get ready with me", "short", "beauty", "Spec Reel, stock footage"),
         img("/assets/roo-tiktok/slide-3.webp", "ROO TikTok carousel", "Carousel", "r-916", "graphics", "ecommerce"),
         img("/assets/thumbnails/07.webp", "Interview Query thumbnail", "YouTube thumbnail", "r-169", "graphics", "careers"),
         img("/assets/roo-pins/03.webp", "ROO Pinterest pin", "Pinterest pin", "r-23", "graphics", "ecommerce"),
