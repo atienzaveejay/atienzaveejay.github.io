@@ -1,4 +1,6 @@
 ---
+facts:
+  - Delivered as | Google Slides, PowerPoint or PDF
 title: Pitch decks and media kits
 path: /decks/
 active: Graphics
