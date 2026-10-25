@@ -922,3 +922,10 @@ footer { padding: clamp(64px, 8vw, 112px) 0 0; }
   .filter-row > .mono { width: auto; margin-right: 4px; }
   .svc-lib .lib-grid { columns: 2 140px; }
 }
+
+/* ---------- showreel ---------- */
+.showreel video { width: 100%; display: block; border-radius: 4px; border: 1px solid var(--line); background: #000; }
+.showreel .reel-tall { display: none; max-width: 420px; margin: 0 auto; }
+.showreel .note { margin-top: 12px; }
+@media (max-width: 760px) { .showreel .reel-wide { display: none; } .showreel .reel-tall { display: block; } }
+.svc-page .showreel { padding-bottom: 0; } .svc-page .showreel + .svc-lib { padding-top: clamp(32px, 4vw, 56px); }

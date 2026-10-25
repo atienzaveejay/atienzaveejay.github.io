@@ -418,7 +418,7 @@ def build_home(home, about, work, apps, videos, designs, articles):
 
 
 # Work library: every piece has one or more types and one or more industries; the two filters combine.
-TYPES = [("content", "Content", [("short", "Short-form video"), ("long", "Long-form video"), ("video-ads", "Video ads"), ("graphics", "Graphics")]),
+TYPES = [("content", "Content", [("short", "Short-form video"), ("long", "Long-form video"), ("podcast", "Podcast"), ("video-ads", "Video ads"), ("graphics", "Graphics")]),
          ("growth", "Growth", [("seo", "SEO"), ("paid-ads", "Paid ads"), ("email", "Email"), ("social", "Social growth")]),
          ("design", "Design", [("websites", "Websites"), ("decks", "Decks")])]
 INDUSTRIES = [("coaching", "Coaching"), ("careers", "Careers and recruiting"), ("real-estate", "Real estate"), ("beauty", "Beauty and wellness"),
@@ -496,6 +496,18 @@ def library_items(work, designs):
         img("/assets/thumbnails/11.webp", "Sports channel thumbnail", "YouTube thumbnail", "r-169", "graphics", "media"),
         img("/assets/thumbnails/12.webp", "Sports channel thumbnail", "YouTube thumbnail", "r-169", "graphics", "media"),
     ]
+    credit = "How I Invest podcast with Ryan Serhant, CC BY 3.0"
+    pod = [dict(types=["podcast", "long"], inds=["media"], kind="mp4", href=u("/assets/podcast/highlight.mp4"), src=u("/assets/podcast/highlight.mp4"),
+                thumb=u("/assets/podcast/highlight.jpg"), title="Podcast episode highlight, 3:19", meta=credit, ratio="r-169")]
+    pod += [dict(types=["podcast", "short"], inds=["media"], kind="mp4", href=u(f"/assets/podcast/clip-{n}.mp4"), src=u(f"/assets/podcast/clip-{n}.mp4"),
+                 thumb=u(f"/assets/podcast/clip-{n}.jpg"), title=t, meta=credit, ratio="r-916")
+            for n, t in ((1, "Podcast clip: AI can do everything but this"), (2, "Podcast clip: the 1,000 minute rule"),
+                         (3, "Podcast clip: how to get over a lost deal"))]
+    rvf = dict(types=["long"], inds=["coaching"], kind="mp4", href=u("/assets/wc-video/raw-vs-final.mp4"), src=u("/assets/wc-video/raw-vs-final.mp4"),
+               thumb=u("/assets/wc-video/raw-vs-final.jpg"), title="Raw takes to final cut", ratio="r-169",
+               meta="Coach Edwin Soriano, sales video: 1:05 of raw takes to 0:34 in the final")
+    content = [rvf] + content
+    content = content[:2] + pod[:1] + content[2:9] + pod[1:2] + content[9:16] + pod[2:3] + content[16:24] + pod[3:] + content[24:]
     thumb_ind = {**{n: "careers" for n in (1, 2, 3, 4, 5, 7)}, 14: "ecommerce", 15: "ecommerce"}
     graphics = [img(f"/assets/thumbnails/{n:02d}.webp", "Interview Query thumbnail" if thumb_ind.get(n) == "careers" else "YouTube thumbnail",
                     "YouTube thumbnail", "r-169", "graphics", thumb_ind.get(n, "media")) | {"gfx": "thumbnails"}
@@ -571,7 +583,7 @@ def build_work_index(work, videos, designs):
         cls = f'item {it["ratio"]} k-{it["kind"]}' + (" shot" if it["kind"] == "img" and it["href"] == it["thumb"] else "")
         grp = ' data-group="library"' if " shot" in cls else ""
         hover = " data-hover" if it["kind"] == "mp4" else ""
-        tgroups = " ".join(sorted({groups[t] for t in it["types"]} | ({"video"} if set(it["types"]) & {"short", "long", "video-ads"} else set())))
+        tgroups = " ".join(sorted({groups[t] for t in it["types"]} | ({"video"} if set(it["types"]) & {"short", "long", "podcast", "video-ads"} else set())))
         cards.append(f'<a class="{cls}" data-type="{" ".join(it["types"])} {tgroups}" data-ind="{" ".join(it["inds"])}"{attrs}{grp}{hover}>'
                      f'<div class="media">{media}</div><div class="cap">{top}<span class="mono">{e(tag)}</span>'
                      f'<strong>{e(it["title"])}</strong><small>{e(it["meta"])}</small></div></a>')
@@ -820,9 +832,9 @@ def build_sitemap(paths):
     open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}{u('/sitemap.xml')}\n")
 
 
-VIDEO_T, GROWTH_T = ("short", "long", "video-ads"), ("seo", "paid-ads", "email", "social")
+VIDEO_T, GROWTH_T = ("short", "long", "podcast", "video-ads"), ("seo", "paid-ads", "email", "social")
 SVC_LIB = {  # page: (hash key, filter label, facets, which facets an item belongs to)
-    "/video-editing/": ("format", "Format", [("short", "Short-form"), ("long", "Long-form"), ("video-ads", "Video ads")],
+    "/video-editing/": ("format", "Format", [("short", "Short-form"), ("long", "Long-form"), ("podcast", "Podcast"), ("video-ads", "Video ads")],
                         lambda i: [t for t in i["types"] if t in VIDEO_T]),
     "/growth/": ("type", "Type", [("seo", "SEO"), ("paid-ads", "Paid ads"), ("email", "Email"), ("social", "Social growth")],
                  lambda i: [t for t in i["types"] if t in GROWTH_T] if i["kind"] == "case" else []),
@@ -836,6 +848,15 @@ SVC_LIB = {  # page: (hash key, filter label, facets, which facets an item belon
                                   ["short"] if "short" in i["types"] and "real-estate" not in i["inds"] else [])),
     "/ui-design/": ("type", "Type", [("live", "Live sites"), ("concept", "Concept sites")], lambda i: [i["site"]] if i.get("site") else []),
 }
+
+
+def showreel_block():
+    """The 58-second showreel; phones get the 30-second vertical cut."""
+    return f"""<section class="wrap section showreel" id="showreel">
+  <video class="reel-wide" src="{u('/assets/showreel/showreel.mp4')}" poster="{u('/assets/showreel/showreel.jpg')}" controls playsinline preload="none"></video>
+  <video class="reel-tall" src="{u('/assets/showreel/showreel-vertical.mp4')}" poster="{u('/assets/showreel/showreel-vertical.jpg')}" controls playsinline preload="none"></video>
+  <p class="note">Showreel, under a minute: long-form, Shorts, ads and real estate.</p>
+</section>"""
 
 
 def service_gallery(path):
@@ -888,10 +909,12 @@ def build_hire(pages, work):
     for h in pages:
         content, heads = md(h["body"], toc=True)
         gallery = service_gallery(h["path"]) if h["path"] in SVC_LIB else ""
+        if h.get("showreel") == "true":
+            gallery = showreel_block() + gallery
         if gallery and h["path"] == "/ui-design/":  # the gallery replaces the two card grids written into the page
             content = re.sub(r'<h2 id="live-sites">.*?(?=<h2 id="(?!concept-sites)[^"]*">)', "", content, count=1, flags=re.S)
             heads = [(i, t) for i, t in heads if i not in ("live-sites", "concept-sites")]
-        links = ([("work", "The work")] if gallery else []) + list(heads)
+        links = ([("showreel", "Showreel")] if h.get("showreel") == "true" else []) + ([("work", "The work")] if h["path"] in SVC_LIB else []) + list(heads)
         extra = []
         cases = [] if gallery else [W[c.strip()] for c in h.get("cases", "").split(",") if c.strip() in W]
         if cases:
@@ -906,7 +929,7 @@ def build_hire(pages, work):
                          f'<p class="note">Starting prices. The final quote depends on length, volume and turnaround.</p></section>')
         stype = SERVICE_TYPE.get(h["path"])
         if stype and not gallery:
-            pool = [i for i in LIBRARY if stype in i["types"] or (stype == "video" and set(i["types"]) & {"short", "long", "video-ads"})
+            pool = [i for i in LIBRARY if stype in i["types"] or (stype == "video" and set(i["types"]) & {"short", "long", "podcast", "video-ads"})
                     or (stype == "growth" and set(i["types"]) & {"seo", "paid-ads", "email", "social"})]
             chips = "".join(f'<a href="{u("/work/")}#type={stype}&amp;industry={k}">{e(lab)} <span>{n}</span></a>'
                             for k, lab in INDUSTRIES for n in [sum(1 for i in pool if k in i["inds"])] if n)
