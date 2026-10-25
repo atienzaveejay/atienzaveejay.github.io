@@ -2,8 +2,8 @@
 title: Video editing
 path: /video-editing/
 active: Video
-desc: Video editing portfolio: YouTube long-form, Shorts and product ads edited by Veejay Atienza in DaVinci Resolve and CapCut, for coaches, experts and a US kitchen brand.
-lede: I edit talking-head videos for coaches and experts, in English and Taglish: the YouTube long-form, the Shorts cut from it, and product ads. Every video here is client work I edited.
+desc: Video editing portfolio: YouTube long-form, Shorts, real estate videos and product ads edited by Veejay Atienza in DaVinci Resolve and CapCut.
+lede: I edit talking-head videos for coaches and experts in English and Taglish, plus real estate and product videos: YouTube long-form, Shorts and Reels, listing films and ads.
 ---
 ## YouTube long-form
 
@@ -36,6 +36,26 @@ lede: I edit talking-head videos for coaches and experts, in English and Taglish
 @[short](https://www.youtube.com/shorts/nwHHkEbal_Q | **Kate Lewis**)
 
 @[short](https://www.youtube.com/shorts/_kA2zVr5djM | **Kate Lewis**)
+
+</div>
+
+## Real estate
+
+<div class="clips one" markdown="1">
+
+@[video](/assets/real-estate/listing-film.mp4 | **Listing film**, narrated walkthrough)
+
+</div>
+
+<div class="clips" markdown="1">
+
+@[video](/assets/real-estate/just-listed.mp4 | **Just listed**)
+
+@[video](/assets/real-estate/guess-the-price.mp4 | **Guess the price**)
+
+@[video](/assets/real-estate/pov-keys.mp4 | **POV: you just got the keys**)
+
+@[video](/assets/real-estate/neighbourhood-coogee.mp4 | **Neighbourhood spotlight**)
 
 </div>
 

@@ -544,3 +544,5 @@ main .case-head, main .page-head { padding-top: 48px; } @media (max-width: 640px
 .concept-card:hover strong { text-decoration: underline; }
 @media (max-width: 900px) { .concept-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .concept-grid { grid-template-columns: 1fr; } }
+.clips.one { grid-template-columns: 1fr; margin-bottom: 28px; }
+.clips.one .embed-video { aspect-ratio: 16 / 9; }
