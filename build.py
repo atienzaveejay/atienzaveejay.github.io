@@ -595,6 +595,8 @@ def main():
         target = os.path.join(OUT, name)
         shutil.rmtree(target) if os.path.isdir(target) else os.remove(target)
     shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(OUT, "assets"))
+    shutil.copytree(os.path.join(ROOT, "concepts"), os.path.join(OUT, "concepts"),
+                    ignore=shutil.ignore_patterns("_tools", "_work"))  # standalone concept sites, served as-is
     for f in ("style.css", "site.js"):
         shutil.copy(os.path.join(ROOT, f), OUT)
     open(os.path.join(OUT, ".nojekyll"), "w").close()

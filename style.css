@@ -526,3 +526,21 @@ main .case-head, main .page-head { padding-top: 48px; } @media (max-width: 640px
 .clip figcaption { color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 10px; }
 .clip figcaption strong { color: var(--ink); font-weight: 600; }
 @media (max-width: 640px) { .clips { grid-template-columns: repeat(2, 1fr); gap: 22px 12px; } .clips.wide { grid-template-columns: 1fr; } .clip figcaption { font-size: 13px; } }
+
+/* UI design page: large screens with one-line notes */
+.ui-fig { margin: 20px 0 32px; }
+.ui-fig img, .phones img { width: 100%; border: 1px solid var(--rule); border-radius: 2px; display: block; }
+.ui-fig figcaption, .phones figcaption { color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 10px; max-width: 640px; }
+.phones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 20px 0 32px; }
+.phones figure { margin: 0; }
+.phones.two { grid-template-columns: repeat(2, 1fr); max-width: 66%; }
+.ui-intro { font-size: 18px; max-width: 640px; }
+@media (max-width: 640px) { .phones, .phones.two { grid-template-columns: repeat(2, 1fr); max-width: none; gap: 12px; } .ui-fig figcaption, .phones figcaption { font-size: 13px; } }
+.concept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 18px; margin: 20px 0 32px; }
+.concept-card { display: block; color: inherit; text-decoration: none; }
+.concept-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border: 1px solid var(--rule); border-radius: 2px; display: block; }
+.concept-card strong { display: block; margin-top: 10px; font-weight: 600; }
+.concept-card span { display: block; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.concept-card:hover strong { text-decoration: underline; }
+@media (max-width: 900px) { .concept-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .concept-grid { grid-template-columns: 1fr; } }

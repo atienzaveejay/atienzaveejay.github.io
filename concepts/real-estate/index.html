@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kemp Hollis Property | Paddington, Red Hill, Bardon and Ashgrove</title>
+<meta name="description" content="Independent real estate agency on Given Terrace, Paddington. Houses for sale and rent in Paddington, Red Hill, Bardon and Ashgrove, and free appraisals for home owners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Source+Serif+4:opsz,wght@8..60,600..700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16221B; --muted:#4A5850; --line:#D3DCD5; --paper:#FFFFFF; --mist:#EEF2EF;
+  --green:#1F4D36; --green-dk:#163A28; --green-lt:#DCE8E0;
+  --jac:#5E4596; --jac-lt:#ECE6F6;
+  --radius:6px; --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Archivo",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--jac);outline-offset:2px;border-radius:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+h1,h2,h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.012em}
+h2{font-size:clamp(31px,4.3vw,48px)}
+h3{font-size:24px;line-height:1.1}
+.lede{color:var(--muted);max-width:56ch;margin-top:14px}
+p,blockquote,h1,h2,h3{text-wrap:pretty}
+section{padding:80px 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px 40px;margin-bottom:36px}
+.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* concept strip */
+.concept{background:var(--ink);color:#C9D3CC;font-size:13px;text-align:center;padding:7px 16px}
+.concept a{color:#fff;text-underline-offset:2px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:72px}
+.brand{display:flex;flex-direction:column;text-decoration:none;line-height:1}
+.brand b{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:23px;letter-spacing:.07em;color:var(--green)}
+.brand span{font-size:12px;color:var(--muted);margin-top:4px;letter-spacing:.04em}
+.nav{display:flex;gap:24px;margin-left:auto}
+.nav a{text-decoration:none;font-size:15px;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--green)}
+.top-call{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:var(--radius);border:0;background:var(--green);color:#fff;font-weight:650;font-size:16px;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--green-dk)}
+.btn.light{background:#fff;color:var(--green)}
+.btn.light:hover{background:var(--green-lt)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:var(--radius);width:48px;height:44px;align-items:center;justify-content:center;cursor:pointer}
+@media (max-width:1060px){
+  .nav,.top-call{display:none}
+  .menu-btn{display:inline-flex}
+  .top .btn{display:none}
+  .nav.open{display:flex;position:absolute;left:0;right:0;top:72px;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 20px 16px}
+  .nav.open a{padding:14px 0;border-bottom:1px solid var(--line);font-size:18px}
+}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr;background:var(--green);color:#fff;padding:0}
+.hero-photo{position:relative;min-height:150px;aspect-ratio:2/1}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-copy{padding:28px 20px 36px}
+@media (max-width:899px){.hero p{font-size:16px;margin-top:14px}.appraise{margin-top:20px}}
+.hero h1{font-size:clamp(36px,5.2vw,64px);max-width:14ch}
+.hero p{color:#D6E4DA;margin-top:18px;max-width:46ch}
+.appraise{margin-top:28px;display:flex;flex-direction:column;gap:10px;max-width:520px}
+.appraise label{font-weight:600;font-size:15px}
+.field{display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border-radius:var(--radius);padding:0 14px;min-height:54px;border:2px solid transparent}
+.field:focus-within{border-color:var(--jac);outline:3px solid #fff;outline-offset:0}
+.field input{border:0;outline:0;flex:1;min-width:0;background:none;font-size:17px;height:50px}
+.field .icon{color:var(--green)}
+.appraise .btn{min-height:54px;background:#fff;color:var(--green)}
+.appraise .btn:hover{background:var(--green-lt)}
+.hero small{display:block;color:#BFD3C6;font-size:14px;margin-top:4px}
+.buyer-link{display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-weight:600;width:100%;max-width:520px}
+.buyer-link span{color:#BFD3C6;font-weight:400;white-space:nowrap}
+@media (max-width:560px){.buyer-link{flex-wrap:wrap;gap:4px 10px}.buyer-link span{width:100%;padding-left:30px}}
+.buyer-link:hover b{text-decoration:underline;text-underline-offset:3px}
+@media (min-width:900px){
+  .hero{grid-template-columns:minmax(0,46fr) minmax(0,54fr);min-height:640px}
+  .hero-copy{order:-1;padding:72px 56px 64px max(20px,calc((100vw - var(--wrap))/2 + 20px));display:flex;flex-direction:column;justify-content:center}
+  .hero-photo{aspect-ratio:auto}
+  .appraise{flex-direction:row;flex-wrap:wrap}
+  .appraise label{width:100%}
+  .appraise .field{flex:1}
+}
+
+/* stats */
+.stats{padding:30px 0;border-bottom:1px solid var(--line)}
+.stats ul{list-style:none;display:grid;grid-template-columns:1fr;gap:18px}
+.stats li{display:grid;grid-template-columns:104px 1fr;align-items:baseline;gap:12px}
+.stats b{font-weight:700;font-size:34px;letter-spacing:-.01em;color:var(--green);line-height:1}
+.stats span{color:var(--muted);font-size:15px;max-width:30ch}
+@media (min-width:760px){.stats ul{grid-template-columns:repeat(3,1fr);gap:32px}}
+
+/* sold table */
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:0 16px;min-height:42px;font-size:15px;font-weight:550;cursor:pointer}
+.tab[aria-selected="true"],.tab[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tab:hover{border-color:var(--ink)}
+.sold-table{width:100%;border-collapse:collapse;font-size:16px}
+.sold-table th{font-size:13px;font-weight:600;color:var(--muted);text-align:left;padding:0 12px 12px;border-bottom:2px solid var(--ink)}
+.sold-table td{padding:16px 12px;border-bottom:1px solid var(--line);vertical-align:baseline}
+.sold-table td:first-child,.sold-table th:first-child{padding-left:0}
+.sold-table .num{text-align:right}
+.sold-table .addr b{font-weight:650}
+.sold-table .addr span{color:var(--muted)}
+.price{font-weight:700;font-size:18px}
+.up{color:var(--green);font-weight:650}
+.sold-note{margin-top:22px;color:var(--muted);font-size:15px}
+.sold-note a{color:var(--green);font-weight:600}
+@media (max-width:760px){
+  .sold-table thead{display:none}
+  .sold-table,.sold-table tbody,.sold-table tr,.sold-table td{display:block}
+  .sold-table tr{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .sold-table td{padding:0;border:0;text-align:left!important;font-size:15px}
+  .sold-table td.addr{grid-column:1}
+  .sold-table td.price-cell{grid-column:2;grid-row:1;text-align:right!important}
+  .sold-table td.meta{grid-column:1 / -1;color:var(--muted)}
+  .sold-table td.d-only{display:none}
+  .sold-table .addr span{display:block}
+}
+@media (min-width:761px){.sold-table td.meta{display:none}}
+
+/* listings */
+.listing-sec{background:var(--mist)}
+.qld-note{display:flex;gap:12px;align-items:flex-start;background:#fff;border-left:3px solid var(--jac);padding:14px 16px;font-size:15px;color:var(--muted);max-width:640px;margin-bottom:28px}
+.qld-note .icon{color:var(--jac);margin-top:2px}
+.grid{display:grid;grid-template-columns:1fr;gap:28px 24px}
+@media (min-width:680px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.grid{grid-template-columns:repeat(3,1fr)}}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
+.card[hidden]{display:none}
+.card figure{position:relative}
+.card img{aspect-ratio:4/3;width:100%;object-fit:cover}
+.card .body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.method{font-weight:700;font-size:18px}
+.method.auction{color:var(--jac)}
+.card h3{font-size:22px}
+.card h3 a{text-decoration:none}
+.card h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.card .sub{color:var(--muted);font-size:15px;margin-top:-6px}
+.specs{display:flex;flex-wrap:wrap;gap:6px 16px;list-style:none;font-size:15px;color:var(--ink)}
+.specs li{display:flex;align-items:center;gap:6px}
+.specs .icon{width:18px;height:18px;color:var(--muted)}
+.open{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;font-size:15px}
+.open .icon{color:var(--jac)}
+.open b{font-weight:650}
+.tag{position:absolute;left:12px;top:12px;background:#fff;color:var(--ink);font-size:13px;font-weight:650;padding:5px 10px;border-radius:4px}
+.empty{color:var(--muted)}
+
+/* open homes */
+.opens{display:grid;grid-template-columns:1fr;gap:32px}
+@media (min-width:960px){.opens{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:64px}}
+.route{font-size:15px;color:var(--muted);margin-top:18px;max-width:40ch}
+.ics{margin-top:24px}
+.btn.outline{background:#fff;color:var(--green);border:1.5px solid var(--green)}
+.btn.outline:hover{background:var(--green-lt)}
+.timeline{list-style:none;border-top:2px solid var(--ink)}
+.timeline li{display:grid;grid-template-columns:92px 1fr auto;gap:4px 20px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.timeline time{font-weight:700;font-size:24px;color:var(--jac);line-height:1}
+.timeline time span{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-top:4px}
+.timeline .where b{display:block;font-weight:650}
+.timeline .where span{color:var(--muted);font-size:15px}
+.timeline .agent{font-size:14px;color:var(--muted);text-align:right}
+@media (max-width:560px){
+  .timeline li{grid-template-columns:72px 1fr}
+  .timeline time{font-size:24px}
+  .timeline .agent{grid-column:2;text-align:left}
+}
+
+/* selling */
+.sell{background:var(--green);color:#fff}
+.sell-grid{display:grid;grid-template-columns:1fr;gap:40px}
+@media (min-width:960px){.sell-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}}
+@media (min-width:960px){.sell-photo{position:sticky;top:100px}}
+.sell-photo img{border-radius:var(--radius);width:100%;aspect-ratio:3/2;object-fit:cover}
+@media (min-width:960px){.sell-photo img{aspect-ratio:4/5}}
+.sell .lede{color:#D6E4DA}
+.steps{list-style:none;counter-reset:s;margin-top:32px;border-top:1px solid rgba(255,255,255,.25)}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:0 12px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.25)}
+.steps li::before{content:counter(s);font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:28px;line-height:1.1;color:#A9CDB6}
+.steps b{display:block;font-size:18px;font-weight:650}
+.steps p{color:#D6E4DA;font-size:16px;margin-top:4px}
+.fees{margin-top:36px;display:grid;grid-template-columns:1fr;gap:20px}
+@media (min-width:600px){.fees{grid-template-columns:1fr 1fr}}
+.fees div{border-top:3px solid #fff;padding-top:14px}
+.fees strong{display:block;font-weight:700;font-size:32px;letter-spacing:-.01em;line-height:1.05}
+.fees p{color:#D6E4DA;font-size:15px;margin-top:6px}
+.sell .btn{margin-top:36px}
+
+/* reviews */
+.quotes{display:grid;grid-template-columns:1fr;gap:36px}
+@media (min-width:900px){.quotes{grid-template-columns:repeat(3,1fr);gap:44px}}
+.quote{border-top:2px solid var(--ink);padding-top:20px}
+.quote .fact{font-size:14px;font-weight:650;color:var(--green);margin-bottom:12px}
+.quote blockquote{font-size:19px;line-height:1.5}
+.quote figcaption{margin-top:16px;color:var(--muted);font-size:15px}
+
+/* team */
+.team-sec{background:var(--mist)}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 18px}
+@media (min-width:960px){.team{grid-template-columns:repeat(4,1fr);gap:28px}}
+.person img{aspect-ratio:4/5;width:100%;object-fit:cover;border-radius:var(--radius)}
+.person h3{margin-top:14px;font-size:24px}
+.person .role{color:var(--muted);font-size:15px;margin-top:4px}
+.person a{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-weight:600;font-size:15px;color:var(--green);text-decoration:none;min-height:32px}
+.person a:hover{text-decoration:underline}
+
+/* rentals */
+.rent-grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media (min-width:960px){.rent-grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px}}
+.rentals{list-style:none;border-top:2px solid var(--ink)}
+.rentals li{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.rentals img{width:120px;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.rentals b{display:block;font-weight:650}
+.rentals .sub{color:var(--muted);font-size:15px}
+.rentals .rent{text-align:right;font-weight:700;font-size:18px;white-space:nowrap}
+.rentals .rent span{display:block;font-size:14px;font-weight:500;color:var(--muted)}
+@media (max-width:560px){
+  .rentals li{grid-template-columns:96px 1fr;align-items:start}
+  .rentals img{width:96px}
+  .rentals .rent{grid-column:2;text-align:left}
+}
+.landlord{margin-top:20px;font-size:15px;color:var(--muted)}
+.landlord b{color:var(--ink)}
+
+/* appraisal form */
+.form-sec{border-top:1px solid var(--line)}
+.form-grid{display:grid;grid-template-columns:1fr;gap:40px}
+@media (min-width:960px){.form-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px}}
+.next{list-style:none;margin-top:28px}
+.next li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.next .icon{color:var(--green);margin-top:3px}
+.next b{display:block}
+.next span{color:var(--muted);font-size:15px}
+form.full{display:grid;grid-template-columns:1fr;gap:18px;background:var(--mist);padding:28px 22px;border-radius:var(--radius)}
+@media (min-width:640px){form.full{grid-template-columns:1fr 1fr;padding:36px}}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.wide{grid-column:1 / -1}
+.f label{font-weight:600;font-size:15px}
+.f input,.f select,.f textarea{border:1.5px solid #9AAA9F;border-radius:var(--radius);background:#fff;min-height:50px;padding:10px 12px;font-size:17px;width:100%}
+.f textarea{min-height:96px;resize:vertical}
+.f input:focus,.f select:focus,.f textarea:focus{outline:3px solid var(--jac);outline-offset:0;border-color:var(--jac)}
+.f .hint{font-size:13px;color:var(--muted)}
+form.full .btn{grid-column:1 / -1;justify-self:start;min-height:54px;padding:0 28px}
+.thanks{grid-column:1 / -1;background:#fff;border-left:3px solid var(--green);padding:14px 16px;font-weight:550}
+
+/* footer */
+footer{background:var(--ink);color:#C9D3CC;padding:56px 0 110px;font-size:15px}
+.foot{display:grid;grid-template-columns:1fr;gap:32px}
+@media (min-width:800px){.foot{grid-template-columns:2fr 1fr 1fr 1fr}footer{padding-bottom:56px}}
+footer .brand b{color:#fff}
+footer .brand span{color:#C9D3CC}
+footer h3{font-family:"Archivo",system-ui,sans-serif;font-size:14px;font-weight:650;color:#fff;margin-bottom:10px;letter-spacing:.02em}
+footer ul{list-style:none;display:grid;gap:6px}
+footer a{color:#C9D3CC;text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.fine{margin-top:40px;padding-top:20px;border-top:1px solid #2E3D34;font-size:13px;color:#9FAEA4}
+
+/* phone action bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;transform:translateY(110%);transition:transform .25s;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
+.mbar.show{transform:none}
+.mbar .btn{flex:1}
+@media (prefers-reduced-motion:reduce){.mbar{transition:none}}
+.mbar .call{flex:0 0 52px;padding:0;background:#fff;color:var(--green);border:1.5px solid var(--green)}
+@media (min-width:800px){.mbar{display:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19v-12M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11.5" r="1.8"/></symbol>
+  <symbol id="i-bath" viewBox="0 0 24 24"><path d="M4 12h16v2a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2zM6 12V6a2 2 0 0 1 3.6-1.2M7 19l-1 2M17 19l1 2"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16h14v-4l-2-5H7l-2 5v4zM5 16v2.5M19 16v2.5M5 12h14"/><circle cx="8" cy="14" r=".6"/><circle cx="16" cy="14" r=".6"/></symbol>
+  <symbol id="i-land" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h3M4 14h3M9 4v3M14 4v3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.5 4-2 1.3a10 10 0 0 0 6.2 6.2l1.3-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5.5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><path d="M3 12h4l2-4 4 8 2-4h6"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 16h5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
+<div class="concept"><a href="https://atienzaveejay.github.io/ui-design/">Concept design by Veejay Atienza</a>. Not a real business.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Kemp Hollis Property, home"><b>KEMP HOLLIS</b><span>Property, Paddington</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#for-sale">For sale</a>
+      <a href="#open-homes">Open homes</a>
+      <a href="#sold">Sold</a>
+      <a href="#selling">Selling</a>
+      <a href="#rent">For rent</a>
+      <a href="#team">Team</a>
+    </nav>
+    <a class="top-call" href="tel:0400000000"><svg class="icon"><use href="#i-phone"/></svg>0400 000 000</a>
+    <a class="btn" href="#appraisal">Book an appraisal</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><svg class="icon"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero-photo"><img src="img/hero-veranda.webp" width="1600" height="1066" alt="Front veranda of a timber Queenslander with white lattice and dark green trim, ferns along the base" fetchpriority="high"></div>
+  <div class="hero-copy">
+    <h1 id="hero-h">Selling a house in Paddington, Red Hill, Bardon or Ashgrove?</h1>
+    <p>We're an independent agency on Given Terrace and these four suburbs are all we sell. Give us the address and an agent will walk through the house with you this week, then send a written price estimate with the sales it's based on.</p>
+    <form class="appraise" action="#appraisal" id="quick">
+      <label for="q-addr">Your property address</label>
+      <div class="field"><svg class="icon"><use href="#i-pin"/></svg><input id="q-addr" name="address" autocomplete="street-address" placeholder="e.g. 12 Latrobe Terrace"></div>
+      <button class="btn" type="submit">Request an appraisal</button>
+    </form>
+    <small>Free, and there's no obligation to list with us.</small>
+    <a class="buyer-link" href="#open-homes"><svg class="icon"><use href="#i-cal"/></svg><b>Buying? Six open homes this Saturday</b><span>9:00 to 1:00</span></a>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <ul>
+      <li><b>71</b><span>houses sold in our four suburbs since January</span></li>
+      <li><b>19</b><span>median days on market, against 33 across the four suburbs</span></li>
+      <li><b>+2.6%</b><span>average sale price above our written estimate</span></li>
+    </ul>
+  </div>
+</div>
+
+<section id="sold" aria-labelledby="sold-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2 id="sold-h">Houses we've sold recently</h2>
+        <p class="lede">Every sale from the last eight weeks, with how long it took and how it landed against the estimate we gave the owner.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Filter sales by suburb">
+        <button class="tab" role="tab" aria-selected="true" data-s="all">All</button>
+        <button class="tab" role="tab" aria-selected="false" data-s="Paddington">Paddington</button>
+        <button class="tab" role="tab" aria-selected="false" data-s="Red Hill">Red Hill</button>
+        <button class="tab" role="tab" aria-selected="false" data-s="Bardon">Bardon</button>
+        <button class="tab" role="tab" aria-selected="false" data-s="Ashgrove">Ashgrove</button>
+      </div>
+    </div>
+    <table class="sold-table" id="sold-table">
+      <caption class="sr">Recent sales by Kemp Hollis Property</caption>
+      <thead><tr><th scope="col">Address</th><th scope="col" class="d-only">Sold</th><th scope="col" class="d-only">Method</th><th scope="col" class="num d-only">Days on market</th><th scope="col" class="num d-only">Against our estimate</th><th scope="col" class="num">Price</th></tr></thead>
+      <tbody>
+        <tr data-s="Ashgrove"><td class="addr"><b>27 Stewart Road</b> <span>Ashgrove, 5 bed</span></td><td class="d-only">24 Oct</td><td class="d-only">Auction</td><td class="num d-only">23</td><td class="num d-only up">+4.7%</td><td class="num price-cell"><span class="price">$2,460,000</span></td><td class="meta">Auction 24 Oct, 23 days, <span class="up">+4.7%</span> on our estimate</td></tr>
+        <tr data-s="Bardon"><td class="addr"><b>8 Simpsons Road</b> <span>Bardon, 4 bed</span></td><td class="d-only">17 Oct</td><td class="d-only">Auction</td><td class="num d-only">21</td><td class="num d-only up">+3.9%</td><td class="num price-cell"><span class="price">$1,880,000</span></td><td class="meta">Auction 17 Oct, 21 days, <span class="up">+3.9%</span> on our estimate</td></tr>
+        <tr data-s="Paddington"><td class="addr"><b>14 Cochrane Street</b> <span>Paddington, 4 bed</span></td><td class="d-only">10 Oct</td><td class="d-only">Auction</td><td class="num d-only">18</td><td class="num d-only up">+5.2%</td><td class="num price-cell"><span class="price">$2,140,000</span></td><td class="meta">Auction 10 Oct, 18 days, <span class="up">+5.2%</span> on our estimate</td></tr>
+        <tr data-s="Red Hill"><td class="addr"><b>63 Enoggera Terrace</b> <span>Red Hill, 4 bed</span></td><td class="d-only">3 Oct</td><td class="d-only">Auction</td><td class="num d-only">14</td><td class="num d-only up">+1.8%</td><td class="num price-cell"><span class="price">$1,720,000</span></td><td class="meta">Auction 3 Oct, 14 days, <span class="up">+1.8%</span> on our estimate</td></tr>
+        <tr data-s="Paddington"><td class="addr"><b>5 Fernberg Road</b> <span>Paddington, 3 bed</span></td><td class="d-only">26 Sep</td><td class="d-only">Private sale</td><td class="num d-only">26</td><td class="num d-only">+0.3%</td><td class="num price-cell"><span class="price">$1,585,000</span></td><td class="meta">Private sale 26 Sep, 26 days, +0.3% on our estimate</td></tr>
+        <tr data-s="Bardon"><td class="addr"><b>112 Boundary Road</b> <span>Bardon, 3 bed</span></td><td class="d-only">19 Sep</td><td class="d-only">Private sale</td><td class="num d-only">9</td><td class="num d-only up">+2.2%</td><td class="num price-cell"><span class="price">$1,410,000</span></td><td class="meta">Private sale 19 Sep, 9 days, <span class="up">+2.2%</span> on our estimate</td></tr>
+        <tr data-s="Red Hill"><td class="addr"><b>40 Kennedy Terrace</b> <span>Red Hill, 2 bed</span></td><td class="d-only">12 Sep</td><td class="d-only">Private sale</td><td class="num d-only">31</td><td class="num d-only">&minus;0.5%</td><td class="num price-cell"><span class="price">$1,095,000</span></td><td class="meta">Private sale 12 Sep, 31 days, &minus;0.5% on our estimate</td></tr>
+        <tr data-s="Ashgrove"><td class="addr"><b>290 Waterworks Road</b> <span>Ashgrove, 3 bed</span></td><td class="d-only">5 Sep</td><td class="d-only">Private sale</td><td class="num d-only">33</td><td class="num d-only up">+1.1%</td><td class="num price-cell"><span class="price">$1,295,000</span></td><td class="meta">Private sale 5 Sep, 33 days, <span class="up">+1.1%</span> on our estimate</td></tr>
+      </tbody>
+    </table>
+    <p class="sold-note">Want every sale in your street for the last two years? <a href="#appraisal">We'll bring it to the appraisal.</a></p>
+  </div>
+</section>
+
+<section id="for-sale" class="listing-sec" aria-labelledby="sale-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2 id="sale-h">Houses for sale</h2>
+        <p class="lede">Six homes listed right now. All are open this Saturday.</p>
+      </div>
+      <div class="tabs" aria-label="Filter listings by suburb">
+        <button class="tab" aria-pressed="true" data-l="all">All suburbs</button>
+        <button class="tab" aria-pressed="false" data-l="Paddington">Paddington</button>
+        <button class="tab" aria-pressed="false" data-l="Red Hill">Red Hill</button>
+        <button class="tab" aria-pressed="false" data-l="Bardon">Bardon</button>
+        <button class="tab" aria-pressed="false" data-l="Ashgrove">Ashgrove</button>
+      </div>
+    </div>
+    <p class="qld-note"><svg class="icon"><use href="#i-info"/></svg><span>Queensland law doesn't let agents give a price guide on homes going to auction. Call the listing agent and we'll send you the recent sales nearby instead.</span></p>
+    <div class="grid" id="listings">
+      <article class="card" data-l="Paddington">
+        <figure><img src="img/for-sale-latrobe.webp" width="900" height="675" loading="lazy" alt="Two-storey timber house with a green tin roof, front balcony and tall pines"><figcaption class="tag">New this week</figcaption></figure>
+        <div class="body">
+          <p class="method auction">Auction Sat 14 Nov, 10:00 on site</p>
+          <h3><a href="#appraisal">27 Collingwood Street</a></h3>
+          <p class="sub">Paddington 4064</p>
+          <ul class="specs"><li><svg class="icon"><use href="#i-bed"/></svg>4 <span class="sr">bedrooms</span></li><li><svg class="icon"><use href="#i-bath"/></svg>2 <span class="sr">bathrooms</span></li><li><svg class="icon"><use href="#i-car"/></svg>2 <span class="sr">car spaces</span></li><li><svg class="icon"><use href="#i-land"/></svg>405 m²</li></ul>
+          <p class="open"><svg class="icon"><use href="#i-clock"/></svg>Open <b>Sat 11:45 to 12:15</b></p>
+        </div>
+      </article>
+      <article class="card" data-l="Bardon">
+        <figure><img src="img/for-sale-jubilee.webp" width="900" height="675" loading="lazy" alt="Single-storey white weatherboard cottage behind a timber picket fence with a lawn out front"></figure>
+        <div class="body">
+          <p class="method">Offers over $1,450,000</p>
+          <h3><a href="#appraisal">8 Jubilee Terrace</a></h3>
+          <p class="sub">Bardon 4065</p>
+          <ul class="specs"><li><svg class="icon"><use href="#i-bed"/></svg>3 <span class="sr">bedrooms</span></li><li><svg class="icon"><use href="#i-bath"/></svg>1 <span class="sr">bathroom</span></li><li><svg class="icon"><use href="#i-car"/></svg>1 <span class="sr">car space</span></li><li><svg class="icon"><use href="#i-land"/></svg>607 m²</li></ul>
+          <p class="open"><svg class="icon"><use href="#i-clock"/></svg>Open <b>Sat 9:45 to 10:15</b></p>
+        </div>
+      </article>
+      <article class="card" data-l="Ashgrove">
+        <figure><img src="img/for-sale-ashgrove.webp" width="900" height="675" loading="lazy" alt="Raised timber house with a wide wraparound deck above a carport, set on a big lawn with palms"></figure>
+        <div class="body">
+          <p class="method">Offers over $2,350,000</p>
+          <h3><a href="#appraisal">52 Glenlyon Drive</a></h3>
+          <p class="sub">Ashgrove 4060</p>
+          <ul class="specs"><li><svg class="icon"><use href="#i-bed"/></svg>5 <span class="sr">bedrooms</span></li><li><svg class="icon"><use href="#i-bath"/></svg>3 <span class="sr">bathrooms</span></li><li><svg class="icon"><use href="#i-car"/></svg>2 <span class="sr">car spaces</span></li><li><svg class="icon"><use href="#i-land"/></svg>810 m²</li></ul>
+          <p class="open"><svg class="icon"><use href="#i-clock"/></svg>Open <b>Sat 9:00 to 9:30</b></p>
+        </div>
+      </article>
+      <article class="card" data-l="Red Hill">
+        <figure><img src="img/for-sale-redhill.webp" width="900" height="675" loading="lazy" alt="Side of a grey weatherboard house with metal window awnings and a brick garden path"></figure>
+        <div class="body">
+          <p class="method auction">Auction Sat 7 Nov, 11:00 on site</p>
+          <h3><a href="#appraisal">19 Kennedy Terrace</a></h3>
+          <p class="sub">Red Hill 4059</p>
+          <ul class="specs"><li><svg class="icon"><use href="#i-bed"/></svg>3 <span class="sr">bedrooms</span></li><li><svg class="icon"><use href="#i-bath"/></svg>2 <span class="sr">bathrooms</span></li><li><svg class="icon"><use href="#i-car"/></svg>1 <span class="sr">car space</span></li><li><svg class="icon"><use href="#i-land"/></svg>304 m²</li></ul>
+          <p class="open"><svg class="icon"><use href="#i-clock"/></svg>Open <b>Sat 11:00 to 11:30</b></p>
+        </div>
+      </article>
+      <article class="card" data-l="Paddington">
+        <figure><img src="img/for-sale-paddington.webp" width="900" height="675" loading="lazy" alt="Small white workers cottage with a teal picket fence under a tree in yellow flower"></figure>
+        <div class="body">
+          <p class="method">Offers over $1,190,000</p>
+          <h3><a href="#appraisal">6 Moreton Street</a></h3>
+          <p class="sub">Paddington 4064</p>
+          <ul class="specs"><li><svg class="icon"><use href="#i-bed"/></svg>2 <span class="sr">bedrooms</span></li><li><svg class="icon"><use href="#i-bath"/></svg>1 <span class="sr">bathroom</span></li><li><svg class="icon"><use href="#i-land"/></svg>202 m²</li></ul>
+          <p class="open"><svg class="icon"><use href="#i-clock"/></svg>Open <b>Sat 12:30 to 1:00</b></p>
+        </div>
+      </article>
+      <article class="card" data-l="Red Hill">
+        <figure><img src="img/for-sale-stairs.webp" width="900" height="675" loading="lazy" alt="White Queenslander with green trim, an enclosed sleepout and a timber staircase with fretwork rails"></figure>
+        <div class="body">
+          <p class="method auction">Auction Sat 21 Nov, 9:30 on site</p>
+          <h3><a href="#appraisal">40 Arthur Terrace</a></h3>
+          <p class="sub">Red Hill 4059</p>
+          <ul class="specs"><li><svg class="icon"><use href="#i-bed"/></svg>4 <span class="sr">bedrooms</span></li><li><svg class="icon"><use href="#i-bath"/></svg>2 <span class="sr">bathrooms</span></li><li><svg class="icon"><use href="#i-car"/></svg>2 <span class="sr">car spaces</span></li><li><svg class="icon"><use href="#i-land"/></svg>455 m²</li></ul>
+          <p class="open"><svg class="icon"><use href="#i-clock"/></svg>Open <b>Sat 10:30 to 11:00</b></p>
+        </div>
+      </article>
+    </div>
+    <p class="empty" id="no-list" hidden>Nothing listed in this suburb right now. Ask us about homes coming up before they go online.</p>
+  </div>
+</section>
+
+<section id="open-homes" aria-labelledby="open-h">
+  <div class="wrap opens">
+    <div>
+      <h2 id="open-h">Open homes this Saturday</h2>
+      <p class="lede">Saturday 31 October. The times run in driving order, from Ashgrove out west back into Paddington.</p>
+      <p class="route"><svg class="icon" style="display:inline;vertical-align:-4px;color:var(--jac)"><use href="#i-walk"/></svg> About 6 km end to end. You can see all six before lunch.</p>
+      <a class="btn outline ics" id="ics" href="#" download="kemp-hollis-open-homes-31-oct.ics"><svg class="icon"><use href="#i-cal"/></svg>Add all six to your calendar</a>
+    </div>
+    <ol class="timeline">
+      <li><time datetime="2026-10-31T09:00">9:00<span>to 9:30</span></time><div class="where"><b>52 Glenlyon Drive</b><span>Ashgrove, 5 bed</span></div><div class="agent">Sophie Hollis</div></li>
+      <li><time datetime="2026-10-31T09:45">9:45<span>to 10:15</span></time><div class="where"><b>8 Jubilee Terrace</b><span>Bardon, 3 bed</span></div><div class="agent">Sophie Hollis</div></li>
+      <li><time datetime="2026-10-31T10:30">10:30<span>to 11:00</span></time><div class="where"><b>40 Arthur Terrace</b><span>Red Hill, 4 bed</span></div><div class="agent">Mark Kemp</div></li>
+      <li><time datetime="2026-10-31T11:00">11:00<span>to 11:30</span></time><div class="where"><b>19 Kennedy Terrace</b><span>Red Hill, 3 bed</span></div><div class="agent">Daniel Rossi</div></li>
+      <li><time datetime="2026-10-31T11:45">11:45<span>to 12:15</span></time><div class="where"><b>27 Collingwood Street</b><span>Paddington, 4 bed</span></div><div class="agent">Mark Kemp</div></li>
+      <li><time datetime="2026-10-31T12:30">12:30<span>to 1:00</span></time><div class="where"><b>6 Moreton Street</b><span>Paddington, 2 bed</span></div><div class="agent">Daniel Rossi</div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="selling" class="sell" aria-labelledby="sell-h">
+  <div class="wrap sell-grid">
+    <div class="sell-photo"><img src="img/sell-veranda.webp" width="1000" height="1250" loading="lazy" alt="Long timber veranda with arched brackets, lit by low morning sun"></div>
+    <div>
+      <h2 id="sell-h">How we sell your house</h2>
+      <p class="lede">The same agent looks after you from the first visit to settlement day. Most of our houses sell within four weeks of going online.</p>
+      <ol class="steps">
+        <li><div><b>Appraisal visit</b><p>We walk through the house with you and point out what buyers here will ask about, like stumps, the roof and the pool fence.</p></div></li>
+        <li><div><b>Written estimate</b><p>Within two business days you get a price range and the sales it's based on. You keep it whether you list with us or not.</p></div></li>
+        <li><div><b>Auction or private sale</b><p>We tell you which one suits your house and why. Character homes on good blocks usually go to auction.</p></div></li>
+        <li><div><b>Photos, floor plan and listing</b><p>Online on realestate.com.au and Domain within a week, with a board out the front.</p></div></li>
+        <li><div><b>A report after every open home</b><p>Who came through, what they said about price and who's asked for a contract.</p></div></li>
+      </ol>
+      <div class="fees">
+        <div><strong>2.2%</strong><p>Our fee, including GST, paid only when the house sells.</p></div>
+        <div><strong>$3,500 to $6,000</strong><p>Typical marketing budget. We quote it in writing before you sign anything.</p></div>
+      </div>
+      <a class="btn light" href="#appraisal">Book an appraisal<svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="rev-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="rev-h">What sellers told us afterwards</h2></div>
+    <div class="quotes">
+      <figure class="quote">
+        <p class="fact">Sold at auction, Red Hill, 14 days</p>
+        <blockquote>Mark said it would sell between $1.65m and $1.75m and it went for $1.72m. After 30 years in that house we didn't want surprises, and there weren't any.</blockquote>
+        <figcaption>Helen M.</figcaption>
+      </figure>
+      <figure class="quote">
+        <p class="fact">Private sale, Bardon, 9 days</p>
+        <blockquote>We'd already moved to Melbourne. Sophie sent a short note after each open home with how many groups came and what they thought of the price. We never had to chase her.</blockquote>
+        <figcaption>James T.</figcaption>
+      </figure>
+      <figure class="quote">
+        <p class="fact">Sold at auction, Paddington, 18 days</p>
+        <blockquote>The building report found two stumps that needed replacing. Daniel had three quotes to us that afternoon and the buyer stayed on.</blockquote>
+        <figcaption>Priya K.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="team-sec" aria-labelledby="team-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2 id="team-h">The team</h2>
+        <p class="lede">Four of us, one office. Call the agent for your suburb directly.</p>
+      </div>
+    </div>
+    <div class="team">
+      <div class="person"><img src="img/team-kemp.webp" width="520" height="650" loading="lazy" alt="Mark Kemp, smiling, arms folded, in a light blue shirt"><h3>Mark Kemp</h3><p class="role">Principal. Sells in Paddington and Red Hill</p><a href="tel:0400000011"><svg class="icon"><use href="#i-phone"/></svg>0400 000 011</a></div>
+      <div class="person"><img src="img/team-hollis.webp" width="520" height="650" loading="lazy" alt="Sophie Hollis in a striped shirt, standing in front of greenery"><h3>Sophie Hollis</h3><p class="role">Director. Sells in Bardon and Ashgrove</p><a href="tel:0400000012"><svg class="icon"><use href="#i-phone"/></svg>0400 000 012</a></div>
+      <div class="person"><img src="img/team-rossi.webp" width="520" height="650" loading="lazy" alt="Daniel Rossi in a navy blazer, smiling outdoors"><h3>Daniel Rossi</h3><p class="role">Sales agent. All four suburbs</p><a href="tel:0400000013"><svg class="icon"><use href="#i-phone"/></svg>0400 000 013</a></div>
+      <div class="person"><img src="img/team-lin.webp" width="520" height="650" loading="lazy" alt="Grace Lin in a lilac top, standing beside a table with flowers"><h3>Grace Lin</h3><p class="role">Property manager. Rentals and landlords</p><a href="tel:0400000014"><svg class="icon"><use href="#i-phone"/></svg>0400 000 014</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="rent" aria-labelledby="rent-h">
+  <div class="wrap rent-grid">
+    <div>
+      <h2 id="rent-h">Homes for rent</h2>
+      <p class="lede">Book a viewing time with Grace. Apply online after you've seen the place.</p>
+      <p class="landlord"><b>Own a rental in the area?</b> We manage 180 homes across the inner west. Management is 7.7% of the rent including GST, with a letting fee of one week's rent.</p>
+    </div>
+    <ul class="rentals">
+      <li><img src="img/lease-deck.webp" width="700" height="525" loading="lazy" alt="Covered timber deck with an outdoor dining table and hanging plants"><div><b>41 Coopers Camp Road</b><span class="sub">Bardon, 3 bed, 2 bath, 1 car</span></div><p class="rent">$920 <span>per week, available now</span></p></li>
+      <li><img src="img/lease-newfarm.webp" width="700" height="525" loading="lazy" alt="White rendered townhouse with timber balconies and breeze-block screen"><div><b>3/27 Fernberg Road</b><span class="sub">Paddington, 2 bed, 1 bath, 1 car</span></div><p class="rent">$680 <span>per week, from 7 Nov</span></p></li>
+      <li><img src="img/lease-kitchen.webp" width="700" height="525" loading="lazy" alt="White kitchen with stone benches opening to a dining room with timber floors"><div><b>8 Ashgrove Avenue</b><span class="sub">Ashgrove, 4 bed, 2 bath, 2 car</span></div><p class="rent">$1,050 <span>per week, from 14 Nov</span></p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="appraisal" class="form-sec" aria-labelledby="form-h">
+  <div class="wrap form-grid">
+    <div>
+      <h2 id="form-h">Request an appraisal</h2>
+      <p class="lede">An agent will call you within one business day to find a time. Most visits take about 40 minutes.</p>
+      <ul class="next">
+        <li><svg class="icon"><use href="#i-phone"/></svg><div><b>We call to book a time</b><span>Weekdays or Saturday morning, whatever suits.</span></div></li>
+        <li><svg class="icon"><use href="#i-doc"/></svg><div><b>You get a written estimate</b><span>A price range and every comparable sale we used.</span></div></li>
+      </ul>
+    </div>
+    <form class="full" id="full-form" novalidate>
+      <div class="f"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="f"><label for="f-phone">Mobile</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="f wide"><label for="f-addr">Property address</label><input id="f-addr" name="address" autocomplete="street-address" required></div>
+      <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"><span class="hint">For the written estimate</span></div>
+      <div class="f"><label for="f-when">When might you sell?</label><select id="f-when" name="when"><option>In the next 3 months</option><option>In 3 to 6 months</option><option>Next year</option><option>Not sure, I'd like a price</option></select></div>
+      <div class="f wide"><label for="f-notes">Anything we should know? <span class="hint">(optional)</span></label><textarea id="f-notes" name="notes" placeholder="e.g. renovated kitchen in 2021, tenant in place until March"></textarea></div>
+      <button class="btn" type="submit">Send request</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><b>KEMP HOLLIS</b><span>Property, Paddington</span></a>
+        <p style="margin-top:16px;max-width:34ch">Selling and leasing houses in Paddington, Red Hill, Bardon and Ashgrove since 2009.</p>
+      </div>
+      <div><h3>Office</h3><ul><li>1/210 Given Terrace</li><li>Paddington QLD 4064</li><li><a href="tel:0400000000">0400 000 000</a></li><li><a href="mailto:hello@kemphollis.com">hello@kemphollis.com</a></li></ul></div>
+      <div><h3>Hours</h3><ul><li>Mon to Fri 8:30 to 5:30</li><li>Saturday 8:00 to 1:00</li><li>Agents on mobile after hours</li></ul></div>
+      <div><h3>On this page</h3><ul><li><a href="#for-sale">For sale</a></li><li><a href="#sold">Sold</a></li><li><a href="#selling">Selling</a></li><li><a href="#rent">For rent</a></li></ul></div>
+    </div>
+    <p class="fine">Kemp Hollis Property Pty Ltd. Licence no. 0000000 (placeholder). Concept design, not a real business. Photos from Pexels.</p>
+  </div>
+</footer>
+
+<div class="mbar"><a class="btn call" href="tel:0400000000" aria-label="Call the office"><svg class="icon"><use href="#i-phone"/></svg></a><a class="btn" href="#appraisal">Book an appraisal</a></div>
+
+<script>
+// phone action bar shows once the hero form is off screen
+const bar=document.querySelector('.mbar');new IntersectionObserver(([e])=>bar.classList.toggle('show',!e.isIntersecting&&e.boundingClientRect.top<0)).observe(document.querySelector('.hero'));
+// mobile menu
+const mb=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');mb.setAttribute('aria-expanded',false)}));
+// sold tabs
+document.querySelectorAll('[data-s].tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('[data-s].tab').forEach(x=>x.setAttribute('aria-selected',x===t));
+  document.querySelectorAll('#sold-table tbody tr').forEach(r=>r.hidden=!(t.dataset.s==='all'||r.dataset.s===t.dataset.s));
+}));
+// listing filter
+document.querySelectorAll('[data-l].tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('[data-l].tab').forEach(x=>x.setAttribute('aria-pressed',x===t));
+  let n=0;document.querySelectorAll('#listings .card').forEach(c=>{const s=t.dataset.l==='all'||c.dataset.l===t.dataset.l;c.hidden=!s;n+=s});
+  document.getElementById('no-list').hidden=n>0;
+}));
+// quick form carries address to the full form
+document.getElementById('quick').addEventListener('submit',e=>{e.preventDefault();document.getElementById('f-addr').value=document.getElementById('q-addr').value;location.hash='appraisal';document.getElementById('f-name').focus()});
+// full form
+document.getElementById('full-form').addEventListener('submit',e=>{e.preventDefault();const f=e.target;
+  const miss=[...f.querySelectorAll('[required]')].find(i=>!i.value.trim());if(miss){miss.focus();miss.setAttribute('aria-invalid','true');return}
+  const p=document.createElement('p');p.className='thanks';p.setAttribute('role','status');p.textContent='Thanks '+f.name.value.split(' ')[0]+'. We\'ll call you on '+f.phone.value+' within one business day.';f.replaceChildren(p)});
+// calendar file for the open homes
+(()=>{const rows=[...document.querySelectorAll('.timeline li')];let s='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Kemp Hollis//Open homes//EN\r\n';
+  rows.forEach((li,i)=>{const t=li.querySelector('time').getAttribute('datetime');const d=t.replace(/[-:]/g,'')+'00';const [h,m]=t.slice(11).split(':').map(Number);const end=new Date(2026,9,31,h,m+30);const e='20261031T'+String(end.getHours()).padStart(2,'0')+String(end.getMinutes()).padStart(2,'0')+'00';
+    s+='BEGIN:VEVENT\r\nUID:kh-open-'+i+'@kemphollis.com\r\nDTSTAMP:20261025T000000Z\r\nDTSTART;TZID=Australia/Brisbane:'+d+'\r\nDTEND;TZID=Australia/Brisbane:'+e+'\r\nSUMMARY:Open home: '+li.querySelector('.where b').textContent+'\r\nLOCATION:'+li.querySelector('.where b').textContent+', '+li.querySelector('.where span').textContent.split(',')[0]+' QLD\r\nEND:VEVENT\r\n'});
+  document.getElementById('ics').href='data:text/calendar;charset=utf-8,'+encodeURIComponent(s+'END:VCALENDAR')})();
+</script>
+</body>
+</html>

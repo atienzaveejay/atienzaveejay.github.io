@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Habagat House, General Luna, Siargao</title>
+<meta name="description" content="Twelve rooms and villas in Catangnan, General Luna, a 10-minute walk from Cloud 9. Rates with breakfast, airport pickup and what's nearby.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#10221d;
+  --ink-2:#3f4f4a;
+  --line:#d5dcd8;
+  --paper:#ffffff;
+  --mist:#eef2f0;
+  --reef:#0d5444;
+  --reef-2:#0a4236;
+  --sun:#f4c21b;
+  --sun-2:#e2ad00;
+  --sea:#1d6f93;
+  --ok:#11734f;
+  --low:#a3401c;
+  --r:6px;
+  --display:"Big Shoulders Display", "Arial Narrow", sans-serif;
+  --body:"Figtree", system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--sun);padding:10px 14px;z-index:99}
+.skip:focus{left:8px;top:8px}
+
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.98;letter-spacing:.005em;margin:0}
+h2{font-size:clamp(40px,6vw,68px);text-transform:uppercase}
+h3{font-size:28px;text-transform:uppercase}
+.kicker{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--reef);margin:0 0 10px}
+.lede{font-size:19px;max-width:44ch;color:var(--ink-2);margin:14px 0 0}
+section{padding:88px 0}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;margin-bottom:36px}
+
+.ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* concept strip */
+.concept{background:var(--mist);color:var(--ink-2);font-size:13px;text-align:center;padding:6px 16px}
+.concept a{color:var(--ink);font-weight:700}
+
+/* header */
+.top{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;height:64px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.brand b{font-family:var(--display);font-weight:900;font-size:27px;letter-spacing:.02em;text-transform:uppercase}
+.brand small{font-size:12px;color:var(--ink-2);margin-top:3px;letter-spacing:.02em}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{text-decoration:none;font-size:16px;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--sun)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:var(--r);border:0;background:var(--sun);color:var(--ink);font-weight:700;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--sun-2)}
+.btn.ghost{background:transparent;border:1.5px solid currentColor}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:#000}
+.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--ink);border-radius:var(--r);height:42px;padding:0 12px;align-items:center;gap:8px;cursor:pointer}
+@media (max-width:960px){
+  .nav{display:none}
+  .menu-btn{display:inline-flex}
+  .top .btn{display:none}
+  .nav.open{display:flex;position:absolute;left:0;right:0;top:64px;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:6px 20px 14px}
+  .nav.open a{padding:13px 0;border-bottom:1px solid var(--line);font-size:18px}
+}
+
+/* hero */
+.hero{position:relative;padding:0;background:var(--ink);color:#fff}
+.hero-photo{position:relative;height:min(64vh,620px);min-height:480px;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,20,16,.88) 0%,rgba(8,20,16,.78) 38%,rgba(8,20,16,.35) 58%,rgba(8,20,16,0) 75%),linear-gradient(180deg,rgba(8,20,16,0) 55%,rgba(8,20,16,.55) 100%)}
+.hero-copy{position:absolute;left:0;right:0;bottom:40px;z-index:2}
+.hero h1{font-size:clamp(44px,6vw,86px);text-transform:uppercase;max-width:15ch}
+.hero-sub{font-size:19px;max-width:46ch;margin:16px 0 0;color:#eef3f1}
+.credit{position:absolute;right:16px;top:12px;font-size:12px;color:#fff;opacity:.85;z-index:2}
+
+/* availability bar */
+.avail{background:var(--ink);padding:22px 0 26px}
+.avail form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) auto;gap:12px;align-items:end}
+.field label{display:block;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#c9d6d1;margin-bottom:6px}
+.field input,.field select{width:100%;min-width:0;max-width:100%;height:50px;border-radius:var(--r);border:1.5px solid #4b5f58;background:#182e27;color:#fff;padding:0 12px;color-scheme:dark}
+.field input{-webkit-appearance:none;appearance:none;display:block}
+.field input:focus,.field select:focus{border-color:var(--sun);outline:none;box-shadow:0 0 0 3px rgba(244,194,27,.35)}
+.avail .btn{height:50px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;margin:18px 0 0;padding:0;list-style:none;font-size:15px;color:#dbe5e1}
+.facts li{display:flex;align-items:center;gap:8px}
+.facts .ico{color:var(--sun)}
+@media (max-width:860px){.avail form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hero-photo{min-height:440px;height:62vh}.hero-photo img{object-position:64% 18%}.hero-sub{font-size:17px}.hero-photo::after{background:linear-gradient(180deg,rgba(8,20,16,0) 0%,rgba(8,20,16,.35) 30%,rgba(8,20,16,.86) 52%,rgba(8,20,16,.94) 100%)}.avail .field.guests{grid-column:1/-1}.avail .btn{grid-column:1/-1}}
+
+/* rooms */
+.stay-line{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;background:var(--mist);border-radius:var(--r);padding:14px 18px;margin-bottom:28px;font-size:16px}
+.stay-line strong{font-weight:700}
+.cur{margin-left:auto;display:inline-flex;border:1.5px solid var(--ink);border-radius:var(--r);overflow:hidden}
+.cur button{border:0;background:transparent;padding:7px 14px;cursor:pointer;font-weight:700;font-size:15px}
+.cur button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.rooms{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.room{display:grid;grid-template-columns:300px 1fr 260px;gap:28px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.room h3{font-size:34px}
+.room .count{font-size:15px;color:var(--ink-2);margin:6px 0 12px}
+.specs{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:0 0 12px;padding:0;font-size:15px}
+.specs li{display:flex;align-items:center;gap:6px}
+.specs .ico{width:18px;height:18px;color:var(--reef)}
+.room p.desc{margin:0;color:var(--ink-2);max-width:52ch;font-size:16px}
+.price{border-left:1px solid var(--line);padding-left:24px;display:flex;flex-direction:column;gap:4px}
+.price .per{font-family:var(--display);font-weight:800;font-size:40px;line-height:1}
+.price .per span{font-family:var(--body);font-size:15px;font-weight:400;color:var(--ink-2)}
+.price .total{font-size:15px;color:var(--ink-2)}
+.price .total b{color:var(--ink)}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:15px;font-weight:700;margin:8px 0 12px}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor}
+.status.ok{color:var(--ok)}
+.status.low{color:var(--low)}
+.status.none{color:var(--ink-2)}
+.price .btn{width:100%}
+.price .btn[disabled]{background:var(--mist);color:var(--ink-2);cursor:not-allowed}
+.rates-note{font-size:15px;color:var(--ink-2);margin:18px 0 0}
+@media (max-width:1000px){.room{grid-template-columns:220px 1fr}.price{grid-column:1/-1;border-left:0;padding-left:0;border-top:1px dashed var(--line);padding-top:16px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:6px 16px}.price .btn{grid-column:2;grid-row:1/4}}
+@media (max-width:600px){.room{grid-template-columns:1fr;gap:16px}.price{grid-template-columns:1fr}.price .btn{grid-column:auto;grid-row:auto}.cur{margin-left:0}}
+
+/* getting here */
+.here{background:var(--reef);color:#fff}
+.here .kicker{color:var(--sun)}
+.here .lede{color:#d8e6e1}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tabs button{background:transparent;border:1.5px solid #6f9d90;color:#fff;border-radius:999px;padding:9px 18px;cursor:pointer;font-weight:700;font-size:16px}
+.tabs button[aria-selected="true"]{background:var(--sun);border-color:var(--sun);color:var(--ink)}
+.route{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.leg{position:relative;padding:0 22px 0 0}
+.leg .dot{width:44px;height:44px;border-radius:50%;background:var(--reef-2);border:2px solid var(--sun);display:grid;place-items:center;color:var(--sun);position:relative;z-index:1}
+.leg:not(:last-child)::before{content:"";position:absolute;top:21px;left:44px;right:0;border-top:2px dashed #7fb0a3}
+.leg h3{font-size:26px;margin:16px 0 6px}
+.leg .time{font-family:var(--display);font-weight:800;font-size:22px;color:var(--sun);letter-spacing:.02em}
+.leg p{margin:6px 0 0;color:#dbe8e4;font-size:16px;max-width:30ch}
+.here-foot{display:grid;grid-template-columns:1.2fr 1fr;gap:36px;margin-top:52px;padding-top:36px;border-top:1px solid #2f7363}
+.pickup{background:var(--reef-2);border-radius:var(--r);padding:24px}
+.pickup table{width:100%;border-collapse:collapse;font-size:16px}
+.pickup th,.pickup td{text-align:left;padding:10px 0;border-bottom:1px solid #2f6a5c;vertical-align:top}
+.pickup td:last-child{text-align:right;font-weight:700;white-space:nowrap;padding-left:12px}
+.pickup tr:last-child td{border-bottom:0}
+.here-foot img{border-radius:var(--r);width:100%;height:100%;object-fit:cover;min-height:240px}
+@media (max-width:860px){
+  .route{grid-template-columns:1fr;gap:0}
+  .leg{padding:0 0 26px 64px}
+  .leg .dot{position:absolute;left:0;top:0}
+  .leg h3{margin-top:6px}
+  .leg:not(:last-child)::before{top:44px;bottom:0;left:21px;right:auto;border-top:0;border-left:2px dashed #7fb0a3}
+  .here-foot{grid-template-columns:1fr}
+}
+
+/* nearby */
+.near-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:start}
+.board{border-top:2px solid var(--ink)}
+.board h3{font-size:22px;padding:18px 0 6px;display:flex;align-items:center;gap:8px;color:var(--reef)}
+.board h3 .ico{width:22px;height:22px}
+.board ul{list-style:none;margin:0;padding:0}
+.board li{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:11px 0;border-bottom:1px solid var(--line)}
+.board li b{font-weight:700}
+.board li span{color:var(--ink-2);font-size:15px;grid-column:1}
+.board li em{font-style:normal;font-family:var(--display);font-weight:800;font-size:24px;grid-row:1/3;grid-column:2;align-self:center;text-align:right;min-width:84px}
+.board li em small{font-family:var(--body);font-weight:400;font-size:13px;display:block;color:var(--ink-2)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:14px;position:sticky;top:88px}
+.pics figure{margin:0}
+.pics figure.wide{grid-column:1/-1}
+.pics img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.pics figure.wide img{aspect-ratio:16/9}
+.pics figcaption{font-size:15px;margin-top:8px;color:var(--ink-2)}
+.pics figcaption b{color:var(--ink)}
+@media (max-width:900px){.near-grid{grid-template-columns:1fr}.pics{position:static}}
+
+/* surf season */
+.season{background:var(--mist)}
+.months{display:grid;grid-template-columns:150px repeat(12,1fr);gap:4px;font-size:15px}
+.months .lab{font-weight:700;align-self:center}
+.months .m{text-align:center;font-weight:700;font-size:14px;padding-bottom:4px;color:var(--ink-2)}
+.cell{height:44px;border-radius:4px;display:grid;place-items:center;font-size:13px;font-weight:700}
+.w1{background:#cfe3ea;color:var(--ink)} .w2{background:#6fa9c0;color:var(--ink)} .w3{background:#1d6f93;color:#fff}
+.r1{background:#fff;color:var(--ink);border:1px solid var(--line)} .r2{background:#c2cfca;color:var(--ink)} .r3{background:#5d6f69;color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:16px;font-size:15px;color:var(--ink-2)}
+.season-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+.season-notes h3{font-size:24px;margin-bottom:8px}
+.season-notes p{margin:0;color:var(--ink-2);font-size:16px}
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+.scroll-x .months{min-width:760px}
+@media (max-width:860px){.season-notes{grid-template-columns:1fr}.months{grid-template-columns:110px repeat(12,1fr)}}
+
+/* included */
+.incl{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.incl img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%;max-height:640px}
+.inc-list{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:22px 28px}
+.inc-list li{display:grid;grid-template-columns:28px 1fr;gap:10px}
+.inc-list .ico{width:24px;height:24px;color:var(--reef);margin-top:2px}
+.inc-list b{display:block}
+.inc-list span{color:var(--ink-2);font-size:16px}
+@media (max-width:900px){.incl{grid-template-columns:1fr}.incl img{aspect-ratio:16/10}}
+@media (max-width:520px){.inc-list{grid-template-columns:1fr}}
+
+/* reviews */
+.reviews{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.reviews li{border-top:4px solid var(--sun);padding-top:18px}
+.reviews blockquote{margin:0;font-size:18px}
+.reviews li:first-child blockquote{font-size:22px;line-height:1.45}
+.reviews cite{display:block;font-style:normal;margin-top:14px;color:var(--ink-2);font-size:15px}
+.reviews cite b{color:var(--ink)}
+.score{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:30px;font-size:15px;color:var(--ink-2)}
+@media (max-width:900px){.reviews{grid-template-columns:1fr}}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:48px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:2px solid var(--ink)}
+summary{cursor:pointer;list-style:none;padding:18px 36px 18px 0;font-weight:700;font-size:18px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:24px;width:10px;height:10px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg);transition:transform .2s}
+details[open] summary::after{transform:rotate(-135deg);top:29px}
+details p{margin:0 0 18px;color:var(--ink-2);max-width:60ch}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr;gap:24px}}
+
+/* footer */
+footer{background:var(--ink);color:#dbe5e1;padding:64px 0 110px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px}
+footer h2{color:#fff;font-size:44px}
+footer h3{font-size:20px;color:var(--sun);margin-bottom:10px}
+footer p{margin:0 0 6px}
+footer a{color:#fff}
+.small{font-size:14px;color:#a9bab4;margin-top:40px}
+@media (max-width:860px){.foot{grid-template-columns:1fr}}
+@media (min-width:861px){footer{padding-bottom:64px}}
+
+/* mobile sticky bar */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top:1px solid var(--line);display:none;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+.mbar div{font-size:14px;line-height:1.25;color:var(--ink-2)}
+.mbar div b{display:block;font-size:18px;color:var(--ink)}
+.mbar .btn{margin-left:auto}
+@media (max-width:860px){.mbar{display:flex;transform:translateY(110%);transition:transform .25s}.mbar.show{transform:none}}
+
+/* booking drawer */
+.drawer{border:0;padding:0;margin:0 0 0 auto;height:100%;max-height:100%;width:min(460px,100%);background:var(--paper);color:var(--ink)}
+.drawer::backdrop{background:rgba(8,20,16,.55)}
+.drawer .in{padding:24px;display:flex;flex-direction:column;gap:16px;min-height:100%}
+.drawer header{display:flex;justify-content:space-between;align-items:center}
+.drawer header h2{font-size:34px}
+.x{background:none;border:1.5px solid var(--ink);border-radius:var(--r);width:42px;height:42px;cursor:pointer;display:grid;place-items:center}
+.sum{background:var(--mist);border-radius:var(--r);padding:16px}
+.sum dl{display:grid;grid-template-columns:auto 1fr;gap:6px 0;margin:0;font-size:16px}
+.sum dt{color:var(--ink-2);padding-right:16px}
+.sum dd{margin:0;text-align:right;font-weight:700}
+.sum .grand{border-top:1px solid var(--line);padding-top:8px;margin-top:4px;font-size:18px}
+.drawer .f label{display:block;font-weight:700;font-size:15px;margin-bottom:5px}
+.drawer .f input,.drawer .f select{width:100%;height:48px;border:1.5px solid #9aa8a3;border-radius:var(--r);padding:0 12px;background:#fff}
+.drawer .f input:focus,.drawer .f select:focus{border-color:var(--sea);outline:none;box-shadow:0 0 0 3px rgba(29,111,147,.25)}
+.drawer .note{font-size:14px;color:var(--ink-2);margin:0}
+.done{display:none;background:#e5f3ec;border-radius:var(--r);padding:16px;color:var(--ink)}
+</style>
+</head>
+<body>
+<a class="skip" href="#rooms">Skip to rooms and prices</a>
+
+<div class="concept"><a href="https://atienzaveejay.github.io/ui-design/">Concept design by Veejay Atienza</a>. Not a real business.</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 13.5 3 11l1.5-1.5 7.5 1 4-4.5c1-1 2.6-1.2 3.3-.5s.5 2.3-.5 3.3L14.3 13l1 7.5L13.8 22l-2.5-7.5"/><path d="m6 17-3 1 1-3"/></symbol>
+  <symbol id="i-van" viewBox="0 0 24 24"><path d="M3 16V8a2 2 0 0 1 2-2h10l4 4h1a1 1 0 0 1 1 1v5h-2"/><path d="M9 16h6"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M15 6v4h4"/></symbol>
+  <symbol id="i-boat" viewBox="0 0 24 24"><path d="M3 15h18l-2.5 4h-13z"/><path d="M12 15V4l6 8h-6"/><path d="M2 21c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.8"/><path d="m9 21 2.5-7L14 16v5"/><path d="M7 11.5 10 8l3 1 2 3 3 1"/><path d="M11.5 14 13 9"/></symbol>
+  <symbol id="i-scooter" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M8 17.5h7l2-6h-3"/><path d="M14 5h2l1.5 6.5"/><path d="M5.5 15V12h5l2 5.5"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19V6"/><path d="M3 15h18v4"/><path d="M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11" r="2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.5 3.6-5.5 7-5.5s6.2 2 7 5.5"/></symbol>
+  <symbol id="i-size" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M9 4v4M4 9h4M15 20v-4M20 15h-4"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 17c2.5 0 3.5-2 6-2s3.5 2 6 2 3.5-2 6-2"/><path d="M4 12c0-4 3-7 7-7 2.5 0 4 1.5 4 3.5 0 1.5-1 2.5-2.5 2.5"/></symbol>
+  <symbol id="i-pool" viewBox="0 0 24 24"><path d="M8 17V5a2 2 0 0 1 4 0"/><path d="M16 17V5a2 2 0 0 1 4 0"/><path d="M8 9h8M8 13h8"/><path d="M2 20c1.5 0 1.5-1 3-1s1.5 1 3 1 1.5-1 3-1 1.5 1 3 1 1.5-1 3-1 1.5 1 3 1"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3v3M12 3v3"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0"/><path d="M5.5 12.5a10 10 0 0 1 13 0"/><path d="M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-board" viewBox="0 0 24 24"><path d="M17.5 3.5c2.5 2.5-1 9-5 13s-8 6-10 5c-1-2 1-6 5-10s7.5-10.5 10-8z"/><path d="M6 18 18 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 19.5 5.3 16A8 8 0 1 1 8 18.7z"/></symbol>
+  <symbol id="i-scooterkey" viewBox="0 0 24 24"><circle cx="8" cy="14" r="4"/><path d="m11 11 9-9M17 5l2 2M15 7l2 2"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Habagat House, home">
+      <b>Habagat House</b>
+      <small>Catangnan, General Luna, Siargao</small>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#rooms">Rooms and prices</a>
+      <a href="#getting-here">Getting here</a>
+      <a href="#nearby">What's nearby</a>
+      <a href="#season">Surf season</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn" href="#dates">Check dates</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav"><svg class="ico"><use href="#i-menu"/></svg>Menu</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="hero-photo">
+      <img src="img/hero.webp" alt="Two surfers riding a green wave in front of a coconut-covered hillside" width="1920" height="1280" fetchpriority="high">
+      <div class="hero-copy">
+        <div class="wrap">
+          <h1 id="hero-h">Twelve rooms, ten minutes' walk from Cloud 9</h1>
+          <p class="hero-sub">A small surf house on Tourism Road in General Luna. Breakfast is included, boards have their own rack and our van meets every flight at Sayak.</p>
+        </div>
+      </div>
+    </div>
+    <div class="avail" id="dates">
+      <div class="wrap">
+        <form id="dateForm" aria-label="Check availability">
+          <div class="field"><label for="in">Check-in</label><input type="date" id="in" required></div>
+          <div class="field"><label for="out">Check-out</label><input type="date" id="out" required></div>
+          <div class="field guests"><label for="guests">Guests</label>
+            <select id="guests">
+              <option value="1">1 guest</option>
+              <option value="2" selected>2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5">5 guests</option>
+              <option value="6">6 guests</option>
+            </select>
+          </div>
+          <button class="btn" type="submit">See rooms for these dates</button>
+        </form>
+        <ul class="facts">
+          <li><svg class="ico"><use href="#i-tag"/></svg>From ₱4,800 a night with breakfast for two</li>
+          <li><svg class="ico"><use href="#i-van"/></svg>50 minutes from Sayak Airport</li>
+          <li><svg class="ico"><use href="#i-chat"/></svg>Replies on Messenger within the hour, 7 AM to 10 PM</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="rooms" aria-labelledby="rooms-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Rooms and prices</p>
+          <h2 id="rooms-h">Five kinds of room, twelve in all</h2>
+        </div>
+        <p class="lede">Prices are per room, per night, with breakfast for two and all taxes. No resort fee on top.</p>
+      </div>
+
+      <div class="stay-line" aria-live="polite">
+        <svg class="ico" aria-hidden="true"><use href="#i-house"/></svg>
+        <span id="stayText">Showing prices for <strong>13 to 17 Nov</strong>, 4 nights, 2 guests</span>
+        <a href="#dates">Change dates</a>
+        <div class="cur" role="group" aria-label="Currency">
+          <button type="button" data-cur="PHP" aria-pressed="true">₱ PHP</button>
+          <button type="button" data-cur="USD" aria-pressed="false">$ USD</button>
+        </div>
+      </div>
+
+      <ul class="rooms" id="roomList"></ul>
+      <p class="rates-note">Rates go up 20% from 20 December to 5 January and over Holy Week. Extra bed ₱900 a night. Children under 7 stay free in their parents' room. US dollar prices are a guide at ₱58 to $1; we charge in pesos.</p>
+    </div>
+  </section>
+
+  <section class="here" id="getting-here" aria-labelledby="here-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Getting here</p>
+          <h2 id="here-h">Flights, the drive and the ferry</h2>
+        </div>
+        <p class="lede">Siargao's airport is Sayak (IAO) in Del Carmen, on the other side of the island. Pick where you're starting from.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Starting point">
+        <button role="tab" id="t-mnl" aria-selected="true" aria-controls="p-route" data-route="mnl">From Manila</button>
+        <button role="tab" id="t-ceb" aria-selected="false" aria-controls="p-route" data-route="ceb" tabindex="-1">From Cebu</button>
+        <button role="tab" id="t-crk" aria-selected="false" aria-controls="p-route" data-route="crk" tabindex="-1">From Clark</button>
+        <button role="tab" id="t-ferry" aria-selected="false" aria-controls="p-route" data-route="ferry" tabindex="-1">By ferry from Surigao</button>
+      </div>
+      <div role="tabpanel" id="p-route" aria-labelledby="t-mnl">
+        <ol class="route" id="route"></ol>
+      </div>
+
+      <div class="here-foot">
+        <div class="pickup">
+          <h3>Pickup from us</h3>
+          <p style="margin:6px 0 10px;color:#d8e6e1">Send your flight number when you book. We watch the arrival and wait if it's late.</p>
+          <table>
+            <caption class="sr">Transfer prices</caption>
+            <tbody>
+              <tr><td>Private van from Sayak Airport, up to 6 people with boards</td><td>₱2,500</td></tr>
+              <tr><td>Seat in our shared van, meets the Manila and Cebu flights</td><td>₱400 / person</td></tr>
+              <tr><td>Pickup at Dapa ferry port</td><td>₱800</td></tr>
+              <tr><td>Two-Bedroom Villa guests, airport both ways</td><td>Included</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <img src="img/bangka.webp" alt="A blue and yellow outrigger bangka seen from above on clear green water" width="1000" height="562" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section id="nearby" aria-labelledby="near-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">What's nearby</p>
+          <h2 id="near-h">How far things are from our gate</h2>
+        </div>
+        <p class="lede">Times are door to door from Habagat House. Scooters are ₱450 a day at the front desk.</p>
+      </div>
+      <div class="near-grid">
+        <div class="board">
+          <h3><svg class="ico"><use href="#i-walk"/></svg>On foot</h3>
+          <ul>
+            <li><b>Cloud 9 boardwalk and surf break</b><span>Catangnan beach, along the shore</span><em>10<small>min walk</small></em></li>
+            <li><b>Jacking Horse and Quiksilver breaks</b><span>Beginner waves at mid tide</span><em>12<small>min walk</small></em></li>
+            <li><b>Cafes and the Tourism Road strip</b><span>Bakeries, ATMs, a pharmacy</span><em>5<small>min walk</small></em></li>
+          </ul>
+          <h3><svg class="ico"><use href="#i-scooter"/></svg>By scooter or tricycle</h3>
+          <ul>
+            <li><b>General Luna town and the boat terminal</b><span>Where island hopping leaves from</span><em>10<small>min</small></em></li>
+            <li><b>Maasin River and the coconut road</b><span>Rope swing, paddle boats</span><em>30<small>min</small></em></li>
+            <li><b>Magpupungko rock pools, Pilar</b><span>Go at low tide or there's nothing to see</span><em>45<small>min</small></em></li>
+            <li><b>Sayak Airport</b><span>Del Carmen</span><em>50<small>min</small></em></li>
+          </ul>
+          <h3><svg class="ico"><use href="#i-boat"/></svg>By boat</h3>
+          <ul>
+            <li><b>Naked, Daku and Guyam islands</b><span>Shared tour ₱1,500 a person with lunch</span><em>15–25<small>min each</small></em></li>
+            <li><b>Sugba Lagoon</b><span>Van to Del Carmen, then a 40-minute boat</span><em>1.5<small>hours</small></em></li>
+          </ul>
+        </div>
+        <div class="pics">
+          <figure class="wide"><img src="img/cloud9-boardwalk.webp" alt="People walking out along the wooden Cloud 9 boardwalk over the reef at golden hour" width="1000" height="666" loading="lazy"><figcaption><b>Cloud 9 boardwalk.</b> Watch the break from the tower, sunset is busiest.</figcaption></figure>
+          <figure><img src="img/island-hopping.webp" alt="Aerial view of a palm-lined white sand island with turquoise water" width="1000" height="562" loading="lazy"><figcaption><b>Island hopping.</b> Leave by 8 AM to beat the crowds.</figcaption></figure>
+          <figure><img src="img/rock-pools.webp" alt="Rocky shoreline with green tidal pools next to a coconut forest" width="1000" height="750" loading="lazy"><figcaption><b>Magpupungko.</b> We post the day's low tide at reception.</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="season" id="season" aria-labelledby="season-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Surf season</p>
+          <h2 id="season-h">When to come, month by month</h2>
+        </div>
+        <p class="lede">From our own logbook over the last six seasons. Weather on the Pacific side changes fast, so treat it as a rough guide.</p>
+      </div>
+      <div class="scroll-x" tabindex="0" aria-label="Month by month waves and rain, scrolls sideways on small screens">
+        <div class="months" role="table" aria-label="Waves and rain by month">
+          <div role="row" style="display:contents">
+            <span role="columnheader"><span class="sr">Measure</span></span>
+            <span role="columnheader" class="m">Jan</span><span role="columnheader" class="m">Feb</span><span role="columnheader" class="m">Mar</span><span role="columnheader" class="m">Apr</span><span role="columnheader" class="m">May</span><span role="columnheader" class="m">Jun</span><span role="columnheader" class="m">Jul</span><span role="columnheader" class="m">Aug</span><span role="columnheader" class="m">Sep</span><span role="columnheader" class="m">Oct</span><span role="columnheader" class="m">Nov</span><span role="columnheader" class="m">Dec</span>
+          </div>
+          <div role="row" style="display:contents">
+            <span role="rowheader" class="lab">Waves at Cloud 9</span>
+            <span role="cell" class="cell w2">Mid</span><span role="cell" class="cell w2">Mid</span><span role="cell" class="cell w1">Small</span><span role="cell" class="cell w1">Small</span><span role="cell" class="cell w1">Small</span><span role="cell" class="cell w1">Small</span><span role="cell" class="cell w2">Mid</span><span role="cell" class="cell w3">Big</span><span role="cell" class="cell w3">Big</span><span role="cell" class="cell w3">Big</span><span role="cell" class="cell w3">Big</span><span role="cell" class="cell w2">Mid</span>
+          </div>
+          <div role="row" style="display:contents">
+            <span role="rowheader" class="lab">Rain</span>
+            <span role="cell" class="cell r3">Wet</span><span role="cell" class="cell r3">Wet</span><span role="cell" class="cell r2">Some</span><span role="cell" class="cell r1">Dry</span><span role="cell" class="cell r1">Dry</span><span role="cell" class="cell r2">Some</span><span role="cell" class="cell r2">Some</span><span role="cell" class="cell r2">Some</span><span role="cell" class="cell r2">Some</span><span role="cell" class="cell r2">Some</span><span role="cell" class="cell r3">Wet</span><span role="cell" class="cell r3">Wet</span>
+          </div>
+        </div>
+      </div>
+      <div class="season-notes">
+        <div><h3>Learning to surf</h3><p>March to June. Small, clean waves on the inside reefs and the warmest water. Lessons are ₱1,500 for 90 minutes with a local instructor and a board.</p></div>
+        <div><h3>Surfing Cloud 9 properly</h3><p>August to November, when the bigger swells arrive and the international surf cup runs. Book early: our Surf Lofts fill first.</p></div>
+        <div><h3>Christmas and New Year</h3><p>Busy and often rainy, with a minimum stay of four nights from 20 December. Brownouts happen in storms; our generator covers the rooms.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="included" aria-labelledby="incl-h">
+    <div class="wrap incl">
+      <img src="img/breakfast.webp" alt="Breakfast plate of garlic rice, scrambled eggs and beef tapa with mango on the side" width="800" height="1067" loading="lazy">
+      <div>
+        <p class="kicker">Included with every room</p>
+        <h2 id="incl-h">What the price covers</h2>
+        <ul class="inc-list">
+          <li><svg class="ico"><use href="#i-cup"/></svg><div><b>Breakfast until 11</b><span>Tapsilog, longsilog or eggs and toast, with Siargao coffee and fresh mango.</span></div></li>
+          <li><svg class="ico"><use href="#i-board"/></svg><div><b>Board rack and rinse</b><span>Lockable rack, fresh-water shower and a wax station by the gate.</span></div></li>
+          <li><svg class="ico"><use href="#i-wifi"/></svg><div><b>Starlink Wi-Fi</b><span>In every room and the garden. Good enough for video calls.</span></div></li>
+          <li><svg class="ico"><use href="#i-bolt"/></svg><div><b>Backup power</b><span>A generator runs the fans, lights and fridge during brownouts.</span></div></li>
+          <li><svg class="ico"><use href="#i-pool"/></svg><div><b>Garden pool</b><span>Twelve metres, shaded in the afternoon. Open 7 AM to 9 PM.</span></div></li>
+          <li><svg class="ico"><use href="#i-pin"/></svg><div><b>Tide and swell board</b><span>Written up each morning at reception by our surf guide, Jun.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" aria-labelledby="rev-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="kicker">Guest reviews</p>
+          <h2 id="rev-h">What guests wrote after staying</h2>
+        </div>
+      </div>
+      <ul class="reviews">
+        <li><blockquote>"Our flight from Cebu landed an hour late and the van was still there. Jun had the low tide written on the board for Magpupungko the next day, which saved us a wasted trip."</blockquote><cite><b>Patricia R.</b>, Quezon City. Garden Room, 5 nights, July</cite></li>
+        <li><blockquote>"Surf Loft was exactly what I needed for two weeks of Cloud 9 in September. Rack for my boards, cold shower outside, ten minutes to the break."</blockquote><cite><b>Liam O.</b>, Torquay, Australia. Surf Loft, 14 nights</cite></li>
+        <li><blockquote>"We came with two kids and my parents. The two-bedroom villa fit all six of us and the pool kept the kids busy every afternoon."</blockquote><cite><b>Marco D.</b>, Cebu City. Two-Bedroom Villa, 4 nights</cite></li>
+      </ul>
+      <p class="score"><span><b style="color:var(--ink)">9.3 out of 10</b> on Booking.com from 412 reviews</span><span><b style="color:var(--ink)">4.8 out of 5</b> on Google from 268 reviews</span></p>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-h" style="background:var(--mist)">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="kicker">Questions</p>
+        <h2 id="faq-h">Before you book</h2>
+        <p class="lede">Anything else, message us on Messenger or WhatsApp at +63 900 000 0000.</p>
+      </div>
+      <div>
+        <details open><summary>How do I pay?</summary><p>A 30% deposit holds the room. Pay it by GCash, Maya, bank transfer or card (Visa and Mastercard, 3% fee). The rest is paid at check-out in pesos, cash or card.</p></details>
+        <details><summary>What is the cancellation policy?</summary><p>Free cancellation up to 14 days before arrival. After that the deposit can move to new dates within 12 months. If your flight is cancelled by the airline, we move your booking at no cost.</p></details>
+        <details><summary>What time are check-in and check-out?</summary><p>Check-in from 2 PM, check-out by 11 AM. On an early flight you can leave bags and use the outdoor shower before you go.</p></details>
+        <details><summary>Is there an ATM nearby?</summary><p>There are two on Tourism Road, five minutes away, but they run out of cash on weekends. Bring enough pesos for tricycles and small cafes.</p></details>
+        <details><summary>Can you book surf lessons and tours?</summary><p>Yes, at the front desk or by message before you arrive. Lessons, island hopping, Sugba Lagoon and scooter rental can all go on your room bill.</p></details>
+        <details><summary>Do the rooms have air conditioning?</summary><p>All rooms have air conditioning and a ceiling fan. The fans run on the generator during brownouts; the air conditioning comes back once the main power does.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h2>Habagat House</h2>
+        <p style="margin-top:12px">Tourism Road, Purok 3, Barangay Catangnan<br>General Luna, Siargao Island, Surigao del Norte 8419</p>
+      </div>
+      <div>
+        <h3>Reservations</h3>
+        <p><a href="tel:+639000000000">+63 900 000 0000</a> (call, Messenger or WhatsApp)</p>
+        <p><a href="mailto:stay@habagathouse.com">stay@habagathouse.com</a></p>
+        <p>Front desk open 7 AM to 10 PM</p>
+      </div>
+      <div>
+        <h3>On this page</h3>
+        <p><a href="#rooms">Rooms and prices</a></p>
+        <p><a href="#getting-here">Getting here</a></p>
+        <p><a href="#nearby">What's nearby</a></p>
+        <p><a href="#faq">Questions</a></p>
+      </div>
+    </div>
+    <p class="small">Habagat House is a concept design by Veejay Atienza. The business, prices, reviews and contact details are made up. Photos from Pexels.</p>
+  </div>
+</footer>
+
+<div class="mbar" aria-label="Quick booking">
+  <div>From <b>₱4,800 / night</b>breakfast included</div>
+  <a class="btn" href="#dates">Check dates</a>
+</div>
+
+<dialog class="drawer" id="drawer" aria-labelledby="dr-h">
+  <form class="in" id="bookForm" method="dialog">
+    <header><h2 id="dr-h">Booking request</h2><button type="button" class="x" id="closeDr" aria-label="Close"><svg class="ico"><use href="#i-x"/></svg></button></header>
+    <div class="sum"><dl id="sumList"></dl></div>
+    <div class="f"><label for="nm">Full name</label><input id="nm" autocomplete="name" required></div>
+    <div class="f"><label for="em">Email</label><input id="em" type="email" autocomplete="email" required></div>
+    <div class="f"><label for="fl">Flight number (optional)</label><input id="fl" placeholder="e.g. 5J 3181"></div>
+    <div class="f"><label for="pk">Airport pickup</label>
+      <select id="pk"><option>No pickup, thanks</option><option>Private van, ₱2,500</option><option>Shared van seats, ₱400 each</option></select></div>
+    <p class="note">Nothing is charged now. We confirm within the hour and send a GCash, bank or card link for the 30% deposit.</p>
+    <button class="btn dark" type="submit" style="width:100%">Send booking request</button>
+    <div class="done" id="done" role="status">Thanks. This is a concept site, so no request was sent. A real one would reply from stay@habagathouse.com.</div>
+  </form>
+</dialog>
+
+<script>
+(function(){
+  const ROOMS=[
+    {id:'garden',name:'Garden Room',n:4,img:'garden-room',alt:'Double bed with fringed cushions, rattan lamp and a window onto palm leaves',sleeps:2,bed:'Queen bed',size:'24 m²',rate:4800,desc:'Ground floor, opening onto the garden and pool. Rain shower, desk, fan and air conditioning.'},
+    {id:'loft',name:'Surf Loft',n:3,img:'surf-loft',alt:'Twin beds under a rattan pendant in a room with timber walls',sleeps:2,bed:'Two singles or a queen',size:'26 m²',rate:5600,desc:'Built for surf trips: a rack for three boards inside, an outdoor rinse shower and a fridge.'},
+    {id:'upper',name:'Upstairs Room',n:2,img:'upstairs-room',alt:'Bedroom with a large window looking straight into palm trees',sleeps:3,bed:'Queen bed and a daybed',size:'30 m²',rate:6900,desc:'First floor with a window into the palm canopy and a small balcony. Quietest rooms we have.'},
+    {id:'plunge',name:'Plunge Pool Villa',n:2,img:'plunge-villa',alt:'Small blue plunge pool surrounded by palms and tropical plants',sleeps:2,bed:'King bed',size:'45 m² plus pool',rate:11500,desc:'Detached villa with its own walled garden and a 3 by 2 metre plunge pool. Breakfast brought to you.'},
+    {id:'villa2',name:'Two-Bedroom Villa',n:1,img:'two-bed-villa',alt:'Open-sided villa with a timber roof and a long pool in front',sleeps:6,bed:'King and two singles, plus a sofa bed',size:'110 m²',rate:18900,desc:'For families and groups. Kitchenette, living room, its own pool and airport transfers both ways.'}
+  ];
+  const USD=58;
+  let cur='PHP';
+  const $=s=>document.querySelector(s);
+  const fmt=(php)=>cur==='PHP'?'₱'+Math.round(php).toLocaleString('en-PH'):'$'+Math.round(php/USD).toLocaleString('en-US');
+  const iso=d=>d.toISOString().slice(0,10);
+  const inEl=$('#in'), outEl=$('#out'), gEl=$('#guests');
+  inEl.value='2026-11-13'; outEl.value='2026-11-17';
+  inEl.min='2026-10-25';
+
+  function nightsList(a,b){const out=[];const d=new Date(a+'T00:00:00Z');const e=new Date(b+'T00:00:00Z');while(d<e){out.push(new Date(d));d.setUTCDate(d.getUTCDate()+1);}return out;}
+  function peak(d){const m=d.getUTCMonth(),day=d.getUTCDate();return (m===11&&day>=20)||(m===0&&day<=5);}
+  function free(room,nights){ // mock availability, stable for given dates
+    let min=room.n;
+    nights.forEach(d=>{let h=(d.getUTCDate()*2654435761+d.getUTCMonth()*40503+room.id.charCodeAt(0)*97+room.id.length*131)>>>0;h=(h^(h>>>13))%10;const taken=h<5?0:h<8?1:h<9?2:room.n;min=Math.min(min,Math.max(0,room.n-taken));});
+    if(nights.some(peak)) min=Math.max(0,min-1);
+    return min;
+  }
+  function label(d){return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',timeZone:'UTC'});}
+
+  function render(){
+    let ns=nightsList(inEl.value,outEl.value);
+    if(!ns.length){ns=nightsList(inEl.value,iso(new Date(new Date(inEl.value+'T00:00:00Z').getTime()+864e5)));}
+    const g=+gEl.value;
+    const last=new Date(ns[ns.length-1]);last.setUTCDate(last.getUTCDate()+1);
+    $('#stayText').innerHTML='Showing prices for <strong>'+label(ns[0])+' to '+label(last)+'</strong>, '+ns.length+' night'+(ns.length>1?'s':'')+', '+g+' guest'+(g>1?'s':'');
+    $('#roomList').innerHTML=ROOMS.map(r=>{
+      const total=ns.reduce((s,d)=>s+(peak(d)?r.rate*1.2:r.rate),0);
+      const f=free(r,ns); const fits=g<=r.sleeps;
+      let st,cls;
+      if(!fits){st='Sleeps '+r.sleeps+' at most';cls='none';}
+      else if(f===0){st='Full on these dates';cls='none';}
+      else if(f===1){st='Last one left';cls='low';}
+      else {st=f+' of '+r.n+' free';cls='ok';}
+      const ok=fits&&f>0;
+      return `<li class="room">
+        <img src="img/${r.img}.webp" alt="${r.alt}" loading="lazy" width="900" height="675">
+        <div><h3>${r.name}</h3><p class="count">${r.n} ${r.n>1?'rooms':'villa'} like this</p>
+          <ul class="specs"><li><svg class="ico" aria-hidden="true"><use href="#i-user"/></svg>Sleeps ${r.sleeps}</li><li><svg class="ico" aria-hidden="true"><use href="#i-bed"/></svg>${r.bed}</li><li><svg class="ico" aria-hidden="true"><use href="#i-size"/></svg>${r.size}</li></ul>
+          <p class="desc">${r.desc}</p></div>
+        <div class="price"><div class="per">${fmt(r.rate)} <span>/ night</span></div>
+          <div class="total">${ns.length} night${ns.length>1?'s':''}: <b>${fmt(total)}</b></div>
+          <div class="status ${cls}">${st}</div>
+          <button class="btn" type="button" data-room="${r.id}" data-total="${total}" ${ok?'':'disabled'}>${ok?'Request this room':'Not available'}</button></div>
+      </li>`;}).join('');
+  }
+  render();
+  $('#dateForm').addEventListener('submit',e=>{e.preventDefault();
+    if(outEl.value<=inEl.value){const d=new Date(inEl.value+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+1);outEl.value=iso(d);}
+    render();document.getElementById('rooms').scrollIntoView();});
+  [inEl,outEl,gEl].forEach(el=>el.addEventListener('change',()=>{if(outEl.value>inEl.value)render();}));
+  document.querySelectorAll('.cur button').forEach(b=>b.addEventListener('click',()=>{cur=b.dataset.cur;document.querySelectorAll('.cur button').forEach(x=>x.setAttribute('aria-pressed',x===b));render();}));
+
+  // booking drawer
+  const dr=$('#drawer');
+  $('#roomList').addEventListener('click',e=>{const b=e.target.closest('button[data-room]');if(!b)return;
+    const r=ROOMS.find(x=>x.id===b.dataset.room);const total=+b.dataset.total;
+    const ns=nightsList(inEl.value,outEl.value);const last=new Date(ns[ns.length-1]);last.setUTCDate(last.getUTCDate()+1);
+    $('#sumList').innerHTML=`<dt>Room</dt><dd>${r.name}</dd><dt>Dates</dt><dd>${label(ns[0])} to ${label(last)}</dd><dt>Guests</dt><dd>${gEl.value}</dd><dt>Deposit (30%)</dt><dd>${fmt(total*.3)}</dd><dt class="grand">Total</dt><dd class="grand">${fmt(total)}</dd>`;
+    $('#done').style.display='none';
+    if(dr.showModal)dr.showModal();});
+  $('#closeDr').addEventListener('click',()=>dr.close());
+  dr.addEventListener('click',e=>{if(e.target===dr)dr.close();});
+  $('#bookForm').addEventListener('submit',e=>{e.preventDefault();$('#done').style.display='block';});
+
+  // routes
+  const ROUTES={
+    mnl:[['i-plane','Fly Manila to Siargao','About 1 hr 50 min','Cebu Pacific and PAL fly daily from NAIA Terminal 3 and 1. Morning flights sell out first.'],['i-pin','Land at Sayak (IAO)','Del Carmen','Small terminal. Our driver waits outside with a Habagat House sign.'],['i-van','Drive to General Luna','About 50 min','Through Dapa on the island\'s main road. Boards go on the roof rack.'],['i-house','Arrive at Habagat House','Catangnan','Cold towel, then the room. Check-in from 2 PM; earlier if the room is ready.']],
+    ceb:[['i-plane','Fly Cebu to Siargao','About 1 hr','Several flights a day on Cebu Pacific and PAL. The easiest link for most international arrivals.'],['i-pin','Land at Sayak (IAO)','Del Carmen','Small terminal. Our driver waits outside with a Habagat House sign.'],['i-van','Drive to General Luna','About 50 min','Through Dapa on the island\'s main road. Boards go on the roof rack.'],['i-house','Arrive at Habagat House','Catangnan','Cold towel, then the room. Check-in from 2 PM; earlier if the room is ready.']],
+    crk:[['i-plane','Fly Clark to Siargao','About 2 hr','Direct flights run a few days a week. Check the airline\'s current schedule before you plan around it.'],['i-pin','Land at Sayak (IAO)','Del Carmen','Small terminal. Our driver waits outside with a Habagat House sign.'],['i-van','Drive to General Luna','About 50 min','Through Dapa on the island\'s main road. Boards go on the roof rack.'],['i-house','Arrive at Habagat House','Catangnan','Cold towel, then the room. Check-in from 2 PM; earlier if the room is ready.']],
+    ferry:[['i-plane','Fly to Surigao City','From Manila or Cebu','Useful when Siargao flights are full or cost too much over the holidays.'],['i-boat','Fast craft to Dapa','About 2 hr','Boats leave Surigao port several times a morning. Rough in the wet months.'],['i-van','Drive from Dapa port','About 25 min','We pick up at the port for ₱800 a van.'],['i-house','Arrive at Habagat House','Catangnan','Cold towel, then the room. Check-in from 2 PM; earlier if the room is ready.']]
+  };
+  function route(k){$('#route').innerHTML=ROUTES[k].map(l=>`<li class="leg"><span class="dot"><svg class="ico" aria-hidden="true"><use href="#${l[0]}"/></svg></span><h3>${l[1]}</h3><span class="time">${l[2]}</span><p>${l[3]}</p></li>`).join('');}
+  route('mnl');
+  const tabs=[...document.querySelectorAll('[role=tab]')];
+  function sel(t){tabs.forEach(x=>{const on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;});$('#p-route').setAttribute('aria-labelledby',t.id);route(t.dataset.route);}
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{let j=null;if(e.key==='ArrowRight')j=(i+1)%tabs.length;if(e.key==='ArrowLeft')j=(i-1+tabs.length)%tabs.length;if(j!==null){tabs[j].focus();sel(tabs[j]);}});});
+
+  // mobile bar appears once the date form is off screen
+  const mbar=$('.mbar');
+  if('IntersectionObserver' in window){new IntersectionObserver(es=>{mbar.classList.toggle('show',!es[0].isIntersecting&&es[0].boundingClientRect.top<0);}).observe($('#dates'));}else{mbar.classList.add('show');}
+  // menu
+  const mb=$('.menu-btn'),nav=$('#nav');
+  mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o);});
+  nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');mb.setAttribute('aria-expanded','false');}});
+})();
+</script>
+</body>
+</html>

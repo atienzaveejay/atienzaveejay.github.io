@@ -2,3 +2,5 @@ _site/
 _export/
 .DS_Store
 __pycache__/
+concepts/_work/
+concepts/_tools/

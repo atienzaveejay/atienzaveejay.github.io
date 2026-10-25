@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fort Strength Club | Small-group strength classes in BGC</title>
+<meta name="description" content="Small-group strength and conditioning classes in BGC, Taguig. Eight people per class, a coach on every lift, 45-minute lunch classes. Your first class is free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1F2EF; --card:#FFFFFF; --ink:#121417; --muted:#4A5058; --line:#D3D6D1;
+  --blue:#1A44E0; --blue-ink:#0F2C9E; --blue-soft:#E3E9FD;
+  --red:#C8241C; --yellow:#F2C300; --green:#1E7F47;
+  --wide:"Archivo",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --r:6px; --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--wide);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--wide);font-stretch:118%;line-height:1.05;letter-spacing:-.01em;margin:0}
+h2{font-size:clamp(30px,4vw,46px);font-weight:850}
+h3{font-size:20px;font-weight:750;font-stretch:110%}
+.mono{font-family:var(--mono)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* concept strip */
+.concept{background:var(--ink);color:#B9BEC4;font-size:12.5px;text-align:center;padding:6px 16px}
+.concept a{color:#fff}
+
+/* header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(241,242,239,.96);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:28px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:850;font-stretch:122%;font-size:18px;letter-spacing:-.01em;white-space:nowrap}
+.logo svg{flex:none}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;font-size:15px;font-weight:550;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:700;font-size:16px;text-decoration:none;border-radius:var(--r);padding:13px 20px;border:2px solid transparent;cursor:pointer;line-height:1.1}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-ink)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:#fff}
+.nav .btn{padding:10px 16px;font-size:15px}
+.menu-btn{display:none;margin-left:auto;background:none;border:0;padding:8px;cursor:pointer;color:var(--ink)}
+@media (max-width:900px){
+  .nav ul{display:none;position:absolute;left:0;right:0;top:64px;background:var(--paper);flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line)}
+  .nav ul.open{display:flex}
+  .nav ul a{display:block;padding:12px 0;font-size:17px;color:var(--ink)}
+  .menu-btn{display:block}
+  .nav > .btn{display:none}
+}
+
+/* hero */
+.hero{padding:44px 0 56px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:44px;align-items:start}
+.hero h1{font-size:clamp(36px,4.3vw,58px);font-weight:900;font-stretch:120%}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.lede{font-size:19px;color:var(--muted);margin:20px 0 26px;max-width:36ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:8px 28px;margin:30px 0 0;padding:0;list-style:none}
+.facts li{font-size:14px;color:var(--muted);line-height:1.3}
+.facts b{display:block;font-family:var(--mono);font-size:22px;color:var(--ink);font-weight:600}
+.hero-photo{margin-top:30px;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+
+/* schedule board */
+.board{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:20px 22px 0;flex-wrap:wrap}
+.board-head h2{font-size:24px;font-weight:800}
+.board-head p{margin:0;font-size:14px;color:var(--muted)}
+.days{display:flex;gap:6px;padding:16px 22px;overflow-x:auto;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.days button{flex:1 0 auto;min-width:58px;font:inherit;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:8px 10px;cursor:pointer;text-align:center;color:var(--ink)}
+.days button span{display:block;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.days button b{font-size:15px;font-weight:700}
+.days button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.days button[aria-selected="true"] span{color:#C9CDD2}
+.slots{list-style:none;margin:0;padding:0 0 6px}
+.slot{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:16px;align-items:center;padding:12px 22px;border-top:1px solid var(--line)}
+.slot time{font-family:var(--mono);font-weight:600;font-size:17px;line-height:1.2}
+.slot time small{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+.slot .cls{font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.slot .meta{font-size:14px;color:var(--muted)}
+.plate{width:12px;height:12px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 3px rgba(0,0,0,.18)}
+.p-green{background:var(--green)}.p-blue{background:var(--blue)}.p-yellow{background:var(--yellow)}.p-red{background:var(--red)}
+.spots{font-family:var(--mono);font-size:13px;color:var(--muted);text-align:right;white-space:nowrap}
+.spots.low{color:var(--red);font-weight:600}
+.slot .act{display:flex;align-items:center;gap:14px}
+.slot .btn{padding:9px 14px;font-size:14px}
+.btn-small-line{border:2px solid var(--line);background:#fff;color:var(--ink)}
+.btn-small-line:hover{border-color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;padding:14px 22px 18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);background:#FAFAF8}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+
+@media (max-width:1000px){.hero-grid{grid-template-columns:1fr;gap:32px}.lede{max-width:52ch}.hero-photo{display:none}}
+@media (max-width:560px){
+  .slot{grid-template-columns:80px minmax(0,1fr);gap:4px 10px;padding:14px 16px}
+  .slot time{white-space:nowrap}
+  .slot .act{grid-column:2;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;text-align:left}
+  .spots{margin:0}
+  .board-head,.days,.legend{padding-left:16px;padding-right:16px}
+  .slot time{font-size:15px}
+}
+
+/* sections */
+section.block{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:44px;align-items:end;margin-bottom:44px}
+.sec-head p{margin:0;color:var(--muted);font-size:18px;max-width:52ch}
+@media (max-width:900px){.sec-head{grid-template-columns:1fr;gap:14px;margin-bottom:32px}section.block{padding:60px 0}}
+
+/* first class */
+.first-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:start}
+.timeline{list-style:none;margin:0;padding:0;counter-reset:t}
+.timeline li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:20px;padding:20px 0;border-top:1px solid var(--line)}
+.timeline li:last-child{border-bottom:1px solid var(--line)}
+.timeline .clock{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--blue)}
+.timeline h3{margin-bottom:6px}
+.timeline p{margin:0;color:var(--muted)}
+.first-side{position:sticky;top:96px}
+.first-side img{border-radius:var(--r);aspect-ratio:1/1;object-fit:cover;object-position:60% 50%;width:100%}
+.bring{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px}
+.bring h3{font-size:17px;margin-bottom:10px}
+.bring ul{margin:0;padding:0;list-style:none}
+.bring li{display:flex;gap:10px;padding:5px 0;font-size:16px}
+.bring svg{flex:none;margin-top:3px}
+@media (max-width:900px){.first-grid{grid-template-columns:1fr}.first-side{position:static}.first-side img{aspect-ratio:16/10}}
+@media (max-width:560px){.timeline li{grid-template-columns:1fr;gap:4px}}
+
+/* class types */
+.types{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:3px solid var(--ink)}
+.type{padding:22px 22px 26px 0;margin-right:22px}
+.type + .type{border-left:1px solid var(--line);padding-left:22px;margin-right:0}
+.type .tag{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px;color:var(--muted);margin-bottom:14px}
+.type h3{margin-bottom:10px}
+.type p{margin:0;color:var(--muted);font-size:16px}
+.type .who{margin-top:14px;font-size:14px;color:var(--ink);font-weight:600}
+@media (max-width:900px){.types{grid-template-columns:1fr 1fr}.type:nth-child(3){border-left:0;padding-left:0}.type:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:560px){.types{grid-template-columns:1fr}.type,.type + .type{border-left:0;padding:20px 0;margin:0}.type + .type{border-top:1px solid var(--line)}}
+
+/* prices */
+.prices{background:var(--ink);color:#fff;border-top:0}
+.prices .sec-head p{color:#B9BEC4}
+.price-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:start}
+table.plans{width:100%;border-collapse:collapse}
+.plans th,.plans td{text-align:left;padding:18px 12px 18px 0;border-bottom:1px solid #2E3238;vertical-align:top}
+.plans thead th{font-family:var(--mono);font-weight:500;font-size:12.5px;color:#9DA3AA;text-transform:uppercase;letter-spacing:.06em;padding-top:0}
+.plans tbody th{font-weight:700;font-size:18px}
+.plans tbody th small{display:block;font-weight:400;font-size:14px;color:#B9BEC4;margin-top:4px}
+.plans td{font-family:var(--mono);font-size:17px;white-space:nowrap}
+.plans td.per{color:#B9BEC4}
+.plans tr.hl th,.plans tr.hl td{color:#fff}
+.plans tr.hl{background:rgba(26,68,224,.22)}
+.plans tr.hl th{padding-left:12px;box-shadow:inset 3px 0 0 #6E8BFF}
+.plans tr{transition:background .2s}
+.fine{font-size:14px;color:#9DA3AA;margin:18px 0 0}
+.calc{background:#1C1F24;border:1px solid #2E3238;border-radius:10px;padding:26px}
+.calc h3{font-size:20px;margin-bottom:6px}
+.calc > p{margin:0 0 18px;color:#B9BEC4;font-size:15px}
+.seg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.seg button{font:inherit;font-family:var(--mono);font-weight:600;font-size:18px;padding:12px 0;border-radius:var(--r);border:1px solid #3A3F46;background:transparent;color:#fff;cursor:pointer}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--ink);border-color:#fff}
+.seg-label{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:6px;font-size:12px;color:#9DA3AA;text-align:center}
+.result{margin-top:22px;padding-top:20px;border-top:1px solid #2E3238}
+.result .plan{font-size:22px;font-weight:800;font-stretch:115%}
+.result .cost{font-family:var(--mono);font-size:15px;color:#B9BEC4;margin-top:6px}
+.result .cost b{color:#fff;font-weight:600}
+.calc .btn{margin-top:22px;width:100%}
+.team{margin-top:20px;font-size:15px;color:#B9BEC4;border-top:1px solid #2E3238;padding-top:18px}
+.team b{color:#fff}
+@media (max-width:900px){.price-grid{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .plans thead{display:none}
+  .plans tr{display:grid;grid-template-columns:1fr auto;padding:14px 0;border-bottom:1px solid #2E3238}
+  .plans th,.plans td{border:0;padding:0}
+  .plans tbody th{grid-column:1/-1;margin-bottom:6px}
+  .plans td.per{text-align:right}
+  .plans tr.hl{padding-left:12px;padding-right:12px}
+  .plans tr.hl th{padding-left:0;box-shadow:none}
+}
+
+/* coaches */
+.coach-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:48px;align-items:start}
+.coach-photo img{border-radius:var(--r);width:100%;aspect-ratio:3/2;object-fit:cover}
+.coach-photo figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+.coaches{list-style:none;margin:0;padding:0}
+.coaches li{padding:20px 0;border-top:1px solid var(--line)}
+.coaches li:last-child{border-bottom:1px solid var(--line)}
+.coaches .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.coaches .cert{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.coaches p{margin:8px 0 0;color:var(--muted)}
+@media (max-width:900px){.coach-grid{grid-template-columns:1fr;gap:28px}}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin:0;display:flex;flex-direction:column}
+.review blockquote{margin:0 0 18px;font-size:17px;flex:1}
+.review figcaption{font-size:14px;color:var(--muted)}
+.review figcaption b{color:var(--ink);display:block;font-size:15px}
+.review.photo{padding:0;overflow:hidden;background:var(--ink)}
+.review.photo img{height:100%;width:100%;object-fit:cover}
+@media (max-width:900px){.reviews{grid-template-columns:1fr}.review.photo{display:none}}
+
+/* trial form */
+.trial-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.trial-grid > div > p{color:var(--muted);font-size:18px;margin:16px 0 0}
+form.trial{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+label{font-weight:650;font-size:15px}
+input,select{font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid #9AA0A6;border-radius:var(--r);background:#fff;color:var(--ink);width:100%}
+input:focus,select:focus{outline:3px solid var(--blue);outline-offset:0;border-color:var(--blue)}
+.hint{font-size:13.5px;color:var(--muted)}
+.chips{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;border:0;padding:0;margin:0}
+.chips legend{font-weight:650;font-size:15px;margin-bottom:8px;padding:0}
+.chips label{font-weight:500;font-size:15px;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.chips input{width:auto;accent-color:var(--blue);margin:0}
+.chips label:has(input:checked){border-color:var(--blue);background:var(--blue-soft)}
+.chips label:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:2px}
+form.trial .btn{grid-column:1/-1;font-size:17px;padding:16px}
+.done{grid-column:1/-1;background:var(--blue-soft);border-radius:var(--r);padding:14px 16px;font-weight:600;color:var(--blue-ink)}
+.done[hidden]{display:none}
+@media (max-width:900px){.trial-grid{grid-template-columns:1fr;gap:28px}}
+@media (max-width:560px){form.trial{grid-template-columns:1fr;padding:20px}}
+
+/* faq */
+.faq{max-width:860px}
+.faq details{border-top:1px solid var(--line);padding:4px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:16px 0;font-weight:700;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary svg{flex:none;transition:transform .2s}
+.faq details[open] summary svg{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:68ch}
+
+/* find us */
+.find-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.find-grid h3{font-size:17px;margin-bottom:10px}
+.find-grid p,.find-grid li{margin:0;color:var(--muted);font-size:16px}
+.walks{list-style:none;margin:0;padding:0}
+.walks li{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line)}
+.walks li span:last-child{font-family:var(--mono);color:var(--ink);white-space:nowrap}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:7px 0;border-bottom:1px dashed var(--line);color:var(--muted)}
+.hours td:last-child{text-align:right;font-family:var(--mono);color:var(--ink)}
+@media (max-width:900px){.find-grid{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:#B9BEC4;padding:36px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a{color:#fff}
+footer .logo{color:#fff}
+
+/* sticky mobile action */
+.mbar{display:none}
+@media (max-width:700px){
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(241,242,239,.97);border-top:1px solid var(--line)}
+  .mbar .btn{flex:1;padding:13px 10px;font-size:15px}
+  body{padding-bottom:72px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="concept"><a href="https://atienzaveejay.github.io/ui-design/">Concept design by Veejay Atienza</a>. Not a real business.</div>
+
+<header class="top">
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top" class="logo" aria-label="Fort Strength Club, home">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="9" width="5" height="12" rx="1" fill="#121417"/><rect x="24" y="9" width="5" height="12" rx="1" fill="#121417"/><rect x="6" y="6" width="4" height="18" rx="1" fill="#1A44E0"/><rect x="20" y="6" width="4" height="18" rx="1" fill="#1A44E0"/><rect x="10" y="13.5" width="10" height="3" fill="#121417"/></svg>
+      Fort Strength Club
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul id="menu">
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#first-class">Your first class</a></li>
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#coaches">Coaches</a></li>
+      <li><a href="#find-us">Find us</a></li>
+    </ul>
+    <a href="#trial" class="btn btn-blue">Book a free class</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Get strong around your <em>office hours.</em></h1>
+      <p class="lede">Coached barbell and conditioning classes on 26th Street, BGC. Eight people per class at most, and a 45-minute lunch class that gets you back to your desk by 1:15.</p>
+      <div class="hero-actions">
+        <a href="#trial" class="btn btn-blue">Book a free class</a>
+        <a href="#prices" class="btn btn-line">See prices</a>
+      </div>
+      <ul class="facts">
+        <li><b>8</b>people per class, max</li>
+        <li><b>45</b>minute lunch class</li>
+        <li><b>4</b>showers, towels included</li>
+      </ul>
+      <figure class="hero-photo" style="margin-bottom:0;margin-left:0;margin-right:0">
+        <img src="img/coach-cue.webp" alt="A coach adjusts a member's grip on the barbell before her first squat" width="1400" height="933">
+      </figure>
+    </div>
+
+    <div class="board" id="schedule">
+      <div class="board-head">
+        <h2>Class schedule</h2>
+        <p>Week of 26 Oct. Live spots left.</p>
+      </div>
+      <div class="days" role="tablist" aria-label="Day of the week"></div>
+      <ul class="slots" id="slots" role="tabpanel" aria-live="polite"></ul>
+      <div class="legend" aria-label="Class colour key">
+        <span><i class="plate p-green"></i>Barbell Basics</span>
+        <span><i class="plate p-blue"></i>Strength</span>
+        <span><i class="plate p-yellow"></i>Conditioning</span>
+        <span><i class="plate p-red"></i>Lunch Express</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="first-class" aria-labelledby="first-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="first-h">What your first class is like</h2>
+      <p>Most people who walk in have never touched a barbell. Here is the hour, minute by minute, for a 6:15 PM class.</p>
+    </div>
+    <div class="first-grid">
+      <ol class="timeline">
+        <li><span class="clock">6:00 PM</span><div><h3>Arrive and change</h3><p>Come 15 minutes early. Front desk gives you a towel and a locker key. Shoes off at the door, we train in flat shoes or socks.</p></div></li>
+        <li><span class="clock">6:05 PM</span><div><h3>Ten minutes with your coach</h3><p>One-on-one before the group starts. We ask about old injuries and your work setup, then check how you squat and hinge with no weight.</p></div></li>
+        <li><span class="clock">6:15 PM</span><div><h3>Warm-up with the group</h3><p>Ten minutes of mobility for stiff hips and shoulders, the usual damage from sitting all day.</p></div></li>
+        <li><span class="clock">6:25 PM</span><div><h3>Main lift</h3><p>Squat, deadlift or press. You start with an empty bar or a kettlebell, never a weight you have to grind. The coach watches every set and writes your numbers on the board.</p></div></li>
+        <li><span class="clock">6:55 PM</span><div><h3>Short finisher</h3><p>Eight to ten minutes on the bike, sled or carries. Hard, but you pick the pace.</p></div></li>
+        <li><span class="clock">7:15 PM</span><div><h3>Shower and go</h3><p>Four private showers with shampoo and body wash. Your coach messages you a plan for your next three classes the same night.</p></div></li>
+      </ol>
+      <aside class="first-side">
+        <img src="img/deadlift.webp" alt="A coach crouches beside a member to watch her deadlift setup" width="1800" height="1200" loading="lazy">
+        <div class="bring">
+          <h3>What to bring</h3>
+          <ul>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A44E0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Clothes you can squat in</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A44E0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Flat shoes, or train in socks</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A44E0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>A water bottle (we have a refill station)</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A44E0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L19 7"/></svg>Your office clothes, if you're heading back</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="classes" aria-labelledby="classes-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="classes-h">Class types</h2>
+      <p>Each class has a plate colour, the same one you see on the schedule. New members start in green.</p>
+    </div>
+    <div class="types">
+      <article class="type">
+        <div class="tag"><i class="plate p-green"></i>Green · 60 min</div>
+        <h3>Barbell Basics</h3>
+        <p>Learn the squat, deadlift, bench and press with light weight and lots of coaching. Run as a 4-week block.</p>
+        <p class="who">Start here if you're new</p>
+      </article>
+      <article class="type">
+        <div class="tag"><i class="plate p-blue"></i>Blue · 60 min</div>
+        <h3>Strength</h3>
+        <p>A 12-week program on the big lifts. Weights go up a little each week and your coach tracks every number.</p>
+        <p class="who">After Basics, or with lifting experience</p>
+      </article>
+      <article class="type">
+        <div class="tag"><i class="plate p-yellow"></i>Yellow · 50 min</div>
+        <h3>Conditioning</h3>
+        <p>Kettlebells, sleds, rowers and bikes in intervals. Good for your heart and your weekend basketball.</p>
+        <p class="who">Any level</p>
+      </article>
+      <article class="type">
+        <div class="tag"><i class="plate p-red"></i>Red · 45 min</div>
+        <h3>Lunch Express</h3>
+        <p>One main lift and a short finisher, 12:15 to 1:00. Leaves you 15 minutes to shower and walk back.</p>
+        <p class="who">Any level, weekdays only</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block prices" id="prices" aria-labelledby="prices-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="prices-h">Prices</h2>
+      <p>All prices in pesos and VAT included. No joining fee and no lock-in contract. Pause your membership for up to a month a year for travel or busy season.</p>
+    </div>
+    <div class="price-grid">
+      <div>
+        <table class="plans" id="plans">
+          <thead><tr><th scope="col">Plan</th><th scope="col">Price</th><th scope="col">Per class</th></tr></thead>
+          <tbody>
+            <tr data-plan="trial"><th scope="row">First class<small>One per person, any class type</small></th><td>Free</td><td class="per">₱0</td></tr>
+            <tr data-plan="drop"><th scope="row">Drop-in<small>Single class, book up to 3 days ahead</small></th><td>₱950</td><td class="per">₱950</td></tr>
+            <tr data-plan="pack"><th scope="row">10-class pack<small>Use within 3 months</small></th><td>₱8,000</td><td class="per">₱800</td></tr>
+            <tr data-plan="eight"><th scope="row">8 classes a month<small>About twice a week, monthly billing</small></th><td>₱5,600</td><td class="per">₱700</td></tr>
+            <tr data-plan="unli"><th scope="row">Unlimited<small>Every class, monthly billing</small></th><td>₱7,500</td><td class="per">from ₱440</td></tr>
+          </tbody>
+        </table>
+        <p class="fine">Cancel a booking up to 6 hours before class. Late cancels and no-shows use up one class.</p>
+      </div>
+      <div class="calc" aria-labelledby="calc-h">
+        <h3 id="calc-h">Which plan fits you?</h3>
+        <p>How many times a week can you realistically come?</p>
+        <div class="seg" role="group" aria-label="Classes per week">
+          <button type="button" aria-pressed="false" data-n="1">1</button>
+          <button type="button" aria-pressed="true" data-n="2">2</button>
+          <button type="button" aria-pressed="false" data-n="3">3</button>
+          <button type="button" aria-pressed="false" data-n="4">4+</button>
+        </div>
+        <div class="seg-label" aria-hidden="true"><span>a week</span><span>a week</span><span>a week</span><span>a week</span></div>
+        <div class="result" aria-live="polite">
+          <div class="plan" id="calc-plan">8 classes a month</div>
+          <div class="cost" id="calc-cost"><b>₱5,600</b> a month, ₱700 per class</div>
+        </div>
+        <a href="#trial" class="btn btn-blue">Try a free class first</a>
+        <p class="team"><b>Teams of 5 or more:</b> 15% off any monthly plan, billed to your company. Ask us for a quote to send HR.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="coaches" aria-labelledby="coaches-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="coaches-h">Coaches</h2>
+      <p>Every coach is full-time and certified, and has coached complete beginners for at least three years.</p>
+    </div>
+    <div class="coach-grid">
+      <figure class="coach-photo" style="margin:0">
+        <img src="img/squat.webp" alt="Coach Paolo stands behind a member during a back squat" width="1400" height="933" loading="lazy">
+        <figcaption>Coach Paolo spotting a back squat in the 6:00 AM Strength class.</figcaption>
+      </figure>
+      <ul class="coaches">
+        <li><div class="row"><h3>Paolo Villanueva</h3><span class="cert">Head coach · NSCA-CSCS</span></div><p>Former strength coach for a UAAP varsity team. Writes the 12-week Strength program and runs the morning classes.</p></li>
+        <li><div class="row"><h3>Bea Santos</h3><span class="cert">Coach · NASM-CPT, PT</span></div><p>Licensed physical therapist. The coach to see about back pain, desk shoulders and coming back after an injury.</p></li>
+        <li><div class="row"><h3>Migs Reyes</h3><span class="cert">Coach · USAW Level 1</span></div><p>Runs Conditioning and most of the evening classes. Competed in national weightlifting meets for six years.</p></li>
+        <li><div class="row"><h3>Jen Dizon</h3><span class="cert">Coach · ACE-CPT</span></div><p>Teaches Barbell Basics and Lunch Express. Twelve years in a BGC bank before she started coaching.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="reviews-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="reviews-h">What members say</h2>
+      <p>From members who work within a few blocks of the gym.</p>
+    </div>
+    <div class="reviews">
+      <figure class="review">
+        <blockquote>I do the 12:15 class three times a week and I'm back at my desk at 1:10, showered. My deadlift went from 40 kg to 85 kg since February.</blockquote>
+        <figcaption><b>Kristine L.</b>Analyst, member since February</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>My lower back hurt after every long day. Coach Bea changed how I set up my deadlift and I haven't needed a massage since.</blockquote>
+        <figcaption><b>Ramon T.</b>Engineer, member since last year</figcaption>
+      </figure>
+      <figure class="review photo"><img src="img/smile.webp" alt="A member smiles at her coach between sets" width="1200" height="800" loading="lazy"><figcaption class="sr">Photo of a member between sets</figcaption></figure>
+      <figure class="review">
+        <blockquote>I finish my shift at 6 AM at a BPO in Uptown and walk here for the 7:15 class. The coaches know my name and my numbers.</blockquote>
+        <figcaption><b>Jerome C.</b>Team lead, member since March</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>Five of us from the office signed up together with the company rate. HR handles the billing, we just book.</blockquote>
+        <figcaption><b>Anna P.</b>HR manager, company plan</figcaption>
+      </figure>
+      <figure class="review">
+        <blockquote>I was nervous I'd be the weakest one there. Nobody cares. The first class was an empty bar and a lot of good advice.</blockquote>
+        <figcaption><b>Carla M.</b>Lawyer, member since April</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="trial" aria-labelledby="trial-h">
+  <div class="wrap trial-grid">
+    <div>
+      <h2 id="trial-h">Book your free class</h2>
+      <p>Pick a class and we'll text you within the hour to confirm. Your free class includes the ten minutes one-on-one with a coach.</p>
+      <img src="img/bench.webp" alt="A coach spots a member on the bench press" width="1200" height="800" loading="lazy" style="border-radius:6px;margin-top:28px;aspect-ratio:3/2;object-fit:cover">
+    </div>
+    <form class="trial" id="trial-form" novalidate>
+      <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="f-phone">Mobile number</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0917 000 0000" required></div>
+      <div class="field full"><label for="f-class">Class</label><select id="f-class" name="class" required></select><span class="hint">Or tap "Try free" on any class in the schedule.</span></div>
+      <fieldset class="field full chips">
+        <legend>What would you like help with?</legend>
+        <label><input type="checkbox" name="goal" value="strength">Getting stronger</label>
+        <label><input type="checkbox" name="goal" value="back">Back or neck pain</label>
+        <label><input type="checkbox" name="goal" value="weight">Losing weight</label>
+        <label><input type="checkbox" name="goal" value="sport">A sport</label>
+        <label><input type="checkbox" name="goal" value="unsure">Not sure yet</label>
+      </fieldset>
+      <button class="btn btn-blue" type="submit">Book my free class</button>
+      <p class="done" id="done" hidden role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section class="block" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="faq-h">Questions</h2><p>Message us on (02) 8000 0000 if yours isn't here.</p></div>
+    <div class="faq">
+      <details><summary>I've never lifted. Can I still join?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes, most members hadn't. Start with the free class, then a 4-week Barbell Basics block. You can join Strength after that.</p></details>
+      <details><summary>Is there parking?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>The building's pay parking is ₱60 for the first three hours. Members get a ₱40 validation at the front desk. Most people walk from their office.</p></details>
+      <details><summary>Can I come in my lunch break and still look decent after?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>That's what Lunch Express is for. It ends at 1:00 sharp. We have four showers, hair dryers, and a vanity counter with an iron for shirts.</p></details>
+      <details><summary>Do you do one-on-one sessions?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. Private sessions are ₱2,200 each or ₱19,000 for ten, and good for injury rehab with Coach Bea.</p></details>
+      <details><summary>How do I pay?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>GCash, Maya, credit card or bank transfer. Monthly plans bill on the same date each month.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="find-us" aria-labelledby="find-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="find-h">Find us</h2><p>Third floor, 26th Street corner 9th Avenue, Bonifacio Global City, Taguig. Use the side lobby on 9th Avenue.</p></div>
+    <div class="find-grid">
+      <div>
+        <h3>Walking time</h3>
+        <ul class="walks">
+          <li><span>Bonifacio High Street</span><span>5 min</span></li>
+          <li><span>Uptown Bonifacio</span><span>12 min</span></li>
+          <li><span>One Bonifacio High Street</span><span>6 min</span></li>
+          <li><span>BGC Bus, Market! Market! stop</span><span>9 min</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opening hours</h3>
+        <table class="hours">
+          <tr><td>Monday to Friday</td><td>5:30 AM to 9:30 PM</td></tr>
+          <tr><td>Saturday</td><td>7:30 AM to 1:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Phone: (02) 8000 0000<br>Mobile and Viber: 0917 000 0000<br>Email: <a href="mailto:hello@fortstrengthclub.com">hello@fortstrengthclub.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="logo">Fort Strength Club</span>
+    <span>© 2026 Fort Strength Club, BGC, Taguig. <a href="https://atienzaveejay.github.io/ui-design/">Concept design by Veejay Atienza</a>.</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="#schedule" class="btn btn-line">Schedule</a>
+  <a href="#trial" class="btn btn-blue">Book a free class</a>
+</div>
+
+<script>
+(function(){
+  var types={B:['Barbell Basics','green',60],S:['Strength','blue',60],C:['Conditioning','yellow',50],L:['Lunch Express','red',45]};
+  var coaches={B:'Jen',S:'Paolo',C:'Migs',L:'Jen'};
+  var wk=[['06:00','S',5],['07:15','B',2],['12:15','L',3],['18:15','S',1],['19:30','C',4],['20:40','B',6]];
+  var days=[['Mon','26'],['Tue','27'],['Wed','28'],['Thu','29'],['Fri','30'],['Sat','31']];
+  var spotsBy=[[5,2,3,1,4,6],[3,4,0,2,5,7],[6,1,2,0,3,5],[4,3,1,2,6,6],[2,5,4,3,7,8]];
+  var sat=[['08:00','S',2],['09:30','B',4],['11:00','C',5]];
+  function fmt(t){var h=+t.slice(0,2),m=t.slice(3),ap=h<12?'AM':'PM';h=h%12||12;return h+':'+m+' '+ap}
+  function list(i){
+    if(i===5) return sat.map(function(r){return [r[0],r[1],r[2],r[1]==='S'?'Paolo':r[1]==='B'?'Bea':'Migs']});
+    return wk.map(function(r,j){var c=coaches[r[1]];if(r[1]==='S'&&j>2)c='Migs';if(r[1]==='B'&&j>2)c='Bea';return [r[0],r[1],spotsBy[i][j],c]});
+  }
+  var tabs=document.querySelector('.days'),slots=document.getElementById('slots'),sel=document.getElementById('f-class');
+  days.forEach(function(d,i){
+    var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.id='tab'+i;
+    b.setAttribute('aria-selected',i===0?'true':'false');b.tabIndex=i===0?0:-1;
+    b.innerHTML='<b>'+d[0]+'</b><span>'+d[1]+' Oct</span>';
+    b.addEventListener('click',function(){show(i)});
+    b.addEventListener('keydown',function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){var n=(i+k+6)%6;show(n);tabs.children[n].focus()}});
+    tabs.appendChild(b);
+  });
+  function show(i){
+    [].forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i?'true':'false');b.tabIndex=j===i?0:-1});
+    slots.setAttribute('aria-labelledby','tab'+i);
+    slots.innerHTML=list(i).map(function(r){
+      var t=types[r[1]],left=r[2],label=days[i][0]+' '+days[i][1]+' Oct, '+fmt(r[0])+', '+t[0];
+      var sp=left===0?'Full, waitlist open':left+' of 8 left';
+      var btn=left===0?'<a class="btn btn-small-line" href="#trial" data-pick="'+label+' (waitlist)">Join waitlist</a>':'<a class="btn btn-blue" href="#trial" data-pick="'+label+'">Try free</a>';
+      return '<li class="slot"><time>'+fmt(r[0])+'<small>'+t[2]+' min</small></time><div><div class="cls"><i class="plate p-'+t[1]+'"></i>'+t[0]+'</div><div class="meta">Coach '+r[3]+'</div></div><div class="act"><div class="spots'+(left>0&&left<=2?' low':'')+'">'+sp+'</div>'+btn+'</div></li>';
+    }).join('');
+  }
+  show(0);
+  // fill form select
+  days.forEach(function(d,i){var g=document.createElement('optgroup');g.label=d[0]+' '+d[1]+' Oct';
+    list(i).forEach(function(r){if(r[2]===0)return;var o=document.createElement('option');o.textContent=fmt(r[0])+', '+types[r[1]][0];o.value=d[0]+' '+d[1]+' Oct, '+fmt(r[0])+', '+types[r[1]][0];g.appendChild(o)});sel.appendChild(g)});
+  slots.addEventListener('click',function(e){var a=e.target.closest('[data-pick]');if(!a)return;var v=a.getAttribute('data-pick');
+    var hit=[].some.call(sel.options,function(o){return o.value===v});
+    if(!hit){var o=document.createElement('option');o.value=o.textContent=v;sel.insertBefore(o,sel.firstChild)}
+    sel.value=v;setTimeout(function(){document.getElementById('f-name').focus({preventScroll:true})},500)});
+
+  // calculator
+  var plans={1:['10-class pack','<b>₱8,000</b> per pack, about ₱3,200 a month at ₱800 per class','pack'],
+             2:['8 classes a month','<b>₱5,600</b> a month, ₱700 per class','eight'],
+             3:['Unlimited','<b>₱7,500</b> a month, about ₱580 per class','unli'],
+             4:['Unlimited','<b>₱7,500</b> a month, about ₱440 per class','unli']};
+  var segs=document.querySelectorAll('.seg button');
+  function pick(n){segs.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.n==n?'true':'false')});
+    var p=plans[n];document.getElementById('calc-plan').textContent=p[0];document.getElementById('calc-cost').innerHTML=p[1];
+    document.querySelectorAll('#plans tbody tr').forEach(function(r){r.classList.toggle('hl',r.dataset.plan===p[2])})}
+  segs.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.n)})});
+  pick(2);
+
+  // form
+  document.getElementById('trial-form').addEventListener('submit',function(e){e.preventDefault();
+    var n=document.getElementById('f-name'),p=document.getElementById('f-phone'),d=document.getElementById('done');
+    if(!n.value.trim()||!p.value.trim()){d.hidden=false;d.textContent='Please add your name and mobile number.';(n.value.trim()?p:n).focus();return}
+    d.hidden=false;d.textContent='Thanks, '+n.value.trim().split(' ')[0]+'. We\'ll text '+p.value+' within the hour to confirm '+sel.value+'. (Concept only, nothing was sent.)'});
+
+  // menu
+  var mb=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  mb.addEventListener('click',function(){var o=menu.classList.toggle('open');mb.setAttribute('aria-expanded',o);mb.setAttribute('aria-label',o?'Close menu':'Open menu')});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+})();
+</script>
+</body>
+</html>
