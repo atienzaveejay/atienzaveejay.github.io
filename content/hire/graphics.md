@@ -37,4 +37,10 @@ Pins for ROO's Pinterest account, built from the brand's own shoot photos.
 
 Earlier work for an e-sports community, a clothing brand and a university student council. Click any image to view it larger.
 
+## Pitch decks and media kits
+
+<div class="gallery gallery-decks"><a href="/assets/decks/kareera-media-kit/01.webp" class="shot" data-group="picks-decks"><img src="/assets/decks/kareera-media-kit/01.webp" alt="Media kit: Kareera cover"></a><a href="/assets/decks/kareera-partnership/01.webp" class="shot" data-group="picks-decks"><img src="/assets/decks/kareera-partnership/01.webp" alt="Partnership pitch deck: Kareera cover"></a><a href="/assets/decks/ugc-creator-pitch/01.webp" class="shot" data-group="picks-decks"><img src="/assets/decks/ugc-creator-pitch/01.webp" alt="UGC creator pitch template cover"></a></div>
+
+A media kit and a partnership deck for Kareera, my AI mock interview app, plus a pitch template for UGC creators. [See all six decks](/decks/).
+
 [See every graphic on the Graphics page](/design/)

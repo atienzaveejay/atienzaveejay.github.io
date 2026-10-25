@@ -170,6 +170,10 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.15; let
 .gallery .shot { display: block; break-inside: avoid; margin-bottom: 16px; }
 .gallery img { width: 100%; border: 1px solid var(--rule); border-radius: 2px; }
 .gallery-print { columns: 1; max-width: 680px; }
+.gallery-decks { columns: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.gallery-decks .shot { margin: 0; }
+.gallery-decks img { aspect-ratio: 16 / 9; object-fit: cover; }
+@media (max-width: 640px) { .gallery-decks { grid-template-columns: 1fr 1fr; } }
 
 /* writing */
 .writing h2 { font-size: 28px; }

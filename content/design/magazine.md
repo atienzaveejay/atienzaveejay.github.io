@@ -1,6 +1,6 @@
 ---
 title: Magazine
-order: 6
+order: 12
 group: Print
 ---
 ![](/assets/magazine/01.webp)

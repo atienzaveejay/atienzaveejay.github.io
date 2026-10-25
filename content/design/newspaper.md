@@ -1,6 +1,6 @@
 ---
 title: Newspaper
-order: 7
+order: 13
 group: Print
 ---
 ![](/assets/newspaper/01.webp)

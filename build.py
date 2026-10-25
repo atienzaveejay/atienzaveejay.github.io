@@ -371,7 +371,7 @@ def build_work_index(work, videos, designs):
   <div class="section-head"><h2>Video and graphics</h2></div>
   <div class="duo">
     <a class="duo-card" href="{u('/video/')}">{collage([v["cover"] for v in videos if v.get("cover")])}<span class="tile-title">Video</span><span class="tile-sub">{len(videos)} sets: YouTube, TikTok, Reels and product videos</span></a>
-    <a class="duo-card" href="{u('/design/')}">{collage([d.get("cover") or first_image(d["body"]) for d in designs])}<span class="tile-title">Graphics</span><span class="tile-sub">{len(designs)} sets: social graphics, thumbnails and print</span></a>
+    <a class="duo-card" href="{u('/design/')}">{collage([d.get("cover") or first_image(d["body"]) for d in designs])}<span class="tile-title">Graphics</span><span class="tile-sub">{len(designs)} sets: social graphics, thumbnails, decks and print</span></a>
   </div>
 </section>
 """
@@ -519,7 +519,7 @@ def build_design(designs):
     for d in designs:
         images = re.findall(r"!\[[^\]]*\]\((.+?)\)", d["body"])
         pdfs = re.findall(r"\[PDF: ([^\]]+)\]\((.+?)\)", d["body"])
-        cls = "gallery gallery-print" if pdfs else "slides-row" if d.get("group") == "Carousels" else "gallery"
+        cls = "gallery gallery-decks" if d.get("group") == "Decks" else "gallery gallery-print" if pdfs else "slides-row" if d.get("group") == "Carousels" else "gallery"
         figs = "".join(
             f'<a href="{u(src)}" class="shot" data-group="{d["slug"]}"><img src="{u(src)}" alt="{e(d["title"])} design {n + 1}" loading="lazy"></a>'
             for n, src in enumerate(images))
@@ -532,10 +532,10 @@ def build_design(designs):
   {f'<p>{links}</p>' if links else ''}
 </section>""")
     body = f"""
-<div class="wrap page-head"><h1>Graphics</h1><p class="lede">Social media graphics, YouTube thumbnails, ad creative and print layouts. Click any image to view it larger, then use the arrow keys.</p>{jump_nav(designs)}</div>
+<div class="wrap page-head"><h1>Graphics</h1><p class="lede">Social media graphics, YouTube thumbnails, pitch decks and media kits, ad creative and print layouts. Click any image to view it larger, then use the arrow keys.</p>{jump_nav(designs)}</div>
 <div class="wrap">{''.join(sections)}</div>
 """
-    write("/design/", page("Graphics", body, "Graphics portfolio: social media graphics, YouTube thumbnails, ads and print by Veejay Atienza.", "/design/", "Graphics"))
+    write("/design/", page("Graphics", body, "Graphics portfolio: social media graphics, YouTube thumbnails, pitch decks, media kits, ads and print by Veejay Atienza.", "/design/", "Graphics"))
 
 
 def load_articles():
