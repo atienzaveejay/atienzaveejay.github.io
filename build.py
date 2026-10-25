@@ -100,6 +100,15 @@ def embed(url, kind="video"):
     return f'<a class="embed-link" href="{e(clean)}" target="_blank" rel="noopener">View {e(label)}</a>'
 
 
+def clip(spec, kind):
+    """@[short](url | caption): the embed with a caption under it; without a caption, just the embed."""
+    url, _, caption = spec.partition(" | ")
+    if not caption.strip():
+        return embed(url.strip(), kind)
+    cap = markdown.markdown(caption.strip())[3:-4]  # inline markdown, minus the <p> wrapper
+    return f'<figure class="clip">{embed(url.strip(), kind)}<figcaption>{cap}</figcaption></figure>'
+
+
 def bars(spec):
     """@[bars](Label=value; Label=value | caption). Values may carry units, e.g. 12.0% or 14,946."""
     rows, _, caption = spec.partition("|")
@@ -121,7 +130,7 @@ def bars(spec):
 def md(text, toc=False):
     text = re.sub(r"<details><summary>(.*?)</summary>", r'<details markdown="1"><summary>\1</summary>', text)
     text = re.sub(r"^@\[bars\]\((.+)\)$", lambda m: bars(m[1]), text, flags=re.M)
-    text = re.sub(r"^@\[(\w+)\]\((.+?)\)$", lambda m: embed(m[2], m[1]), text, flags=re.M)
+    text = re.sub(r"^@\[(\w+)\]\((.+?)\)$", lambda m: clip(m[2], m[1]), text, flags=re.M)
     conv = markdown.Markdown(extensions=["tables", "fenced_code", "md_in_html", "sane_lists", "toc"],
                              extension_configs={"toc": {"toc_depth": "2"}})
     out = conv.convert(text)

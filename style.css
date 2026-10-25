@@ -512,3 +512,13 @@ main .case-head, main .page-head { padding-top: 48px; } @media (max-width: 640px
 @media (max-width: 640px) { .slides-row { grid-template-columns: repeat(4, 1fr); } }
 .gallery-four { columns: 4 180px; }
 .slides-six { grid-template-columns: repeat(6, 1fr); }
+
+/* Captioned samples on the hire pages */
+.clips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 18px; margin-top: 20px; align-items: start; }
+.clips.wide { grid-template-columns: repeat(2, 1fr); }
+.clip { margin: 0; }
+.clip .embed-video { margin: 0; max-width: none; aspect-ratio: 9 / 16; object-fit: cover; }
+.clip .embed-tall { max-width: none; }
+.clip figcaption { color: var(--muted); font-size: 14px; line-height: 1.5; margin-top: 10px; }
+.clip figcaption strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) { .clips { grid-template-columns: repeat(2, 1fr); gap: 22px 12px; } .clips.wide { grid-template-columns: 1fr; } .clip figcaption { font-size: 13px; } }
